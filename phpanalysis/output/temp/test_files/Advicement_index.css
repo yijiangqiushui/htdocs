@@ -1,0 +1,153 @@
+* {
+	margin: 0px; padding: 0px;
+}
+img {
+	border: currentColor; border-image: none;
+}
+a {
+	color: rgb(255, 255, 255); font-size: 12px;
+}
+ul {
+	list-style: none;
+}
+.clear {
+	clear: both;
+}
+#warp {
+	background: rgb(246, 246, 246); margin: 0px auto; width: 1004px; padding-bottom: 50px;
+}
+.header {
+	background: url("../../images/header_bg.gif") no-repeat; margin: 0px auto; width: 1004px; height: 86px;
+}
+.JY_box {
+	padding: 35px 50px 5px;
+}
+.JY_table {
+	border-collapse: collapse;
+}
+.JY_table tr {
+	height: 30px; line-height: 30px;
+}
+.JY_table .JY_a {
+	color: rgb(249, 152, 0); font-size: 12px; font-weight: bold; text-decoration: underline;
+}
+.JY_select {
+	border: 1px solid rgb(190, 190, 190); border-image: none; width: 78px; height: 24px; line-height: 24px;
+}
+.JY_table .JY_input {
+	border: 1px solid rgb(190, 190, 190); border-image: none; width: 238px; height: 24px; color: rgb(153, 153, 153); line-height: 24px;
+}
+.px_table {
+	border-collapse: collapse;
+}
+.px_table td {
+	color: rgb(51, 51, 51); font-family: "????"; font-size: 12px;
+}
+.px_table td a {
+	color: rgb(51, 51, 51); font-family: "????"; font-size: 12px; text-decoration: none;
+}
+.px_table td a:hover {
+	color: rgb(249, 152, 0);
+}
+.BB_box {
+	padding-right: 50px; padding-left: 50px;
+}
+.BB_table {
+	border: 1px solid rgb(220, 220, 220); border-image: none; width: 900px; border-collapse: collapse;
+}
+.BB_table tr {
+	border: 1px solid rgb(220, 220, 220); border-image: none; height: 40px;
+}
+.BB_table th {
+	background: rgb(225, 225, 225); height: 40px; text-align: center; color: rgb(51, 51, 51); line-height: 40px; font-family: "????"; font-size: 14px; font-weight: bold;
+}
+.BB_table td {
+	border: 1px solid rgb(220, 220, 220); border-image: none; height: 40px; text-align: center; color: rgb(51, 51, 51); line-height: 40px; font-family: "????"; font-size: 12px;
+}
+.BB_table a {
+	color: rgb(51, 51, 51); text-decoration: underline;
+}
+.BB_table .jynr {
+	width: 300px; text-align: left; line-height: 16px; padding-left: 10px;
+}
+.BB_table .row_b {
+	background-color: rgb(255, 255, 255);
+}
+.YM {
+	margin: 0px auto; height: 40px; line-height: 40px; padding-left: 400px;
+}
+.YM_jl {
+	color: rgb(85, 85, 85); font-size: 12px;
+}
+.YM_jl span {
+	color: rgb(249, 152, 0); font-weight: bold;
+}
+.FBJY {
+	border: 1px solid rgb(190, 190, 190); border-image: none; width: 1002px; margin-top: 20px;
+}
+.FB_top {
+	background: url("../../images/hf.gif") no-repeat 18px 10px rgb(225, 225, 225); height: 40px; color: rgb(51, 51, 51); line-height: 40px; padding-left: 160px; font-size: 12px;
+}
+.FB_top2 {
+	background: url("../../images/jy.gif") no-repeat 18px 10px rgb(225, 225, 225); height: 40px; color: rgb(51, 51, 51); line-height: 40px; padding-left: 160px; font-size: 12px;
+}
+.FB_top span {
+	color: rgb(5, 14, 189); padding-left: 100px;
+}
+.TJY_t {
+	text-align: left; margin-top: 20px; margin-bottom: 20px; margin-left: 50px; border-collapse: collapse;
+}
+.TJY_t tr {
+	height: 40px; line-height: 40px;
+}
+.TJY_t td {
+	color: rgb(85, 85, 85); font-family: "????"; font-size: 12px;
+}
+.TJY_textarea {
+	border: 1px solid rgb(190, 190, 190); border-image: none; width: 700px; height: 130px; color: rgb(153, 153, 153); padding-top: 3px; padding-left: 5px; font-size: 12px;
+}
+.TJY_input {
+	border: 1px solid rgb(190, 190, 190); border-image: none; width: 300px; height: 22px; color: rgb(153, 153, 153); line-height: 22px; padding-left: 5px;
+}
+.HF_box {
+	background: rgb(255, 255, 255); border: 1px solid rgb(190, 190, 190); border-image: none; width: 900px; margin-bottom: 10px; margin-left: 50px;
+}
+.HF_z {
+	text-align: left; color: rgb(85, 85, 85); line-height: 20px; padding-top: 10px; padding-left: 20px; font-family: "????"; font-size: 14px; font-weight: bold;
+}
+.HF_z span {
+	padding-left: 50px;
+}
+.WT {
+	padding-top: 10px; padding-bottom: 10px; padding-left: 20px;
+}
+.wt_box {
+	background: rgb(254, 195, 83); width: 57px; height: 26px; text-align: center; color: rgb(117, 62, 8); line-height: 26px; font-family: "????"; font-size: 16px; float: left;
+}
+.wt_w {
+	height: 26px; color: rgb(51, 51, 51); line-height: 26px; font-size: 12px; float: left;
+}
+.HFZ {
+	padding-right: 50px; padding-left: 50px;
+}
+.HFZ_box {
+	border: 2px solid rgb(198, 218, 227); border-image: none; width: 900px; margin-bottom: 10px;
+}
+.HFZ_box_t {
+	background: rgb(137, 172, 205); border-collapse: collapse;
+}
+.HFZ_box_t td {
+	height: 30px; color: rgb(51, 51, 51); line-height: 30px; font-size: 12px;
+}
+.HFZ_box_b {
+	text-align: left; color: rgb(85, 85, 85); line-height: 16px; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; font-family: "????"; font-size: 12px;
+}
+.HFZ_box_b span a {
+	color: rgb(0, 0, 255); padding-left: 510px;
+}
+.HFZ_box_t2 {
+	margin-top: 10px; border-collapse: collapse;
+}
+.HFZ_box_t2 td {
+	color: rgb(85, 85, 85); font-family: "????"; font-size: 12px;
+}

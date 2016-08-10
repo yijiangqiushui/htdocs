@@ -1,0 +1,22 @@
+/* CSS Document */
+
+.hlui-table{}
+.ui-table-title-bar{ margin-top:8px; height:28px; border-top:1px solid #e8e9ea; border-bottom:1px solid #e8e9ea; background-color:#f9f9f9;}
+
+.ui-table-title{ float:left; padding-left:15px; line-height:28px; font-size:14px; font-weight:bold; color:#3c8bfe;}
+.ui-table-in-func-bar{ float:right; padding-right:15px; margin-top:2px;}
+
+.hlui-table table{ width:100%; border-bottom:1px solid #ccc;}
+
+.hlui-table table th{ border-bottom:1px solid #ccc; line-height:25px; font-size:12px; font-weight:normal; color:#fff; text-align:left; text-indent:5px; background-color:#666;}
+.ui-table-th{ border-right:1px solid #ccc;}
+.hlui-table table td{ line-height:25px; font-size:12px; text-align:left; text-indent:5px;}
+.ui-table-td{ border-right:1px solid #ccc;}
+.ui-td-interlacing{ background-color:#f1f1f1;}
+
+.hlui-table-opt-choice{ font-size:12px; padding:5px 0;}
+.hlui-table-opt-choice label{}
+.hlui-table-opt-choice select{ width:80px; border:1px solid #ccc; line-height:26px; height:26px;}
+
+.hlui-table-tr-m-over{ background-color:#94AAD3; color:#fff;}
+.hlui-table-tr-m-click{ background-color:#FC0; color:#000;}

@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title><link rel="stylesheet" type="text/css"
+	href="../../../../website/html/view/css/tablestyle.css" />
+	<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/icon.css">
+	<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+	<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../js/apply_fruits.js"></script>
+    
+    <script type="text/javascript">
+		var flag=$._GET('flag');
+		if(flag=='expertCat'){
+			titleStr='年度专家组分类';
+		}else if(flag=='scienceCat'){
+			titleStr='技术领域分类';
+		}else{
+			titleStr='经济行业分类';
+		}
+	</script>
+</head>
+
+<body class='easyui-layout'>
+	<!--树结构-->
+	<div id='west' data-options="region:'west',title:titleStr,split:true" style="width:200px;padding:5px;">
+    	<ul id="treeData"></ul>
+    </div>
+    
+     <!--表结构-->
+    <div id='center' data-options="region:'center',title:'申报项目信息',split:true" style="padding:5px;">
+        <div id="toolbar">
+    		<!--<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="queApply()">查询</a>-->
+        	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="exportExcel(0)">按项目导出打分Excel表格</a>
+        	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="exportExcel(1)">按专家导出打分Excel表格</a>
+        	<!--<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="exportExcel()">导出打分Excel表格</a>-->
+        	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="arrClassify()">批量归类</a>
+        	<a href="../../../../otherfiles/zj-dfbz.doc" class="easyui-linkbutton" iconCls="icon-tip" plain="true"  target="_blank">专家打分标准</a>
+        	<!--<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="printForm()">打印表单</a> -->
+    	</div>
+    	<table id="applygrid"></table>
+    </div>
+    <!--查询-->
+     <div id="show" class="easyui-dialog" style="width:360px;padding:10px 20px" closed="true" buttons="#score-buttons">
+     	<form id="show_form" method="post">
+        	<table width="300">
+            	<tr>
+                	<td>项目名称：</td>
+                    <td><input id="search_name" name="aname" class="easyui-validatebox" width="150" /></td>
+                </tr>
+                <tr>
+                	<td>主要完成人：</td>
+                    <td><input id="search_people" name="impPerson" class="easyui-validatebox" width="150" /></td>
+                </tr>
+                <tr>
+                	<td>第一完成单位：</td>
+                    <td><input id="search_unit" name="completeOrg" class="easyui-validatebox" width="150" /></td>
+                </tr>
+            </table>  
+        </form>
+     </div>
+      <div id="score-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="query_fruit()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#show').dialog('close')">取消</a>
+    </div>
+    <!--导出打分Excel表格-->
+    <div id="exportdlg" class="easyui-dialog" style="width:300px;padding:10px 20px"
+            closed="true" buttons="#excel-buttons">
+        <form id="expertfm" method="post">
+        <table>
+            <tr>
+                <td id="expertName"></td>
+                <td>
+                <div id="combo1"><input name="expertList" id="expertList" style="width:150px"></div>
+                <div id="combo2" style="display:none"><input name="expertCobox" id="expertCobox" style="width:150px"></div>
+                <input type="hidden" id="expertTeamCat" name="expertCat"/></td>
+           	</tr>
+         </table>
+        </form>
+       
+    </div>
+    <div id="excel-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="expertScore()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#exportdlg').dialog('close')">取消</a>
+    </div>
+    
+    <!--添加-->
+    <div id="scoredlg" class="easyui-dialog" style="width:450px;padding:10px 20px"
+            closed="true" buttons="#score-buttons">
+        <!--<div class="ftitle">评分信息</div>-->
+        <form id="scorefm" method="post">
+        <table>
+            <tr>
+                <td>技术创新程度：</td>
+                <td><input name="creative" style="width:50px">分</td>
+           	</tr>
+            
+        	<tr>
+                <td>科学性：</td>
+                <td><input name="scientific" style="width:50px">分</td>
+            </tr>
+            <tr>
+                <td>难易程度或复杂程度：</td>
+                <td><input name="difficulty" style="width:50px">分</td>
+           	</tr>
+            <tr>
+                <td>技术经济指标的先进程度：</td>
+                <td><input name="advanced" style="width:50px">分</td>
+           	</tr>
+            <tr>
+                <td>已获经济效益：</td>
+                <td><input name="benefits" style="width:50px">分</td>
+           	</tr>
+            <tr>
+                <td>社会效益：</td>
+                <td><input name="effectiveness" style="width:50px">分</td>
+           	</tr>
+            <tr>
+                <td>发展前景及潜在效益：</td>
+                <td><input name="prospect" style="width:50px">分</td>
+           	</tr>
+            <tr>
+                <td>转化、应用、推广程度：</td>
+                <td><input name="popularize" style="width:50px">分</td>
+           	</tr>
+            <tr>
+                <td>与本区经济、社会、科技发展需求的紧密程度：</td>
+                <td><input name="closes" style="width:50px">分</td>
+           	</tr>
+            <tr>
+                <td>对推动行业技术进步的作用：</td>
+                <td><input name="affect" style="width:50px">分</td>
+           	</tr>
+            <tr>
+                <td id="changeTitle">知识产权情况：</td>
+                <td><input name="property" style="width:50px">分</td>
+           	</tr>
+            <tr>
+                <td>科技查新情况：</td>
+                <td><input name="technology" style="width:50px">分</td>
+           	</tr>
+         </table>
+        </form>
+       
+    </div>
+      
+    <div id="score-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveScore()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#scoredlg').dialog('close')">取消</a>
+    </div>
+    
+    <!--查看评分-->
+    <div id="checkScoredlg" class="easyui-dialog" style="width:900px;padding:10px 20px"
+            closed="true" buttons="#checkScore-buttons">
+        	<table id="checkScore" class="easyui-datagrid-"></table>
+            <!--<div id="toolbar1">
+                <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="exportExcel()">导出打分Excel表格</a>       
+            </div>-->
+    </div>
+      
+    <div id="checkScore-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#checkScoredlg').dialog('close')">取消</a>
+    </div>
+    
+    <!--查看申报项目信息-->
+    <div id="checkFruitsdlg" class="easyui-dialog" style="width:850px;height:550px;padding:10px 20px"
+            closed="true">
+        <div class="easyui-accordion" data-options="fit:true,border:false">
+        	<div title="一、项目基本情况" style="padding:10px;">
+            	<form id="application" method="post">
+                  <table width="726" border="0">
+                    <tr>
+                      <td width="76" height="41">项目名称：</td><td colspan="4"><input type="text" name="aname" id="aname" value="" style="background:transparent; border:none;width:600px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td>主要完成人：</td><td colspan="4"><div id="impPerson"></div></td>
+                    </tr>
+                    <tr>
+                      <td rowspan="5">第一完成单位</td>
+                      <td colspan="4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td width="81">单位名称：</td><td width="216"><input type="text" name="completeOrg" id="completeOrg" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td width="90">通讯地址：</td><td width="241"><input type="text" name="completeAdress" id="completeAdress" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td>邮编：</td><td><input type="text" name="completeCode" id="completeCode" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td>联系人：</td><td><input type="text" name="completePerson" id="completePerson" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td>联系电话：</td><td><input type="text" name="completeTel" id="completeTel" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td>手机：</td><td><input type="text" name="completePhone" id="completePhone" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td>传真：</td><td><input type="text" name="completeFax" id="completeFax" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td>电子邮件：</td><td><input type="text" name="completeEmail" id="completeEmail" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td rowspan="5">推荐单位</td>
+                      <td colspan="4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>单位名称：</td><td><input type="text" name="recOrg" id="recOrg" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td>通讯地址：</td><td><input type="text" name="recAdress" id="recAdress" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td>邮编：</td><td><input type="text" name="recCode" id="recCode" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td>联系人：</td><td><input type="text" name="recPerson" id="recPerson" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td>联系电话：</td><td><input type="text" name="recTel" id="recTel" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td>手机：</td><td><input type="text" name="recPhone" id="recPhone" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td>传真：</td><td><input type="text" name="recFax" id="recFax" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td>电子邮件：</td><td><input type="text" name="recEmail" id="recEmail" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">所属国民经济行业：</td>
+                      <td colspan="3"><input type="text" name="economic" id="economic" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">所属科学技术领域：</td>
+                      <td colspan="3"><input type="text" name="science" id="science" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">任务来源：</td>
+                      <td><input type="text" name="source" id="source" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td>具体计划、基金的名称和编号：</td>
+                      <td><input type="text" name="planID" id="planID" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">项目起始时间：</td>
+                      <td><input type="text" name="proStart" id="proStart" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td><td>完成时间：</td><td><input type="text" name="proEnd" id="proEnd" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr>
+                  </table>
+                </form>
+            </div>
+            
+            <div title="二、内容简介" style="padding:10px;">
+            	<form id='brief' method="post">
+                  <table width="724" border="0">
+                    <tr>
+                      <td width="84">内容简介：</td>
+                      <!--<td colspan="3"><textarea name="proBrief" id="proBrief" style="width: 600px; height: 230px; overflow-y:visible;border:1;resize:none;" readonly="readonly"></textarea></td>-->
+                      <td width="630" colspan="3"><div id="proBrief"></div></td>
+                    </tr>
+                  </table>
+                </form>
+           </div>
+           <div title="三、主要创新点" style="padding:10px;">
+           		<form id='create' method="post">
+                  <table width="720" border="0">
+                    <tr>
+                    <td width="103">主要创新点：</td>
+                      <!--<td colspan="3"><textarea name="proCreat" id="proCreat" style="width: 600px; height: 230px; overflow-y:visible;border:1;resize:none;" readonly="readonly"></textarea></td>-->
+                      <td width="607" colspan="3"><div id="proCreat"></div></td>
+                    </tr>
+                  </table>
+                </form>
+           </div>
+           <div title="四、项目详细内容" style="padding:10px;">
+           		<form id='detail' method="post">
+                  <table width="764" border="0" cellspacing="5">
+                    <tr>
+                    <td valign="top">立项背景：</td>
+                      <td colspan="4"><textarea name="background" id="background" style="width: 500px; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+                    </tr>
+                     <tr>
+                    <td valign="top">详细科学技术内容：</td>
+                      <td colspan="4"><textarea name="scienceCon" id="scienceCon" style="width: 500px; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+                    </tr>
+                     <tr>
+                    <td valign="top">应用情况及推广程度：</td>
+                      <td colspan="4"><textarea name="extend" id="extend" style="width: 500px; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+                    </tr>                                     
+                     <tr>
+                    <td valign="top">推动科学技术进步的作用：</td>
+                      <td colspan="4"><textarea name="effect" id="effect" style="width: 500px; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+                    </tr>
+                    <tr>                
+                      <td width="153">项目总投资金额：</td><td width="330"><input type="text" name="invest" id="invest" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                      <td width="61">回收期（年）：</td><td width="202"><input type="text" name="recoverDate" id="recoverDate" value="" style="background:transparent; border:none;width:200px;" readonly="readonly"/></td>
+                    </tr> 
+                    <tr>
+                    	<td colspan="4"><table id="grid4" class="easyui-datagrid-"></table> </td>
+                    </tr> 
+                    <tr>               
+                    <td valign="top">计算依据：</td>
+                      <td colspan="4"><textarea name="casculBasis" id="casculBasis" style="width: 500px; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+                    </tr>
+                     <tr>
+                    <td valign="top">经济效益综述：</td>
+                      <td colspan="4"><textarea name="economicBenefit" id="economicBenefit" style="width: 500px; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+                    </tr>
+                     <tr>
+                    <td valign="top">社会效益：</td>
+                      <td colspan="4"><textarea name="socialeffect" id="socialeffect" style="width: 500px; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+                    </tr>
+                  </table>
+                </form>
+           </div>
+           <div title="五、本项目曾获科技奖励情况" style="padding:10px;">
+          	 <table id="datagrid5" class="easyui-datagrid-" ></table>
+           </div>
+           <div title="六、主要完成单位情况" style="padding:10px;"> 
+           <table id="datagrid6" class="easyui-datagrid-"></table>
+           </div>
+           <div title="七、主要完成人情况" style="padding:10px;">
+ 
+           <table id="datagrid7" class="easyui-datagrid-"></table>
+           </div>
+           <div title="八、主要证明目录" style="padding:10px;">
+            <table id="datagrid81" class="easyui-datagrid-"></table><br />         
+            <table id="datagrid82" class="easyui-datagrid-"></table><br />           
+            <table id="datagrid83" class="easyui-datagrid-"></table><br />            
+            <table id="datagrid84" class="easyui-datagrid-"></table><br />           
+            <table id="datagrid85" class="easyui-datagrid-"></table><br />          
+            <table id="datagrid86" class="easyui-datagrid-"></table><br />
+           </div>
+           <div title="九、推荐单位意见" style="padding:10px;">
+           <form id='recommend' method="post">
+                  <table width="673" border="0">
+                    <tr>
+                    	<td valign="top">推荐单位意见</td>
+                        <td colspan="3"><textarea name="content" id="content" style="width: 500px; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+                    </tr>
+				</table>
+                </form>
+           </div>
+           <div title="十、项目详细内容" style="padding:10px;">
+           <table id="grid10" class="easyui-datagrid-"></table>
+           </div>
+        </div>
+        </div>
+    </div>
+   
+    <!--heyangyang-->
+    <div id="recommendInfo_dlg" class="easyui-dialog" style="width:900px;padding:10px 20px"
+            closed="true" buttons="#recommendInfo_buttons">
+        <form id="recommendInfo_form" method="post" novalidate>
+         <table border="0" width='825' style="margin:auto;">
+            <tr>
+                <td colspan="2">推荐单位意见：</td>
+            </tr>
+            <tr>
+                <td colspan="2"><textarea name='content' style="width:810px;height:300px;"></textarea></td>
+            </tr>
+            <tr>
+                <td width="10%" align="center">声明：</td>
+                <td><div style="margin:10px;">&nbsp;&nbsp;&nbsp;&nbsp;我单位严格按照《通州区科学技术奖励办法》及其实施细则的有关规定和北京市通州区科学技术委员会对推荐工作的具体要求，对申报推荐书及全部附件材料进行了严格审查，确认该项目符合《通州区科学技术奖励办法实施细则》规定的推荐资格条件，推荐材料全部内容属实，且不存在任何违反《中华人民共和国保守国家秘密法》和《科学技术保密规定》等相关法律法规及侵犯他人知识产权的情形。</div><div style="margin:10px;">&nbsp;&nbsp;&nbsp;&nbsp;我单位承诺将严格按照通州区科学技术奖励工作的相关规定和要求，认真履行作为推荐单位的义务并承担相应的责任。</div></td>
+            </tr>
+        </table> 
+        </form>
+       
+    </div>
+      
+    <div id="recommendInfo_buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveRecommendInfo()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#recommendInfo_dlg').dialog('close')">取消</a>
+    </div>
+    
+    <div id="checkdlg" class="easyui-dialog" style="width:550px;padding:10px 20px"
+            closed="true" buttons="#check-buttons">
+        <form id="upt_ProState" method="post" novalidate>
+        <table width="478">
+            <tr>
+              <td width="117">项目状态：</td>
+              <td width="402"><select name="proState" style="width:150px">
+                <option value="0">待审核</option>
+                <option value="1">审核通过</option>
+                <option value="2">退回修改</option>
+                <option value="3">未通过审核</option>
+              </select></td>
+            </tr>
+            <tr>
+            	<td>审核意见：</td>
+                <td>
+                <textarea name="checkAdvice" cols="45" rows="5"></textarea></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    
+    <div id="check-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="uptProState()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#checkdlg').dialog('close')">取消</a>
+    </div>
+    
+    
+    <!--批量归类-->
+	<div id="classifydlg" class="easyui-dialog" style="width:450px;padding:10px 20px"
+            closed="true" buttons="#classify-buttons">
+		<form id="classify_fm" method="post" novalidate>
+        <table width="383">
+            <tr>
+              <td width="98">专家组：</td>
+              <td width="348"><input id="expertTree" name="expertId" style="width:220px;"/>
+              <input type="hidden" id="expertCat" name="expertCat"/></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    
+    <div id="classify-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="uptClassify()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#classifydlg').dialog('close')">取消</a>
+    </div>
+    
+    <!--查看重复项目-->
+    <div id="checkRepeatdlg" class="easyui-dialog" style="width:850px;padding:10px 20px"
+            closed="true" buttons="#checkRepeat-buttons">
+        	<table id="checkRepeat" class="easyui-datagrid-"></table>
+    </div>
+      
+    <div id="checkRepeat-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#checkRepeatdlg').dialog('close')">取消</a>
+    </div>
+    
+</body>
+</html>

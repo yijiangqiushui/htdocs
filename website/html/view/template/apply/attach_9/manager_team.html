@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>无标题文档</title>
+        <!-- <link rel="stylesheet" type="text/css"
+              href="../../../../../../website/html/view/css/tablestyle.css" /> -->
+        <link rel="stylesheet" type="text/css"
+              href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+        <link rel="stylesheet" type="text/css"
+              href="../../../../../../common/html/plugin/easyui/themes/icon.css"/>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+        <script type="text/javascript" src="../../../../../../common/html/js/validation.js"></script>
+                <script type="text/javascript" src="../../../../../../common/html/js/tablecommon.js"></script>
+        <script type="text/javascript"
+        src="../../../js/apply/9manager_team.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../css/table.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../css/button.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../css/apply/attach9/attach9_main.css"/>
+    </head>
+
+    <body style="width: 100%; height: 100%">
+        <div  class="project_content">
+            <div class="table_title clearfix">
+                <div class="title_pic left">项目申请书填写</div>
+                <div class="right back_pic" id="back"></div>
+            </div>
+            <div class="table_content back-long">
+                <form action="" method="post" id="9manager_team_fm">
+                    <table style="width: 99%; height: 100%"  cellspacing="0">
+                        <tr>
+                            <td colspan="5"><h2>
+                                    <div class="title_top p-b10">孵化场地及管理团队</div>
+                                </h2></td>
+                        </tr>
+                        <tr>
+                            <th  width=""><p align="center">孵化总面积</p></th>
+                            <!--没有字段-->
+                            <td colspan="2"><input  type="text"   datatype="float" style="width: 98%; height: 100%"
+                                                    name="hatch_total_area" /></td>
+                            <th  width="101"><p align="center">办公用房面积</p></th>
+                            <!--没有字段-->
+                            <td width="105"><input  type="text"   datatype="float" style="width: 98%; height: 100%"
+                                                    name="work_total_area" /></td>
+                        </tr>
+                        <tr>
+                            <th  width=""><p align="center">孵化孵化用房面积</p></th>
+                            <!--没有字段-->
+                            <td colspan="2"><input  type="text"   datatype="float" style="width: 98%; height: 100%"
+                                                    name="hatch_house_area" /></td>
+                            <th  width=""><p align="center">公共服务面积</p></th>
+                            <!--没有字段-->
+                            <td><input type="text"   datatype="float" style="width: 98%; height: 100%"name="public_service_area" /></td>
+                        </tr>
+                        <tr>
+                            <th  width=""><p align="center">场地平均租金</p></th>
+                            <!--没有字段-->
+                            <td colspan="4"><input  type="text"   datatype="float" style="width: 99%; height: 100%" name="rent_pay" /></td>
+
+                        </tr>
+                        <tr>
+                            <th  width="85"><p align="center">管理人员总数</p></th>
+                            <td colspan="4"><input  type="text" datatype="number" style="width: 99%; height: 100%" name="manager_total_num" /></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="4" width="85"><p align="center">管理人员结构</p></th>
+                            <th  width="83">博士人数</th>
+                            <td width="109"><input  type="text" class="calper"  id="calper1"  datatype="number"   name="doctor_num" /></td>
+                            <th rowspan="4"><p align="center">所占比例</p></th>                            
+                            <td ><input  class="calratio"  datatype="float" name="doctor_ratio" readonly="readonly" ><p class='pclass'>%</p></input></td>
+                        </tr>
+                        <tr>
+                            <th >硕士人数</th>
+                            <td><input  class="calper"  datatype="number" name="master_num" id="calper2"  /></td>
+                            <td><input type="text" class="calratio"  datatype="float" name="master_ratio" readonly="readonly" /><p class='pclass'>%</p></td>
+                        </tr>
+                        <tr>
+                            <th >本科人数</th>
+                            <td><input type="text" class="calper"  datatype="number" name="graduate_num"  id="calper3" /></td>
+                            <td><input type="text" class="calratio" datatype="float" name="graduate_ratio" readonly="readonly" /><p class='pclass'>%</p></td>
+                        </tr>
+                        <tr>
+                            <th >专科人数</th> 
+                            <td><input type="text" class="calper"   datatype="number"  name="associate_num" id="calper4" /></td>
+                            <td><input type="text" class="calratio"  datatype="float"  name="associate_ratio" readonly="readonly"  /><p class='pclass'>%</p></td>
+                        </tr>
+                    </table>
+                    <div class="button_wrapper clearfix">
+                        <!--   <div class="submit" >提交</div> -->
+                        <div class="save" >保存</div>
+                        <!-- <div class="reset" >重置</div> -->
+                    </div></form></div>
+        </div>
+    </body>
+</html>

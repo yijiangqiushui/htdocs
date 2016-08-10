@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>教师信息</title>
+<link rel="stylesheet" type="text/css"
+	href="../../../../website/html/view/css/tablestyle.css" />
+	<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/icon.css">
+	<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../js/teacher.js"></script>
+    <style type="text/css">
+        #fm{
+            margin:0;
+            padding:10px 30px;
+        }
+        .ftitle{
+            font-size:14px;
+            font-weight:bold;
+            padding:5px 0;
+            margin-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+        .fitem{
+            margin-bottom:5px;
+        }
+        .fitem label{
+            display:inline-block;
+            width:80px;
+        }
+		a{
+			text-decoration:none;	
+		}
+		
+    </style>
+    
+</head>
+
+<body id="body">
+
+	<!--author：贺央央-->
+    
+    <!--展示教师信息-->
+    <table id="grid" class="easyui-datagrid-"></table> 
+    
+    <div id="toolbar">
+    	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="loadTeacher()">教师信息</a>
+    	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="selectTeacher()">查询教师</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newTeacher()">添加信息</a>       
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyTeacherlist()">批量删除</a>       
+    </div>
+    
+    <!--添加教师信息-->
+    <div id="dlg" class="easyui-dialog" style="width:400px;height:400px;padding:10px 20px"
+            closed="true" buttons="#dlg-buttons">
+        <form id="fm" method="post" novalidate>
+        <table>
+            <tr>
+                <td>姓名：</td>
+                <td><input name="name" class="easyui-validatebox" data-options="required:true,missingMessage:'姓名为必填项'"></td>
+           	</tr>
+             <tr>
+                <td>性别：</td>
+                <td><input name="sex" id="sex" class="easyui-combobox" data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:50,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'男',text:'男'},{value:'女',text:'女'}]
+                  
+                ">
+                </td>
+               
+            </tr>
+     
+            <tr>
+                <td>生日：</td>
+                <td><input name="birth" class="easyui-datebox" data-options="currentText:''"></td>
+            </tr>
+            <tr>
+                <td>电话：</td>
+                <td><input name="tel" class="easyui-validatebox"></td>
+            </tr>
+            <tr>
+                <td>邮箱：</td>
+                <td><input name="email" class="easyui-validatebox" validType="email" data-options="invalidMessage:'格式不正确'"></td>
+            </tr>
+           <tr>
+                <td>学位：</td>
+                <td><input name="degree" class="easyui-combobox" data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:110,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'专科',text:'专科'},{value:'本科',text:'本科'},{value:'硕士',text:'硕士'},{value:'博士',text:'博士'},{value:'其他',text:'其他'}]
+                  
+                ">
+                </td>
+               
+            </tr>
+            <tr>
+                <td>职称：</td>
+                <td><input name="work" class="easyui-validatebox"></td>
+            </tr>
+             <tr>
+                <td>就职单位：</td>
+                <td><input name="office" class="easyui-validatebox"></td>
+            </tr>
+             <tr>
+                <td>研发方向：</td>
+                <td><input name="research" class="easyui-validatebox"></td>
+            </tr>
+           </table> 
+        </form>
+       
+    </div>
+      
+    <div id="dlg-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveTeacher()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+    </div>
+    
+    <!--查询教师信息-->
+    <div id="show" class="easyui-dialog" style="width:300px;height:200px;padding:10px 20px"
+            closed="true" buttons="#show-buttons">
+        <form id="show-form" method="post" novalidate>
+        <table>
+            <tr>
+                <td>姓名：</td>
+                <td><input id="search_name" name="name" class="easyui-validatebox"></td>
+            </tr>
+            <tr>
+                <td>学位：</td>
+                <td><input name="degree" id="search_degree" class="easyui-combobox" data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:110,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'专科',text:'专科'},{value:'本科',text:'本科'},{value:'硕士',text:'硕士'},{value:'博士',text:'博士'},{value:'其他',text:'其他'}]       
+                "></td>
+            </tr>
+         </table>  
+        </form>
+    </div>
+    <div id="show-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="showSelectTeacher()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#show').dialog('close')">取消</a>
+    </div>
+    
+     <!--教育经历-->
+     
+     <div id="edu" class="easyui-dialog" style="top:100px;width:700px;padding:5px 5px"
+            closed="true" data-options="onClose:function(){closeedu();}">
+     	<table id="edu_grid" class="easyui-datagrid-"></table>   
+    	 
+         <div id="edu_toolbar">   
+        		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="showEduAddForm()">添加</a>          
+    	</div>
+        
+    </div>
+   
+   
+    <div id="edu_dlg" class="easyui-dialog" style="width:400px;height:250px;padding:10px 20px"
+            closed="true" buttons="#edu_buttons">
+        <form id="edu_form" method="post" novalidate>
+        	<table>
+            	<tr>
+                	<td width='100'>教育阶段：</td>
+                	<td>
+                	<input name="stage" class="easyui-combobox" data-options="
+                		valueField:'value',
+                    	textField:'text',
+                    	panelHeight:150,
+                    	multiple:false,
+                    	editable:false,
+                    	required:true,
+                    	missingMessage:'该项必选', 
+                    	data:[{value:'小学',text:'小学'},{value:'初中',text:'初中'},{value:'高中',text:'高中'},{value:'大学',text:'大学'},{value:'读研',text:'读研'},{value:'博士',text:'博士'},{value:'其他',text:'其他'}]                  
+                	">                        
+           			</td>
+            	</tr>        
+           		<tr>
+                	<td>学校名称：</td>
+                	<td><input name="school" class="easyui-validatebox"  data-options="required:true,missingMessage:'该项为必填项'"></td>
+            	</tr>
+            <tr>
+                <td>开始时间：</td>
+                <td><input name="starttime" class="easyui-datebox" data-options="currentText:''"></td>
+            </tr>
+            <tr>
+                <td> 结束时间：</td>
+                <td><input name="endtime" class="easyui-datebox" data-options="currentText:''"></td>
+            </tr>
+         </table>
+        </form>
+    </div>
+    <div id="edu_buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveEdu()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#edu_dlg').dialog('close')">取消</a>
+    </div>
+  
+    <!--曾获荣誉-->
+   
+     <div id="hor" class="easyui-dialog" style="top:100px;width:600px;padding:5px 5px"
+            closed="true" data-options="onClose:function(){closehor();}">
+     	<table id="hor_grid" class="easyui-datagrid-"></table>   
+    	 
+         <div id="hor_toolbar">   
+        		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="showHorAddForm()">添加</a>          
+    	</div>
+        
+    </div>
+   
+   
+    <div id="hor_dlg" class="easyui-dialog" style="width:400px;height:250px;padding:10px 20px"
+            closed="true" buttons="#hor_buttons">
+        <form id="hor_form" method="post" enctype="multipart/form-data" novalidate>
+        <table>
+        	<tr>
+                <td width='100'>荣誉概述：</td>
+                <td><input name="overview" class="easyui-validatebox"  data-options="required:true,missingMessage:'该项为必填项'"></td>
+            </tr>
+            
+           	<tr>
+                <td>详细描述：</td>           
+                <td><textarea name="descrip" style="height:60px;width:148px;"></textarea></td>
+          	</tr>
+           
+            <tr>
+                <td>上传附件：</td>
+                <td><input name="file" type="file" class="easyui-validatebox"></td>
+            </tr>
+          </table> 
+        </form>
+    </div>
+    <div id="hor_buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveHor()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#hor_dlg').dialog('close')">取消</a>
+    </div> 
+   
+     <!--指导竞赛情况-->
+     
+      <div id="com" class="easyui-dialog" style="top:100px;width:600px;padding:5px 5px"
+            closed="true" data-options="onClose:function(){closecom();}">
+     	<table id="com_grid" class="easyui-datagrid-"></table>   
+    	 
+         <div id="com_toolbar">   
+        		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="showComAddForm()">添加</a>          
+    	</div>
+        
+    </div>
+   
+   
+    <div id="com_dlg" class="easyui-dialog" style="width:400px;height:250px;padding:10px 20px"
+            closed="true" buttons="#com_buttons">
+        <form id="com_form" method="post" novalidate>
+       	<table>
+            	<tr>
+                	<td width='100'>竞赛名称：</td>
+                	<td><input name="name" class="easyui-validatebox"  data-options="required:true,missingMessage:'该项为必填项'"></td>
+            	</tr>        
+           		<tr>
+                	<td>竞赛地点：</td>
+                	<td><input name="address" class="easyui-validatebox"></td>
+            	</tr>
+            <tr>
+                <td>竞赛时间：</td>
+                <td><input name="time" class="easyui-datebox"></td>
+            </tr>
+            <tr>
+                <td> 竞赛情况：</td>
+                <td><textarea name="result" style="height:60px;width:148px;"></textarea></td>
+            </tr>
+         </table>
+        </form>
+    </div>
+    <div id="com_buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveCom()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#com_dlg').dialog('close')">取消</a>
+    </div> 
+  
+</body>
+</html>

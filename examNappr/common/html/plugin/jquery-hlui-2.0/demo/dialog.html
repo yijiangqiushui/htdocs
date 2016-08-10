@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/dialog.js"></script>
+
+<link href="../css/hlui.css" rel="stylesheet" type="text/css" />
+<link href="../css/dialog.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!--
+注意调用jquery-ui.js
+-->
+
+<div id="t" onclick="dialog(1);">测试1</div>
+<div onclick="dialog(2);">测试2</div>
+
+<script type="text/javascript">
+function dialog(id){
+	var dialog_vars={
+		id:'test',		//id of dialog div
+		title:'测试',	//dialog title
+		iconSrc:'',		//icon src，like "http://www.iconpng.com/png/osx-lion/imac.png"
+		reloadinner:1,	//1-reload title and body,0-do not reload
+		isWin:1,		//0-close button only,1-more buttons
+		width:'450',	//
+		height:'200',	//
+		left:'200',		//default position:left
+		top:'200',		//default position:top
+		inner:{			//
+			type:'ajax',	//iframe,ajax,html,id
+			iframe:'http://www.baidu.com',	//if type is iframe
+			ajax:'dialog.php?param1=1&t=hello',	//if type is ajax,use get method
+			html:'hello,<br>world!',		//	//if type is html
+			id:'t'			//if type is id, dialog body will show its html contents
+		}
+	};
+	$.dialog(dialog_vars);
+}
+
+</script>
+
+</body>
+</html>

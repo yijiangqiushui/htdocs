@@ -1,0 +1,147 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
+    <link rel="stylesheet" type="text/css"
+          href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css"
+          href="../../../../../common/html/plugin/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../css/findlogin.css">
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+        <script type="text/javascript" src="../../../../../common/html/js/validation.js"></script>
+    <script type="text/javascript" src="../../js/userinfo/logininfo.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/button.css"/>
+
+    <style type="text/css">
+        input {
+        	height:100%;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #DDD;
+            padding: 1px 3px;
+        }
+
+        td:nth-child(odd) {
+            background-color: #D1E4F3;
+            color: #666;
+            width: 180px;
+        }
+
+        td:nth-child(even) {
+            background-color: #EAF3FA;
+        }
+
+        td {
+            padding: 2px;
+            line-height: 30px;
+            text-align: center;
+            border: solid 1px #ffffff;
+        }
+
+        table {
+            font-size: 14px;
+        }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: auto 0;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+<form action="" method="post" id="login_info">
+    <div style="margin-top: 40px; margin-left: 0px;padding: 0 20px;max-width: 1000px">
+        <div style="">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #ddd;">
+                <tr>
+                    <td colspan="4" style="background-color:#7AB5ED;height:35px;font-size:14px;"><p style="font-weight: bold; line-height:30px;color:#FFF002;">用户信息修改</p></td>
+                </tr>
+                <tr>
+                    <td style='min-width:100px;'>用户名</td>
+                    <td colspan="3"><input type="text" style="height: 100%;border:0px" name="username"
+                               readOnly="readonly" id="username"/></td>
+                    <!-- <td width="">所在单位代码</td>
+                    <td><input type="text" style="height: 100%" name="org_code"
+                               readOnly="readonly"/></td> -->
+                </tr>
+<!--                 <tr>
+                    <td width="">最近一次登录的ip地址</td>
+                    <td><input type="text" name="lastIP" style="height: 100%
+                               readOnly="readonly"/></td>
+                    <td width="">注册时间</td>
+                    <td><input type="text" style="height: 100%" name="addDate"
+                               readOnly="readonly"/></td>
+                </tr> -->
+ <!--                <tr>
+                    <td width="">用户类型</td>
+                    <td><select name="user_type" style="width:94%;height:98%;border-color:#ccc">
+                        <option value="0">个人用户</option>
+                        <option value="1">商业用户</option>
+                        <option value="2">合作用户</option>
+
+                    </select></td>
+                    <td width="">部门</td>
+                    <td><input type="text" style="height: 100%" name="department"
+                               readOnly="readonly"/></td>
+                </tr> -->
+
+                <tr>
+                    <td width="">联系人</td>
+                    <td><input type="text" style="height: 100% ; min-width:150px;" name="realname"/></td>
+                   <td style='min-width:100px;'>手机</td>
+                    <td><input type="text" style="height: 100% ; min-width:150px;" name="celphone" datatype="telephone"/></td>
+                </tr>
+                <tr>
+                    <td width="">邮箱</td>
+                    <td><input type="text" style="height: 100%" name="email"  datatype="email"/></td>
+                    <td width="">座机</td>
+                    <td><input type="text" style="height: 100%" name="phone"  datatype="phone"/></td>
+                </tr>
+                <!--  <tr>
+          <td width="">是否禁止fou</td>
+          <td >
+            <table border="0" cellspacing="0" paddingspacing="0"><tr><td><div style="float:right">是</div></td><td><div style="float:left"><input type="radio" name="isForbidden" value="1"/></div></td></tr>
+                       <tr><td><div style="float:right">否</div></td><td><div style="float:left"><input type="radio" name="isForbidden" value="0"/></div></td></tr>
+            </table></td>
+          </tr>-->
+                <!-- 	<tr>
+                        <td colspan="4"><span style="margin-left: 190px;"><a
+                                href="#" class="easyui-linkbutton" iconcls="icon-ok"
+                                onclick="submit_data()">确定</a></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="float: center"><a href="#" class="easyui-linkbutton"
+                                iconcls="icon-ok" onclick="cancel_readonly()">修改</a></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="float: center"><a href="#" class="easyui-linkbutton"
+                                iconcls="icon-no" onclick="reset()">重置</a></span></td>
+
+                    </tr>
+         -->
+                <!--没有字段-->
+            </table>
+            <div style="cursor: pointer; width: 380px;margin: 20px 0 0 400px;">
+                <div class="save aleft marcss" style="">
+                    <div onclick="submit_data()">确定</div>
+                </div>
+                <!-- <div class="reset" style="">
+                    <div onclick="cancel_readonly()">重置</div>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+</form>
+</body>
+</html>

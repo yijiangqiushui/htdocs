@@ -1,0 +1,42 @@
+/* CSS Document */
+*{font-size:14px; color:#000; margin:0; padding:0;}
+.clearBoth{ clear:both;}
+.clearBoth_last{}
+
+body{ background-color:#f1f1f1;}
+
+.head{display:none;}
+
+.wrapper{}
+
+.loginForm{overflow:hidden;position:absolute;width:600px; height:400px; left:50%; top:45%; margin-left:-300px; margin-top:-200px; border:1px solid #ccc; background-color:#fff; 
+border-radius:0 30px;
+-moz-border-radius:0 30px;
+}
+
+.loginFormBanner{ height:200px; background-image:url(../img/loginFormBanner.jpg);}
+
+.loginForm form{ margin:auto; margin-top:20px; width:300px;} 
+
+.msg{font-size:16px;}
+.input{ height:30px; margin-bottom:2px;}
+.input input,.input label{ float:left;  font-family:'微软雅黑',Verdana, Geneva, sans-serif;}
+.input label{ width:80px; color:#666; font-size:16px; letter-spacing:5px; line-height:26px; text-align:center;}
+.input input{ width:178px; height:24px; border:1px solid #ccc; font-size:16px;
+background:-webkit-linear-gradient(bottom,#fff 0%,#eee 100%);
+background:-moz-linear-gradient(bottom,#fff 0%,#eee 100%);
+background:-ms-linear-gradient(bottom,#fff 0%,#eee 100%);
+background:-o-linear-gradient(bottom,#fff 0%,#eee 100%);
+}
+.validateCode{ position:relative;}
+.validateCodeImg{ display:none; position:absolute; left:265px;top:-1px; cursor:pointer;}
+
+.submit{ text-align:center;}
+.submit input{ width:100px; height:28px; font-size:16px; color:#666; cursor:pointer;  font-family:'微软雅黑',Verdana, Geneva, sans-serif;border:1px solid #ccc;
+background:-webkit-linear-gradient(top , #fff 0%, #ccc 100%);
+background:-moz-linear-gradient(top , #fff 0%, #ccc 100%);
+background:-ms-linear-gradient(top , #fff 0%, #ccc 100%);
+background:-o-linear-gradient(top , #fff 0%, #ccc 100%);
+}
+
+.copyright{ margin-top:20px; color:#666; text-align:center;  font-family:'微软雅黑',Verdana, Geneva, sans-serif;}

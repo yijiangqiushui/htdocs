@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/infofocus.js"></script>
+<link href="../css/infofocus.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+*{ padding:0; margin:0;}
+</style>
+</head>
+
+<body>
+<div id="t"></div>
+<script type="text/javascript">
+	var config={
+		renderTo:'#t',
+		id:'test',
+		blkwth:400,//宽度
+		blkhgt:300,//高度
+		interval:5,
+		count:0,
+		speed:'normal',//normal,fast,slow
+		clritvl:0,
+		imgarr:[
+			{'href':'#','url':'http://www.tzqsnkj.org/common/upload/2014/08/28/471a670821e2448cca7a8635fbe7bf58a56d789b.png'},
+			{'href':'#','url':'http://www.tzqsnkj.org/common/upload/2014/08/13/68a07fc2198a2b2f67821f534aa4626b4e90209d.png'},
+			{'href':'#','url':'http://www.tzqsnkj.org/common/upload/2014/08/28/471a670821e2448cca7a8635fbe7bf58a56d789b.png'},
+			{'href':'#','url':'http://www.tzqsnkj.org/common/upload/2014/08/20/a8f39876f1d61386b4da318b9462cc45a3ddaaef.png'},
+		],
+		introarr:[
+			{'h1':'潞河中学举行清明节扫墓活动','p':'2014年4月1日，我校组织全体初一、预科及高一年级同学来到学校革命烈士纪念碑前为烈士们扫墓。在庄严'},
+			{'h1':'潞河中学在通州区教育学会教育管理研获奖','p':'我校在通州区普职成教干部培训办公室和通州区教育学会教育管理研究会举办的通州区教育学会教育管理研究会,'},
+			{'h1':'潞河中学学生参加天文知识竞赛取得佳绩','p':'我校初高中共十九名同学于12月12日参加了在青少年活动中心举办的2013年北京市中小学生天文知识个人'},
+			{'h1':'我校在第四届北京市基础教育教学成果奖获奖项目','p':'开出一片沃土收获累累硕果——潞河中学语文学科校本选修课程的研发与实施潞河中学语文教研室王友珍潞河中学'},
+		],
+/*		intro_h1_style:{'padding-left':'1em','font-size':'14px','line-height':'18px'},//,'display':'none'
+		intro_p_style:{'padding':'5px','text-indent':'2em','font-size':'12px'},//,'line-height':'35px'
+		switch_style:{'right':'25px','bottom':'25px'},
+		intro_bg_style:{'opacity':0.6,'height':'45px'},
+*/
+		intro_h1_style:{'padding-left':'1em','font-size':'14px','height':'40px','line-height':'40px'},//,'display':'none'
+		intro_p_style:{'padding':'5px','text-indent':'1em','font-size':'12px','display':'none'},//,'line-height':'35px'
+		switch_style:{'bottom':'45px','text-align':'center','width':'100%'},
+		intro_bg_style:{'opacity':0.6,'height':'40px'}
+		
+	};
+	
+	$.infofocus(config);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+
+<script type="text/javascript" src="../js/layout.js"></script>
+<link href="../css/layout.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../js/mp4.js"></script>
+
+</head>
+
+<body>
+<script type="text/javascript">
+var left_width=300; //默认
+//$.layout(left_width);
+$.layout();//没有参数则左部使用默认宽度
+
+$.layout_west_append('hel');
+$.layout_east_append('<iframe src="http://www.baidu.com" width="100%" height="100%" frameborder="0"></iframe>');
+
+$('#ui-layout-west').append('<br />I love you!');//renderTo
+//$('#ui-layout-east').append('<br />I love you!');
+
+	var config={
+		renderTo:'#ui-layout-east',
+		id:'hello',
+		width:800,
+		height:540,
+		controls:true,
+		autoplay:true,
+		loop:true,
+		mute:false,
+		mp4_root:'',
+		contextmenu:false,
+		autoposition:true,
+		src_arr:['/demo/1.mp4','/demo/2.mp4','/demo/3.mp4']
+	};
+	$.mp4(config);	
+
+</script>
+</body>
+</html>

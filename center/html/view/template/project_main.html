@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>通州科委项目</title>
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/icon.css"/>
+
+<script type="text/javascript" src="../../../../common/html/lib/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../../../common/html/js/log.js"></script>
+
+<script type="text/javascript" src="../../../html/view/js/project_main.js"></script>
+<script type="text/javascript" src="../../../../center/html/view/js/common.js"></script>
+<script type="text/javascript" src="../../../../center/html/view/js/ukeycommon.js"></script>
+<script type="text/javascript" src="../../../../center/html/view/js/NTClientJavascript.js"></script>
+</head>
+<body class='easyui-layout'>
+<!-- 对树结构添加右键事件-->   
+<!--表结构-->
+	<div id="west" data-options="region:'west',title:'部门分类',sqlit:'true'" style="width:200px;padding:5px;" >
+	<div style="margin:20px 0;"></div>
+		<ul class="easyui-tree">
+			<li>
+				<span>部门分类</span>
+						<span>部门分类</span>
+						<ul>
+							<li>
+								<span><a href="#" onclick="loadAll(0)">发展计划科</a></span>
+							</li>
+							<li>
+								<span><a href="#" onclick="loadAll(1)">科技综合科</a></span>
+							</li>
+							<li>
+								<span><a href="#" onclick="loadAll(2)">知识产权科</a></span>
+							</li>
+						</ul>
+					</li>
+			</ul>
+			
+			
+			
+			
+		</div>
+		<div id='center' data-options="region:'center',split:true">
+		  <table id="projectList">
+		  </table>
+		   <div id="toolbar"> 
+		<!--   	<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="queryAdmin()">查询</a> 
+		    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick="newAdmin()">添加</a> 
+		    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="delArrAdmin()">批量删除</a>  -->
+		    <a href="javascript:void(0)" class="easyui-linkbutton jcqx_set" iconcls="icon-ok" plain="true" onclick="visorAdmin()">监察权限</a>
+		  </div> 
+		</div>  
+		  <!--添加-->
+		<!--添加用户-->
+		<div id="newProject" class="easyui-dialog" style="width:600px;height:200px ;padding:0px 20px" closed="true" buttons="#dlg-buttons1">
+		  <div id="addProject">
+		    <form id="newAdmin" action="" method="post">
+		         项目类型<input name="project_type" type="text"/><br/><br/>
+		    申报开始时间<input name="apply_start" type="text"/><br/><br/>
+		    申报结束时间<input name="apply_end" type="text"/><br/><br/>
+		    科室类型 <select name="department">
+		           <option value="发展计划科">发展计划科</option>
+		           <option value="知识产权科">知识产权科</option>
+		           <option value="科技综合科">科技综合科</option>
+		        </select>
+		    <input type="button" value="确定" onclick="addAdmin();">
+		    </form>
+		  </div>
+		</div>
+<div id="visorPriDlg" title="监察权限设置" data-options="iconCls:'icon-save'" style="width:600px;height:160px;padding:10px">
+	<div id="visorPri"></div>
+    <div id="visorPri-linkbutton" style="text-align:center; display:none; margin-top:10px;">
+	<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="checkForDialog()">确认</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="cancelForDialog()">取消监察</a>
+	<!--<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#visorPriDlg').dialog('close')">取消</a> -->
+    </div>
+</div>
+		
+</body>
+</html>
+
+

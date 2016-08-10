@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<!--
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+-->
+<script type="text/javascript" src="../../../../../common/html/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/NTClientJavascript.js"></script>
+
+<script type="text/javascript" src="../../js/file/seal.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/seal.css"/>
+</head>
+
+<body style="display:none;">
+<form method="post" id="form1">
+<input type="hidden" name="category" id="category"/>
+<input type="hidden" name="deptName" id="deptName"/>
+<input type="hidden" name="content" id="content"/>
+<table id="table" width="911"  cellpadding="9" border="1" rules="all">
+  <tr>
+    <td width="130" height="20" class="setright">&nbsp;件数:</td>
+    <td width="130"><label for="total"></label>
+        <input type="text" name="total" id="total" class="easyui-validatebox" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:true,missingMessage:'该项为必填项'" />
+    </td>
+    <td width="66">
+    <select id="select" style="width:66px; text-align:center;">
+        <option value="0" selected="selected">使用</option>
+        <option value="1">借出</option>
+    </select>
+    </td>
+    <td width="70" class="setright">&nbsp;用章时间</td>
+    <td><label for="use_time"></label>
+        <div style="float:left;">
+            <input name="use_time" id="use_time" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" />
+        </div>
+        <div style="display: none; float:left;" id="endt">&nbsp;-
+            <input name="end_time" id="end_time" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" />
+        </div>
+    </td>
+  </tr>
+  <tr>
+    <td height="20" class="setright">&nbsp;用章人</td>
+    <td colspan="4"><input name="dept" id="dept" /></td>
+  </tr>  <tr>
+    <td height="20" class="setright">&nbsp;用章事由:(文件标题)</td>
+    <td colspan="4"><textarea id="reason" name="reason" rows="5" style="width:750px;"></textarea></td>
+  </tr>
+  <tr>
+    <td class="setright">&nbsp;用章内容:</td>
+    <td colspan="4" id="check">
+    	<p>
+    	  <input class="check" type="radio" name="checkbox" value="科委党组"/>科委党组
+    	</p>
+    	<p>
+    	<input class="check"type="radio" name="checkbox" value="区科委"/>区科委
+    	</p>
+    	<p>
+    	  <input class="check"type="radio" name="checkbox" value="区知识产权局" />区知识产权局
+    	</p>
+    	<p>
+    	<input class="check"type="radio" name="checkbox" value="区科技领导小组办公室" />区科技领导小组办公室
+    	</p>
+    	<p>
+    	<input class="check"type="radio" name="checkbox" value="区科普联席会议办公室" />区科普联席会议办公室
+    	</p>
+    	<p>
+    	  <input class="check"type="radio" name="checkbox" value="区知识产权联席办公室"/>区知识产权联席办公室
+        </p>
+	</td>
+  </tr>
+  <!--tr>
+  	<td height="20" class="setright">印章管理员:</td>
+  	<td colspan="3"><label for="admin"></label>
+    <input type="text" name="admin" id="admin" /></td-->
+  	<!--<td class="setright">用章人(签字):</td>
+  	<td><!--<label for="user"></label>
+    <input type="text" name="user" id="user" /></td>-->
+  <!--/tr-->
+ 
+</table>
+<div class="submit">
+  	  <input type="button" name="button" id="button" value="提交"  onmousemove="this.style.cursor='pointer'"  onclick="saveInfo();" />
+</div>
+</form>
+</body>
+</html>

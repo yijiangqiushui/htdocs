@@ -1,0 +1,35 @@
+/* CSS Document */
+
+.hlui-calendar{ position:absolute; z-index:20000; left:8px; top:8px;}
+
+.ui-calendar-body{ width:180px; border:1px solid #ccc; padding:5px; background-color:#fff;}
+.ui-calendar-body *{ font-family:Verdana, Geneva, sans-serif;}
+.ui-calendar-yNm{}
+
+.ui-calendar-yNm-center{ float:left; width:116px; text-align:center; line-height:16px; font-size:12px;}
+.ui-calendar-preyear,.ui-calendar-premonth,.ui-calendar-nextmonth,.ui-calendar-nextyear{ width:16px; height:16px; background-image:url(../img/icons/calendar_arrows.png); cursor:pointer;}
+.ui-calendar-preyear{ float:left;background-position:0 center;}
+.ui-calendar-premonth{ float:left; background-position:-16px center;}
+.ui-calendar-nextmonth{ float:right; background-position:-32px center;}
+.ui-calendar-nextyear{ float:right; background-position:-48px center;}
+
+.ui-calendar-week span{ width:14.25%; color:#666; font-weight:bold; display:inline-block; text-align:center; font-size:12px; line-height:24px;}
+
+.ui-calendar-day span{ width:14.25%; display:inline-block; text-align:center; font-size:12px; line-height:20px;}
+
+.ui-calendar-button span{ width:33.33%; color:#666; display:inline-block; text-align:center; font-size:12px; font-weight:bold; line-height:20px; cursor:pointer;}
+
+.ui-calendar-spinner{ border:1px solid #ccc; width:40px; height:20px; float:left; margin:0px 5px;}
+.ui-calendar-spinner-hour{ border:1px solid #ccc; width:40px; height:20px; float:left; margin:0px 5px;}
+.ui-calendar-spinner-br{ float:left; line-height:20px;}
+#ui-calendar-spinnerinput{ border:0; line-height:20px; height:20px; width:18px; font-size:12px; padding: 0 2px; float:left;}
+
+.ui-calendar-time{ padding:10px 0 5px 5px; border-top:1px solid #ccc; margin-top:10px;}
+.ui-calendar-spinnerarrow{ display:inline-block; width:18px; height:20px; float:left;}
+.ui-calendar-spinnerarrow-up,.ui-calendar-spinnerarrow-down{ height:10px; display:block; background-image:url(../img/icons/spinner_arrows.png); cursor:pointer;}
+.ui-calendar-spinnerarrow-up{ background-position:0 center;}
+.ui-calendar-spinnerarrow-down{ background-position:-16px center;}
+
+.ui-calendar-span-grey{ color:#ccc;}
+.ui-calendar-span-black{ cursor:pointer;}
+.ui-calendar-span-selected{ background-color:#006699; color:#fff;} 

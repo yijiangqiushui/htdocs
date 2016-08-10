@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+
+<script type="text/javascript" src="../js/menubutton.js" /></script>
+<link type="text/css" href="../css/menubutton.css" rel="stylesheet" />
+
+<script type="text/javascript" src="../js/hlui.js"></script>
+<script type="text/javascript" src="../js/table.js"></script>
+
+<script type="text/javascript" src="../js/pagination.js"></script>
+<link href="../css/pagination.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.userclass{ margin:10px 0;}
+.table-userclass a{ color:#000;}
+</style>
+<link type="text/css" href="../css/form.css" rel="stylesheet" />
+<link type="text/css" href="../css/table.css" rel="stylesheet" />
+</head>
+
+<body>
+<div id="mytest">
+</div>
+<script type="text/javascript">
+var config={
+	renderTo:'#mytest',
+	id:'mytable',
+	title:'客户端信息管理',
+	data_url:'table.php',
+	items:[
+		{name:'商品',width:400,align:'center'},
+		{name:'价格',width:400,align:'center'},
+		{name:'日期',width:180,align:'center'}
+	],
+	opers:[
+		{name:'查看',href:'table.php',target:"_blank"},//函数名称
+		{name:'编辑',func_name:'edit'}
+	],
+	menubutton_config:{//功能按钮
+		renderTo:'outer',//inner,outer,.ui-table-func-bar-outer或.ui-table-func-bar-inner
+		menu:[
+			{
+				name:'添加信息',
+				func:'test()'
+			},
+			{
+				name:'操作',
+				//func:'test()',//有下级菜单，可加可不加
+				//icon:'/common/html/plugin/jquery-hlui-2.0/img/icons/cut.png',
+				submenu:[
+					{
+						name:'禁用',
+						func:'cut()',
+						icon:'/common/html/plugin/jquery-hlui-2.0/img/icons/help.png'
+					},
+					{
+						name:'推荐',
+						func:'test()',
+						icon:'/common/html/plugin/jquery-hlui-2.0/img/icons/print.png'
+					},
+					{
+						name:'审核',
+						func:'test()'
+					}
+				]
+			},
+			{
+				name:'帮助',
+				func:'test()',
+				icon:'/common/html/plugin/jquery-hlui-2.0/img/icons/help.png'
+			}
+		]
+	},
+	pagination_align:'left' //分页显示对齐方式
+};
+$.table(config);//第一步：设置表格
+
+function layPageination(){
+	$.post('pagination.php',function(ret_val){//先获取记录总数
+		var pagination_vars={
+			id:'mypagination',
+			renderTo:'.ui-table-pagination',
+			class:'default',
+			total:ret_val,
+			size:15,
+			current:1,
+			list_num:5,
+			dataopt:{
+				is_four_text:0,
+				is_links:1,
+				is_turn2page:1
+			},
+			user_func:'layTable',
+			params:'a=hello&b=world&c=100'
+		};
+		$.pagination(pagination_vars);
+	});
+}
+layPageination();//第而二步：设置分页
+
+function layTable(){//第三步：加载表格数据
+	var url_arr=config.data_url.split('?');
+	config.data_url=url_arr[0]+$.pagination_params('mypagination').params;//设置表格查询条件
+	$.table_loadData(config);
+}
+
+function view(id){
+	alert(id);
+}
+
+function edit(id){
+	alert(id);
+}
+
+function cut(){
+	alert($.table_get_selection('mytable'));//参数：table的id<获取选中复选框的值
+}
+
+function test(){
+	//alert('ok');
+	window.open('http://www.baidu.com','open')
+}
+</script>
+</body>
+</html>

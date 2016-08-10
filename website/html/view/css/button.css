@@ -1,0 +1,226 @@
+@CHARSET "UTF-8";
+* {
+	padding: 0;
+	margin: 0;
+}
+.wrapper {
+
+}
+/* input{
+	height:100%;
+    width:100%;
+    border: 0;
+    font-size: 14px;
+} */
+textarea{
+	height:100%;
+    width:100%;
+    border: none;
+    font-size: 14px;
+	padding: 0;
+}
+
+.pass{
+	width: 102px;
+	height: 30px;
+	background-image: url(../img/table/submit.png);
+	font-size: 14px;
+	color: #fff;
+	float: left;
+	position: relative;
+	left: 250px;
+	text-align: center;
+	cursor: pointer;
+	background-size: 100% 100%;
+	line-height: 29px;
+}
+.nopass {
+	
+	width: 102px;
+	height: 30px;
+	/* background-image: url(../img/table/nopass.png); */
+	background-image: url(../img/table/submit.png);
+	font-size: 14px;
+	color: orange;
+	float: left;
+ 	position: absolute;  
+	left: 100px;
+	text-align: center;
+	cursor: pointer;
+	
+	
+	
+}
+ .nopass1 {
+	width: 102px;
+	height: 30px;
+	background-image: url(../img/table/submit.png);
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	line-height: 29px;
+	margin:0 auto;
+	position:relative; 
+	left:500px;
+	color: orange;
+} 
+.submit {
+	width: 102px;
+	height: 30px;
+	background-image: url(../img/table/submit.png);
+	font-size: 14px;
+	color: #fff;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	line-height: 29px;
+	margin-right: 20px;
+}
+
+.save {
+	width: 102px;
+	height: 30px;
+	background-image: url(../img/table/submit.png);
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	line-height: 29px;
+	margin:0 auto;
+}
+
+.save1 {
+	width: 102px;
+	height: 30px;
+	/* background-image: url(../img/table/nopass.png); */
+	background-image: url(../img/table/submit.png);
+	font-size: 14px;
+	float: left;
+ 	position: relative;  
+	left: 350px;
+	line-height: 29px;
+	text-align: center;
+	cursor: pointer;
+ 	position:relative; 
+	color: #fff;
+}
+
+/*david  add */
+.saved{
+	width: 102px;
+	height: 30px;
+	background-image: url(../img/table/reset.png);
+	font-size: 14px;
+	color: #fff;
+	float: left;
+	cursor:auto;
+	text-align: center;
+	line-height: 29px;
+	line-height: 29px;
+	margin-right: 20px;
+}
+
+
+.aleft{
+	float:left;
+}
+
+.aleft.marcss{
+	margin-left:25px;
+}
+
+.reset {
+	width: 102px;
+	height: 30px;
+	line-height: 29px;
+	background-image: url(../img/table/reset.png);
+	font-size: 14px;
+	color: #000;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	margin-right: 20px;
+	position:relative;
+	left:150px;
+}
+
+.button1 {
+	background: #7CCD7C;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+
+.button2 {
+	background: #B5B5B5;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+
+.button1 {
+	background: #7CCD7C;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+
+.button2 {
+	background: #B5B5B5;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+
+.button3 {
+	background: #B5B5B5;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+
+.button4 {
+	background: #B5B5B5;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+
+.button5 {
+	background: #B5B5B5;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+
+.button6 {
+	background: #B5B5B5;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+.adjust_pos{
+	margin-top:10px;
+}
+
+#sub{
+     height:33px; 
+     background-image:url(../img/main-xmsbxt/submit.png); 
+     border-radius:5px;
+     float:left;
+     color:#E6FF41;
+     width:90%;
+     margin: 5px  5px;
+ }
+.menu{ 
+		 position: relative; !important
+		} 

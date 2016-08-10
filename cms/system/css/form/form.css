@@ -1,0 +1,37 @@
+﻿<!--
+form{margin:0;padding:0;}
+.borderStyle{border:1px solid #CCC;height:20px;line-height:20px}
+.inputWidth_0{width:30px}
+.inputWidth_1{width:50px}
+.inputWidth_2{width:60px}
+.inputWidth_3{width:80px}
+.inputWidth_4{width:100px}
+.inputWidth_5{width:120px}
+.inputWidth_6{width:150px}
+.inputWidth_7{width:200px}
+.inputWidth_8{width:250px}
+.inputWidth_9{width:300px}
+.inputWidth_10{width:300px}
+.inputWidth_11{width:500px}
+.inputWidth_12{width:600px}
+.inputWidth_100{width:100%}
+.textareaHeight_1{height:50px}
+.textareaHeight_2{height:100px}
+.textareaHeight_3{height:150px}
+.textareaHeight_4{height:200px}
+.textareaHeight_5{height:300px}
+
+.promptColor_red{color:#F00;}
+.promptColor_green{color:#0F0;}
+.promptColor_blue{color:#06F;}
+.formTableSetDiv{padding:10px 0 10px 0;}
+.formTableSetDiv table td{height:25px}
+.dlgTitle{height:30px;font-size:14px;font-weight:bold;color:#FFF; cursor:move;}
+#batchUploadTd span{ margin:2px 0 2px 0;display:block}
+#batchUploadTd a{color:#06F;font-weight:normal;cursor:poitner;margin-left:5px}
+.normalFont{font-weight:normal}
+.textareaPadding{padding-top:5px; padding-bottom:5px}
+
+.buttonStyle{ background-image:url(/cms/system/img/other/button_bg_1.gif);border:1px solid #6B97C1; line-height:16px;padding:2px 3px 0 3px; margin-top:8px;cursor:pointer;font-size:13px;}
+
+-->

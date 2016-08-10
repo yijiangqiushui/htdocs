@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>推荐单位管理</title><link rel="stylesheet" type="text/css"
+	href="../../../../website/html/view/css/tablestyle.css" />
+<!--heyangyang-->
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script src="../js/recommend_org.js"></script>
+    <style type="text/css">
+        #fm{
+            margin:0;
+            padding:10px 30px;
+        }
+        .ftitle{
+            font-size:14px;
+            font-weight:bold;
+            padding:5px 0;
+            margin-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+        .fitem{
+            margin-bottom:5px;
+        }
+        .fitem label{
+            display:inline-block;
+            width:80px;
+        }
+		a{
+			text-decoration:none;	
+		}		
+    </style>
+</head>
+
+<body>
+
+    <table id="grid" class="easyui-datagrid-"></table> 
+   
+    <div id="toolbar">
+    	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="loadCommend()">推荐单位信息</a>
+    	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="selectUser()">查询推荐单位</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newCommend()">添加推荐单位</a>       
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delCommendList()">批量删除</a>       
+    </div>
+    
+    <!--添加推荐单位信息-->
+    
+    <div id="dlg" class="easyui-dialog" style="width:400px;padding:10px 20px"
+            closed="true" buttons="#dlg-buttons">
+        <form id="fm" method="post" novalidate>
+        <table>
+            <tr>
+                <td>单位名称：</td>
+                <td><input name="name" class="easyui-validatebox" data-options="required:true,missingMessage:'单位名称为必填项'"></td>
+           	</tr>       
+            <tr>
+                <td>地址：</td>
+                <td><input name="address" class="easyui-validatebox" data-options="currentText:''"></td>
+            </tr>
+            <tr>
+                <td>电话：</td>
+                <td><input name="tel" class="easyui-validatebox"></td>
+            </tr>
+            <tr>
+                <td>邮箱：</td>
+                <td><input name="email" class="easyui-validatebox" validType="email" data-options="invalidMessage:'格式不正确'"></td>
+            </tr>
+             <tr>
+                <td>邮编：</td>
+                <td><input name="postcode" class="easyui-validatebox"></td>
+            </tr>
+            <tr>
+                <td>类型：</td>
+                <td><input name="type" id="type" class="easyui-combobox" data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:100,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'1',text:'1'},{value:'2',text:'2'},{value:'3',text:'3'},{value:'4',text:'4'},{value:'5',text:'5'}]
+                  
+                ">
+                </td>
+            </tr>
+             <tr>
+                <td>传真：</td>
+                <td><input name="fax" class="easyui-validatebox"></td>
+            </tr>
+             <tr>
+                <td>联系人：</td>
+                <td><input name="linkman" class="easyui-validatebox"></td>
+            </tr>
+             <tr>
+                <td>联系电话：</td>
+                <td><input name="phone" class="easyui-validatebox"></td>
+            </tr>
+            
+           
+           </table> 
+        </form>
+       
+    </div>
+      
+    <div id="dlg-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+    </div>
+    
+    <!--条件查询推荐单位信息 -->
+    <div id="show" class="easyui-dialog" style="width:320px;padding:10px 20px"
+            closed="true" buttons="#show-buttons">
+        <form id="show-form" method="post" novalidate>
+        <table>
+        	<tr>
+                <td>推荐单位名称：</td>
+                <td><input id="search_name" name="name" class="easyui-validatebox" style="width:146px;"></td>
+            </tr>
+            <!--<tr>
+                <td>推荐单位属地：</td>
+                <td>
+                	<select id="search_address" class="easyui-combobox" name="address" style="width:150px;" >  
+                        <option value="朝阳区">朝阳区</option>  
+                        <option value="海淀区">海淀区</option>
+                        <option value="东城区">东城区</option>  
+                        <option value="西城区">西城区</option>
+                        <option value="通州区">通州区</option>  
+                        <option value="丰台区">丰台区</option>
+                        <option value="大兴区">大兴区</option>
+                        <option value="顺义区">顺义区</option>  
+                        <option value="平谷区">平谷区</option>
+                        <option value="昌平区">昌平区</option>  
+                        <option value="怀柔区">怀柔区</option>
+                        <option value="房山区">房山区</option>  
+                        <option value="石景山区">石景山区</option>
+                        <option value="门头沟区">门头沟区</option>                                             
+               		</select>                
+                </td>
+            </tr>-->
+            <tr>
+                <td>推荐单位类型：</td>  
+                <td>
+                	<select id="search_type" class="easyui-combobox" name="type" style="width:150px;" >  
+                        <option value="1">1</option>  
+                        <option value="2">2</option>
+                        <option value="3">3</option>  
+                        <option value="4">4</option>
+                        <option value="5">5</option>                                              
+               		</select>                
+                </td>
+               
+            </tr>
+         </table>  
+        </form>
+    </div>
+    <div id="show-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="showSelectUser();">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#show').dialog('close')">取消</a>
+    </div>
+</body>
+
+</html>

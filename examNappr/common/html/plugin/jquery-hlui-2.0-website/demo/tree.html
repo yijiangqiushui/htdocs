@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/hlui.js"></script>
+<script type="text/javascript" src="../js/tree.js" /></script>
+<link type="text/css" href="../css/tree.css" rel="stylesheet" />
+</head>
+
+<body>
+<div id="ssdaf"></div>
+<div id="test"></div>
+
+<iframe src="" name="targethere"></iframe>
+<script type="text/javascript">
+//$.tree_init();
+
+function tree(){
+	var tree_vars={
+		renderTo:'#ssdaf',//body,#id
+		id:'tree',//tree id
+		json_url:'tree_data1.json',
+		rootname:'信息管理',
+		all_name:'全部',
+		show_all:true,
+		parent_count:true,
+		user_func:'mytreefunc',//when click,do something
+		iframe:{src:'tree_iframe.php',target:'targethere'},//target是iframe的name和id
+		animate:true
+	};
+	$.tree(tree_vars);
+}
+
+tree();
+
+function mytreefunc(upper_cat,id){
+	alert(upper_cat);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+<script type="text/javascript" src="../../../js/apply/aim_standard.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../website/html/view/css/tablestyle.css" />
+<style type="text/css">
+input {
+	height: 100%;
+	width: 99.5%;
+	border: 0px;
+}
+</style>
+
+<title>项目的实施目标及考核标准</title>
+</head>
+<body>
+	<div class="easyui-panel" style="border: 0;">
+		<form action="" id="project_plan" method="post">
+			<table width="600" height="375" border="1" cellspacing="0">
+				<tr>
+					<td colspan="2"><h2>三、项目实施计划和阶段任务</h2></td>
+				</tr>
+				<tr>
+					<td width="85">年度</td>
+					<td width="505" height="35">分年度目标和实施内容（按季度填写计划进度与阶段目标）</td>
+				</tr>
+				<tr>
+					<td height="150">一季度</td>
+					<td><textarea name="sessionone" class="easyui-validatebox"
+							required="true"></textarea></td>
+				</tr>
+				<tr>
+					<td height="150">二季度</td>
+					<td><textarea name="sessiontwo" class="easyui-validatebox"
+							required="true"></textarea></td>
+				</tr>
+				<tr>
+					<td height="150">三季度</td>
+					<td><textarea name="sessionthree" class="easyui-validatebox"
+							required="true"></textarea></td>
+				</tr>
+				<tr>
+					<td height="150">四季度</td>
+					<td><textarea name="sessionfour" class="easyui-validatebox"
+							required="true"></textarea></td>
+				</tr>
+			</table>
+
+			<a href="#" class="easyui-linkbutton" iconcls="icon-ok"
+				onclick="sub()">确定</a> <a href="#" class="easyui-linkbutton"
+				iconcls="icon-no" onclick="reset()">重置</a>
+		</form>
+	</div>
+</body>
+</html>

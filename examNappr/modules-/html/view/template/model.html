@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>模块管理</title>
+	<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/icon.css">
+	<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/model.js"></script>
+    <style type="text/css">
+        #editfm{
+            margin:0;
+            padding:10px 30px;
+        }
+        .ftitle{
+            font-size:14px;
+            font-weight:bold;
+            padding:5px 0;
+            margin-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body class='easyui-layout'>
+	<!--树结构-->
+	<div id='west' data-options="region:'west',title:'模块分类',split:true" style="width:250px;padding:5px;">
+    	<ul id="treeData"></ul>
+    </div>
+    
+     <!--表结构-->
+    <div id='center' data-options="region:'center',title:'内容分类管理',split:true" style="padding:5px;">
+    	<table id="modelgrid" class="easyui-datagrid"></table> 
+    	<div id="toolbar">
+    	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newModel()">添加模块</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="makeArrModel()">批量重新生成</a>
+    	</div>
+    </div>
+
+	<!--添加-->
+    <div id="editdlg" class="easyui-dialog" style="width:700px;padding:10px 20px"
+            closed="true" buttons="#dlg-buttons">
+        <div class="ftitle">模块信息</div>
+        <form id="editfm" method="post" novalidate>
+        <table style="width:600px;">
+            <tr>
+                <td>SQL语句：</td>
+                <!--<td><input name="sqlQuery" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'"></td>-->		<td><textarea name="sqlQuery" style="width:500px;height:100px;" data-options="required:true,missingMessage:'该项为必填项'"></textarea></td>
+           	</tr>
+            
+        	<tr>
+                <td>文件名称：</td>
+                <td><input name="fileName" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'"></td>
+            </tr>
+            <tr>
+                <td>文件格式类型：</td>
+                <td><select name="fileType" style="width:155px;">
+                       <!-- <option value="focusnews-index">总平台首页焦点</option>
+                        <option value="banner">子系统Banner焦点</option>-->
+                        <option value="last-news">头条新闻</option>
+                        <option value="both-hotline">总平台</option>
+                        <option value="right-list">右侧列表</option>
+                        <option value="notice-list">公告列表</option>
+                        <option value="list">列表</option>
+                        <option value="updateSituation-list">最新动态列表</option>
+                        <option value="notitle-imgslide">无标题滚动图片</option>
+                        <option value="hotline-list">服务热线列表</option>
+                        <!--
+                        <option value="activity-category">社区列表-活动</option>
+                        <option value="talents-category">社区列表-人才</option>
+                        <!--<option value="focusnews-catlist">内推荐页焦点</option>
+                        <option value="txt-source">文字+信息来源</option>
+                        <option value="txt-time">文字+发布时间</option>-->
+                        <option value="activityimgslide">活动滚动图片信息</option>
+                        <option value="recognitionimgslide">先进表彰滚动图片信息</option>
+                        <option value="img-txt">左侧图片+文字</option>
+                        <option value="txt">文字</option>
+                        <!--<option value="img">首页右侧推荐图片信息</option>
+                        <option value="video">首页右侧推荐MP4视频</option>
+                        <option value="special-block">专题活动</option>
+                        <option value="txt-more">文字+更多</option>-->
+                        <option value="link-img">友情链接-图片</option>
+                        <option value="link-txt">友情链接-文字</option>
+                        <option value="topic-Theme">专题主题</option>
+                        <option value="topic-wonderful">专题精彩纷呈</option>
+                        <option value="topic-activity">专题活动快讯</option>
+                        <option value="topic-history">历届回顾</option>
+                        <option value="topic-intr-guide">专题活动介绍指南</option>
+                        <option value="topic-banner">专题活动大赛获奖名单</option>
+                        <!--<option value="txt-txt">评论</option>-->
+                     </select>
+                 </td>
+           	</tr>
+            <tr>
+                <td>生成文件格式：</td>
+                <td><select name="fileFolder" style="width:155px;">
+                        <option value="html">html</option>
+                        <option value="json">json</option>
+                     </select>
+                 </td>
+           	</tr>
+          </table>
+        </form>
+       
+    </div>
+      
+    <div id="dlg-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveModel()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#editdlg').dialog('close')">取消</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>无标题文档</title>
+       <!--  <link rel="stylesheet" type="text/css"
+              href="../../../../../../website/html/view/css/tablestyle.css" /> -->
+        <link rel="stylesheet" type="text/css"
+              href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+        <link rel="stylesheet" type="text/css"
+              href="../../../../../../common/html/plugin/easyui/themes/icon.css"/>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+        <script type="text/javascript" src="../../../../../../common/html/js/tablecommon.js"></script>
+        <script type="text/javascript" src="../../../../../../common/html/js/validation.js"></script>
+        <script type="text/javascript" src="../../../js/apply/hatch9_fm.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../css/table.css"/>   
+        <link rel="stylesheet" type="text/css" href="../../../css/button.css"/> 
+    </head>
+
+    <body>
+        <div class="project_content">
+            <div class="table_title clearfix">
+                <div class="title_pic left">项目申请书填写</div>
+                <div class="right back_pic" id="back"></div>
+            </div>
+            <!-- class="easyui-panel" -->
+            <div class="table_content back-long">
+                <form action="" method="post" id="hatch9_fm">
+                    <table cellspacing="0" cellpadding="0" class="basic_info">
+                        <tr>
+                            <td colspan="4"><h2>
+                                    <div class="title_top p-b10">孵化成效</div>
+                                </h2></td>
+                        </tr>
+                        <tr>
+                            <th class="bt"  colspan="4"><p align="center">截至上一年底机构累计数据</p></th>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="155"><p align="center">毕业企业数</p></th>
+                            <td width="85"><input  datatype="number"  style="width: 98%; height: 100%" type="text"
+                                                   name="Finish_Com_num" /></td>
+                            <th class="bt" width="169"><p align="center">被兼并收购数</p></th>
+                            <td width="73"><input  datatype="number" type="text" style="width: 98%; height: 100%"
+                                                   name="Acquire_num" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">上市公司数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="List" /></td>
+                            <th class="bt" width=""><p align="center">转化科技成果数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%"
+                                        name="Tec_product_num" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">其中：海外板块</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Overseas" /></td>
+                            <th class="bt" width=""><p align="center">千人计划人才数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Qr_Genious_num" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">主板</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Mainboard" /></td>
+                            <th class="bt" width=""><p align="center">海聚工程人才数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Hj_num" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">创业板、中小板</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Mid_num" /></td>
+                            <th class="bt" width=""><p align="center">高聚工程人才数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Gj_num" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">获得风险投资企业数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Risk_inv_num" /></td>
+                            <th class="bt" width=""><p align="center">获得风险投资总额</p></th>
+                            <td><input  datatype="float"  type="text" style="width: 98%; height: 100%" name="Risk_inv_sum" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">国家高新技术企业数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="High_sal_num" /></td>
+                            <th class="bt" width=""><p align="center">中关村高新技术企业数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Zgc_tech_num" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="4"><p align="center">截至上一年底在孵及入驻企业数据</p></th>
+                        </tr>
+
+
+                        <tr>
+                            <th class="bt" width=""><p align="center">入驻企业总数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Settle_com_num" /></td>
+                            <th class="bt" width=""><p align="center">在孵企业总数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Hatch_com_num" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">留学生创业企业数</p></th>
+
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%"
+                                        name="Overseas_enter_nums" /></td>
+                            <th class="bt" width=""><p align="center">入驻企业总收入</p></th>
+                            <td><input  datatype="float"
+                                        type="text" style="width: 98%; height: 100%"
+                                        name="Settle_com_profit" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">入驻企业上缴税金</p></th>
+                            <td><input  datatype="float"  type="text" style="width: 98%; height: 100%" name="Settle_com_tax" /></td>
+                            <th class="bt" width=""><p align="center">收入过千万元企业数</p></th>
+                            <td><input  datatype="number" type="text" style="width: 98%; height: 100%"  name="Overthousand_com_num" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">企业知识产权数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Com_know_num" /></td>
+                            <th class="bt" width=""><p align="center">企业提供就业岗位数</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Position_num" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">企业研发投入总额（万元）</p></th>
+                            <td><input  datatype="float"
+                                        type="text" style="width: 98%; height: 100%" name="Research_fund" /></td>
+                            <th class="bt" width=""><p align="center">企业研发人员数（人）</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Research_num" /></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width=""><p align="center">企业获得各级财政资金支持的数量</p></th>
+                            <td><input  datatype="number" 
+                                        type="text" style="width: 98%; height: 100%" name="Finance_num" /></td>
+                            <th class="bt" width=""><p align="center">企业获得各级财政资金支持总额度</p></th>
+                            <td><input  datatype="float"
+                                        type="text" style="width: 98%; height: 100%" name="Finance_limit" /></td>
+                        </tr>
+                    </table>
+                    <div class="button_wrapper clearfix">
+                        <!--  <div class="submit" >提交</div> -->
+                        <div class="save" >保存</div>
+                        <!-- <div class="reset" >重置</div> -->
+                    </div>
+                </form></div>
+        </div>
+    </body>
+</html>

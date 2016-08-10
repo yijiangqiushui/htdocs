@@ -1,0 +1,30 @@
+/* CSS Document */
+*{font-size:12px;}
+a{ text-decoration:none; }
+select{ width:170px; height:24px;}
+
+.submit{ padding-top:10px;}
+textarea{ border:1px solid #9cf; width:727px; font-size:16px;}
+input{ border:1px solid #9cf; height:20px; }
+#table{   
+     border:1px solid;  
+     border-color:#ccc;  
+}  
+#table td
+{ 	
+   border:1px solid;  
+   border-color:#ccc;
+   padding:3px;
+   
+}  
+#table tr  
+{ 
+ border:1px solid;
+ border-color:#ccc;
+}
+#button{ width:60px; height:30px;}
+#number{ width:50px;}
+#file_name{ width:727px;}
+#addedDate{ width:154px;}
+.check{ width:50px;}
+.submit{ margin-left:380px;}

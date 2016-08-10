@@ -1,0 +1,22 @@
+/* CSS Document */
+
+.hlui-focus{ position:relative; overflow:hidden;}
+.ui-focus-holder{ position:absolute; z-index:1; top:0; left:0; overflow:hidden;}
+.ui-focus-img a{ display:block; float:left; background-position:center;}
+
+.ui-focus-intro{ position:absolute; z-index:2; left:0; bottom:0; width:100%; color:#fff;}
+
+.ui-focus-intro h1{ }
+.ui-focus-intro p{}
+.ui-focus-intro div{ display:none;}
+.ui-focus-intro div:nth-child(1){ display:block;}
+
+.ui-focus-intro-bg{ position:absolute; z-index:1; bottom:0; height:40px; width:100%; background-color:#333;}
+
+.ui-focus-switch{ position:absolute; z-index:4;}
+.ui-focus-switch a{ display:inline-block; height:12px; width:12px; overflow:hidden; background-color:#333; margin-left:10px; border:1px solid #fff;
+border-radius:7px;
+-moz-border-radius:7px;      /* Gecko browsers */
+-webkit-border-radius:7px;   /* Webkit browsers */
+}
+.ui-focus-switch a:nth-child(1){ background-color:#06f;}

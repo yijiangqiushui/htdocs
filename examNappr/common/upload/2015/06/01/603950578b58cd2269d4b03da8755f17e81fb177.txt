@@ -1,0 +1,41 @@
+项目相关svn
+玉桥孵化器：	https://jsc-server/svn/fuhuaqi/
+
+朝阳导航平台：	https://jsc-server/svn/daohang/
+
+资源配送中心：	https://jsc-server/svn/peisongzhongxin/
+
+朝阳科普之窗：	https://jsc-server/svn/kepuzhichuang/
+
+
+
+
+
+
+
+
+网站地址：
+通州青少年科技：	http://www.tzqsnkj.org/
+
+浙江51技术：		http://www.51jishu.com/techmarket/homeHandler/www
+
+科技创新服务系统：	http://localhost/center/html/view/template/
+
+
+触摸屏
+https://jsc-server/svn/yuqiao-80inch/
+
+https://jsc-server/svn/fhjd_touch
+
+教研院附属中学 触摸屏
+https://jsc-server/svn/jyyfszx
+
+
+备用：
+插件svn
+https://jsc-server/svn/jquery-qsui/
+插件svn加密版
+https://jsc-server/svn/jquery-qsui-encripted/
+
+通州科委三分屏
+https://jsc-server/svn/tzkw_touch

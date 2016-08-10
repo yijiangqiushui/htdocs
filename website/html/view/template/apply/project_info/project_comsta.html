@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>项目经济考核指标及完成情况</title>
+
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript"
+	src="../../../js/apply/project_info/project_comsta.js"></script>
+</head>
+<body>
+	<div class="easyui-panel" style="border: 0;">
+		<form method="post" id="project_comsta">
+			<table border="1" cellspacing="0">
+				<tr>
+					<td colspan="6"><h2>一、项目单位基本情况</h2></td>
+				</tr>
+				<tr>
+					<td>注册地址</td>
+					<td colspan="5"><input class="easyui-validatebox"
+						required="true" type="text" id="pro_reg_add" /></td>
+				</tr>
+				<tr>
+					<td>联系人</td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="pro_con" /></td>
+					<td>联系电话</td>
+					<td colspan="3"><input class="easyui-validatebox"
+						required="true" type="text" id="pro_con_tel" /></td>
+				</tr>
+				<tr>
+					<td>职工总数（人）</td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="staff_sum" /></td>
+					<td>中级职称以上人数（人）</td>
+					<td colspan="3"><input class="easyui-validatebox"
+						required="true" type="text" id="above_middle" /></td>
+				</tr>
+				<tr>
+					<td>单位年收入（万元）</td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="year_input class="
+						easyui-validatebox"  required="true" " /></td>
+					<td>年利润（万元）</td>
+					<td width="102"><input class="easyui-validatebox"
+						required="true" type="text" id="year_profit" /></td>
+					<td width="74">年税金（万元）</td>
+					<td width="67"><input class="easyui-validatebox"
+						required="true" type="text" id="year_tax" /></td>
+				</tr>
+				<tr>
+				</tr>
+			</table>
+			<a href="javascript:void(0);" class="easyui-linkbutton"
+				iconcls="icon-ok" onclick="submitdata()">确定</a> <a
+				href="javascript:void(0);" class="easyui-linkbutton"
+				iconcls="icon-no" onclick="reset()">重置</a>
+		</form>
+	</div>
+</body>
+</html>

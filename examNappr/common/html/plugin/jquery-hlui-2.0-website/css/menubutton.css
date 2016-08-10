@@ -1,0 +1,32 @@
+/* CSS Document */
+
+.hlui-menubutton{ padding:0;position:relative;}
+.ui-menubutton-menus{ float:left; font-size:12px;}
+.ui-menubutton-menu{ line-height:16px; padding:3px 10px; cursor:pointer; margin-right:5px; border:1px solid #ccc;
+background-color:#fff;
+border-radius:3px 3px;
+-moz-border-radius:3px 3px;
+cursor:pointer;
+
+background:-webkit-linear-gradient(bottom,#eee 0%,#fff 100%);
+background:-moz-linear-gradient(bottom,#eee 0%,#fff 100%);
+background:-ms-linear-gradient(bottom,#eee 0%,#fff 100%);
+background:-o-linear-gradient(bottom,#eee 0%,#fff 100%);
+}
+.ui-menubutton-menu-hover{
+background-color:#EEF;
+border-radius:3px 3px;
+-moz-border-radius:3px 3px;
+cursor:pointer;
+}
+.ui-menubutton-icon{ display:inline-table; width:16px; height:16px; margin-right:5px;}
+.ui-menubutton-name{}
+.ui-menubutton-dropdown{ display:inline-table; width:16px; height:16px; background-image:url(../img/icons/menu_arrows.png);}
+
+.ui-menubutton-submenu{ display:none; border:1px solid #ccc; position:absolute; z-index:1; background-color:#fff; padding:3px; cursor:pointer;}
+
+.ui-menubutton-submenu span{ display:block; float:left;}
+
+.ui-menubutton-submenu-icon{ width:25px; border-right:1px solid #ccc; height:22px; background-repeat:no-repeat; background-position:3px center;}
+
+.ui-menubutton-submenu-name{ padding:0 20px 0 5px; line-height:22px; border-right:1px solid #fff;}

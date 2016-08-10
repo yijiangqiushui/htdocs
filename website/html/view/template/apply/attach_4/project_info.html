@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>项目基本情况</title>
+   <link rel="stylesheet" type="text/css" href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../../../common/html/plugin/easyui/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/table.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/button.css"/>
+    
+    <script src="../../../../../../common/html/js/datecommon.js"></script>
+    <script src="../../../../../../common/html/plugin/datapicker/moment.min.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/easyui/jquery.cookie.js" ></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+    	            <script type="text/javascript" src="../../../../../../common/html/js/validation.js"></script>
+    <script src="../../../../../../common/html/js/tablecommon.js"></script>
+  <script type="text/javascript" src="../../../js/apply/project4_info.js"></script>
+
+</head>
+
+<body>
+
+	<form action="" method="post" id="4pro_info_fm">
+		<div class="project_content">
+			<div class="table_title clearfix">
+				<div class="title_pic left">项目申请书</div>
+				<div class="right back_pic" id="back"></div>
+			</div>
+			<div class="table_content back-long">
+				<table cellspacing="0" cellpadding="0" class="basic_info">
+					<tr>
+						<td colspan="6" class="border_left_none"
+							style="background-color: #7AB5ED;">
+							<div class="title_top p-b10">项目基本情况</div>
+						</td>
+					</tr>
+
+
+					<tr>
+						<th  width="300px"><p align="center">立项项目名称</p></th>
+						<td colspan="5"><input type="text" name="project_name" readOnly="readonly"/></td>
+					</tr>
+					<tr>
+						<th  width="300px"><p align="center">立项部门</p></th>
+						<td colspan="5"><input type="text" name="department" /></td>
+						<!-- 没有字段-->
+					</tr>
+					<tr>
+						<th ><p align="center">项目总经费（万元）</p></th>
+						<td width=""><input type="text" name="project_fund" datatype="float"/></td>
+						<!--没有字段-->
+						<th ><p align="center">支持经费（万元）</p></th>
+						<td width=""><input type="text" name="support_fund" datatype="float"/></td>
+						<!--没有字段 -->
+						<th  ><p align="center">支持方式</p></th>
+						<td width=""><input type="text" name="support_way" /></td>
+						<!--没有字段-->
+					</tr>
+					<tr>
+						<th  width="300px"><p align="center">拨付时间</p></th>
+						<td colspan="5"><input id="allocate_time" name="allocate_time" class="dateplu" readonly/></td>
+					</tr>
+					
+					<tr>
+						<th  widt="300px"><p align="center">开始时间</p></th>
+						<td ><input id="start_end" name="start_time" class='dateplu' readonly /></td>
+						<th>结束时间</th>
+						<td colspan='3'><input nam='end_time' class='dateplu' readonly/></td>
+					</tr>
+					<tr>
+						<th  width="300px"><p align="center">与项目有关的知识产权名称</p></th>
+						<td colspan="5"><input type="text" name="property_name" /></td>
+						<!-- 没有字段-->
+					</tr>
+					<tr>
+						<th  width="300px"><p align="center">项目主要内容（限500字）</p></th>
+						<td colspan="5" class="pad" ><textarea  name="project_main" data-options="multiline:true" id="project_main" title="500"></textarea></td>
+					</tr>
+					<tr>
+						<th  width="300px"><p align="center">申报单位简介（限300字）</p></th>
+						<td colspan="5"><textarea name="company_summary"
+								data-options="multiline:true" id="company_summary" title="300"></textarea></td>
+						<!--没有字段-->
+					</tr>
+				</table>
+                <input type="hidden" name="save_display" id="save_display"/>
+				<div class="button_wrapper clearfix d-n">
+					<div class="save">保存</div>
+					<!-- <div class="reset" >重置</div> -->
+				</div>
+			</div>
+
+		</div>
+	</form>
+
+</body>
+
+</html>

@@ -1,0 +1,490 @@
+
+<!DOCTYPE html PUBLIC "-//W5C//DTD XHTML 1.0 Transitional//EN" "http://www.w5.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w5.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>项目经费总决算表</title>
+<style type="text/css">
+/*定义表格宽度及样式 */
+table {
+	text-align: center;
+	width: 500px;
+	border-width: 8px;
+	border-style: double;
+	color: blue;
+}
+
+/*定义单元格宽度及样式 */
+td {
+	width: 50px;
+	border-width: 5px;
+	height: 10px;
+}
+</style>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript"
+	src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+<script type="text/javascript"
+	src="../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+<script type="text/javascript"
+	src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../website/html/view/css/tablestyle.css" />
+<script type="text/javascript" src="../../../../../common/html/js/tablecommon.js"></script>
+<script type="text/javascript" src="../../js/apply/coorg2_info.js"></script>
+</head>
+
+<body>
+	<center>
+		<p>项目经费总决算表</p>
+		<div class="#" style="border: 0;">
+			<form method="post" id="">
+				<table width="800" height="1500" border="1" cellspacing="0"
+					row="100" col="8">
+					<tr>
+						<td colspan="8"><h2></h2></td>
+					</tr>
+					<tr>
+						<td colspan="5">1、项目经费来源：</td>
+						<td colspan="5"><center>
+								单位：万元
+								<center /></td>
+					</tr>
+					<tr>
+						<td colspan="5">来 源</td>
+						<td>任务书预算经费</td>
+						<td>核减经费</td>
+						<td>实际到位经费</td>
+					</tr>
+					<tr>
+						<td colspan="5"></td>
+						<td><input class="easyui-validatebox"
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox"
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox"
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td colspan="5"><center>区财政科技经费</center></td>
+						<td><input class="easyui-validatebox"
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox"
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td colspan="5"><center>项目承担单位自筹经费</center></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td colspan="5"><center>其 他</center></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td colspan="5"><center>合 计</center></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td colspan="5">1、项目经费支出：</td>
+						<td colspan="5"><center>
+								单位：万元
+								<center /></td>
+					</tr>
+					<tr>
+						<td colspan="8">（1）项目经费支出预算：</td>
+					</tr>
+					<tr>
+						<td colspan="3">科 目</td>
+						<td>经费来源</td>
+						<td>任务书预算经费</td>
+						<td>核减经费</td>
+						<td>调整经费</td>
+						<td>实际支出经费</td>
+					</tr>
+					<tr>
+						<td rowspan="2" colspan="3">设备费</td>
+						<td>区财政科技经费</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td rowspan="2" colspan="3">材料费</td>
+						<td>区财政科技经费</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox"
+							type="text" name="#" /></td>
+					</tr>
+					<td rowspan="2" colspan="3">测试化验加工费</td>
+					<td>区财政科技经费</td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td rowspan="2" colspan="3">燃料动力费</td>
+						<td>区财政科技经费</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td rowspan="2" colspan="3">国际合作与交流费</td>
+						<td>区财政科技经费</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td rowspan="2" colspan="3">差旅费</td>
+						<td>区财政科技经费</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td rowspan="2" colspan="3">会议费</td>
+						<td>区财政科技经费</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td rowspan="2" colspan="3">档案出版、文献信息传播、知识产权事务费</td>
+						<td>区财政科技经费</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<td rowspan="2" colspan="3">劳务费</td>
+					<td>区财政科技经费</td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<td rowspan="2" colspan="3">专家咨询费</td>
+					<td>区财政科技经费</td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<td rowspan="2" colspan="3">其他费用</td>
+					<td>区财政科技经费</td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					<td><input class="easyui-validatebox" 
+						type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td>其他来源</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td colspan="4"><strong>合 计</strong></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td colspan="4">区财政科技经费总合计</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td colspan="2">其他来源总合计:</td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+
+					<tr>
+						<td colspan="8">（2）仪器设备购置费用明细：（单价在5万元以上，含5万元）</td>
+					</tr>
+
+					<tr>
+						<td>名 称</td>
+						<td>型号</td>
+						<td>任务计划金额（单价）</td>
+						<td>实际购买数量</td>
+						<td>实际支付金额（单价）</td>
+						<td>资金来源</td>
+						<td>购买时间</td>
+						<td>主要用途</td>
+					</tr>
+					<tr>
+						<td style="width: '12.5%'"></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+					<tr>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+						<td><input class="easyui-validatebox" 
+							type="text" name="#" /></td>
+					</tr>
+				</table>
+				<a href="#" class="easyui-linkbutton" iconcls="icon-ok"
+					onclick="submitdata()">确定</a> <a href="#" class="easyui-linkbutton"
+					iconcls="icon-no" onclick="reset()">重置</a>
+			</form>
+		</div>
+	</center>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>修改密码</title><link rel="stylesheet" type="text/css"
+	href="../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../js/updatePwd.js"></script>
+    
+<link href="../css/updatePwd.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="ftitle">修改密码</h1>
+<form id="fm" method="post" novalidate="novalidate">
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><label>原始密码:</label></td>
+      <td><input id="oldPwd" name="old" type="password" /></td>
+    </tr>
+    <tr>
+      <td><label>新密码:</label></td>
+      <td><input id="newPwd" name="new" type="password" /></td>
+    </tr>
+    <tr>
+      <td><label>确认密码:</label></td>
+      <td><input id="rePwd" name="renew" type="password" required="required" class="easyui-validatebox" validtype="equalTo['#newPwd']" invalidmessage="两次输入密码不匹配" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="button" value="提交" onclick="updatePwd();"/><input type="button" value="取消" onclick="cancel();"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,197 @@
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f1f1f1;
+}
+
+.head {
+	width: 800px;
+	margin: auto;
+	padding: 30px 0;
+	background-image: url(../img/head_bg.png);
+	background-repeat: no-repeat;
+	background-position: 600px 0;
+}
+
+.body {
+	width: 800px;
+	margin: auto;
+	margin-bottom: 30px;
+}
+
+.register_title {
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.register_datetime {
+	font-size: 12px;
+	line-height: 20px;
+	color: #666;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+
+.register_content {
+	font-size: 14px;
+	padding: 15px 0;
+	line-height: 24px;
+}
+
+.register_content p {
+	text-indent: 2em;
+}
+
+.register_close {
+	border-bottom: 1px solid #ccc;
+	padding: 0 0 10px 0;
+	text-align: center;
+}
+
+.link-button {
+	font-size: 12px;
+	text-decoration: none;
+	color: #333;
+	border: 1px solid #ccc;
+	display: inline-block;
+	padding: 5px 10px;
+	cursor: pointer;
+	width: 40px;
+	text-align: center;
+}
+
+.register_attachment {
+	padding-top: 10px;
+	line-height: 24px;
+	color: #666;
+	font-size: 14px;
+}
+
+.foot {
+	color: #666;
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+/**********************/
+.panel-title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.panel-header {
+	height: 22px;
+}
+
+table tr {
+	height: 40px;
+}
+
+.register_content span {
+	color: #F00
+}
+
+#pub_pic span{
+	color: #FFF
+}
+
+#reg_pic span{
+	color: #FFF
+}
+
+.left {
+	float:left;
+}
+
+.clearfix:after {
+	content:'';
+	height:0;
+	clear:both;
+	visibility:hidden;
+	display:block;
+}
+
+.p-t20 {
+	padding-top:20px;
+}
+
+.forget_title {
+	padding-left: 20px;
+    font-size: 14px;
+    padding-right: 20px;
+    line-height: 30px;
+}
+
+.forget_input {
+	height: 30px;
+    width: 200px;
+    border: 1px solid #ccc;
+}
+
+.confirm {
+	padding: 8px 8px;
+    border: none;
+    background: #2AA4DC;
+    color: #fff;
+}
+
+.back {
+	padding: 8px 8px;
+    border: none;
+    background: rgb(249,165,5);
+    color: #fff;
+}
+.block_forget {
+    width: 350px;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+
+.error {
+	position: absolute;
+	width: 135px;
+	height: 40px;
+	background: url('../img/error.png') no-repeat;
+	background-size: 135px 40px;
+	padding:15px 0 0 5px;
+	margin-left: -50px;
+    z-index: 1;
+}
+.error1 {
+	position: absolute;
+    width: 160px;
+    height: 40px;
+    background: url('../img/error.png') no-repeat;
+    background-size: 160px 40px;
+    padding: 15px 0 0 15px;
+    margin-left: -60px;
+    z-index: 1;
+}
+
+.error {
+	position: absolute;
+	width: 135px;
+	height: 40px;
+	background: url('../img/error.png') no-repeat;
+	background-size: 135px 40px;
+	padding:15px 0 0 5px;
+	margin-left: -50px;
+    z-index: 1;
+}
+.error1 {
+	position: absolute;
+    width: 160px;
+    height: 40px;
+    background: url('../img/error.png') no-repeat;
+    background-size: 160px 40px;
+    padding: 15px 0 0 15px;
+    margin-left: -60px;
+    z-index: 1;
+}

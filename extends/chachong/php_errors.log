@@ -1,0 +1,26 @@
+[28-Feb-2016 11:31:36] PHP Warning:  file_get_contents(http://project_apply.zhujian.com:8181/website/html/view/template/apply/checkReport.php?action=find&amp;project_id=dev1456630251) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\extends\chachong\api.php on line 28
+[28-Feb-2016 11:31:37] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://127.0.0.1:3306) in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 50
+[28-Feb-2016 11:31:37] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于目标计算机积极拒绝，无法连接。
+ in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 50
+[28-Feb-2016 11:31:37] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 51
+[28-Feb-2016 11:31:39] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 54
+[28-Feb-2016 11:31:39] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: 由于目标计算机积极拒绝，无法连接。
+ in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 54
+[28-Feb-2016 11:31:39] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 54
+[28-Feb-2016 11:31:39] PHP Warning:  mysql_query() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 55
+[28-Feb-2016 11:31:39] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, null given in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 56
+[28-Feb-2016 11:31:41] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 65
+[28-Feb-2016 11:31:41] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: 由于目标计算机积极拒绝，无法连接。
+ in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 65
+[28-Feb-2016 11:31:41] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 65
+[28-Feb-2016 11:31:43] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 68
+[28-Feb-2016 11:31:43] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: 由于目标计算机积极拒绝，无法连接。
+ in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 68
+[28-Feb-2016 11:31:43] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 68
+[28-Feb-2016 11:31:43] PHP Warning:  mysql_query() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 70
+[28-Feb-2016 11:31:43] PHP Warning:  mysql_close() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\extends\chachong\Task.php on line 71

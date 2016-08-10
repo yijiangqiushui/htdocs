@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/mp4.js"></script>
+
+</head>
+
+<body>
+<!--
+属性值					描述
+autoplay	autoplay	如果出现该属性，则视频在就绪后马上播放。
+controls	controls	如果出现该属性，则向用户显示控件，比如播放按钮。
+height		pixels	设置视频播放器的高度。
+loop		loop	如果出现该属性，则当媒介文件完成播放后再次开始播放。
+muted		muted	规定视频的音频输出应该被静音。
+src	url	要播放的视频的 URL。
+width		pixels	设置视频播放器的宽度。
+contextmenu	右键单击显示菜单
+autoposition 断点续播
+-->
+<p id="true">drag me</p>
+
+<script language="javascript">
+
+showmp4();
+
+function showmp4(){
+	var config={
+		renderTo:'#true',
+		id:'hello2',
+		width:800,
+		height:540,
+		controls:true,
+		autoplay:true,
+		loop:true,
+		mute:false,
+		mp4_root:'',
+		contextmenu:true,
+		autoposition:true,
+		src_arr:['/demo/1.mp4','/demo/2.mp4','/demo/3.mp4']
+	};
+	$.mp4(config);	
+}
+</script>
+
+<div id="mytest">ss</div>
+
+<div style="width:100px; height:30px; background-color:#ccc;" onclick="document.getElementById('hello').currentTime=20;">ceshi</div>
+</body>
+</html>

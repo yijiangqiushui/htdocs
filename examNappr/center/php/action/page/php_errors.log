@@ -1,0 +1,121 @@
+[28-Feb-2016 14:08:43] PHP Warning:  Invalid argument supplied for foreach() in E:\kwproject\Program\htdocs\common\php\lib\pri.cls.php on line 172
+[28-Feb-2016 14:08:43] PHP Warning:  Invalid argument supplied for foreach() in E:\kwproject\Program\htdocs\common\php\lib\pri.cls.php on line 172
+[29-Feb-2016 12:30:55] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:30:55] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:30:55] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 29
+[29-Feb-2016 12:30:55] PHP Warning:  Invalid argument supplied for foreach() in E:\kwproject\Program\htdocs\common\php\lib\pri.cls.php on line 172
+[29-Feb-2016 12:31:16] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:31:16] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:31:16] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:31:16] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:31:16] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:31:16] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:31:16] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:31:16] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:31:32] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:31:32] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:31:32] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 29
+[29-Feb-2016 12:31:32] PHP Warning:  Invalid argument supplied for foreach() in E:\kwproject\Program\htdocs\common\php\lib\pri.cls.php on line 172
+[29-Feb-2016 12:31:53] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:31:53] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:31:53] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:31:53] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:31:53] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:32:14] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:32:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:40:33] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:40:33] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:40:33] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 29
+[29-Feb-2016 12:40:33] PHP Warning:  Invalid argument supplied for foreach() in E:\kwproject\Program\htdocs\common\php\lib\pri.cls.php on line 172
+[29-Feb-2016 12:42:49] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:42:49] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:42:49] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 29
+[29-Feb-2016 12:42:49] PHP Warning:  Invalid argument supplied for foreach() in E:\kwproject\Program\htdocs\common\php\lib\pri.cls.php on line 172
+[29-Feb-2016 12:43:10] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:43:10] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:43:10] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\kwproject\Program\htdocs\examNappr\common\php\config.ini.php on line 16
+[29-Feb-2016 12:44:22] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:44:22] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:44:22] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 29
+[29-Feb-2016 12:44:22] PHP Warning:  Invalid argument supplied for foreach() in E:\kwproject\Program\htdocs\common\php\lib\pri.cls.php on line 172
+[29-Feb-2016 12:45:43] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:45:43] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 21
+[29-Feb-2016 12:45:43] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\examNappr\common\php\lib\db.cls.php on line 29
+[29-Feb-2016 12:45:43] PHP Warning:  Invalid argument supplied for foreach() in E:\kwproject\Program\htdocs\common\php\lib\pri.cls.php on line 172

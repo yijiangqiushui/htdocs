@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>数据备份</title><link rel="stylesheet" type="text/css"
+	href="../../../../website/html/view/css/tablestyle.css" />
+	<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/icon.css">
+	<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../js/backup.js"></script>
+    
+    <style type="text/css">
+        #fm{
+           font-size:13px; 
+        }
+		.ftitle{
+            font-size:14px;
+            font-weight:bold;
+            padding:5px 0;
+            margin-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+<div class="ftitle">数据库备份</div>
+    <form id="fm" method="post" novalidate>
+        <table>
+        	<tr>
+            	<td><label>数据库:</label></td>
+            </tr>
+            
+            <tr>
+            	<td></td>
+                <td>
+                	<input type="checkbox"  value="fruits" style="display:none" checked="checked"/>
+                    <!--<input type="checkbox"  value="lstd_website"/>资源与展示
+                    <input type="checkbox"  value="lstd_sp"/>人才中心
+                    <input type="checkbox"  value="lstd_lab"/>实验室预约-->
+                </td>
+            </tr>
+            
+            <tr>
+            	<td></td>
+                <td align="right">
+                	<input type="button" value="备份" onclick="backup();"/>
+                    <input type="button" value="取消" onclick="cancel();"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,1 @@
+SELECT * FROM project_info WHERE project_id = 'dev1452325829'

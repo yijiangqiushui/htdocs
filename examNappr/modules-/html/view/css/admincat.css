@@ -1,0 +1,10 @@
+/* CSS Document */
+/*Modified by Ma Jun Wei 2014/09/06*/
+
+ #fm{ margin:0; padding:10px 30px;}
+ .ftitle{ font-size:14px; font-weight:bold; padding:5px 0; margin-bottom:10px; border-bottom:1px solid #ccc;}
+ .fitem{ margin-bottom:5px;}
+ .fitem label{ display:inline-block; width:80px;}
+ a{ text-decoration:none;}
+ #toolbar a{ float:left; margin-top:10px;}
+ list-style:none;

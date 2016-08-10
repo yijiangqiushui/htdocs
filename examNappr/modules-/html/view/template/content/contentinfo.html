@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文件内容管理</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<link rel="stylesheet" href="../../../../../common/html/plugin/kindeditor-4.1.10/themes/default/default.css" />
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<!--<script charset="utf-8" src="../../../../common/html/plugin/kindeditor-4.1.10/kindeditor-min.js"></script>-->
+<script charset="utf-8" src="../../../../../common/html/plugin/kindeditor-4.1.10/kindeditor.js"></script>
+<script charset="utf-8" src="../../../../../common/html/plugin/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script type="text/javascript" src="../../js/content/contentinfo.js"></script>
+
+<link href="../../css/contentinfo.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+	var editor;
+	KindEditor.options.filterMode = false;
+	KindEditor.ready(function(K) {
+		editor = K.create('textarea[name="content"]', {
+			resizeType : 1,
+			allowPreviewEmoticons : false,
+			allowImageUpload : true,
+			items : [
+				'source','|','fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+				'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+		});
+	});
+</script>
+</head>
+
+<body class="easyui-layout">
+<!--树结构-->
+<div id="west" data-options="region:'west',title:'内容分类',split:true" style="width:250px;padding:5px;">
+    <ul id="treeData"></ul>
+</div>
+    
+<!--表结构-->
+<div id="center" data-options="region:'center',title:'内容信息管理',split:true" style="padding:5px;">
+    <table id="infoGrid" class="easyui-datagrid"></table> 
+    <div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="queInfo()">查询</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newInfo()">添加</a>       
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delArrInfo()">批量删除</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-no" plain="true" onclick="disableEle(1)">禁用</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="disableEle(0)">启用</a> 
+    </div>
+</div>
+    
+<!--添加-->
+<div id="newDlg" class="easyui-dialog" style="width:900px;padding:10px 20px"
+        closed="true" buttons="#newdlg-buttons">
+  <h1 class="ftitle">内容信息</h1>
+  <form id="newFm" method="post" enctype="multipart/form-data" novalidate="novalidate">
+    <input type="hidden" name="cat_id" />
+    <input type="hidden" name="category" />
+    <table>
+      <tr>
+        <td width="89">所属分类：</td>
+        <td colspan="5">
+        <span id="1"><input name="upper_text" class="easyui-validatebox" readonly="readonly" style="border:0px;" /></span> 
+       <span id="2"><input id="catTree" name="catId" style="width:154px;" /></span>
+        </td>
+     </tr>
+      <tr>
+        <td>信息类型：</td>
+        <td colspan="5"><input name="type" id="type" class="easyui-combobox" data-options="
+                            valueField:'value',
+                            textField:'text',
+                            panelHeight:100,
+                            multiple:false,
+                            editable:false, 
+                            data:[{value:'1',text:'文章模型'},{value:'2',text:'图片模型'},{value:'3',text:'视频模型'},{value:'4',text:'下载模型'}]
+                        " />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        专用名称：<input name="exclusive_name" id="exclusive_name"/></td>
+      </tr>
+      <tr>
+        <td>标题：</td>
+        <td colspan="5"><input name="title" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'" validtype="length[1,50]" invalidmessage="有效长度1-50" style="width:650px" /></td>
+      </tr>
+      <tr>
+        <td>内容：</td>
+        <td colspan="5"><textarea  id="editor_id" name="content" style="width:650px;height:200px;"></textarea></td>
+      </tr>
+      <tr>
+        <td>简短标题：</td>
+        <td colspan="5"><input name="brief_title" class="easyui-validatebox" validtype="length[1,50]" invalidmessage="有效长度1-50" style="width:650px" /></td>
+      </tr>
+      <tr>
+        <td>简短内容：</td>
+        <td colspan="5">
+        <textarea name="brief_ctnt" style="width:650px;height:30px;" class="easyui-validatebox" validtype="length[1,50]" invalidMessage="有效长度1-50" ></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>标签：</td>
+        <td colspan="5"><input name="tags" validtype="length[1,20]" invalidmessage="有效长度1-20" style="width:650px" /></td>
+      </tr>
+      <tr>
+        <td>缩略图：</td>
+        <td colspan="5"><input name="file" type="file" /></td>
+      </tr>
+      <tr>
+        <td>缩略图尺寸：</td>
+        <td colspan="5"><input name="thumbnails_size" id="thumb_size" style="width:650px"/></td>
+      </tr>
+      <tr>
+        <td>来源：</td>
+        <td width="188"><input name="info_source" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+        <td width="65">推荐位：</td>
+        <td width="478" colspan="3"><input type="hidden" name="recOption" />
+          <input type="checkbox" name="10" value="10" />
+          首页焦点
+          <input type="checkbox" name="11" value="11" />
+          首页
+          <input type="checkbox" name="20" value="20" />
+          列表页焦点
+          <input type="checkbox" name="21" value="21" />
+          列表页
+          <input type="checkbox" name="3" value="3" />
+          非首页右侧推荐 </td>
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="newdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveInfo()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#newDlg').dialog('close')">取消</a>
+</div>
+    
+<!--查询-->
+<div id="queDlg" class="easyui-dialog" style="width:500px;padding:10px 20px"
+        closed="true" buttons="#quedlg-buttons">
+  <h1 class="ftitle">内容信息</h1>
+  <form id="queFm" method="post" novalidate="novalidate">
+    <table width="391">
+      <tr>
+        <td width="85">标题：</td>
+        <td width="294"><input id="title" name="title" /></td>
+      </tr>
+      <!--
+      <tr>
+        <td>标签：</td>
+        <td><input id="tags" name="tags" /></td>
+      </tr>
+      <tr>
+        <td>内容：</td>
+        <td><input id="content" name="content" /></td>
+      </tr>
+      -->
+      <tr>
+        <td>添加时间：</td>
+        <td><input name="add_time" id="add_time" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="quedlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="findInfo()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#queDlg').dialog('close')">取消</a>
+</div>
+
+<!--上传-->
+<div id="loadDlg" class="easyui-dialog" style="width:650px;padding:10px 20px"
+        closed="true" buttons="#loaddlg-buttons">
+  <h1 class="ftitle">上传附件</h1>
+  <form id="loadFm" method="post" novalidate="novalidate" enctype="multipart/form-data">
+    <table>
+      <tr>
+        <td>文件：</td>
+        <td><input name="file1" type="file" /></td>
+      </tr>
+      <tr>
+        <td>内容：</td>
+        <td><textarea name="brief_ctnt" style="width:500px;height:100px;"></textarea>
+          <!--<input name="content" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'">--></td>
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="loaddlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="loadInfo()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#loadDlg').dialog('close')">取消</a>
+</div>
+    
+<!--查看上传附件-->
+<div id="checkDlg" class="easyui-dialog" style="width:800px;padding:10px 20px"
+        closed="true" buttons="#checkdlg-buttons">
+        <table id="attachGrid" class="easyui-datagrid"></table>
+    <div id="toolbar1">      
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delArrAttach()">批量删除</a> 
+	</div>
+</div>
+    
+<div id="checkdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#checkDlg').dialog('close')">关闭</a>
+</div>
+
+
+<!--评论-->
+<div id="commentDlg" class="easyui-dialog" style="width:850px;padding:10px 20px"
+    closed="true" buttons="#commentdlg-buttons">
+  <h1 class="ftitle">评论信息</h1>
+  <form id="commentFm" method="post" novalidate="novalidate">
+    <table>
+      <tr>
+        <td>评论内容：</td>
+        <td><textarea id="commentInfo" name="comment" style="width:650px;height:200px;"></textarea></td>
+      </tr>
+      <tr>
+        <td>评论等级：</td>
+        <td><select name="comment_grade" id="comment_grade">
+          <option value='1'>好评</option>
+          <option value='2'>差评</option>
+          <option value='3'>一般</option>
+        </select></td>
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="commentdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveComment()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#commentDlg').dialog('close')">取消</a>
+</div>
+
+<!--查看评论-->
+<div id="checkComDlg" class="easyui-dialog" style="width:800px;padding:10px 20px"
+    closed="true" buttons="#checkComdlg-buttons">
+    <table id="commentGrid" class="easyui-datagrid"></table>
+    <div id="toolbar2">      
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delArrComment()">批量删除</a> 
+	</div>
+</div>
+
+<div id="checkComdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#checkComDlg').dialog('close')">关闭</a>
+</div>
+<!--详情-->
+    <div id="newDlg-detail" class="easyui-dialog" style="width:900px;padding:10px 20px"
+            closed="true" buttons="#newdlg-buttons">
+      <div class="ftitle">
+        <h3>信息详情</h3>
+      </div>
+      <form id="proFM" method="post" enctype="multipart/form-data" novalidate="novalidate">
+        <table width="850px" border="1" bordercolor="#FFFF99" cellspacing="2" class="dialog">
+          <tr>
+            <td width="87">所属分类</td>
+            <td colspan="4" width="747"><label id="upper_text"></label></td>
+            <td rowspan="7"><div style="width:110px; height:140px; border:1px solid red; background-image: url(../../../../../common/upload/no_pic.jpg); background-repeat: no-repeat; background-position: center center; background-color:#efefef;"> 
+                        <img id="thumbnail1"  src="" width="110" height="140"/> </div></td>
+          </tr>
+          <tr>
+            <td >信息类型：</td>
+            <td colspan="4"><label id="type1"></label></td>
+          </tr>
+          <tr>
+            <td width="87">标题：</td>
+            <td colspan="4" width="747"><label id="title1"></label></td>
+          </tr>
+          <tr>
+            <td>简短标题：</td>
+            <td colspan="4"><label id="brief_title1"></label></td>
+          </tr>
+          <tr>
+            <td>内容：</td>
+            <td colspan="3"><label id="content1"></label></td>
+          </tr>
+          
+          <tr>
+            <td>简短内容：</td>
+            <td colspan="3"><label id="brief_ctnt1"></label></td>
+          </tr>
+          <tr>
+            <td>标签：</td>
+            <td colspan="3"><label id="tags1"></label></td>
+          </tr>
+         
+          <tr>
+            <td>来源：</td>
+            <td colspan="3"><label id="info_source1"></label></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+      
+    <div id="newdlg-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#newDlg-detail').dialog('close')">关闭</a>
+    </div>
+</body>
+</html>

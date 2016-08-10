@@ -1,0 +1,133 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+  <link rel="stylesheet" type="text/css"
+          href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css"
+          href="../../../../../common/html/plugin/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../css/findlogin.css">
+    <link rel="stylesheet" type="text/css" href="../../css/button.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../../website/html/view/css/uploadify.css" />
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+    <script type="text/javascript"src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript"src="../../../../../common/html/js/validation.js"></script>
+    
+    <script type="text/javascript" src="../../../../../website/html/view/js/projectapp/upload.js"></script>
+	<script src="../../../../../website/html/view/js/jquery.uploadify.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../js/userinfo/userinfo.js"></script>
+<style>
+input {
+	height:100%;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #DDD;
+    padding: 1px 3px;
+}
+
+td:nth-child(odd) {
+    background-color: #D1E4F3;
+    color: #666;
+    width: 180px;
+}
+
+td:nth-child(even) {
+    background-color: #EAF3FA;
+}
+
+td {
+    padding: 2px;
+    line-height: 30px;
+    text-align: center;
+    border: solid 1px #ffffff;
+}
+
+table {
+    font-size: 14px;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin: auto 0;
+    font-size: 14px;
+}
+</style>
+
+</head>
+
+<body>
+	
+	<form action="" method="post" id="user_info">
+		<div style="margin-top: 40px; margin-left: 0px;padding: 0 20px;max-width: 1000px">
+			
+		    <div >
+				<table width="100%" border="1" cellspacing="0" class="basic_info" style="border: 1px solid #ddd;">
+					 <tr>
+	                    <td colspan="4" style="background-color:#7AB5ED;height:35px;font-size:14px;"><p style="font-weight: bold; line-height:30px;color:#FFF002;">企业信息修改</p></td>
+	                </tr>
+					<tr>
+					     <td>组织机构代码</td>
+                         <td><input type="text" style="border:0px" name="org_code" readOnly="readonly" id="org_code"/></td>
+						 <td width="">申报单位名称</td>
+						 <td><input type="text" name="org_name"/></td>
+					</tr>
+					<tr>
+						<td>企业法人</td>
+						<td><input type="text" name="legal_name" /></td>
+						<td>法人电话</td>
+						<td><input type="text" name="legal_phone" datatype="phandtel"/></td>
+					</tr>
+					<tr>
+					    <td class="border_none">通讯地址</td>
+						<td class="border_none" ><input type="text" name="contact_address"/></td>
+						<td>注册地址</td>
+						<td width=""><input type="text" name="register_address" /></td>
+						
+					</tr>
+					<tr>
+					    <td class="border_none">公司电话</td>
+						 <td class="border_none"><input type="text" name="phone"  datatype="phone"/></td> 
+						 <td class="border_none">电子邮箱</td>
+						 <td class="border_none"><input type="text" name="email"  datatype="email"/></td>
+					</tr>
+					
+					<!-- 20160303  david  add -->
+					<tr>
+						<td >工商营业执照 </br><span style="color:red">（三证合一请在此处上传）</span></td>
+						<td>
+
+							<input type="text" style="display:none" name='file1' id="pub_pic_1"/>
+							<input type="file" id="pub_pic" name='pub_pic'/>
+						</td>
+						<td><a href='Javascript:void(0)' target="_blank" id="lookPermit">预览</a></td>
+						<!--  <td colspan="2"><input type="button" cval="file1" style="display:none" id="pub_pic_look" value="预览工商营业执照" /></td>-->
+					</tr>
+					
+					<!-- 20160303 david add  -->
+					<tr>
+						<td>税务登记证</td>
+						<td><input type="text" style="display:none" name="file" id="reg_pic_1"/>
+						<input type="file" id="reg_pic" name="reg_pic"/> 
+						</td>
+						<td><a href='Javascript:void(0)' target="_blank" id="lookCerti">预览</a></td>
+						
+						<!--  <td colspan="2"><input type="button" cval="file" style="display:none" id="reg_pic_look" value="预览税务登记证"/></td>-->
+					</tr>
+				</table>
+
+				<div  style="cursor: pointer; width: 380px;margin: 20px auto;">
+	                <div class="submit aleft" onclick="submit_data()">确定</div>
+	                <!-- <div class="reset" onclick="reset()">重置</div>-->
+	            </div> 
+			</div>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* CSS Document */
+
+.hlui-spinner{ display:block;border:1px solid #ccc; height:20px; margin:0px 5px;}
+.hlui-spinner *{ margin:0; padding:0;}
+.hlui-spinner input{border:0; line-height:20px; height:20px; font-size:12px; padding: 0 2px; float:left;}
+.ui-spinner-arrow{ display:inline-block; width:18px; height:20px; float:left;}
+.ui-spinner-arrow-up,.ui-spinner-arrow-down{ height:10px; display:block; background-image:url(../img/icons/spinner_arrows.png); cursor:pointer;}
+.ui-spinner-arrow-up{ background-position:0 center;}
+.ui-spinner-arrow-down{ background-position:-16px center;}

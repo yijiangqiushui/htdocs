@@ -1,0 +1,29 @@
+/* CSS Document */
+.hlui-tree{ margin:0; padding:0;}
+/*.hlui-tree *{ margin:0; padding:0;}*/
+
+.hlui-tree span{ display:inline-block; vertical-align:middle;}
+.hlui-tree ul{ margin:0; padding:0; list-style:none;}
+.hlui-tree li{ margin:0; padding:0; list-style:none; line-height:18px; height:18px;}
+.hlui-tree a{ display:inline-block; vertical-align:middle; color:#000; text-decoration:none;}
+.ui-tree-rnode{ background-image:url(../img/tree/root.gif);}
+.ui-tree-node{}
+.ui-tree-node span:nth-child(3){ cursor:pointer;}
+
+.ui-tree-img{ width:18px; height:18px;}
+.ui-tree-txt{ height:18px; line-height:18px; font-size:12px;}
+
+.ui-tree-join{ background-image:url(../img/tree/join.gif);}
+.ui-tree-lastjoin{ background-image:url(../img/tree/lastjoin.gif);}
+.ui-tree-minus{ background-image:url(../img/tree/minus.gif);}
+.ui-tree-lastminus{ background-image:url(../img/tree/lastminus.gif);}
+.ui-tree-plus{ background-image:url(../img/tree/plus.gif);}
+.ui-tree-lastplus{ background-image:url(../img/tree/lastplus.gif);}
+.ui-tree-page{ background-image:url(../img/tree/page.gif);}
+.ui-tree-folder{ background-image:url(../img/tree/folder.gif);}
+.ui-tree-folderopen{ background-image:url(../img/tree/folderopen.gif);}
+.ui-tree-line{ background-image:url(../img/tree/line.gif);}
+.ui-tree-noline{}
+
+.ui-tree-node-selected{ background-color:#ccc;}
+.ui-tree-node-over{ background-color:#f1f1f1;}

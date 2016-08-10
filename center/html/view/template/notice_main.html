@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>通州科委项目</title>
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/icon.css"/>
+<script type="text/javascript" src="../../../../common/html/lib/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+<script type="text/javascript" src="../../../html/view/js/notice_main.js"></script>
+<script type="text/javascript" src="../../../../center/html/view/js/common.js"></script>
+
+</head>
+<body class='easyui-layout'>
+<!-- 对树结构添加右键事件-->   
+<!--表结构-->
+<div id="west" data-options="region:'west',title:'部门分类',sqlit:'true'" style="width:200px;padding:5px;" >
+			<!-- <ul>
+				<li id="li1" style="display:none;"><a href="#" onclick="loadPage(0)">发展计划科</a></li>
+				<li id="li2" style="display:none;"><a href="#" onclick="loadPage(1)">科技综合科</a></li>
+				<li id="li3" style="display:none;"><a href="#" onclick="loadPage(2)">知识产权科</a></li>
+			</ul> -->
+	<div style="margin:20px 0;"></div>
+		<ul class="easyui-tree">
+			<li>
+				<span>公告分类</span>
+						<span>公告分类</span>
+						<ul>
+							<li>
+								<span><a href="#" onclick="loadPage(0)">通知公告</a></span>
+							</li>
+							<li>
+								<span><a href="#" onclick="loadPage(1)">重要提示</a></span>
+							</li>
+							<li>
+								<span><a href="#" onclick="loadPage(2)">公示公告</a></span>
+							</li>
+							<li>
+								<span><a href="#" onclick="loadPage(2)">申报指南</a></span>
+							</li>
+							<li>
+								<span><a href="#" onclick="loadPage(2)">申报解读</a></span>
+							</li>
+						</ul>
+					</li>
+			</ul>
+			
+			
+			
+			
+</div>
+		<div id='center' data-options="region:'center',split:true">
+		  <table id="projectList">
+		  </table>
+		  <div id="toolbar"> 
+		  	<!-- <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="queryAdmin()">查询</a> --> 
+		    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick="newAdmin()">添加</a> 
+		    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="delArrAdmin()">批量删除</a> 
+		    <!--  <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-no" plain="true" onclick="disableAdmin(1)">禁用</a> 
+		    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" plain="true" onclick="disableAdmin(0)">启用</a>
+		    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="get_isDel()">已删除</a>
+		    <a href="javascript:void(0)" id="muti_back" class="easyui-linkbutton" iconcls="icon-ok" style="display:none" plain="true">批量恢复</a> 
+		  	<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" id="back_loadPage" onclick="init()">返回用户信息</a>  -->
+		  </div>
+		  <!-- <table class="datagrid-btable">
+		  	<thead>
+		  		<tr>
+		  			<th>公告类型</th>
+		  			<th>公告标题</th>
+		  			<th>发布人</th>
+		  			<th>发布时间</th>
+		  		</tr>
+		  	</thead>
+		  	<tbody>
+		  		<tr>
+		  			<td>公告类型</td>
+		  			<td>公告标题</td>
+		  			<td>发布人</td>
+		  			<td>发布时间</td>
+		  		</tr>
+		  	</tbody>
+		  </table> -->
+		</div>  
+		  <!--添加-->
+		<!--添加用户-->
+		<div id="newProject" class="easyui-dialog" style="width:600px;height:200px ;padding:0px 20px" closed="true" buttons="#dlg-buttons1">
+		  <div id="addProject">
+		    <form id="newAdmin" action="" method="post">
+		         项目类型<input name="project_type" type="text"/><br/><br/>
+		    申报开始时间<input name="apply_start" type="text"/><br/><br/>
+		    申报结束时间<input name="apply_end" type="text"/><br/><br/>
+		    科室类型 <select name="department">
+		           <option value="发展计划科">发展计划科</option>
+		           <option value="知识产权科">知识产权科</option>
+		           <option value="科技综合科">科技综合科</option>
+		        </select>
+		    <input type="button" value="确定" onclick="addAdmin();">
+		    </form>
+		  </div>
+		</div>
+		
+		
+</body>
+</html>
+
+

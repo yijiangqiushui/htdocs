@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>发送短消息</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<!--
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+-->
+<script type="text/javascript" src="../../../../../common/html/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script charset="utf-8" src="../../../../../common/html/plugin/kindeditor-4.1.10/kindeditor.js"></script>
+<script charset="utf-8" src="../../../../../common/html/plugin/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/datagrid-detailview.js"></script>
+<script type="text/javascript" src="../../js/sms/sms.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/NTClientJavascript.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/sms/sms.css"/>
+</head>
+
+<body id='body' class='easyui-layout'>
+<div id='center' data-options="region:'center',title:'短信信息',split:true" style="padding:5px;">
+	<table id="smsgrid" class="easyui-datagrid"></table>
+  <div id="toolbar">
+      <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newSms()">发送消息</a>
+      <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delArrSms()">批量删除</a>
+     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="countSms()">短信统计</a> 
+     <!--
+      <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="reload_reply()">更新回复</a>
+      -->
+      <a href="javascript:void(0)" class="easyui-linkbutton" plain="true" id="myYE">余额：<span class="balance"></span>元</a>
+      <!--
+      <a href="http://localhost:8080/message/msgread.htm" class="easyui-linkbutton" iconCls="icon-reload" plain="true">更新回复</a>
+      <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="importList()">导入通讯录</a>
+      <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="exportList()">导出通讯录</a>
+      -->
+  </div>
+</div>
+
+<!--发送短消息-->
+<div id="addInfo" class="easyui-dialog" style="width:690px;padding:10px 20px" closed="true" buttons="#add-buttons">
+	<div class="add-send-form">
+    <form id="add-form" action="#" method="post" novalidate>
+      <table width="473" border="0">
+        <tr>
+          <td width="85">收件人</td>
+          <td width="378">
+          <textarea name="smsPhone" cols="45" rows="5" data-options="required:false,missingMessage:'该项为必填项'"></textarea>
+          <!--
+          <input name="smsPhone" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'"/></td><!-- validType="mobile"-->
+        </tr>
+        <tr>
+          <td>需要回复</td>
+          <td>
+          <input type="radio" name="isReply" id="radio" value="0" />是    <input type="radio" name="isReply" id="radio1" value="1" />否
+          </td>
+        </tr>
+        <tr>
+          <td>发送内容</td>
+          <td>
+          <textarea class="content" name="content" cols="45" rows="9" maxlength="200">qq</textarea>
+          <div class="cntn-len">已输入<span id="textCount">0</span>字</div>
+          </td>
+        </tr>
+        <tr>
+          <td>落款</td>
+          <td>
+          <input type="text" class="inscribe" value="通州科委" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <!--
+  <div class="progress">发送进度：<span class="progress-span"></span></div>
+  -->
+	</div>
+  <div class="communicate">
+    <div class="communicate-title">通讯录</div>
+	<div class="communicate-search" style="margin:5px 0;">
+    <input type="text" id="seach-list" style="width:100px; float:left;" />
+    <div onclick="getSearch()"><input type="button" value="搜索" style="width:40px; float:left;" /></div>
+    </div>  
+	<div class="seach-list" style="display:none;">
+   		<ul>
+    	</ul>
+    </div>   
+    <div class="communicate-list">
+      <div>
+        <a href="#" id="myCommunicate">我的通讯录</a>
+        <ul class="myCommunicate"></ul>
+      </div>
+      <div>
+        <a href="#" id="othersCommunicate">他人通讯录</a>
+        <div class="othersCommunicate" ></div>
+      </div>
+    <!--
+      <div class="group-block">
+        <div class="communicate-group">第一组</div>
+        <div class="communicate-person">来了来了</div>
+        <div class="communicate-person">来了来了</div>
+      </div><!--group-block-->
+      <!--
+      <div class="group-block">
+        <div class="communicate-group">第二组</div>
+        <div class="communicate-person">来了来了</div>
+      </div><!--group-block-->
+
+    </div><!--communicate-list-->
+  </div><!--communicate-->
+</div>
+  
+<div id="add-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="sendSms()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="close_sendSms()">取消</a>
+</div>
+
+
+<!--导入通讯录-->
+<div id="importList" class="easyui-dialog" style="width:250px;padding:10px 20px" closed="true">
+    <form id="import-form" action="#" method="post" novalidate>
+    	<input type="button" value="导入CSV" onclick="importCSV()"/>
+    	<input type="button" value="导入Excel" onclick="importExcel()"/>
+    </form>
+</div>
+  
+<!--导出通讯录-->
+<div id="exportList" class="easyui-dialog" style="width:250px;padding:10px 20px" closed="true">
+    <form id="import-form" action="#" method="post" novalidate>
+    	<input type="button" value="导出CSV" onclick="exportCSV()"/>
+    	<input type="button" value="导出Excel" onclick="exportExcel()"/>
+    </form>
+</div>
+
+<!--查看无编号回复-->
+<div id="checkDlg" class="easyui-dialog" style="width:800px;padding:10px 20px" closed="true" buttons="#checkdlg-buttons">
+	<table id="attachGrid" class="easyui-datagrid"></table>
+	<div id="toolbar1">      
+   	<!--
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delArrAttach()">批量删除</a> 
+    -->
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-export" plain="true" onclick="exportReply()">导出无编号回复</a> 
+	</div>
+</div>
+    
+<div id="checkdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#checkDlg').dialog('close')">关闭</a>
+</div>
+
+<!--查看短信详细信息-->
+<div id="smsDetails" class="easyui-dialog" style="width:600px;padding:10px 20px" closed="true" buttons="#smsdetails-buttons">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="dialog dialog-table">
+  <input type="hidden" id="failePhone" />
+  	<tr>
+    	<td width="80" id="smsPhone0">收件人</td>
+    	<td id="smsPhone1"></td>
+    </tr>
+  	<tr>
+    	<td width="80" id="replyContent0">信息内容</td>
+    	<td id="replyContent1"></td>
+    </tr>
+  	<tr>
+    	<td width="80" id="sendtime0">发送时间</td>
+    	<td id="sendtime1"></td>
+    </tr>
+  	<tr>
+    	<td width="80" id="isSent0">发送状态</td>
+    	<td id="isSent1"></td>
+    </tr>
+  	<tr class="send_td send_faile">
+    </tr>
+  	<tr class="send_td send_reload">
+    </tr>
+  </table>
+</div>
+<div id="smsdetails-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="closeDetail();">关闭</a>
+</div>
+<!--查看短信发送进度-->
+<div id="sentprogress" class="easyui-dialog" style="width:400px;padding:10px 20px" closed="true" buttons="#sentprogress-buttons">
+  <div class="progress">发送进度：
+    <span class="progress-span"></span>
+    <div class="progress-line"><hr size="5" color="#0066FF"></div>
+    <span class="progress-bili"></span>
+  </div>
+</div>
+<div id="sentprogress-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="close_progress()">关闭</a>
+</div>
+
+
+<div id="newDlg" class="easyui-dialog" style="width:400px;padding:10px 20px"
+        closed="true" buttons="#newdlg-buttons">
+  <h1 class="ftitle"></h1>
+  <form id="newFm" method="post" enctype="multipart/form-data" novalidate="novalidate">
+    <!--
+    <table>
+     <tr>
+     	<td>姓名：</td>
+     	<td>
+      <label id="name" name="name" ></label>
+      </td>
+     </tr>
+     <tr>
+     	<td>手机号：</td>
+     	<td><input type="text" id="tel" name="tel"  class="easyui-validatebox" style="width:150px;"  maxlength="11" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+     </tr>
+     <tr>
+     	<td>公司：</td>
+     	<td><label id="company" name="company" ></label></td>
+     </tr>
+     <tr>
+     	<td>职务：</td>
+     	<td><label id="job" name="job" ></label></td>
+     </tr>
+    </table>
+    -->
+    <input type="hidden" name="cat_id" />
+    <input type="hidden" name="category" />
+    <table>
+      <tr>
+        <td width="89">所属分组：</td>
+        <td colspan="5">
+        	<input id="catTree" name="upper_text" class="easyui-validatebox" readonly="readonly" style="width:154px;border:0px;"  />
+        </td>
+     </tr>
+     <tr>
+     	<td>姓名：</td>
+     	<td>
+      <input type="text" id="name" name="name" class="easyui-validatebox" style="width:150px;" maxlength="32" data-options="required:true,missingMessage:'该项为必填项'" />
+      </td>
+     </tr>
+     <tr>
+     	<td>手机号：</td>
+     	<td><input type="text" id="tel" name="tel"  class="easyui-validatebox" style="width:150px;"  maxlength="11" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+     </tr>
+     <tr>
+     	<td>公司：</td>
+     	<td><input type="text" id="company" name="company" /></td>
+     </tr>
+     <tr>
+     	<td>职务：</td>
+     	<td><input type="text" id="job" name="job" /></td>
+     </tr>
+    </table>
+    <!-- -->
+  </form>
+</div>
+      
+<div id="newdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveInfo()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#newDlg').dialog('close')">取消</a>
+</div>
+
+
+<!--修改手机号-->
+<div id="editSmsPhoneDlg" class="easyui-dialog" style="width:400px;padding:10px 20px"
+        closed="true" buttons="#editSmsPhone-buttons">
+  <form id="editSmsPhoneFm" method="post" >
+    <table>
+     <tr>
+     	<td>手机号：</td>
+     	<td><input type="text" id="smsphone" name="smsphone"  class="easyui-validatebox" style="width:150px;"  maxlength="11" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+     </tr>
+    </table>
+    <!-- -->
+  </form>
+</div>
+      
+<div id="editSmsPhone-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="editSmsPhone()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#editSmsPhoneDlg').dialog('close')">取消</a>
+</div>
+
+
+</body>
+</html>

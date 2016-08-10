@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用证明材料目录</title>
+<!--heyangyang-->
+<link rel="stylesheet" type="text/css"
+	href="../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../common/html/plugin/easyui/themes/icon.css">
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+		<script type="text/javascript" src="../../js/main/apply86.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/applyOrg.css" />
+		<style type="text/css">
+table tr .notNull {
+	color: #F00;
+}
+</style>
+</head>
+
+<body>
+	<table id="grid" class="easyui-datagrid-"></table>
+	<!--    <div id="checkAdviceDiv">
+    	<table id="checkTable">
+        <tr>
+          <td width="129">审核意见:</td>
+          <td width="610">
+          <textarea name="checkAdvice" id="checkAdvice" cols="45" rows="5" style="width: fit; height: fit; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="提交"  onclick="resetCheck();"/></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr><input type="button" value="提交"/></tr>
+        </table>
+    </div>-->
+
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-add" plain="true" onclick="showform(0,0)">添加信息</a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-remove" plain="true" onclick="deleteList()">批量删除</a>
+	</div>
+
+	<div id="dlg" class="easyui-dialog"
+		style="width: 400px; height: 380px; padding: 10px 20px" closed="true"
+		buttons="#dlg-buttons">
+		<form id="fm" method="post" novalidate>
+			<table>
+				<tr>
+					<td width='120'>应用单位名称：</td>
+					<td class="notNull"><input name="unit" maxlength="40" />&nbsp;&nbsp;&nbsp;*必填</td>
+				</tr>
+				<tr>
+					<td>联系人：</td>
+					<td class="notNull"><input name="contact"
+						class="easyui-validatebox" maxlength="20">&nbsp;&nbsp;&nbsp;*必填</td>
+				</tr>
+				<tr>
+					<td>电话：</td>
+					<td class="notNull"><input name="phone" maxlength="20" />&nbsp;&nbsp;&nbsp;*必填</td>
+				</tr>
+				<tr>
+					<td>应用起始时间：</td>
+					<td><input name="startTime" maxlength="20"
+						class="easyui-datebox" data-options="currentText:'',closeText:''"></td>
+				</tr>
+				<tr>
+					<td>应用完成时间：</td>
+					<td><input name="endTime" maxlength="20"
+						class="easyui-datebox" data-options="currentText:'',closeText:''"></td>
+				</tr>
+				<tr>
+					<td>经济效益（万元）：</td>
+					<td><input name="benefit" maxlength="20"
+						class="easyui-validatebox"></td>
+				</tr>
+
+			</table>
+		</form>
+
+	</div>
+
+	<div id="dlg-buttons" style="text-align: center; padding: 5px">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-ok" onclick="saveData()">确定 </a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
+
+	<div id="att_dlg" class="easyui-dialog"
+		style="top: 150px; width: 700px; padding: 0px" closed="true"
+		data-options="onClose:function(){closedlg();}">
+		<table id="att_grid" class="easyui-datagrid-"></table>
+		<div id="att_toolbar">
+			<a href="javascript:void(0)" class="easyui-linkbutton"
+				iconCls="icon-add" plain="true" onclick="showAttForm(0)">添加信息</a> <a
+				href="javascript:void(0)" class="easyui-linkbutton"
+				iconCls="icon-remove" plain="true" onclick="deleteAttList()">批量删除</a>
+		</div>
+	</div>
+
+	<div id="addAtt_dlg" class="easyui-dialog"
+		style="top: 140px; width: 400px; height: 350px; padding: 10px 20px"
+		closed="true" buttons="#addAtt_dlg-buttons">
+		<form id="addAtt_fm" method="post" enctype="multipart/form-data"
+			novalidate>
+			<table>
+				<tr style="height: 40px;">
+					<td width='100'>文件标题：</td>
+					<td><input name="title" class="easyui-validatebox"
+						data-options="required:true"></td>
+				</tr>
+				<tr style="height: 40px;">
+					<td>描述：</td>
+					<td><textarea name="descrip"
+							style="width: 210px; height: 100px;"></textarea></td>
+				</tr>
+				<tr style="height: 40px;">
+					<td>上传文件：</td>
+					<td><input type="file" name="file" class="easyui-validatebox"></td>
+				</tr>
+			</table>
+		</form>
+		<div id="addAtt_dlg-buttons" style="text-align: center; padding: 5px">
+			<a href="javascript:void(0)" class="easyui-linkbutton"
+				iconCls="icon-ok" onclick="saveAtt()">确定 </a> <a
+				href="javascript:void(0)" class="easyui-linkbutton"
+				iconCls="icon-cancel"
+				onclick="javascript:$('#addAtt_dlg').dialog('close')">取消</a>
+		</div>
+	</div>
+</body>
+</html>

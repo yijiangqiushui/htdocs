@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>主要完成单位情况</title>
+<!--heyangyang-->
+<link rel="stylesheet" type="text/css"
+	href="../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../common/html/plugin/easyui/themes/icon.css">
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+		<script type="text/javascript" src="../../js/main/apply6.js"></script>
+
+		<style type="text/css">
+a {
+	text-decoration: none;
+}
+
+input[type=text] {
+	border: 1px solid;
+	color: #000
+}
+
+#fm td {
+	width: 100px;
+}
+
+fm_det td {
+	width: 100px;
+}
+</style>
+</head>
+
+<body>
+	<table id="grid" class="easyui-datagrid-">
+	</table>
+	<!--<div id="checkAdviceDiv">
+    <table id="checkTable">
+    <tr>
+      <td width="129">审核意见:</td>
+      <td width="610">
+      <textarea name="checkAdvice" id="checkAdvice" style="width: fit; height: fit; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="提交"  onclick="resetCheck();"/></td>
+      <td>&nbsp;</td>
+    </tr>
+    </table>
+</div>-->
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconcls="icon-add" plain="true" onclick="showForm(0,0)">添加信息</a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconcls="icon-remove" plain="true" onclick="deleteList()">批量删除</a>
+	</div>
+	<div id="dlg" class="easyui-dialog"
+		style="width: 880px; padding: 10px 20px" closed="true"
+		buttons="#dlg-buttons">
+		<form id="fm" method="post" novalidate="novalidate">
+			<table width="100%" border="0" cellspacing="5" cellpadding="0">
+				<tr>
+					<td align="center">单位名称</td>
+					<td colspan="2"><input name="name" maxlength="40"
+						class="easyui-validatebox" style="width: 309px;" />&nbsp;&nbsp;<span
+						style="color: red;">*</span></td>
+					<td align="center">完成单位排序</td>
+					<td><input name="sort" maxlength="20"
+						class="easyui-validatebox" style="width: 220px;" /></td>
+				</tr>
+				<tr>
+					<td align="left">对申报项目作出的主要贡献<br /> （限100字以内）
+					</td>
+					<td colspan="5"><textarea name="contribute" id="contribute"
+							style="width: 705px; height: 140px;"></textarea></td>
+				</tr>
+				<tr>
+					<td align="center">通讯地址</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="40" name="address" style="width: 309px;" />&nbsp;&nbsp;<span
+						style="color: red;">*</span></td>
+					<td align="center">邮政编码</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="6" name="postcode" style="width: 200px;"
+						onkeyup="this.value=this.value.replace(/\D/g,'')"
+						onafterpaste="this.value=this.value.replace(/\D/g,'')" /></td>
+				</tr>
+				<tr>
+					<td align="center">单位性质</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="nature" maxlength="20" style="width: 309px;" />&nbsp;&nbsp;<span
+						style="color: red;">*</span></td>
+					<td align="center">单位类型</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="20" name="type" style="width: 200px;" />&nbsp;&nbsp;<span
+						style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="center">是否独立法人单位</td>
+					<td colspan="2"><input name="isSeparateLegal"
+						style="width: 315px;" class="easyui-combobox"
+						data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:45,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'1',text:'是'},{value:'0',text:'否'}]
+                ">&nbsp;&nbsp;<span
+							style="color: red;">*</span></td>
+					<td align="center">单位网址</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="40" name="web" style="width: 200px;" /></td>
+				</tr>
+				<tr>
+					<td align="center">企业注册号</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="40" name="registeNum" style="width: 309px;" /></td>
+					<td align="center">组织机构代码</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="40" name="organizationCode" style="width: 200px;" /></td>
+
+				</tr>
+				<tr>
+					<td align="center">单位所在地区</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="40" name="zone" style="width: 309px;" /></td>
+					<td align="center">单位联系人</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="20" name="contact" style="width: 200px;" />&nbsp;&nbsp;<span
+						style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="center">单位联系人电话</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="20" name="phone" style="width: 309px;" /></td>
+					<td align="center">单位联系人手机</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="11" name="tel" style="width: 200px;"
+						onkeyup="this.value=this.value.replace(/\D/g,'')"
+						onafterpaste="this.value=this.value.replace(/\D/g,'')" /></td>
+				</tr>
+				<tr>
+					<td align="center">单位传真</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="40" name="fax" style="width: 309px;" /></td>
+					<td align="center">单位联系人电子邮箱</td>
+					<td colspan="5"><input class="ui-form-validate"
+						data-opt="required:true,validType:'email'" name="email"
+						maxlength="40" style="width: 200px;" />&nbsp;&nbsp;<span
+						style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="center">项目联系人</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="20" name="proContact" style="width: 309px;" />&nbsp;&nbsp;<span
+						style="color: red;">*</span></td>
+					<td align="center">项目联系人手机</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						maxlength="11" name="proTel" style="width: 200px;"
+						onkeyup="this.value=this.value.replace(/\D/g,'')"
+						onafterpaste="this.value=this.value.replace(/\D/g,'')" /></td>
+				</tr>
+				<tr>
+					<td align="center">项目联系人电子邮箱</td>
+					<td colspan="5"><input class="ui-form-validate"
+						data-opt="required:true,validType:'email'" maxlength="40"
+						name="proEmail" style="width: 685px;" />&nbsp;&nbsp;<span
+						style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="center">声明</td>
+					<td colspan="5">&nbsp;&nbsp;&nbsp;&nbsp;本单位严格按照《通州区科学技术奖励办法》及其实施细则的有关规定和北京市通州区科学技术委员会对申报工作的具体要求，如实提供了本申报推荐书及相关材料，且不存在任何违反《中华人民共和国保守国家秘密法》和《科学技术保密规定》等相关法律法规及侵犯他人知识产权的情形。本单位是独立法人机构。如有不符，本单位愿意承担相关后果并接受相应的处理。</td>
+				</tr>
+				<!--
+-->
+			</table>
+		</form>
+	</div>
+	<div id="dlg-buttons" style="text-align: center; padding: 5px">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconcls="icon-ok" onclick="saveData()">确定 </a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconcls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
+	<div id="dlg_det" class="easyui-dialog"
+		style="width: 880px; padding: 10px 20px" closed="true"
+		buttons="#dlgdet-buttons">
+		<form id="fm_det" method="post" novalidate="novalidate">
+			<table width="100%" border="0" cellspacing="5" cellpadding="0">
+				<tr>
+					<td align="center">单位名称</td>
+					<td colspan="2"><input name="name2" class="easyui-validatebox"
+						style="background: transparent; border: none; width: 309px;"
+						disabled="disabled" /></td>
+					<td align="center">完成单位排序</td>
+					<td><input name="sort" class="easyui-validatebox"
+						style="background: transparent; border: none; width: 220px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="center" valign="top">对申报项目作出的主要贡献<br /> （限100字以内）
+					</td>
+					<td colspan="5"><textarea name="contribute"
+							style="background-color: #FFF; overflow-y: visible; border: 0; resize: none; width: 665px;"
+							disabled="disabled"></textarea></td>
+				</tr>
+				<tr>
+					<td align="center">通讯地址</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="address"
+						style="background: transparent; border: none; width: 309px;"
+						disabled="disabled" /></td>
+					<td align="center">邮政编码</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="postcode"
+						style="background: transparent; border: none; width: 220px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="center">单位性质</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="nature"
+						style="background: transparent; border: none; width: 309px;"
+						disabled="disabled" /></td>
+					<td align="center">单位类型</td>
+					<td colspan="2"><input class="easyui-validatebox" name="type"
+						style="background: transparent; border: none; width: 220px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="center">是否独立法人单位</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="isSeparateLegal"
+						style="background: transparent; border: none; width: 309px;"
+						disabled="disabled" /></td>
+					<td align="center">单位网址</td>
+					<td colspan="2"><input class="easyui-validatebox" name="web"
+						style="background: transparent; border: none; width: 220px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="center">企业注册号</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="registeNum"
+						style="background: transparent; border: none; width: 309px;"
+						disabled="disabled" /></td>
+					<td align="center">组织机构代码</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="organizationCode"
+						style="background: transparent; border: none; width: 220px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="center">单位所在地区</td>
+					<td colspan="2"><input class="easyui-validatebox" name="zone"
+						style="background: transparent; border: none; width: 309px;"
+						disabled="disabled" /></td>
+					<td align="center">单位联系人</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="contact"
+						style="background: transparent; border: none; width: 220px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="center">单位联系人电话</td>
+					<td colspan="2"><input class="easyui-validatebox" name="phone"
+						style="background: transparent; border: none; width: 309px;"
+						disabled="disabled" /></td>
+					<td align="center">单位联系人手机</td>
+					<td colspan="2"><input class="easyui-validatebox" name="tel"
+						style="background: transparent; border: none; width: 220px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="center">单位传真</td>
+					<td colspan="2"><input class="easyui-validatebox" name="fax"
+						style="background: transparent; border: none; width: 309px;"
+						disabled="disabled" /></td>
+					<td align="center">单位联系人电子邮箱</td>
+					<td colspan="5"><input class="easyui-validatebox" name="email"
+						style="background: transparent; border: none; width: 220px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="center">项目联系人</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="proContact"
+						style="background: transparent; border: none; width: 309px;"
+						disabled="disabled" /></td>
+					<td align="center">项目联系人手机</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						name="proTel"
+						style="background: transparent; border: none; width: 220px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="center">项目联系人电子邮箱</td>
+					<td colspan="5"><input class="easyui-validatebox"
+						name="proEmail"
+						style="background: transparent; border: none; width: 663px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="20"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="dlgdet-buttons" style="text-align: center; padding: 5px">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconcls="icon-ok" onclick="javascript:$('#dlg_det').dialog('close')">确定</a>
+	</div>
+</body>
+</html>

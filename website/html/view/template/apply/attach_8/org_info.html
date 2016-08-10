@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>申报单位基本情况</title>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/icon.css" />
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/js/validation.js"></script>
+<script src="../../../../../../common/html/js/tablecommon.js"></script>
+<script type="text/javascript" src="../../../js/apply/8org_info.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css" href="../../../css/table.css" />
+<link rel="stylesheet" type="text/css" href="../../../css/button.css" />
+</head>
+
+<body>
+	<form action="" method="post" id="8org_info_fm">
+		<div class="project_content">
+			<div class="table_title clearfix">
+				<div class="title_pic left">项目申请书</div>
+				<div class="right back_pic" id="back"></div>
+			</div>
+			<div class="table_content back-long">
+				<table cellspacing="0" cellpadding="0" class="basic_info">
+					<tr>
+						<td colspan="6" class="border_left_none"
+							style="background-color: #7AB5ED;">
+							<div class="title_top p-b10">项目承担单位基本信息</div>
+						</td>
+					</tr>
+					<tr>
+						<th><p align="center">单位名称</p></th>
+						<td colspan="5"><input name="app_com_name"  readonly="readonly"/></td>
+					</tr>
+					<tr>
+						<th><p align="center">组织机构代码</p></th>
+						<td colspan="3"><input name="app_com_code"  readonly="readonly"/></td>
+						<th><p align="center">注册资金</p></th>
+						<td><input name="app_com_fund" datatype="float" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">注册地址</p></th>
+						<td colspan="3"><input name="com_reg_add" /></td>
+						<th><p align="center">单位类型</p></th>
+						<td><input name="com_type" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">通讯地址</p></th>
+						<td colspan="3"><input name="com_com_add" /></td>
+						<th><p align="center">邮政编码</p></th>
+						<td><input name="com_post" datatype="postcode" /></td>
+					</tr>
+					<tr>
+						<th rowspan="2"><p align="center">法定代表人</p></th>
+						<th><p align="center">姓名</p></th>
+						<th colspan="2"><p align="center">身份证号</p></th>
+						<th colspan="2"><p align="center">联系电话（手机/座机）</p></th>
+					</tr>
+					<tr>
+						<td><input name="com_legal_name" readonly="readonly" /></td>
+						<td colspan="2"><input name="com_legal_ID" datatype="idcard"  /></td>
+						<td colspan="2"><input name="com_legal_tel" datatype="phandtel" readonly="readonly"/></td>
+					</tr>
+					<tr>
+						<th rowspan="2"><p align="center">联系人</p></th>
+						<th><p align="center">姓名</p></th>
+						<th colspan="2"><p align="center" datatype="email">E-mail</p></th>
+						<th colspan="2"><p align="center">联系电话（手机/座机）</p></th>
+					</tr>
+					<tr>
+						<td><input name="linkman"   /></td>
+						<td colspan="2"><input name="linkman_email" datatype="email" /></td>
+						<td colspan="2"><input name="linkman_contact"
+							datatype="phandtel"  /></td>
+					</tr>
+					<tr>
+						<th><p align="center">上年度技术输出合同登记份数</p></th>
+						<td colspan="5"><input name="last_contractNum"
+							datatype="number" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">上年度技术输出合同登记总额（万元）</p></th>
+						<td colspan="5"><input name="last_contractPrice"
+							datatype="float" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">本年度预计技术输出合同登记份数</p></th>
+						<td colspan="5"><input name="predict_contractNum"
+							datatype="number" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">本年度预计技术输出合同登记总额（万元）</p></th>
+						<td colspan="5"><input class="predict_contractPrice"
+							name="predict_contractPrice" datatype="float" /></td>
+					</tr>
+					<!-- <tr>
+						<th><p align="center">企业是否上市</p></th>
+						<td colspan="3"><input name="listed" /></td>
+						<th><p align="center">企业上市代码</p></th>
+						<td colspan="2"><input name="listed_code" /></td>
+					</tr> -->
+					<tr>
+						<th rowspan="2"><p align="center">自主知识产权情况（已授权）</p></th>
+						<th><p align="center">专利授权数</p></th>
+						<th colspan="2"><p align="center">发明专利</p></th>
+						<th><p align="center">实用型</p></th>
+						<th><p align="center">外观设计</p></th>
+					</tr>
+					<tr>
+						<td><input name="patent_num" datatype="number" /></td>
+						<td colspan="2"><input name="patent_invent" datatype="number" /></td>
+						<td><input name="patent_new" datatype="number" /></td>
+						<td><input name="patent_design" datatype="number" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">其他知识产权数</p></th>
+						<td colspan="5"><input name="other_patent_num"
+							datatype="number" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">所属行业</p></th>
+						<td colspan="3"><input name="org_trade" /></td>
+						<th><p align="center">主要产品或技术</p></th>
+						<td><input name="main_product" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">职工总数（人）</p></th>
+						<td><input name="staff_num" datatype="number" /></td>
+						<th>其中大专以上人员（人）</th>
+						<td><input name="junior" datatype="number" /></td>
+						<th><p align="center">其中研究开发人员（人）</p></th>
+						<td><input name="researcher_num" datatype="number" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">上半年销售收入 （万元）</p></th>
+						<td><input name="first_income" datatype="float" /></td>
+						<th><p align="center">上半年上缴税金（万元）</p></th>
+						<td><input name="first_tax" datatype="float" /></td>
+						<th><p align="center">上半年利润（万年）</p></th>
+						<td><input name="first_profit" datatype="float" /></td>
+					</tr>
+					<tr>
+						<th><p align="center">本年度预计销售 （万元）</p></th>
+						<td><input name="expect_income" datatype="float" /></td>
+						<th><p align="center">本年度预计商检税金（万元）</p></th>
+						<td><input name="expect_tax" datatype="float" /></td>
+						<th><p align="center">本年度预计利润（万元）</p></th>
+						<td><input name="expect_profit" datatype="float" /></td>
+					</tr>
+					<tr>
+						<th height="32"><p align="center">申报项目概述（1000字以内）</p></th>
+						<td colspan="5"><textarea name="project_summary"
+								id="project_summary" title="1000" maxlength="1000"></textarea></td>
+					</tr>
+				</table>
+				<input type="hidden" name="save_display" id="save_display" />
+				<div class="button_wrapper clearfix d-n">
+					<div class="save">保存</div>
+					<!-- <div class="reset" >重置</div> -->
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
+

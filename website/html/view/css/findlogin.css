@@ -1,0 +1,20 @@
+.bg {
+	background-image: url(../img/wuliu.jpg);
+	height: 90px;
+	width: 100%;
+	background-repeat: no-repeat;
+}
+
+.orgbg {
+	background-image: url(../img/user.jpg);
+	height: 140px;
+	width: 100%;
+	background-repeat: no-repeat;
+}
+
+.pwd {
+	background-image: url(../img/pwd.jpg);
+	width: 100%;
+	height: 200px;
+	background-repeat: no-repeat;
+}

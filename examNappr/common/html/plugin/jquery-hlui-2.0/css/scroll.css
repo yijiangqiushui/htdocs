@@ -1,0 +1,5 @@
+/* CSS Document */
+
+.hlui-scroll{}
+.ui-scroll-content{ overflow:hidden; position:relative;}
+.ui-scroll-content div{ position:absolute; top:0; left:0;}

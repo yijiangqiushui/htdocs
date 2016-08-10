@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>无标题文档</title>
+
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/icon.css" />
+<script type="text/javascript"
+	src="../../../../../common/html/lib/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../common/html/plugin/easyui/jquery.cookie.js"></script>
+<script type="text/javascript"
+	src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<!-- <script type="text/javascript" src="../../../../html/view/js/setProject.js"></script> -->
+<script type="text/javascript"
+	src="../../../../html/view/js/check_list.js" charset="utf-8"></script>
+<style type="text/css">
+#fm {
+	margin: 0;
+	padding: 10px 30px;
+}
+
+.ftitle {
+	font-size: 14px;
+	font-weight: bold;
+	color: #666;
+	padding: 5px 0;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.fitem {
+	margin-bottom: 5px;
+}
+
+.fitem label {
+	display: inline-block;
+	width: 100px;
+}
+
+a {
+	text-decoration: none;
+}
+</style>
+
+<script type="text/javascript">
+	//点击保存之后 跳转的页面
+	function saveproject_info() {
+		url = '/center/php/action/page/project_list/checkinfo.php?action=saveproject_info';
+		$('#fm2').form('submit', {
+			url : url,
+			onSubmit : function() {
+				//alert('sub :'+ url); 
+				return $(this).form('validate');
+			},
+			success : function(result) {
+				//	alert(result);
+				var result = eval('(' + result + ')');
+				//alert(result.success); 
+				if (result.success) {
+					$('#dlg').dialog('close'); // close the dialog 
+					$('#projectList').datagrid('reload'); // reload the user data 
+				} else {
+					$.messager.show({
+						title : 'Error',
+						msg : result.msg
+					});
+				}
+			}
+		});
+	}
+	function myformatter(date) {
+		var y = date.getFullYear();
+		var m = date.getMonth() + 1;
+		var d = date.getDate();
+		return y + '-' + (m < 10 ? ('0' + m) : m) + '-'
+				+ (d < 10 ? ('0' + d) : d);
+	}
+	function myparser(s) {
+		if (!s)
+			return new Date();
+		var ss = (s.split('-'));
+		var y = parseInt(ss[0], 10);
+		var m = parseInt(ss[1], 10);
+		var d = parseInt(ss[2], 10);
+		if (!isNaN(y) && !isNaN(m) && !isNaN(d)) {
+			return new Date(y, m - 1, d);
+		} else {
+			return new Date();
+		}
+	}
+</script>
+</head>
+<body class='easyui-layout'>
+	<div data-options="region:'west',title:'分类',sqlit:'true'"
+		style="width: 200px; padding: 5px;">
+		<ul class="easyui-tree">
+			<!-- 				loadPage()  方法会按照 传入的参数进行数据的加载  0-5分别是6中状态
+ -->
+			<li data-options="state:'open'"><span>受理项目</span>
+				<ul>
+					<li><span><a href="#" onclick="loaddata(0)">全部内容</a></span></li>
+					<li><span><a href="#" onclick="loaddata(1)">待审核</a></span></li>
+					<li><span><a href="#" onclick="loaddata(2)">待提交</a></span></li>
+					<li><span><a href="#" onclick="loaddata(3)">中期开启</a></span></li>
+					<li><span><a href="#" onclick="loaddata(4)">验收开启</a></span></li>
+					<li><span><a href="#" onclick="loaddata(5)">存档项目</a></span></li>
+				</ul></li>
+		</ul>
+
+	</div>
+	<div
+		data-options="region:'center',title:'信息',iconCls:'icon-ok',split:true">
+		<div id="toolbar" class="datagrid-toolbar">
+			<a href="/center/html/view/template/project_main.html"
+				class="easyui-linkbutton" iconcls="icon-back" plain="true">返回</a>
+		</div>
+		<table id="projectList" class="easyui-datagrid" style="height: auto">
+
+		</table>
+
+	</div>
+
+	<!-- 添加的时候  出现的对话框 -->
+	<div id="dlg" class="easyui-dialog"
+		style="width: 400px; height: auto; padding: 10px 20px" closed="true">
+
+		<div class="easyui-tabs" style="width: 350px; height: auto">
+			<div title="查看">
+				<div class="ftitle">项目基本信息</div>
+				<form id="fm1" method="post" novalidate>
+					<div class="fitem">
+						<label>项目名称:</label> <input name="project_name"
+							class="easyui-validatebox">
+					</div>
+					<div class="fitem">
+						<label>项目编号:</label> <input name="project_id" readonly="readonly">
+					</div>
+					<div class="fitem">
+						<label>主管科室:</label> <input name="department" readonly="readonly">
+					</div>
+					<div class="fitem">
+						<label>主管工程师:</label> <input name="project_engineer"
+							readonly="readonly">
+					</div>
+					<div class="fitem">
+						<label>所属领域:</label> <input name="tech_area" readonly="readonly">
+					</div>
+					<div class="fitem">
+						<label>承担单位:</label> <input name="org_name" readonly="readonly">
+					</div>
+					<div class="fitem">
+						<label>开始时间:</label> <input name="project_start"
+							readonly="readonly">
+					</div>
+					<div class="fitem">
+						<label>结束时间:</label> <input name="project_end" readonly="readonly">
+					</div>
+					<div class="fitem">
+						<label>项目类型:</label> <input name="project_type"
+							readonly="readonly">
+					</div>
+					<div style="float: left;">
+						<a href="#" class="easyui-linkbutton" iconCls="icon-cancel"
+							onclick="javascript:$('#dlg').dialog('close')">关闭</a>
+					</div>
+				</form>
+			</div>
+
+			<div title="修改">
+				<div class="ftitle">项目基本信息</div>
+				<form id="fm2" method="post" novalidate>
+					<div class="fitem">
+						<label>项目名称:</label> <input name="project_name"
+							class="easyui-validatebox" required="true" />
+					</div>
+					<div class="fitem">
+						<label>项目编号:</label> <input name="project_id"
+							class="easyui-validatebox" required="true" readonly="readonly" />
+					</div>
+					<div class="fitem">
+						<label>主管科室:</label> <input name="department"
+							class="easyui-validatebox" required="true" />
+					</div>
+					<div class="fitem">
+						<label>主管工程师:</label> <input name="project_engineer"
+							class="easyui-validatebox" required="true" />
+					</div>
+					<div class="fitem">
+						<label>所属领域:</label> <label style="width: 160px;"> <select
+							id="tech_area" name="tech_area"
+							style="width: 100%; height: 100%;">
+								<option>软件和信息技术服务业</option>
+								<option>互联网和相关服务</option>
+								<option>技术推广和应用服务业</option></label> </select>
+					</div>
+					<div class="fitem">
+						<label>承担单位:</label> <input name="org_name"
+							class="easyui-validatebox" required="true" />
+					</div>
+					<div class="fitem">
+						<label>开始时间:</label> <input name="project_start"
+							class="easyui-datebox" required="true"
+							data-options="formatter:myformatter,parser:myparser" />
+					</div>
+					<div class="fitem">
+						<label>结束时间:</label> <input name="project_end"
+							class="easyui-datebox" required="true"
+							data-options="formatter:myformatter,parser:myparser" />
+					</div>
+					<div class="fitem">
+						<label>项目类型:</label> <input name="project_type"
+							class="easyui-validatebox" required="true" />
+					</div>
+					<div>
+						<label><a href="javascript:void(0);"
+							class="easyui-linkbutton" iconCls="icon-ok"
+							onclick="saveproject_info();">确认</a></label> <label><a href="#"
+							class="easyui-linkbutton" iconCls="icon-cancel"
+							onclick="javascript:$('#dlg').dialog('close')">取消</a></label>
+					</div>
+			</div>
+		</div>
+	</div>
+	<!-- 保存用户 小按钮    取消小按钮-->
+</body>
+</html>
+
+
+
+

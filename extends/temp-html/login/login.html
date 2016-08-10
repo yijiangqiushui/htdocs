@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="login.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div id="bw-login">
+    <a href="#" class="bw-link"></a>
+    <form action="#">
+        <table cellpadding="0" cellspacing="0" border="0" align="center" width="85%">
+            <tr>
+                <td width="50">用户名：</td>
+                <td><input type="text" name="username" /> </td>
+            </tr>
+            <tr>
+                <td>密&nbsp;码：</td>
+                <td><input type="password" name="password" /></td>
+            </tr>
+            <tr>
+                <td>验证码：</td>
+                <td>
+                    <input type="text" name="validateCode" class="code" />
+                    <img src="/common/php/file/validateCode.png.php?rand=0.03558872011490166" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="button">
+                        <button class="bw-login">登 录</button>
+                        <button class="bw-register">注 册</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="bw-forget" valign="top" align="right">
+                    <a href="#">忘记密码</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

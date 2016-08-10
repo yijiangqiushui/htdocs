@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/hlui.js"></script>
+<script type="text/javascript" src="../js/idcard.js"></script>
+<script type="text/javascript" src="../js/form.js"></script>
+
+<link href="../css/form.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>使用建议：如add_name,edit_name,query_name,register_name等，这样不会发生一个页面多个表单的id冲突问题</p>
+<h1>关键代码：</h1>
+<p>&lt;script type=&quot;text/javascript&quot; src=&quot;../js/hlui.js&quot;&gt;&lt;/script&gt;<br />
+</p>
+<p>一、html</p>
+<p>
+2) class="ui-form-validate ui-form-text"</p>
+<p>
+3) data-opt="required:true,validType:'ic',length:'6,30'" ，validType：email（电子邮件），number（数字），money（价钱），user（用户名），url（网址），chnchr（汉字），ip，tel（座机），phone（手机），postcode（邮政编码），ic（身份证号） 
+</p>
+<p>如用到身份证验证，则调用</p>
+<p>&lt;script type=&quot;text/javascript&quot; src=&quot;../js/idcard.js&quot;&gt;&lt;/script&gt;<br />
+</p>
+<p>二、js&nbsp;</p>
+<p> $.form('id'); ，初始化表单</p>
+<p> if($.form_validate('表单ID')，检测表单 </p>
+<p>$.form_checkbox_val('checkbox名称')</p>
+<p>$.form_radio_val('radio名称')</p>
+<p>$.post($('#表单ID').attr('action'),function(str){<br />
+alert(str);<br />
+});</p>
+<p>document.getElementById('表单ID').submit();</p>
+
+<h1>示例表单</h1>
+<form id="ff" class="form" name="myform" action="form.php">
+<table>
+	    		<tr>
+	    			<td>Name:</td>
+	    			<td><input class="ui-form-validate" type="text" name="name" data-opt="required:true,length:'2,8'" /></td>
+	    		</tr>
+	    		<tr>
+	    			<td>Name:</td>
+	    			<td><input class="ui-form-validate ui-form-text" type="text" name="name3" data-opt="required:true,validType:'email',length:'6,30'" /></td>
+	    		</tr>
+	    		<tr>
+	    			<td>Message:</td>
+    			  <td><p>
+	    			  <textarea class="ui-form-validate ui-form-textarea" name="message" data-opt="required:false"></textarea>
+                      
+                      <textarea class="ui-form-validate ui-form-textarea" name="box" data-opt="required:true"></textarea>
+	    			</p>
+    			    <p>
+    			      <input name="checkbox" type="checkbox" value="1" />
+    			      <input name="checkbox" type="checkbox" value="2" />
+    			      <input name="checkbox" type="checkbox" value="w" />
+    			      <label for="checkbox"></label>
+                    </p>
+    			    <p>
+    			      <input type="radio" name="radio" value="1" />
+    			      <input type="radio" name="radio" value="2" />
+    			      <input type="radio" name="radio" value="3" />
+    			      <label for="radio"></label>
+    			    </p></td>
+	    		</tr>
+	    	</table>
+  <p>
+  <a class="ui-form-button" onclick="check_submit();">确认</a></p>
+  </form>
+ <div id="t"></div>
+<script type="text/javascript">
+
+function check_submit(){
+	$.form('#ff',function(result){//id selector,success
+		alert(result.is_success);
+	},'debug');//检查form表单
+}
+  </script>
+  
+</body>
+</html>

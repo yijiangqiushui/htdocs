@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>项目实施过程中企业研发新专利、开发新产品情况</title>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript"
+	src="../../../js/apply/project_info/project_newp.js"></script>
+</head>
+<body>
+	<div class="easyui-panel" style="border: 0;">
+		<form method="post" id="project_newp">
+			<table border="1" cellspacing="0">
+				<tr>
+					<td height="54" colspan="6"><h2>六、项目实施过程中企业研发新专利、开发新产品情况</h2></td>
+				</tr>
+				<tr>
+					<td rowspan="2">1</td>
+					<td height="29">专利名称</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="rd_right" /></td>
+					<td>类型</td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="right_type" /></td>
+				</tr>
+				<tr>
+					<td height="29">专利状态</td>
+					<td colspan="4"><input class="easyui-validatebox"
+						required="true" type="text" id="right_cond" /></td>
+				</tr>
+				<tr>
+					<td height="29">2</td>
+					<td>产品名称</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="compact_name" /></td>
+					<td>水平</td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="compact_level" /></td>
+				</tr>
+			</table>
+			<a href="javascript:void(0);" class="easyui-linkbutton"
+				iconcls="icon-ok" onclick="submitdata()">确定</a> <a
+				href="javascript:void(0);" class="easyui-linkbutton"
+				iconcls="icon-no" onclick="reset()">重置</a>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>无标题文档</title>
+       <!--  <link rel="stylesheet" type="text/css"
+              href="../../../../../../website/html/view/css/tablestyle.css"/> -->
+        <link rel="stylesheet" type="text/css"
+              href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+        <link rel="stylesheet" type="text/css"
+              href="../../../../../../common/html/plugin/easyui/themes/icon.css"/>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+        <script type="text/javascript" src="../../../../../../common/html/js/tablecommon.js"></script>
+        <script type="text/javascript" src="../../../../../../common/html/js/validation.js"></script>
+        <script type="text/javascript" src="../../../js/apply/9manage_state.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="../../../css/table.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../css/button.css"/>
+        <style>
+            .current_year {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+                font-size: 14px;
+                margin: auto 0;
+                text-align: center;
+                width: 50%;
+                float: left;
+                height: 99%;
+                margin: 0 auto;
+                padding: 0 auto;
+                background-color: #EAF3FA;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="project_content">
+            <div class="table_title clearfix">
+                <div class="title_pic left">项目申请书填写</div>
+                <div class="right back_pic" id="back"></div>
+            </div>
+            <!-- class="easyui-panel" -->
+            <div class="table_content back-long">
+                <form action="" method="post" id="manage9_state">
+                    <h2>
+                        <div class="title_top p-b10">经营状况
+                            <!-- <div id="add-year" style="float: right;line-height: 30px;font-size: 14px;padding-right: 20px;"><a
+                                    style="color: #F00;" href="#">增加年份</a></div> -->
+                        </div>
+                    </h2>
+                    <table style="width: 100%; height: 100%" height="291" border="0" cellspacing="0">
+                        <!-- <tr>
+                            <th class="bt" width="114"><p align="center">操作</p></th>
+                            <td><p class="del-year" style="text-align: center;cursor: pointer;">删除列</p></td>
+                            <td><p class="del-year" style="text-align: center;cursor: pointer;">删除列</p></td>
+                            <td><p class="del-year" style="text-align: center;cursor: pointer;">删除列</p></td>
+                            </td>
+                        </tr> -->
+                        <tr>
+                            <th class="bt" width="114"><p align="center">指标</p></th>
+                            <td><select name='the_year[0]' class='current_year'></select>
+                                <p style="margin-right:40px;margin-top:10px;float: right;">年</p></td>
+                            <td><select name='the_year[1]' class='current_year'></select>
+                                <p style="margin-right:40px;margin-top:10px;float: right;"> 年</p>
+                            </td>
+                            <td><select name='the_year[2]' class='current_year'></select>
+                                <p style="margin-right:40px;margin-top:10px;float: right;">年</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">总收入（万元）</p></th>
+                            <td><input datatype="float" type="text"
+                                       name="sum_income[0]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="sum_income[1]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="sum_income[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">其中：房租收入</p></th>
+                            <td><input datatype="float" type="text"
+                                       name="house_income[0]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="house_income[1]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="house_income[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">物业费收入</p></th>
+                            <td><input datatype="float" type="text" name="propert_income[0]"/></td>
+                            <td><input type="text" datatype="float" name="propert_income[1]"/></td>
+                            <td><input type="text" datatype="float" name="propert_income[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">投资收入（万元）</p></th>
+                            <td><input datatype="float" type="text"
+                                       name="invest_income[0]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="invest_income[1]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="invest_income[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">公共技术平台服务收入</p></th>
+                            <td><input datatype="float" type="text"
+                                       name="public_income[0]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="public_income[1]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="public_income[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">其他服务收入</p></th>
+                            <td><input datatype="float" type="text"
+                                       name="plat_invest[0]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="plat_invest[1]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="plat_invest[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">利润（万元）</p></th>
+                            <td><input datatype="float" type="text" name="profit[0]"/></td>
+                            <td><input type="text" datatype="float" name="profit[1]"/></td>
+                            <td><input type="text" datatype="float" name="profit[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">上缴税金（万元）</p></th>
+                            <td><input datatype="float" type="text" name="hand_tax[0]"/></td>
+                            <td><input type="text" datatype="float" name="hand_tax[1]"/></td>
+                            <td><input type="text" datatype="float" name="hand_tax[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">种子资金总额（万元）</p></th>
+                            <td><input datatype="float" type="text"
+                                       name="seed_total_fund[0]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="seed_total_fund[1]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="seed_total_fund[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">种子资金当年投资额（万元）</p></th>
+                            <td><input datatype="float" type="text"
+                                       name="seed_invest_fund[0]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="seed_invest_fund[1]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="seed_invest_fund[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">投资孵化器内企业数</p></th>
+                            <td><input datatype="number" type="text"
+                                       name="hatch_com_num[0]"/></td>
+                            <td><input type="text" datatype="number"
+                                       name="hatch_com_num[1]"/></td>
+                            <td><input type="text" datatype="number"
+                                       name="hatch_com_num[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">公共技术服务平台投资额（万元）</p></th>
+                            <td><input datatype="float" type="text"
+                                       name="public_service_fund[0]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="public_service_fund[1]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="public_service_fund[2]"/></td>
+                        </tr>
+                        <tr>
+                            <th class="bt" width="114"><p align="center">公共技术服务平台收益（万元）</p></th>
+                            <td><input datatype="float" type="text"
+                                       name="public_service_sum[0]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="public_service_sum[1]"/></td>
+                            <td><input type="text" datatype="float"
+                                       name="public_service_sum[2]"/></td>
+                        </tr>
+                    </table>
+                    <div class="button_wrapper clearfix">
+                        <!--   <div class="submit" >提交</div> -->
+                        <div class="save">保存</div>
+                        <!-- <div class="reset" >重置</div> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+
+<!--         <script type="application/javascript"> 这部分的功能是增加列
+            $(function() {
+            // 增加一列
+            $('#add-year').click(function() {
+            $tr = $('#manage9_state tr');
+            $tr.each(function(i) {
+            var td_html = $('td:eq(0)', this).prop('outerHTML');
+            $(this).append(td_html);
+            });
+            renameInput();
+            });
+
+            // 删除一列
+            $('table').delegate('.del-year', 'click', function() {
+            var index = $('.del-year').index(this);
+            $tr = $('#manage9_state tr');
+            if ($('td', $tr[0]).length < 2) {
+            alert('不能删除最后一列');
+            return ;
+            }
+            $tr.each(function(i) {
+            $('td:eq(' + index + ')', this).remove();
+            });
+            renameInput();
+            });
+
+            // 重新排列name
+            function renameInput() {
+            $tr = $('#manage9_state tr:gt(0)');
+            $tr.each(function(i) {
+            $('td', this).each(function(j) {
+            var old_name = $('select, input', this).attr('name');
+            var pre_name = old_name.substring(0, old_name.indexOf('['));
+            var new_name = pre_name + '[' + j + ']';
+            $('select, input', this).attr('name', new_name);
+            });
+            });
+            countYear();
+            }
+
+            $(function() {
+            countYear();
+
+            var $year_tr = $('#manage9_state tr:eq(1)');
+            var $select = $('select', $year_tr);
+            $year_tr.delegate('select', 'change', countYear);
+            });
+
+            // 计算处理年份问题
+            function countYear() {
+            var $year_tr = $('#manage9_state tr:eq(1)');
+            var $select = $('select', $year_tr);
+            var start = $select[0].value;
+            $select.each(function(i) {
+            $(this).val((start * 100 + i * 100) / 100);
+            });
+            }
+            });
+        </script> -->
+    </body>
+</html>

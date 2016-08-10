@@ -1,0 +1,18 @@
+/* CSS Document */
+.hlui-imgslide{}
+.ui-imgslide-inner{ overflow:hidden; position:relative;}
+.ui-imgslide-holder{ position:absolute; left:0; top:0;}
+.ui-imgslide-holder img{ float:left;}
+.ui-imgslide-btn{ position:absolute; top:50%; margin-top:-40px; width:80px; height:80px; cursor:pointer;
+border-radius:5px 5px;
+-moz-border-radius:5px 5px;
+}
+.ui-imgslide-btn-left{ left:15px; background-image:url(../img/imgslide/left.png);}
+.ui-imgslide-btn-right{ right:15px; background-image:url(../img/imgslide/right.png);}
+.ui-imgslide-intro{ padding:10px;}
+.ui-imgslide-intro span{ font-weight:bold; color:#f00; display:inline-table; margin-right:15px;}
+.ui-imgslide-realsize{ position:absolute; top:0; left:0; display:none; border:1px solid #ccc; cursor:move;}
+
+.ui-imgslide-close{ position:relative; width:100%;}
+.ui-imgslide-close a{ position:absolute; right:0; top:0; background-image:url(../img/icons/detail-close.png); width:29px; height:29px;}
+

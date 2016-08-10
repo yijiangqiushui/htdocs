@@ -1,0 +1,9 @@
+/* CSS Document */
+
+.hlui-scrollbar{ position:absolute; z-index:1; right:0; top:0; display:none;}
+
+.ui-scrollbar-inner{position:relative; height:300px; }
+
+.ui-scrollbar-bg{ height:100%; width:11px; background:rgba(78,83,95,0.5);border-radius:10px; padding:10px 0;}
+.ui-scrollbar-block{position:absolute; top:0; left:0; width:9px; height:50px; border-radius:10px;background:#666c77; z-index:2; margin-left:1px;}
+

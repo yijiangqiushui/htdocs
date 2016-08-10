@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>通州区科委办公平台</title>
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../../../common/html/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="head">
+    <div class="logo"></div>
+    <div class="navNinfo">
+      <div class="adminInfo">
+        <div class="left">您好！<span id='cur_user'>super</span> [<span id='catName'>超级管理员</span>]<span>|</span><a href="javascript:void(0);" id="logout">[退出]</a><span>|</span><a href="default_iframe.html" target="targetFrame" id="sys_home">系统首页</a><!--<span>|</span><a href="#" id="web_home">站点首页</a>--></div>
+        <div class="right"><a href="javascript:void(0);" id="lockScrBtn">锁屏</a><span>|</span><a href="#" id="product_home">QSCMS</a><span>|</span><a href="#" id="help">帮助？</a></div>
+        <div class="clearBoth"></div>
+      </div><!--adminInfo-->
+      <div class="nav">
+        <div class="left"><div class="clearBoth"></div></div>
+        <div class="right"></div>
+        <div class="clearBoth"></div>
+      </div><!--nav-->
+    </div><!--navNinfo-->
+  	<div class="clearBoth"></div>
+  </div><!--head-->
+  <div class="body">
+    <div class="menu">
+      <div class="menuScroll">
+        <div class="scrpllBtn">
+          <div class="btn2up"></div>
+          <div class="btn2down"></div>
+          <div class="clearBoth"></div>
+        </div><!--scrpllBtn-->
+      </div><!--menuScroll-->
+    </div><!--menu-->
+    <div class="targetFrame">
+      <div class="toggleMenu"></div><!--toggleMenu-->
+      <div class="holder">
+        <div class="position">当前位置：<span>系统首页 ></span> </div><!--position-->
+        <div class="iframe"><iframe name="targetFrame" id="targetFrame" src="default_iframe.html" frameborder="0" scrolling="yes" width="100%" height="100%"></iframe></div><!--position-->
+      </div><!--holder-->
+    </div><!--targetFrame-->
+    <div class="clearBoth"></div>
+</div><!--body--></div>
+
+<div class="screenLock_bg"></div>
+<div class="screenLock_pwd">
+  <div class="sclTip">屏幕锁定状态，请输入密码解锁！</div>
+  <div class="screenLockForm">
+  	<form action="" method="post" id="screenLock" name="screenLock" onsubmit="return false;">
+      <label for="slfPWD">密码：</label>
+      <input type="password" name="slfPWD" id="slfPWD" maxlength="30" />
+      <input name="slfSubmit" type="button" id="slfSubmit" value="确定" />
+      <div class="clearBoth"></div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

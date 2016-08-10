@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>通州区科学技术奖申报推荐书</title>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../common/html/plugin/easyui/themes/icon.css">
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+		<script type="text/javascript" src="../../js/apply.js"></script>
+		<style type="text/css">
+table tr .notNull {
+	color: #F00;
+}
+</style>
+</head>
+<body>
+	<div style="font-weight: bold">一、项目基本情况</div>
+	<form id="appFm" action="#" method="post" novalidate>
+		<table width="1049" height="549" border="0">
+			<!-- <tr>
+      <td>申报年度</td>
+      <td colspan="2">
+      <input id="baseYear" name="year" class="easyui-combobox" /></td>
+    </tr>-->
+			<tr>
+				<td width="139">项目名称</td>
+				<td colspan="4" class="notNull"><input id="aname" name="aname"
+					style="width: 620px;" />&nbsp;&nbsp;&nbsp;*必填</td>
+			</tr>
+			<tr>
+				<td>主要完成人</td>
+				<td colspan="4" class="notNull"><textarea id="impPerson"
+						name="impPerson" cols="86"></textarea>&nbsp;&nbsp;&nbsp;*必填</td>
+			</tr>
+			<tr>
+				<td rowspan="4">第一完成单位</td>
+				<td width="83">单位名称</td>
+				<td width="298" class="notNull"><textarea id="completeOrg"
+						name="completeOrg" maxlength="100"></textarea>&nbsp;&nbsp;&nbsp;*必填</td>
+				<td width="133">通讯地址</td>
+				<td width="374" class="notNull"><textarea id="completeAdress"
+						name="completeAdress" maxlength="100"></textarea>&nbsp;&nbsp;&nbsp;*必填</td>
+			</tr>
+			<tr>
+				<td>邮编</td>
+				<td class="notNull"><input id="completeCode"
+					name="completeCode" maxlength="6"
+					onkeyup="this.value=this.value.replace(/\D/g,'')"
+					onafterpaste="this.value=this.value.replace(/\D/g,'')"
+					style="width: 190px;" />&nbsp;&nbsp;&nbsp;*必填</td>
+				<td>联系人</td>
+				<td class="notNull"><input id="completePerson"
+					name="completePerson" maxlength="50" style="width: 190px;" />&nbsp;&nbsp;&nbsp;*必填</td>
+			</tr>
+			<tr>
+				<td>联系电话</td>
+				<td class="notNull"><input id="completeTel" name="completeTel"
+					style="width: 190px;" maxlength="20" />&nbsp;&nbsp;&nbsp;*必填</td>
+				<td>手机</td>
+				<td class="notNull"><input id="completePhone"
+					name="completePhone" style="width: 190px;" maxlength="11" />&nbsp;&nbsp;&nbsp;*必填
+				</td>
+			</tr>
+			<tr>
+				<td>传真</td>
+				<td class="notNull"><input id="completeFax"
+					style="width: 190px;" name="completeFax" />&nbsp;&nbsp;&nbsp;*必填</td>
+				<td>电子邮箱</td>
+				<td class="notNull"><input id="completeEmail"
+					class="ui-form-validate" data-opt="required:true,validType:'email'"
+					style="width: 190px;" name="completeEmail" maxlength="100" />&nbsp;&nbsp;&nbsp;*必填</td>
+			</tr>
+			<tr>
+				<td>推荐单位</td>
+				<td colspan="4" class="notNull"><input type="text"
+					name="rec_org" id="rec_org" style="width: 283px;" />&nbsp;&nbsp;&nbsp;*必填</td>
+			</tr>
+			<tr>
+				<td>所属国民经济行业</td>
+				<td colspan="4" class="notNull"><input id="baseEconomic"
+					name="economic" class="easyui-combobox" style="width: 283px;" />&nbsp;&nbsp;&nbsp;*必填
+					<input type="hidden" id="economicCat" name="economicCat" /> <!-- <select id="economic" name="economic">
+        	<option value="1">农、林、牧、渔业</option>
+            <option value="2">采矿业</option>
+            <option value="3">制造业</option>
+            <option value="4">电力、燃气及水的生产和供应业</option>
+            <option value="5">建筑业</option>
+            <option value="6">交通运输、仓储和邮政业</option>
+            <option value="7">信息传输、计算机服务和软件业</option>
+            <option value="8">批发和零售业</option>
+            <option value="9">住宿和餐饮业</option>
+            <option value="10">金融业</option>
+            <option value="11">房地产业</option>
+            <option value="12">租赁和商务服务业</option>
+            <option value="13">科学研究、技术服务和地质勘查业</option>
+            <option value="14">水利、环境和公共设施管理业</option>
+            <option value="15">居民服务和其他服务业</option>
+            <option value="16">教育</option>
+            <option value="17">卫生、社会保障和社会福利业</option>
+            <option value="18">文化、体育和娱乐业</option>
+            <option value="19">公共管理和社会组织</option>
+            <option value="19">国际组织</option>
+        </select>--></td>
+			</tr>
+			<tr>
+				<td>所属科学技术领域</td>
+				<td colspan="4" class="notNull">
+					<!--<input id="scienceTree" name="science" style="width:220px;"/>
+        <input type="hidden" id="scienceCat" name="scienceCat"/>--> <input
+					id="baseScience" name="science" style="width: 283px;" />&nbsp;&nbsp;&nbsp;*必填
+					<input type="hidden" id="scienceCat" name="scienceCat" />
+				</td>
+			</tr>
+			<tr>
+				<td>任务来源</td>
+				<td colspan="2"><input name="source" style="width: 283px;"
+					class="easyui-combobox"
+					data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:200,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'1',text:'国家科技重大专项'},{value:'2',text:'国家科技支撑计划'},{value:'3',text:'863计划'},{value:'4',text:'973计划'},{value:'5',text:'其他国家计划'},
+                    {value:'6',text:'国家自然基金'},{value:'7',text:'北京市科技计划'},{value:'8',text:'北京市自然基金'},{value:'9',text:'部委计划'},{value:'10',text:'国际合作'},
+                    {value:'11',text:'企业'},{value:'12',text:'自选'},{value:'13',text:'其它'}]
+                ">
+						<!--<input type="text" name="source"/>下拉列表
+        <select id="source" name="source" style="width:283px;">
+        	<option value="1">国家科技重大专项</option>
+            <option value="2">国家科技支撑计划</option>
+            <option value="3">863计划</option>
+            <option value="4">973计划</option>
+            <option value="5">其他国家计划</option>
+            <option value="6">国家自然基金</option>
+            <option value="7">北京市科技计划</option>
+            <option value="8">北京市自然基金</option>
+            <option value="9">部委计划</option>
+            <option value="10">国际合作</option>
+            <option value="11">企业</option>
+            <option value="12">自选</option>
+            <option value="13">其他</option>
+        </select>--></td>
+				<td>具体计划、基金的名称和编号</td>
+				<td><input type="text" name="planID" maxlength="100"
+					style="width: 190px;" /></td>
+			</tr>
+			<tr>
+				<td>项目起始时间</td>
+				<td colspan="2" class="notNull"><input type="text"
+					name="proStart" style="width: 283px;" class="easyui-datebox" />&nbsp;&nbsp;&nbsp;*必填</td>
+				<td>完成时间</td>
+				<td class="notNull"><input type="text" name="proEnd"
+					class="easyui-datebox" style="width: 195px;" />&nbsp;&nbsp;&nbsp;*必填</td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" value="保存"
+					onclick="saveApply();" /></td>
+				<!--<td colspan="2"><input type="button" value="重置" onclick="resetInfo();"/></td>-->
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

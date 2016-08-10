@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文件内容管理</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<link rel="stylesheet" href="../../../../../common/html/plugin/kindeditor-4.1.10/themes/default/default.css" />
+<!--
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+-->
+<script type="text/javascript" src="../../../../../common/html/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../js/file/sealmanage.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/NTClientJavascript.js"></script>
+
+<link href="../../css/sealmanage.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="easyui-layout">
+<!--树结构-->
+<div id="west" data-options="region:'west',title:'部门分类',split:true" style="width:200px;padding:5px;">
+    <ul id="treeData"></ul>
+</div>
+    
+<!--表结构-->
+<div id="center" data-options="region:'center',title:'印章审批管理',split:true" style="padding:5px;">
+    <table id="infoGrid"></table> 
+    <div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="queInfo()">查询</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick="newSeal()">添加</a> 
+    <a href="javascript:void(0)"  id="del"  class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delArrInfo()" style="display:none">批量删除</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="exportApply()">打印印章启用登记表</a> 
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="countSeal()">印章使用申请统计</a> 
+    </div>
+</div>
+<!--添加-->
+<div id="newSealDlg" class="easyui-dialog" style="width:955px;padding:10px 20px"
+        closed="true" buttons="#newSealDlg-buttons">
+  <form method="post" id="newSealFm">
+    <input type="hidden" name="category" id="category0"/>
+    <input type="hidden" name="deptName" id="deptName0"/>
+    <input type="hidden" name="content" id="content0"/>
+    <table id="table0" width="911"  cellpadding="1" border="0" rules="">
+      <tr>
+        <td width="130" height="20" class="setright">&nbsp;件数:</td>
+        <td width="130"><label for="total"></label>
+            <input type="text" name="total" id="total0" class="easyui-validatebox" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:true,missingMessage:'该项为必填项'" />
+        </td>
+        <td width="66">
+        <select id="select0" style="width:66px; text-align:center;">
+            <option value="0" selected="selected">使用</option>
+            <option value="1">借出</option>
+        </select>
+        </td>
+        <td width="70" class="setright">&nbsp;用章时间</td>
+        <td><label for="use_time"></label>
+            <div style="float:left;">
+                <input name="use_time" id="use_time0" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" />
+            </div>
+            <div style="display: none; float:left;" id="endt0">&nbsp;-
+                <input name="end_time" id="end_time0" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" />
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <td height="20" class="setright">&nbsp;用章人</td>
+        <td colspan="4"><input name="dept" id="dept0" /></td>
+      </tr>  <tr>
+        <td height="20" class="setright">&nbsp;用章事由:(文件标题)</td>
+        <td colspan="4"><textarea id="reason0" name="reason" rows="5" style="width:750px;"></textarea></td>
+      </tr>
+      <tr>
+        <td class="setright">&nbsp;用章内容:</td>
+        <td colspan="4" id="check0">
+          <p>
+            <input class="check" type="radio" name="checkbox" value="科委党组"/>科委党组
+          </p>
+          <p>
+          <input class="check"type="radio" name="checkbox" value="区科委"/>区科委
+          </p>
+          <p>
+            <input class="check"type="radio" name="checkbox" value="区知识产权局" />区知识产权局
+          </p>
+          <p>
+          <input class="check"type="radio" name="checkbox" value="区科技领导小组办公室" />区科技领导小组办公室
+          </p>
+          <p>
+          <input class="check"type="radio" name="checkbox" value="区科普联席会议办公室" />区科普联席会议办公室
+          </p>
+          <p>
+            <input class="check"type="radio" name="checkbox" value="区知识产权联席办公室"/>区知识产权联席办公室
+            </p>
+      </td>
+      </tr>
+      <!--tr>
+        <td height="20" class="setright">印章管理员:</td>
+        <td colspan="3"><label for="admin"></label>
+        <input type="text" name="admin" id="admin" /></td-->
+        <!--<td class="setright">用章人(签字):</td>
+        <td><!--<label for="user"></label>
+        <input type="text" name="user" id="user" /></td>-->
+      <!--/tr-->
+     
+    </table>
+  </form>
+</div>
+
+<div id="newSealDlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveSeal()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#newSealDlg').dialog('close')">取消</a>
+</div>
+
+<!--编辑-->
+<div id="newDlg" class="easyui-dialog" style="width:955px;padding:10px 20px"
+        closed="true" buttons="#newdlg-buttons">
+  <h1 class="ftitle">印章使用申请信息</h1>
+<form method="post" id="form1">
+<input type="hidden" name="content" id="content"/>
+<table id="table" width="911"  cellpadding="9" border="0" rules="">
+  <tr>
+    <td width="130" height="20" class="setright">件数:</td>
+    <td width="130"><label for="total"></label>
+        <input type="text" name="total" id="total" />
+    </td>
+    <td width="66">
+    <select id="select" style="width:66px; text-align:center;">
+        <option value="0" >使用</option>
+        <option value="1">借出</option>
+    </select>
+    </td>
+    <td width="70" class="setright">&nbsp;用章时间</td>
+    <td><label for="use_time"></label>
+        <div style="float:left;">
+            <input name="use_time" id="use_time" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" />
+        </div>
+        <div style="display: none; float:left;" id="endt">&nbsp;-
+            <input name="end_time" id="end_time" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" />
+        </div>
+    </td>
+  </tr>
+  <tr>
+    <td height="20" class="setright">&nbsp;用章人</td>
+    <td colspan="4"><input name="dept" id="dept" /></td>
+  </tr>  <tr>
+    <td height="20" class="setright">&nbsp;用章事由:(文件标题)</td>
+    <td colspan="4"><textarea id="reason" name="reason" rows="5" style="width:750px;"></textarea></td>
+  </tr>
+  <tr>
+    <td class="setright">用章内容:</td>
+    <td colspan="4" id="check">
+    	<p>
+    	  <input class="check" type="radio" name="checkbox" value="科委党组"/>科委党组
+    	</p>
+    	<p>
+    	<input class="check"type="radio" name="checkbox" value="区科委"/>区科委
+    	</p>
+    	<p>
+    	  <input class="check"type="radio" name="checkbox" value="区知识产权局" />区知识产权局
+    	</p>
+    	<p>
+    	<input class="check"type="radio" name="checkbox" value="区科技领导小组办公室" />区科技领导小组办公室
+    	</p>
+    	<p>
+    	<input class="check"type="radio" name="checkbox" value="区科普联席会议办公室" />区科普联席会议办公室
+    	</p>
+    	<p>
+    	  <input class="check"type="radio" name="checkbox" value="区知识产权联席办公室"/>区知识产权联席办公室
+        </p>
+	</td>
+  </tr>
+  <!--tr>
+  	<td height="20" class="setright">印章管理员:</td>
+  	<td colspan="3"><label for="admin"></label>
+    <input type="text" name="admin" id="admin" /></td-->
+  	<!--<td class="setright">用章人(签字):</td>
+  	<td><!--<label for="user"></label>
+    <input type="text" name="user" id="user" /></td>-->
+  <!--/tr-->
+ 
+</table>
+</form>
+</div>
+
+<div id="newdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveInfo()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#newDlg').dialog('close')">取消</a>
+</div>
+
+<!--领导签批-->
+<div id="leaderDlg" class="easyui-dialog" style="width:550px;padding:10px 20px"
+        closed="true" buttons="#leader-buttons">
+  <!--<h1 class="ftitle">领导签批</h1>-->
+  <form id="leaderFm" method="post" novalidate="novalidate">
+    <table >
+      <tr>
+      	<td id="bear">领导意见：</td>
+        <td width="175">同意：<input type="radio" value="1" name="chk"/>&nbsp;&nbsp;不同意：<input type="radio" value="2" name="chk" /></td>
+      </tr>
+      <tr>
+        <td width="175" id="advice">领导批示：</td>
+        <td width="294"><textarea name="leader" style="width:420px;height:100px;"></textarea></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div id="leader-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveLeaderInfo()">确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#leaderDlg').dialog('close')">取消</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton close-button" iconCls="icon-cancel" onclick="javascript:$('#leaderDlg').dialog('close')">关闭</a></div>
+
+<!--查询-->
+<div id="queDlg" class="easyui-dialog" style="width:500px;padding:10px 10px"
+        closed="true" buttons="#quedlg-buttons">
+  <h1 class="ftitle">印章申请信息</h1>
+  <form id="queFm" method="post" novalidate="novalidate">
+    <table width="440">
+      <tr>
+        <td width="35">申请人：</td>
+        <td width="200"><input id="person" name="person" /></td>
+      </tr>
+      <tr>
+        <td width="35">用章事由：</td>
+        <td width="200"><input id="reason1" name="reason" /></td>
+      </tr>
+      <tr>
+        <td width="35">用章内容：</td>
+        <td width="200">
+            <select name="file_content" id="file_content1" class="easyui-combobox" data-options="editable:false,panelHeight:'130'" style="width:155px;">
+                <option value="科委党组">科委党组</option>
+                <option value="区科委">区科委</option>
+                <option value="区知识产权局">区知识产权局</option>
+                <option value="区科技领导小组办公室">区科技领导小组办公室</option>
+                <option value="区科普联席会议办公室">区科普联席会议办公室</option>
+                <option value="区知识产权联席办公室">区知识产权联席办公室</option>
+            </select>
+        </td>
+      </tr>
+      <tr>
+        <td width="35">文件编号：</td>
+        <td width="200"><input id="file_no1" name="file_no" /></td>
+      </tr>
+      <tr>
+        <td>用章时间：</td>
+        <td><input name="use_time" id="beginDate" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" />—<input name="use_time" id="endDate" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" /></td>
+       <!--<td><input name="use_time" id="use_time1" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" /></td>-->
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="quedlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="findInfo()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#queDlg').dialog('close')">取消</a>
+</div>
+
+ <!--导出印章启用Excel表格-->
+<div id="exportdlg" class="easyui-dialog" style="width:300px;padding:10px 20px"
+   closed="true" buttons="#excel-buttons">
+  <form id="expertfm" method="post">
+   <h3>&nbsp;&nbsp;&nbsp;确定导出印章启用登记表？</h3>
+
+	  <input name="reason3" id="reason3" type="hidden" />
+	  <input name="content3" id="content3" type="hidden" />
+	  <input name="file_no3" id="file_no3" type="hidden" />
+	  <input name="beginDate3" id="beginDate3" type="hidden" />
+      <input name="endDate3" id="endDate3" type="hidden" />
+  </form>
+</div>
+<div id="excel-buttons" style="text-align:center;padding:5px">
+  <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="expertData()">确定 </a>
+  <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#exportdlg').dialog('close')">取消</a>
+</div>
+<!--查看详情-->
+<div id="dlgDetail" class="easyui-dialog" style="width:900px;padding:10px 20px"
+        closed="true" buttons="#dlgDetail-buttons">
+  <h1 class="ftitle">印章使用申请信息</h1>
+<form method="post" id="form_detail">
+<input type="hidden" name="content" id="content"/>
+<table width="785" border="1" cellpadding="9" rules="all">
+  <tr>
+    <td width="21%" class="setright">件数:</td>
+    <td width="16%"><div id="total1"></div></td>
+    <td width="14%" class="setright">&nbsp;用章时间:</td>
+    <td width="49%"><nobr><div id="useTime"></div></nobr></td>
+  </tr>
+  <tr>
+    <td class="setright">用章部门或科室:</td>
+    <td><div id="dept2"></div></td>
+    <td class="setright">&nbsp;用章事由:<br/>(文件标题)</td>
+    <td>
+    <div id="reason2"></div></td>
+  </tr>
+  <tr>
+    <td class="setright">用章内容(请在□画√):</td>
+    <td colspan="3">
+    	<p>
+    	  <input type="radio" name="checkbox" value="科委党组" disabled="disabled"/>科委党组
+    	</p>
+    	<p>
+    	<input type="radio" name="checkbox" value="区科委" disabled="disabled"/>区科委
+    	</p>
+    	<p>
+    	  <input type="radio" name="checkbox" value="区知识产权局" disabled="disabled"/>区知识产权局
+    	</p>
+    	<p>
+    	<input type="radio" name="checkbox" value="区科技领导小组办公室" disabled="disabled"/>区科技领导小组办公室
+    	</p>
+    	<p>
+    	<input type="radio" name="checkbox" value="区科普联席会议办公室" disabled="disabled" />区科普联席会议办公室
+    	</p>
+    	<p>
+    	  <input type="radio" name="checkbox" value="区知识产权联席办公室" disabled="disabled" />区知识产权联席办公室
+        </p>
+	</td>
+  </tr>
+  <tr>
+    <td class="setright">文件编号：</td>
+    <td colspan="3"><div id="fileNo"></div></td>
+    </tr>
+  <!--tr>
+    <td class="setright">科室负责人签批：</td>
+    <td colspan="3"><div id="leader1"></div></td>
+    </tr>
+  <tr>
+    <td class="setright">主管领导批示：</td>
+    <td colspan="3"><div id="leader2"></div></td>
+    </tr>
+  <tr>
+    <td class="setright">主要领导批示：</td>
+    <td colspan="3"><div id="leader3"></div></td>
+    </tr-->
+  <tr>
+  	<td lass="setright">印章管理员:</td>
+  	<td colspan="3"><div id="admin2"></div></td>
+  	<!--<td class="setright">用章人(签字)：</td>
+  	<td><div id="usr2"></div></td>-->
+  </tr>
+</table>
+</form>
+</div>
+
+<div id="dlgDetail-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" id="print-apply">导出审批单</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlgDetail').dialog('close')">关闭</a>
+</div>
+
+ <!--导出印章启用Excel表格-->
+<div id="setdlg" class="easyui-dialog" style="width:300px;padding:10px 20px"
+   closed="true" buttons="#set-buttons">
+  <form id="setfm" method="post">
+  	用章状态：
+    <select id="setStatus" name="setStatus" style="width:120px;">
+    	<option value="0">未借出</option>
+    	<option value="1">已借出</option>
+    	<option value="2">已归还</option>
+    </select>
+  </form>
+</div>
+<div id="set-buttons" style="text-align:center;padding:5px">
+  <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="updStatus()">确定 </a>
+  <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#setdlg').dialog('close')">取消</a>
+</div>
+
+</body>
+</html>

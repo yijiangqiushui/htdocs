@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>主要完成人情况</title>
+<!--heyangyang-->
+<link rel="stylesheet" type="text/css"
+	href="../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../common/html/plugin/easyui/themes/icon.css">
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+		<script type="text/javascript" src="../../js/main/apply7.js"></script>
+
+		<style type="text/css">
+a {
+	text-decoration: none;
+}
+
+#fm input[type=text] {
+	border: 1px solid;
+	border-color: #CCC
+}
+
+#fm td {
+	width: 70px;
+}
+
+#fm_det input[type=text] {
+	border: none;
+}
+
+#fm_det textarea {
+	border: 0;
+}
+
+table tr .notNull {
+	color: #F00;
+}
+</style>
+</head>
+
+<body>
+
+	<table id="grid" class="easyui-datagrid-"></table>
+
+	<!--<div id="checkAdviceDiv">
+    <table id="checkTable">
+    <tr>
+      <td width="129">审核意见:</td>
+      <td width="610">
+      <textarea name="checkAdvice" id="checkAdvice" style="width: fit; height: fit; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="提交"  onclick="resetCheck();"/></td>
+      <td>&nbsp;</td>
+    </tr>
+    </table>
+</div>-->
+
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-add" plain="true" onclick="showForm(0,0)">添加信息</a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-remove" plain="true" onclick="deleteList()">批量删除</a>
+	</div>
+
+	<div id="dlg" class="easyui-dialog"
+		style="width: 880px; padding: 10px 20px" closed="true"
+		buttons="#dlg-buttons">
+		<form id="fm" method="post" novalidate>
+			<table width="100%" border="0" cellspacing="5" cellpadding="0">
+				<tr>
+					<td align="right">完成人排序：</td>
+					<td><input type="text" name="sort" maxlength="20"
+						style="width: 152px;" /></td>
+					<td align="right">姓名：</td>
+					<td><input type="text" name="name" maxlength="40"
+						style="width: 120px;" /><span style="color: red;">*</span></td>
+					<td align="right">性别：</td>
+					<td><input name="sex" style="width: 73px;"
+						class="easyui-combobox"
+						data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:45,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'男',text:'男'},{value:'女',text:'女'}]
+                "></td>
+					<td align="right">民族：</td>
+					<td><input name="nation" style="width: 80px;"
+						class="easyui-combobox"
+						data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:400,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'汉族',text:'汉族'},{value:'壮族',text:'壮族'},{value:'满族',text:'满族'},{value:'回族',text:'回族'},{value:'苗族',text:'苗族'},
+                    {value:'维吾尔族',text:'维吾尔族'},{value:'土家族',text:'土家族'},{value:'黎族',text:'黎族'},{value:'蒙古族',text:'蒙古族'},{value:'藏族',text:'藏族'},
+                    {value:'朝鲜族',text:'朝鲜族'},{value:'布依族',text:'布依族'},{value:'侗族',text:'侗族'},{value:'哈萨克族',text:'哈萨克族'},{value:'彝族',text:'彝族'},
+                    {value:'白族',text:'白族'},{value:'瑶族',text:'瑶族'},{value:'傣族',text:'傣族'},{value:'哈尼族',text:'哈尼族'},{value:'其它',text:'其它'}]
+                "></td>
+					<!-- <td><input type="text" name="nation" style="width:68px;"/></td>-->
+				</tr>
+				<tr>
+					<td align="right">出生地：</td>
+					<td><input type="text" name="birthplace" maxlength="40"
+						style="width: 152px;" /><span style="color: red;">*</span></td>
+					<td align="right">出生日期：</td>
+					<td><input type="text" name="birthdate" maxlength="20"
+						style="width: 120px;" /><span style="color: red;">*</span></td>
+					<td align="right">身份证号：</td>
+					<td colspan="3"><input type="text" name="idNumber"
+						maxlength="40" style="width: 240px;" /><span style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="right">文化程度：</td>
+					<td><input type="text" name="eduLeval" maxlength="20"
+						style="width: 152px;" /><span style="color: red;">*</span></td>
+					<td align="right">毕业时间：</td>
+					<td><input type="text" name="graduateTime" maxlength="20"
+						style="width: 120px;" class="easyui-datebox" /><span
+						style="color: red;">*</span></td>
+					<td align="right">是否归国人员：</td>
+					<td colspan="3"><input name="isHomecoming"
+						style="width: 245px;" class="easyui-combobox"
+						data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:45,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'1', text:'是'},{value:'0',text:'否'}]
+                "></td>
+				</tr>
+				<tr>
+					<td align="right">工作单位：</td>
+					<td colspan="3"><input type="text" maxlength="40"
+						name="company" style="width: 381px;" /><span style="color: red;">*</span></td>
+					<td align="right">联系电话：</td>
+					<td colspan="3"><input type="text" name="phone" maxlength="20"
+						style="width: 240px;" /></td>
+				</tr>
+				<tr>
+					<td align="right">电子邮箱：</td>
+					<td colspan="3"><input type="text" name="email" maxlength="40"
+						style="width: 381px;" class="ui-form-validate"
+						data-opt="required:true,validType:'email'" /><span
+						style="color: red;">*</span></td>
+					<td align="right">手机：</td>
+					<td colspan="3"><input type="text" name="tel"
+						style="width: 240px;" maxlength="11"
+						onkeyup="this.value=this.value.replace(/\D/g,'')"
+						onafterpaste="this.value=this.value.replace(/\D/g,'')" /><span
+						style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="right">通讯地址：</td>
+					<td colspan="7"><input type="text" name="address"
+						maxlength="40" style="width: 725px;" /><span style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="right">毕业学校：</td>
+					<td><input type="text" name="graduateSchool" maxlength="40"
+						style="width: 152px;" /><span style="color: red;">*</span></td>
+					<td align="right">专业：</td>
+					<td><input type="text" name="major" maxlength="20"
+						style="width: 113px;" /><span style="color: red;">*</span></td>
+					<td align="right">学位：</td>
+					<td colspan="3"><input type="text" maxlength="20"
+						name="degree" style="width: 241px;" /><span style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="right">现从事专业：</td>
+					<td><input type="text" name="profession" maxlength="20"
+						style="width: 152px;" /></td>
+					<td align="right">技术职称：</td>
+					<td><input type="text" name="techTitle" maxlength="20"
+						style="width: 113px;" /></td>
+					<td align="right">行政职务：</td>
+					<td colspan="3"><input type="text" maxlength="20"
+						name="adminPost" style="width: 241px;" /></td>
+				</tr>
+				<tr>
+					<td align="right">熟悉学科：</td>
+					<td colspan="7"><input type="text" maxlength="20"
+						name="familiarSubject" style="width: 725px;" /><span
+						style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="right">曾获科技奖励情况：</td>
+					<td colspan="7"><textarea name="techAward"
+							style="width: 725px; height: 60px;"></textarea></td>
+				</tr>
+				<tr>
+					<td align="right">参加本项目的起始时间：</td>
+					<td colspan="3"><input type="text" maxlength="20"
+						name="startTime" style="width: 381px;" class="easyui-datebox" /><span
+						style="color: red;">*</span></td>
+					<td align="right">完成时间：</td>
+					<td colspan="3"><input type="text" maxlength="20"
+						name="endTime" style="width: 240px;" class="easyui-datebox" /><span
+						style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="right">对本项目主要实质性贡献（限100字）：</td>
+					<td colspan="7"><textarea name="contribute" id="contribute"
+							style="width: 725px; height: 90px;"></textarea><span
+						style="color: red;">*</span></td>
+				</tr>
+				<tr>
+					<td align="right">声明：</td>
+					<td colspan="7">&nbsp;&nbsp;&nbsp;本人严格按照《通州区科学技术奖励办法》及其实施细则的有关规定和北京市通州区科学技术委员会对申报工作的具体要求，如实提供了本申报推荐书及相关材料，且不存在任何违反《中华人民共和国保守国家秘密法》和《科学技术保密规定》等相关法律法规及侵犯他人知识产权的情形。本单位是独立法人机构。如有不符，本人愿意承担相关后果并接受相应的处理。</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="dlg-buttons" style="text-align: center; padding: 5px">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-ok" onclick="saveData()">确定 </a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
+
+
+
+	<div id="dlg_det" class="easyui-dialog"
+		style="width: 880px; padding: 10px 20px" closed="true"
+		buttons="#dlgdet-buttons">
+		<form id="fm_det" method="post" novalidate>
+			<table width="100%" border="0" cellspacing="5" cellpadding="0">
+				<tr>
+					<td align="right">完成人排序：</td>
+					<td><input type="text" name="sort"
+						style="border: none; width: 152px;" disabled="disabled" /></td>
+					<td align="right">姓名：</td>
+					<td><input type="text" name="name" style="width: 120px;"
+						disabled="disabled" /></td>
+					<td align="right">性别：</td>
+					<td><input type="text" name="sex" style="width: 73px;"
+						disabled="disabled" /></td>
+					<td align="right">民族：</td>
+					<td><input type="text" name="nation" style="width: 113px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">出生地：</td>
+					<td><input type="text" name="birthplace" style="width: 152px;"
+						disabled="disabled" /></td>
+					<td align="right">出生日期：</td>
+					<td><input type="text" name="birthdate" style="width: 120px;"
+						disabled="disabled" /></td>
+					<td align="right">身份证号：</td>
+					<td colspan="3"><input type="text" name="idNumber"
+						style="width: 240px;" disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">文化程度：</td>
+					<td><input type="text" name="eduLeval" style="width: 152px;"
+						disabled="disabled" /></td>
+					<td align="right">毕业时间：</td>
+					<td><input type="text" name="graduateTime"
+						style="width: 120px;" disabled="disabled" /></td>
+					<td align="right">是否归国人员：</td>
+					<td colspan="3"><input type="text" name="isHomecoming"
+						style="width: 240px;" disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">工作单位：</td>
+					<td colspan="3"><input type="text" name="company"
+						style="width: 370px;" disabled="disabled" /></td>
+					<td align="right">联系电话：</td>
+					<td colspan="3"><input type="text" name="phone"
+						style="width: 240px;" disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">电子邮箱：</td>
+					<td colspan="3"><input type="text" name="email"
+						style="width: 370px;" disabled="disabled" /></td>
+					<td align="right">手机：</td>
+					<td colspan="3"><input type="text" name="tel"
+						style="width: 240px;" disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">通讯地址：</td>
+					<td colspan="7"><input type="text" name="address"
+						style="width: 725px;" disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">毕业学校：</td>
+					<td><input type="text" name="graduateSchool"
+						style="width: 152px;" disabled="disabled" /></td>
+					<td align="right">专业：</td>
+					<td><input type="text" name="major" style="width: 113px;"
+						disabled="disabled" /></td>
+					<td align="right">学位：</td>
+					<td colspan="3"><input type="text" name="degree"
+						style="width: 241px;" disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">现从事专业：</td>
+					<td><input type="text" name="profession" style="width: 152px;"
+						disabled="disabled" /></td>
+					<td align="right">技术职称：</td>
+					<td><input type="text" name="techTitle" style="width: 113px;"
+						disabled="disabled" /></td>
+					<td align="right">行政职务：</td>
+					<td colspan="3"><input type="text" name="adminPost"
+						style="width: 241px;" disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">熟悉学科：</td>
+					<td colspan="7"><input type="text" name="familiarSubject"
+						style="width: 725px;" disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">曾获科技奖励情况：</td>
+					<td colspan="7" valign="top"><textarea name="techAward"
+							style="width: 725px; resize: none;" disabled="disabled"></textarea></td>
+				</tr>
+				<tr>
+					<td align="right">参加本项目的起始时间：</td>
+					<td colspan="3"><input type="text" name="startTime"
+						style="width: 370px;" disabled="disabled" /></td>
+					<td align="right">完成时间：</td>
+					<td colspan="3"><input type="text" name="endTime"
+						style="width: 240px;" disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td align="right">对本项目主要实质性贡献（限100字）：</td>
+					<td colspan="7" valign="top"><textarea name="contribute"
+							style="width: 725px; resize: none;" disabled="disabled"></textarea></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="dlgdet-buttons" style="text-align: center; padding: 5px">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-ok" onclick="javascript:$('#dlg_det').dialog('close')">确定
+		</a>
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>

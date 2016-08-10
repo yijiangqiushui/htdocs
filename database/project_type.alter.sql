@@ -1,0 +1,1 @@
+ALTER TABLE  `project_type` ADD  `is_new` TINYINT NOT NULL DEFAULT  '0' AFTER  `project_leader` ;

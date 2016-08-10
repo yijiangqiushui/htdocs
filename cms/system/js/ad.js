@@ -1,0 +1,1 @@
+<!--function upLoadFileAllowedStr(){var str=".jpg.gif";return str;}//-->

@@ -1,0 +1,16 @@
+/* CSS Document */
+
+.hlui-layout-noselect{
+-moz-user-select: none; /*火狐*/
+-webkit-user-select: none; /*webkit浏览器*/
+-ms-user-select: none; /*IE10*/
+-khtml-user-select: none; /*早期浏览器*/
+user-select: none;
+}
+.hlui-layout{ overflow:hidden;}
+.body{ margin:0; padding:0; overflow:hidden;}
+.ui-layout-west{float:left;height:100%;overflow:hidden; overflow-y:hidden;}
+.ui-layout-break{width:8px; float:left;height:100%;overflow:hidden;border-left:1px solid #e9e9e9; border-right:1px solid #ccc;cursor:e-resize;background-color:#f1f1f1;}
+.ui-layout-east{float:left; height:100%; overflow:hidden;}
+.ui-layout-mouseup{display:none;width:0; height:0; background-color:#fff; position:absolute; left:0; top:0;}
+.ui-layout-ctntpdng{ padding:8px; overflow:auto;}

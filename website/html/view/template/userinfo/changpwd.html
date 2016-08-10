@@ -1,0 +1,110 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
+    <link rel="stylesheet" type="text/css"
+          href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css"
+          href="../../../../../common/html/plugin/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../css/findlogin.css">
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+    <script type="text/javascript"
+            src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+
+    <script type="text/javascript" src="../../js/userinfo/changepwd.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/button.css"/>
+    <style type="text/css">
+        input {
+            width: 90%;
+            background-color: #fff;
+            border: 1px solid #DDD;
+            padding: 3px 3px;
+        }
+
+        td {
+            padding: 2px;
+            line-height: 30px;
+            text-align: center;
+            border: solid 1px #ffffff;
+            background-color: #EAF3FA;
+        }
+
+        th {
+            background-color: #7AB5ED;
+            border: solid 1px #ffffff;
+        }
+        table {
+            font-size: 14px;
+        }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: auto 0;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+<form action="" method="post" id="change_pwd">
+    <div style="margin-top: 40px; margin-left: 20px;">
+        <div style="">
+
+            <table width="400px" border="0" style="border: 1px solid #DDD;" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td colspan="4" style="background-color:#7AB5ED;height:30px;">
+                        <div style="text-align: center; font-weight:bold; line-height:30px;color:#FFF002;">修改密码 </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="140">原密码</td>
+                    <td><input type="password" name="oldpwd"
+                               id="oldpwd"/></td>
+                </tr>
+                <tr>
+                    <td width="">设置新密码</td>
+                    <td><input type="password" name="newpwd"
+                               id="newpwd"/></td>
+                </tr>
+                <tr>
+                    <td width="">重新输入新密码</td>
+                    <td><input type="password" name="renewpwd"
+                               id="renewpwd"/></td>
+                </tr>
+
+                <!-- <tr>
+                    <td colspan=""><div style="float: center">
+                            <a href="#" class="easyui-linkbutton" iconcls="icon-ok"
+                                onclick="changepwd()">确定</a>
+                        </div></td>
+                    <td colspan=""><div style="float: center">
+                            <a href="#" class="easyui-linkbutton" iconcls="icon-no"
+                                onclick="reset()">重置</a>
+                        </div></td>
+
+                </tr> -->
+                <!--没有字段-->
+
+            </table>
+        </div>
+    </div>
+    <div style="cursor: pointer; width: 300px; margin: 20px 0 0 160px">
+        <div class="save aleft" >
+            <div onclick="changepwd()">确定</div>
+        </div>
+       <!--  <div class="reset" style="left:20px">
+            <div onclick="reset()">重置</div>
+        </div> -->
+    </div>
+</form>
+</body>
+</html>

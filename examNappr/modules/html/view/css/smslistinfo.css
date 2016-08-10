@@ -1,0 +1,14 @@
+/* CSS Document */
+/*Modified by zhao xiaogang 2014/09/09*/
+
+#newFm,#edtFm,#queFm{margin:0; padding:10px 30px;}
+.ftitle{font-size:14px; font-weight:bold; margin-bottom:8px; border-bottom:1px solid #ccc; }
+
+#mySmsList,#otherSmsList{ text-decoration:none; color:#333; line-height:20px;}
+#treeData{ display:block;}
+.otherNameList{ padding-left:1em; color:#333; display:block;}
+.otherNameList a{ text-decoration:none; color:#333;}
+
+.import_button{ margin-top:20px; margin-bottom:10px;}
+
+#toolbar a{ float:left; margin:10px 0 5px 3px;}

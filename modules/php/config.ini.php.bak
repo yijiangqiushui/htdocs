@@ -1,0 +1,27 @@
+<?php
+/**************************************************
+#	Version 1.2		PHP MySQL JavaScript
+#	Copyright (c) 2009 http://www.fangbian123.com
+#	Author: Li Zhixiao <English Name: Hawking E-mail:578731186@qq.com QQ:578731186>
+#	Date: 2009/10/10
+**************************************************/
+
+define("MAX_SIZE",50*1024*1024);
+define('CUR_ROOTPATH',dirname(dirname(__FILE__)).'\\');
+
+define("USERNAME","root");									//数据库连接用户名
+define("PASSWORD","");									//数据库连接密码
+define("SERVERNAME","jsc-server");							//数据库服务器的名称
+define("DBNAME","fruits");									//数据库名称
+
+define('DBBACKUPPATH','D:/db/');
+
+/**************************************/
+$rec_org_type_arr=array(
+'类型一',
+'类型二'
+);
+
+//$rec_org_type_arr[$rs[0]['rec_org_type']]
+
+?>

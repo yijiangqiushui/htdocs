@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>申报机构管理</title><link rel="stylesheet" type="text/css"
+	href="../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+<script type="text/javascript" src="../js/apply_org.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/applyOrg.css"/>
+</head>
+
+<body>
+	<!--author:heyangyang-->
+    
+    <table id="grid" class="easyui-datagrid-"></table> 
+      
+    <div id="toolbar">
+    	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="showAll()">申报机构信息</a>
+    	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="showCondition()">查询信息</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delOrgList()">批量删除</a>       
+    </div>
+    
+     <!--查询-->
+    <div id="show" class="easyui-dialog" style="width:360px;padding:10px 20px"
+            closed="true" buttons="#show-buttons">
+        <form id="show-form" method="post" novalidate>
+        <table width="300">
+        	<tr>
+                <td>组织机构代码：</td>
+                <td><input id="search_code" name="orgCode" class="easyui-validatebox" width="150"></td>
+            </tr>
+            <tr>
+                <td>申报单位名称：</td>
+                <td><input id="search_name" name="orgName" class="easyui-validatebox"></td>
+            </tr>
+         </table>  
+        </form>
+    </div>
+    <div id="show-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="findOrg()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#show').dialog('close')">取消</a>
+    </div>
+        
+    <!--修改-->
+     <div id="dlg" class="easyui-dialog" style="width:750px;padding:20px 20px"
+            closed="true" buttons="#edt-buttons">
+        <form id="fm" method="post" enctype="multipart/form-data" novalidate>
+      		<table border="0" width="710">
+                  <tr height="40">
+                    <td>组织机构代码</td>
+                    <td><input type="text" name="orgCode" class="easyui-validatebox" required="true"/></td>
+                    <td>申报单位名称</td>
+                    <td><input type="text" class="easyui-validatebox" name="orgName" required="true"/></td>
+                  </tr>
+                  <tr>
+                    <td>企业法人</td>
+                    <td><input type="text" class="easyui-validatebox" name="legalPerson" required="true"/></td>
+                    <td>联系人</td>
+                    <td><input type="text" class="easyui-validatebox" name="contact" required="true"/></td>
+                  </tr>
+                  <tr>
+                    <td>联系人手机</td>
+                    <td><input type="text" class="easyui-validatebox" name="telphone" required="true"/></td>
+                    <td>通讯地址</td>
+                    <td><input type="text" class="easyui-validatebox" name="address" required="true"/></td>
+                  </tr>
+                  <tr>
+                    <td>联系电话</td>
+                    <td><input type="text" class="easyui-validatebox" name="phone" required="true"/></td>
+                    <td>电子邮箱</td>
+                    <td><input type="text" class="easyui-validatebox" validtype="email" name="email" required="true"/></td>
+                  </tr>
+                  <tr>
+                    <td>税务登记证</td>
+                    <td><input type="file" name="file"/></td>
+                    <td>工商营业执照</td>
+                    <td><input type="file" name='file1'/></td>
+                  </tr>
+                
+    		</table>
+        </form>
+    </div>
+    <div id="edt-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveOrg()">确定 </a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+    </div>
+    
+    
+</body>
+</html>

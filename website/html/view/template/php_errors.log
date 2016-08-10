@@ -1,0 +1,37 @@
+[29-Feb-2016 11:00:30] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:00:30] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:00:32] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 28
+[29-Feb-2016 11:00:33] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:00:33] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:00:35] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 28
+[29-Feb-2016 11:07:03] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.171.28.116:3306) in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:07:03] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:07:05] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 28
+[29-Feb-2016 11:39:13] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.171.28.50:3306) in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:39:13] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:39:15] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 28
+[29-Feb-2016 11:50:43] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.171.28.50:3306) in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:50:43] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:50:45] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 28
+[29-Feb-2016 11:50:51] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.171.28.50:3306) in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:50:51] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:50:53] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 28
+[29-Feb-2016 11:52:40] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.171.28.50:3306) in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:52:40] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:52:42] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 28
+[29-Feb-2016 11:54:09] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.171.28.50:3306) in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:54:09] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 11:54:11] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 28
+[29-Feb-2016 12:24:41] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.171.28.50:3306) in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 12:24:41] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 20
+[29-Feb-2016 12:24:41] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\cms\system\class\db.cls.php on line 28
+[29-Feb-2016 13:52:26] PHP Fatal error:  Call to undefined function eixt() in E:\kwproject\Program\htdocs\website\html\view\template\user_project_genious.php on line 15

@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+tr:nth-child(odd) {
+	background-color: #D1E4F3;
+	border: solid 2px #ffffff;
+}
+
+tr:nth-child(even) {
+	background-color: #EAF3FA;
+	border: solid 2px #ffffff;
+}
+
+
+body {
+	font-family: "微软雅黑";
+	margin: auto 30px;
+	font-size: 16px;
+	padding: 0;
+	border: solid 2px #ffffff;
+}
+
+div {
+	text-align: center;
+	margin: auto 0;
+	line-height: 100%;
+}
+
+table {
+	border: solid 2px #ffffff;
+	border-collapse: collapse;
+	font-size: 14px;
+	width: 100%;
+}
+
+table  caption {
+	border: solid 2px #ffffff;
+	font: bold 16px;
+	text-align: left;
+}
+
+/* table th {
+	text-align: center;
+} */
+
+table td {
+	text-align: left;
+	border: solid 2px #ffffff;
+}
+
+table input {
+	width: 95%;
+	height: 100%;
+	line-height: 30px;
+}
+
+table table {
+	width: 98%;
+	height: 100%;
+	border: solid 2px #ffffff;
+}
+
+table textarea {
+	width: 98%;
+	height: 100%;
+	margin: 5px;
+	border: solid 2px #ffffff;
+}

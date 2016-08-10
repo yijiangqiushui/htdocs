@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/tagbar.js" /></script>
+<link type="text/css" href="../css/tagbar.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="test" style=""></div>
+<br />
+<div id="renderid"></div>
+
+
+<script type="text/javascript">
+var arr=['hello','world','!'];
+
+var config={
+	renderTo:'.test',
+	id:'myid',
+	ui_css:{},//style of .ui-tagbar-under
+	selected_css:{'background-color':'#fff','background-image':'url(/daohang/website/html/view/img/body-block-bar-tag-selected-bg.png)','background-repeat':'repeat-x','background-position':'top','color':'#333','font-weight':'bold','border-bottom':'1px solid #fff'},
+	init_index:0,//默认选择某项下标，从0开始
+	event_type:'click',
+	bar_h1:{
+		txt:'热门推荐',
+		icon:'/daohang/website/html/view/img/video-icon.png',
+	},
+	item_arr:[
+		{name:'tag 1'},
+		{name:'tag 2'},
+		{name:'tag 3'},
+	],
+	user_func:function(index){
+		return ;//alert(arr[index]);
+	},
+	more:{
+		txt:'更多',
+		icon:'/daohang/website/html/view/img/tag-bar-more.png',
+		href:'http://www.baidu.com',
+		target:'_blank',
+	}
+};
+
+var config2={
+	renderTo:'#renderid',
+	id:'myid2',
+	ui_css:{},//style of .ui-tagbar-under
+	selected_css:{'background-image':'url(../../../../../../resources/website/html/view/img/nav-first.png)','color':'#fff','font-weight':'bold'},
+	init_index:4,//默认选择某项下标
+	event_type:'click',
+	item_arr:[
+		{name:'首页',href:'#1'},
+		{name:'视频',href:'#2'},
+		{name:'图片',href:'#3'},
+		{name:'文库',href:'#4'},
+		{name:'资料',href:'#5'},
+		{name:'竞答题库',href:'#6'},
+		{name:'科普问答',href:'#7'},
+
+	],
+};
+
+var config3={
+	renderTo:'#renderid',
+	id:'myid2',
+	ui_css:{},//style of .ui-tagbar-under
+	selected_css:{'background-image':'url(../../../../../../daohang/website/html/view/img/tag-bar-li-selected-one-bg.png)','color':'#fff','font-weight':'bold'},
+	init_index:4,//默认选择某项下标
+	event_type:'mouseover',
+	item_arr:[
+		{name:'首页',href:'#1'},
+		{name:'视频',href:'#2'},
+		{name:'图片',href:'#3'},
+		{name:'文库',href:'#4'},
+		{name:'资料',href:'#5'},
+		{name:'竞答题库',href:'#6'},
+		{name:'科普问答',href:'#7'},
+
+	],
+	more:{
+		txt:'更多',
+		icon:'/daohang/website/html/view/img/tag-bar-more.png',
+		href:'http://www.baidu.com',
+		target:'_blank',
+	}
+};
+
+var config4={
+	renderTo:'.test',
+	id:'myid',
+	ui_css:{},//style of .ui-tagbar-under
+	selected_css:{'background-image':'url(../../../../../../daohang/website/html/view/img/tag-bar-li-selected-one-bg.png)','color':'#fff','font-weight':'bold'},
+	init_index:0,//默认选择某项下标，从0开始
+	event_type:'mouseover',
+	item_arr:[
+		{name:'tag 1'},
+		{name:'tag 2'},
+		{name:'tag 3'},
+	],
+	user_func:function(index){
+		alert(index);
+		$('#renderid').html(arr[index]);
+	},
+	more:{
+		txt:'更多',
+		icon:'/daohang/website/html/view/img/tag-bar-more.png',
+		href:'http://www.baidu.com',
+		target:'_blank',
+	}
+};
+
+$.tagbar(config4);
+
+</script>
+</body>
+</html>

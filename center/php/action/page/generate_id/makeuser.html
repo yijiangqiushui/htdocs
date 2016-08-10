@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../common/html/plugin/easyui/themes/icon.css"/>
+		<script type="text/javascript"
+			src="../../../../../common/html/lib/js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+		<script type="text/javascript" src="../../../../html/view/js/makeuser.js"></script>
+		<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+		<script type="text/javascript" src="../../../../../center/html/view/js/ukeycommon.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/NTClientJavascript.js"></script>
+<style type="text/css">
+	#editUser {
+		margin: 0;
+		padding: 10px 30px;
+	}
+	
+	.ftitle {
+		font-size: 14px;
+		font-weight: bold;
+		color: #666;
+		padding: 5px 0;
+		margin-bottom: 10px;
+		border-bottom: 1px solid #ccc;
+	}
+	
+	.fitem {
+		margin-bottom: 5px;
+	}
+	
+	.fitem label {
+		display: inline-block;
+		width: 100px;
+	}
+	a {
+		text-decoration: none;
+	}
+</style>
+</head>
+<body class="easyui-layout">
+	<div id="west" data-options="region:'west',title:'申报用户分类',sqlit:'true'" style="width: 200px; padding: 5px;">
+		<ul id="department" class="easyui-tree">
+			
+			<li class="li1">
+			<span><a href="#" onclick="loadPage(2)">用户类型</a></span>
+				<ul>
+					<li><a href="#" onclick="loadPage(0)">注册用户</a></li>
+					<li><a href="#" onclick="loadPage(-1)">分配账号用户</a></li>
+					
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id='center' data-options="region:'center',split:true">
+		<table id="makeuser" class="easyui-datagrid">
+		
+		</table>
+		<div id="toolbar">
+		</div>
+	</div>
+	<div id="edtdlg" class="easyui-dialog" style="width: 400px; height: 210px;" closed="true">
+		<div style="margin-top: 10px;">
+			<form method="post" action="" id="generateID" style="padding:20px;">
+				<table border="0" cellspacing="0" cellpadding="0" width="360" class="table">
+					<tr height="50">
+						<td width="76">用户名：</td>
+						<td colspan="3">
+								<input id="username" class="easyui-validatebox" required="true" type="text" style="height: 20px; width: 80%"/><span style="color: red;">*</span>
+						</td>
+					</tr>
+					<tr>
+						<td width="76">密码：</td>
+						<td colspan="3">
+							<input type="password" id="password" class="easyui-validatebox" placeholder="不输入密码默认为：123456" style="height: 20px; width: 80%;" /><span style="color: red" value="" >*</span>
+					    </td>
+					</tr>
+					<tr height="40">
+						<td colspan='2' style="text-align:center;">
+                        <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="generateid();">生成账号和密码</a>
+                        <!--<input type="button" value="生成账号和密码" onclick="generateid();" style=" height:30px; background-color:#f0f0f0;" />-->
+                        </td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	
+	
+	<div id="isDel" class="easyui-dialog"
+		style="width: 900px; height: 500px;" closed="true">
+		<div id='delcenter' data-options="region:'center',split:true"
+			style="padding: 5px;">
+			<table id="deluser" class="easyui-datagrid">
+			</table>
+		</div>
+	</div>
+	<div id="editUser" class="easyui-dialog" style="width: 350px; height: 280px;" closed="true">
+		<div style="padding-left: 10px, 10px, 10px, 10px;">
+			<form id="editUser_form" method="post" novalidate>
+				<div class="fitem">
+					<label>用户名:</label> <input name="username" id="username"/>
+				</div>
+				<div class="fitem">
+					<label>真实姓名：</label> <input name="realname" id="realname"/>
+				</div>
+				<div class="fitem">
+					<label>用户类型：</label> <select name="user_type" id="user_type">
+					                          <option value="1">普通用户</option>
+					                          <option value="2">超级管理员</option>
+					                         </select>
+				</div>
+				<div class="fitem">
+					<label>联系电话：</label> <input name="phone" id="phone"/>
+				</div>
+				<div class="fitem">
+					<label>E-mail：</label> <input name="email" id="email"/>
+				</div>
+				<div class="fitem">
+					<label>是否启用：</label>
+					 <select name="isForbidden" id="isForbidden">
+					    <option value="0">不禁用</option>
+					    <option value="1">禁用</option>
+					    </select>
+				</div>
+			</form>
+			<!-- david add -->
+			<table id="userDefined"></table>
+			
+		</div>
+		<div style="float:left"> <label><a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="editUser();">确定</a></label></div>
+		<div><label><a href="#"
+							class="easyui-linkbutton" iconCls="icon-cancel"
+							onclick="javascript:$('#editUser').dialog('close')">取消</a></label>
+		</div>
+	</div>
+
+
+
+	<div id="select_block" class="easyui-dialog" style="padding:20px; width: 330px; height: 180px;" closed="true" >
+	   <form id="select_info">	
+		<div class="fitem left">
+			<label class="title">用户名:</label>
+			<input class="easyui-validatebox" id="user_name_select"/>
+		</div>
+		<div class="fitem left">
+			<label class="title">公司名称:</label>
+			<input class="easyui-validatebox" id="company_name_select"/>
+		</div>
+
+		<div class="fitem left">
+			<label class="title">联系人:</label>
+			<input class="easyui-validatebox" id="contact_name_select"/>
+		</div>
+
+		<div class="clear"></div>
+		<div>
+			<a style="margin-left:50px;" href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-ok" onclick="select();">确认</a>
+			<a href="#" style="margin-left:15px;" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#select_block').dialog('close')">取消</a>
+		</div>
+	   </form>	
+	</div>
+	<div id="edituser" class="easyui-dialog" title="项目自定义编辑" data-options="iconCls:'icon-save',resizable:true,modal:true" closed="true" style="width: 790px;">
+			<table id='editlist' style="width:773px; height:500px;"></table>
+	</div>
+</body>
+</html>

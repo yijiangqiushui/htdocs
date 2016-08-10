@@ -1,0 +1,61 @@
+/* CSS Document */
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.logo {
+	padding-left: 10px;
+}
+
+.center_name {
+	border-top: 1px solid #e9e9e9;
+	border-bottom: 1px solid #e9e9e9;
+	background-color: #f1f1f1;
+}
+
+.center_name h1 {
+	font-size: 16px;
+	font-family: '微软雅黑';
+	color: #2475ed;
+	text-indent: 10px;
+	line-height: 30px;
+	width: 180px;
+	text-align: center;
+}
+
+.menus {
+	font-size: 12px;
+	padding: 10px 0 10px 0px;
+}
+
+.menus h1 {
+	font-size: 14px;
+	color: #333;
+	line-height: 24px;
+	border-bottom: 1px solid #e9e9e9;
+	padding-left: 10px;
+}
+
+.menus ul {
+	list-style: none;
+}
+
+.menus ul li {
+	line-height: 24px;
+	text-indent: 20px;
+}
+
+.menus ul li:hover {
+	background-color: #e9e9e9;
+}
+
+.menus ul li a {
+	color: #333;
+	text-decoration: none;
+}
+
+.apply span {
+	color: #f00;
+	font-weight: bold;
+}

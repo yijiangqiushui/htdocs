@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>服务能力</title>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../../common/html/plugin/easyui/themes/icon.css"/>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+		<link rel="stylesheet" type="text/css"
+			href="../../../../../../website/html/view/css/tablestyle.css" />
+	    <script src="../../../../../../common/html/js/tablecommon.js"></script>
+		<script type="text/javascript" src="../../../js/apply/10service_fm.js"></script>
+	<script type="text/javascript" src="../../../../../../common/html/js/validation.js"></script>
+		  <link rel="stylesheet" type="text/css" href="../../../css/table.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/button.css"/>
+	<style type="text/css">
+		td {
+			height: 35px;
+			text-align: left;
+			cellpadding: 0px;
+		}
+
+		body {
+			font-family: "微软雅黑";
+			margin: auto 0;
+			font-size: 16px;
+			margin: auto 0;
+		}
+
+		div {
+			text-align: center;
+			margin: auto 0;
+			line-height: 100%;
+		}
+
+		table {
+			margin: 0 auto;
+			font-size: 14px;
+			width: 100%;
+		}
+
+		table td {
+			text-align: center;
+			border: solid 2px #ffffff;
+		}
+
+		table table {
+			width: 100%;
+		}
+
+		input[type='text'] {
+			height: 100%;
+			width: 99.5%;
+			border: 1px;
+		}
+
+		input[type='button'] {
+			height: 100%;
+			width: 99.5%;
+			border: 1px;
+		}
+
+		.radio_input {
+			width:20px;
+			height:10px;
+			display:inline;
+		}
+
+		.other_input {
+			width:150px !important;
+			height:25px !important;
+			line-height:25px;
+			border:none;
+			border-bottom:1px solid #7AB5ED !important;
+			padding-left:5px;
+		}
+
+		lable {
+			line-height:20px;
+		}
+
+
+	</style>
+</head>
+
+<body>
+
+	  <div class="project_content">
+        <div class="table_title clearfix">
+            <div class="title_pic left">项目申请书</div>
+            <div class="right back_pic" id="back"></div>
+        </div>
+
+	<div class="table_content back-long">
+		<form action="" method="post" id="service_fm">
+			<table style="width: 99%; height: 100%" height="546" border="1"
+				   cellspacing="0">
+				<tr>
+					<td colspan="7"><h2>
+						<div class="title_top p-b10">服务能力</div>
+
+					</h2></td>
+				</tr>
+				<tr>
+					<th class="bt" width="60" rowspan="2"><p align="center">类型</p></th>
+					<th class="bt"  width="98" rowspan="2"><p align="center">服务内容</p></th>
+					<th class="bt" colspan="3"><p align="center">服务情况</p></th>
+					<th class="bt"  width="59" rowspan="2"><p align="center">是否收费</p></th>
+					<th class="bt"  width="82" rowspan="2"><p align="center">服务企业及项目的数量</p></th>
+				</tr>
+				<tr>
+					<th class="bt"  width="62"><p align="center">是否</p></th>
+					<th class="bt" width="56"><p align="center">自供</p></th>
+					<th class="bt"  width="58"><p align="center">合作</p></th>
+				</tr>
+				<tr>
+					<th width="98" rowspan="13"><p align="center">上一年度，专业技术</p></th>
+					<th width="64"><p align="center">技术专业服务</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="publictech_plat"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="publictech_plat1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="publictech_plat2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="publictech_plat3" /></td>
+					<td><input type="text" name="publictech_plat4" datatype="number"/></td>
+				</tr>
+
+
+				<tr>
+					<th class="bt" ><p align="center">知识产权服务</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="right_service"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="right_service1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="right_service2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="right_service3" /></td>
+					<td><input type="text" name="right_service4" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">公共技术平台</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="pub_tech"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="pub_tech1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="pub_tech2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="pub_tech3" /></td>
+					<td><input type="text" name="pub_tech4" datatype="number"/></td>
+				</tr>
+
+
+				<tr>
+					<th class="bt" ><p align="center">科技条件平台</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="tech_cond"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="tech_cond1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="tech_cond2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="tech_cond3" /></td>
+					<td><input type="text" name="tech_cond4" datatype="number"/></td>
+				</tr>
+
+				<tr>
+					<th class="bt" ><p align="center">创业投资</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="create_inv"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="create_inv1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="create_inv2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="create_inv3" /></td>
+					<td><input type="text" name="create_inv4" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">融资及担保</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="financ_assure"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="financ_assure1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="financ_assure2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input"  id="charge" value="0" />否<input type="hidden" value="0" name="financ_assure3" /></td>
+					<td><input type="text" name="financ_assure4" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">商业模式改造</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="mode_reform"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="mode_reform1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="mode_reform2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="mode_reform3" /></td>
+					<td><input type="text" name="mode_reform4" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">信息管理咨询</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="info_ask"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="info_ask1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="info_ask2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="info_ask3" /></td>
+					<td><input type="text" name="info_ask4" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">创业导师</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="info_consult"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="info_consult1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="info_consult2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1"  />是<input type="radio" class="radio_input" id="charge" value="0"   />否<input type="hidden" value="0" name="info_consult3" /></td>
+					<td><input type="text" name="info_consult4" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">创业讲座	 </p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="bsy_lecture"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="bsy_lecture1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="bsy_lecture2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="bsy_lecture3" /></td>
+					<td><input type="text" name="bsy_lecture4" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">行业交流</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="trade_comm"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="trade_comm1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="trade_comm2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="trade_comm3" /></td>
+					<td><input type="text" name="trade_comm4" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">产品构建</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="product_stru"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="product_stru1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="product_stru2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="product_stru3" /></td>
+					<td><input type="text" name="product_stru4" datatype="number"/></td>
+				</tr>
+
+				<tr>
+					<th class="bt" ><p align="center">市场拓展</p></th>
+					<td><input type="radio" class="radio_input"  id="serve" value="1"  />是<input type="radio" class="radio_input"  id="serve" value="0"   />否<input type="hidden" value="0" name="market_expand"/></td>
+					<td><input type="radio" class="radio_input" id="self"/><input type="hidden" value="0" name="market_expand1" /></td>
+					<td><input type="radio" class="radio_input" id="coop"/><input type="hidden" value="0" name="market_expand2" /></td>
+					<td><input type="radio" class="radio_input" id="charge" value="1" />是<input type="radio" class="radio_input" id="charge" value="0"  />否<input type="hidden" value="0" name="market_expand3" /></td>
+					<td><input type="text" name="market_expand4" datatype="number"/></td>
+				</tr>
+
+
+				<tr>
+					<th class="bt"><p align="center">其他服务（填写内容）</p></th>
+					<td style="cellpadding: 0px;" colspan="6"><textarea
+							style="margin-left: 0px; width: 99%; height: 100%;"
+							name="other_ser"></textarea></td>
+				</tr>
+
+				<tr>
+					<th class="bt" width="60" rowspan="6"><p align="center">战略合作中介机构数</p></th>
+					<td rowspan="6"><input  type="text" name="coop_num" datatype="number"/></td>
+					<th class="bt" colspan="4"><p align="center" >	中介机构类别</p></th>
+					<th class="bt" ><p align="center" datatype="number">数量</p></th>
+				</tr>
+				<tr>
+					<th class="bt"  colspan="4"><p align="center">1、管理咨询类</p></th>
+					<td><input
+							type="text" name="manage_ask" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt"  colspan="4"><p align="center">2、技术服务类</p></th>
+					<td><input
+							type="text" name="mange_num" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt"  colspan="4"><p align="center">3、代理服务类</p></th>
+					<td><input
+							type="text" name="tech_num" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt"  colspan="4"><p align="center">4、金融服务类</p></th>
+					<td><input
+							type="text" name="agent_num" datatype="number"/></td>
+				</tr>
+				<tr>
+					<th class="bt"  colspan="4"><p align="center">5、其他</p></th>
+					<td><input
+							type="text" name="other_num" datatype="number"/></td>
+				</tr>
+			</table>
+				</form>
+			 <div class="button_wrapper clearfix">
+                <div class="save" >保存</div>
+            </div></div>
+            
+	
+	</div>
+</body>
+</html>

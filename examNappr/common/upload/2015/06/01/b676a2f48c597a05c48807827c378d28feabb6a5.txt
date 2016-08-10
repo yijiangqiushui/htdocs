@@ -1,0 +1,37 @@
+
+Field			Type            Comment
+id			int(20)
+exclusive_name		char(32)         专有名称
+catName			varchar(50)
+upperCat		tinytext
+upperID			int(20)
+isForbidden		tinyint(1)
+userPrivileges		text
+isLast			tinyint(1)
+isDel			tinyint(1)           0 未删除
+
+
+
+Field			Type             Comment
+id			int(11)
+exclusive_name		char(32)	不可删除，给该类设定的特定名称
+cat_name		varchar(50)
+upper_cat		varchar(20)
+upper_id		int(11)
+catname_all		tinytext
+is_leaf			tinyint(4)
+is_forbidden		tinyint(4)
+is_recommend		tinyint(4)
+isDeltiny		int(1)		0 未删除
+
+
+Field			Type		Comment
+id			int(11)
+exclusive_name		char(32)	不可删除，给该类设定的特定名称
+cat_name		varchar(50)
+upper_cat		varchar(20)
+upper_id		int(11)
+catname_all		tinytext
+is_leaf			tinyint(4)
+is_forbidden		tinyint(4)
+user_id			int(11)		用户id

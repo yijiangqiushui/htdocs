@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>项目曾获科技奖励情况</title>
+<!--heyangyang-->
+<link rel="stylesheet" type="text/css"
+	href="../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../common/html/plugin/easyui/themes/icon.css">
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+		<script type="text/javascript" src="../../js/main/apply5.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/applyOrg.css" />
+		<style type="text/css">
+table tr .notNull {
+	color: #F00;
+}
+</style>
+</head>
+
+<body>
+
+	<table id="grid" class="easyui-datagrid-"></table>
+	<!--<div id="checkAdviceDiv">
+    	<table id="checkTable">
+        <tr>
+          <td width="129">审核意见:</td>
+          <td width="610">
+          <textarea name="advice_award" id="advice_award" style="width: fit; height: fit; overflow-y:visible;border:0;resize:none;" readonly="readonly"></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="提交"  onclick="resetCheck();"/></td>
+          <td>&nbsp;</td>
+        </tr>
+        </table>
+    </div>-->
+
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-add" plain="true" onclick="showform(0,0)">添加信息</a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-remove" plain="true" onclick="deleteList()">批量删除</a>
+	</div>
+
+	<div id="dlg" class="easyui-dialog"
+		style="width: 400px; height: 350px; padding: 10px 20px" closed="true"
+		buttons="#dlg-buttons">
+		<form id="fm" method="post" novalidate>
+			<table>
+				<tr>
+					<td width='100'>获奖项目名称：</td>
+					<td class="notNull"><input name="name" maxlength="40" />&nbsp;&nbsp;&nbsp;*必填</td>
+				</tr>
+				<tr>
+					<td>奖励名称：</td>
+					<td class="notNull"><input name="awardName" maxlength="40" />&nbsp;&nbsp;&nbsp;*必填</td>
+				</tr>
+				<tr>
+					<td>获奖时间：</td>
+					<td><input name="awardTime" class="easyui-datebox"
+						data-options="currentText:'',closeText:''"></td>
+				</tr>
+				<tr>
+					<td>奖励等级：</td>
+					<td><input name="awardGrade" maxlength="20" /></td>
+				</tr>
+				<!--<tr>
+                <td>奖励等级：</td>
+                <td><input name="awardGrade" class="easyui-combobox" data-options="
+                	valueField:'value',
+                    textField:'text',
+                    panelHeight:120,
+                    multiple:false,
+                    editable:false, 
+                    data:[{value:'特等奖',text:'特等奖'},{value:'一等奖',text:'一等奖'},{value:'二等奖',text:'二等奖'},{value:'三等奖',text:'三等奖'},{value:'其他',text:'其他'}]
+                  
+                ">
+                </td>        
+            </tr>-->
+				<tr>
+					<td>授奖部门：</td>
+					<td><input name="depart" maxlength="40"
+						class="easyui-validatebox"></td>
+				</tr>
+			</table>
+		</form>
+
+	</div>
+
+	<div id="dlg-buttons" style="text-align: center; padding: 5px">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-ok" onclick="saveData()">确定 </a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
+
+
+</body>
+</html>

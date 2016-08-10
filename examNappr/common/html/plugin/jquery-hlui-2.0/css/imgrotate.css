@@ -1,0 +1,28 @@
+/* CSS Document */
+
+.hlui-imgrotate{ margin:auto;width:640px; display:none;}
+
+.ui-imgrotate-clear{ clear:both;}
+.ui-imgrotate-button-l,.ui-imgrotate-button-r{ float:left;   margin-top:65px;}/*可修改*/
+.ui-imgrotate-button-l a{ display:block;   width:40px; height:40px; background-image:url(../img/imgrotate/arrow_left.png);}/*可修改*/
+.ui-imgrotate-button-r a{ display:block;   width:40px; height:40px; background-image:url(../img/imgrotate/arrow_right.png);}/*可修改*/
+
+.ui-imgrotate-holder{ float:left; position:relative; overflow:hidden;   width:560px; height:170px;}/*可修改*/
+.ui-imgrotate-holder a{ text-decoration:none;}
+.ui-imgrotate-holder-slide{ position:absolute;   }/*可修改*/
+
+.ui-imgrotate-block{ float:left; overflow:hidden;   width:130px; margin:0 5px;}/*可修改*/
+.ui-imgrotate-block-holder{ height:100%; display:block;   }/*可修改*/
+
+.ui-imgrotate-block-img{   border:1px solid #ccc; padding:4px;
+}/*可修改*/
+.ui-imgrotate-block-img-holder{   height:130px; background-position:center;);
+/*
+ border:1px solid #ccc;
+border-radius: 0 10px 0 10px;
+-moz-border-radius: 0 10px 0 10px;
+-webkit-border-radius: 0 10px 0 10px;
+*/
+}/*可修改*/
+.ui-imgrotate-block-title{   font-weight:bold; height:28px; line-height:28px; overflow:hidden; text-align:center; font-size:12px; color:#333; font-weight:normal;}/*可修改*/
+.ui-imgrotate-block-intro{   display:none; font-size:12px; color:#666; padding:0 5px;}/*可修改*/

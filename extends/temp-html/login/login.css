@@ -1,0 +1,55 @@
+#bw-login {
+    font-size: 12px;
+    width: 244px;
+    height: 303px;
+    background: url('img/bw-bg.png') no-repeat;
+    overflow: hidden;
+}
+#bw-login .bw-link {
+    display: block;
+    height: 90px;
+}
+#bw-login td {
+    line-height: 43px;
+    height: 43px;
+}
+#bw-login img {
+    vertical-align: middle;
+}
+#bw-login input {
+    width: 147px;
+    padding: 5px;
+    border: solid 1px #DDD;
+}
+#bw-login .code {
+    width: 60px;
+}
+#bw-login .button {
+    overflow: hidden;
+    clear: both;
+}
+#bw-login button {
+    display: block;
+    line-height: 29px;
+    padding: 0;
+    width: 61px;
+    border: none;
+    color: #FFF;
+    overflow: hidden;
+    cursor: pointer;
+}
+#bw-login .bw-login {
+    float: left;
+    background: url('img/bw-login.png') no-repeat;
+}
+#bw-login .bw-register {
+    float: right;
+    background: url('img/bw-register.png') no-repeat;
+}
+#bw-login .bw-forget {
+    line-height: 22px;
+}
+#bw-login .bw-forget a {
+    text-decoration: none;
+    color: #666;
+}

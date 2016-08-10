@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/menubutton.js" /></script>
+
+<link type="text/css" href="../css/menubutton.css" rel="stylesheet" />
+
+</head>
+
+<body>
+<div class="t"></div>
+<div id="tt"></div>
+<script type="text/javascript">
+
+var mb_confit={
+	renderTo:'#tt',
+	id:'testid',
+	menu:[
+		{
+			name:'hello',
+			func:'test()',
+			icon:'/common/html/plugin/jquery-hlui-2.0/img/icons/pencil.png'
+		},
+		{
+			name:'操作',
+			//func:'test()',//有下级菜单，可加可不加
+			icon:'/common/html/plugin/jquery-hlui-2.0/img/icons/cut.png',
+			submenu:[
+				{
+					name:'剪切',
+					func:'cut()',
+					icon:'/common/html/plugin/jquery-hlui-2.0/img/icons/help.png'
+				},
+				{
+					name:'测试',
+					func:'test()',
+					icon:'/common/html/plugin/jquery-hlui-2.0/img/icons/print.png'
+				},
+				{
+					name:'undo',
+					func:'test()'
+				}
+			]
+		},
+		{
+			name:'操作',
+			func:'test()'
+		}
+	]
+};
+
+
+function cut(){
+	alert('cut');
+}
+
+function test(){
+	alert('ok');
+}
+
+$.menubutton(mb_confit);
+</script>
+</body>
+</html>

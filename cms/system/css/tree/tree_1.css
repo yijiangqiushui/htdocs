@@ -1,0 +1,22 @@
+<!--
+a{color:#000;text-decoration:none}
+a:hover{text-decoration:underline;color:#00F}
+
+#navigation *{margin:0;padding:0;}
+#navigation li{line-height:18px;display:block;width:100%;height:auto; clear:right;}
+/*#navigation li *{}*/
+.joinStyle{background-image:url(../../img/tree/join.gif); background-repeat:no-repeat}
+.lastJoinStyle{background-image:url(../../img/tree/lastJoin.gif); background-repeat:no-repeat}
+
+.plusStyle{background-image:url(../../img/tree/plus.gif); background-repeat:no-repeat}
+.lastPlusStyle{background-image:url(../../img/tree/lastPlus.gif); background-repeat:no-repeat}
+
+.minusStyle{background-image:url(../../img/tree/minus.gif); background-repeat:no-repeat}
+.lastMinusStyle{background-image:url(../../img/tree/lastMinus.gif); background-repeat:no-repeat}
+
+.childUlStyle{line-height:0;height:0;display:none}
+
+.bgColor_0{}
+.bgColor_1{ background-image:url(../../img/tree/bgColor.gif); background-repeat:repeat-x;}
+
+-->

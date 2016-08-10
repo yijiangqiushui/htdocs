@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>通州区科委在线申报系统</title>
+<script src="../../../../common/html/lib/js/jquery-2.1.0.min.js"></script>
+
+<script src="../js/main-xmsbxt.js"></script>
+
+<link href="../css/main-xmsbxt.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="head">
+			<div class="banner">
+				<div class="logo"></div>
+				<div class="sysinfo">
+					<div class="welcome">欢迎您，某某</div>
+					<div class="sysinfo-break"></div>
+					<div class="exit">退出系统</div>
+					<div class="clear-both"></div>
+				</div>
+			</div>
+			<!--banner-->
+		</div>
+		<!--head-->
+		<div class="body">
+			<div class="func-bar">
+				<div class="menu-bar">
+					<div>管理菜单</div>
+				</div>
+				<div class="position">
+					您的位置：<a href="main-xmsbxt.html">首页</a> &gt;&gt; <a id="nav-link" href="show.php" target="mainframe">申报项目</a>
+				</div>
+				<div class="clear-both"></div>
+			</div>
+			<!--func-bar-->
+			<div class="menusNiframe">
+				<div class="menus">
+					<ul>
+						<li class="menu menu-unselected new-project">申报项目</li>
+						<li class="menu menu-selected my-project">我的项目</li>
+						<li class="submenu myproject">
+						    <ul>
+						        <li class="submenu-uncompleted">进行项目</li>
+						        <li class="submenu-break"></li>
+						        <li class="submenu-completed">已结项目</li>
+						    </ul>
+						</li>
+						<li class="menu menu-unselected user-info">用户信息</li>
+						<li class="submenu userinfo">
+							<ul>
+								<li class="submenu-userinfo">个人信息修改</li>
+								<li class="submenu-break"></li>
+								<li class="submenu-cominfo">企业信息修改</li>
+								<li class="submenu-break"></li>
+								<li class="submenu-modifypwd">密码修改</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="switch-bar" id="switch1">
+					<div class="switch-bar-arrow"></div>
+				</div>
+				<div class="iframe">
+					<iframe name="mainframe" src="show.php" frameborder="0" width="100%" id="iframe1"></iframe>
+				</div>
+			</div>
+			<div class="switch-bar"><div class="switch-bar-arrow"></div></div>
+		</div><!--menusNiframe-->
+	</div><!--body-->
+</body>
+</html>

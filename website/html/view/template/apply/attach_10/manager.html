@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+ <link rel="stylesheet" type="text/css" href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../../../common/html/plugin/easyui/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/table.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/button.css"/>
+    <link rel="stylesheet" href="../../../../../../common/html/lib/css/datapicker/daterangepicker.css" />
+    
+    <script src="../../../../../../common/html/lib/js/jquery-1.11.2.min.js"></script>
+    <script src="../../../../../../common/html/plugin/datapicker/moment.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/easyui/jquery.cookie.js" ></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+    
+    <script src="../../../../../../common/html/plugin/datapicker/jquery.daterangepicker.js"></script>
+    
+    <script src="../../../../../../common/html/js/validation.js"></script>
+    <script src="../../../../../../common/html/js/tablecommon.js"></script>
+<script type="text/javascript" src="../../../js/apply/10manager_fm.js"></script>
+</head>
+
+<body>
+<div class="project_content">
+	  <div class="table_title clearfix">
+	      <div class="title_pic left">基本信息</div>
+	      <div class="right back_pic" id="back"></div>
+      </div>
+      
+      <div class="table_content back-long">
+      <form action=""  id="manager_fm"  method="post">
+			<table cellspacing="0" cellpadding="0" class="basic_info">
+				<tr>
+					<td colspan="4"><h2>
+							  <div class="title_top p-b10">项目承担单位基本信息</div>
+						</h2></td>
+					<!--类似于project_ann那个表-->
+				</tr>
+				<tr>
+					 <th class="bt" width="144"><p align="center">指标</p></th>
+					<td width="114"><input  datatype="number"   style="width: 50%;" name="the_year[0]"
+						>&nbsp;&nbsp;&nbsp;&nbsp;年</input ></td>
+					<!--没有字段-->
+					<td width="111"><input  datatype="number"  style="width: 50%;" type="text" name="the_year[1]"
+						>&nbsp;&nbsp;&nbsp;&nbsp;年</input></td>
+					<!--没有字段-->
+					<td width="113"><input  datatype="number" class="easyui-validatebox" style="width: 50%;" type="text" name="the_year[2]"
+						>&nbsp;&nbsp;&nbsp;&nbsp;年</input></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+				 <th class="bt" width="144"><p align="center">总收入（万元）</p></th>
+					<td><input  datatype="float" class="easyui-validatebox" name="total_income[0]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="total_income[1]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="total_income[2]" /></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+				 <th class="bt" width="144"><p align="center">专业技术服务收入</p></th>
+					<td><input  datatype="float" class="easyui-validatebox" name="prof_tech[0]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="prof_tech[1]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="prof_tech[2]" /></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+				 <th class="bt" width="144"><p align="center">其他服务收入</p></th>
+					<td><input  datatype="float" class="easyui-validatebox" name="other_income[0]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="other_income[1]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="other_income[2]" /></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+					 <th class="bt" width="144"><p align="center">利润（万元）</p></th>
+					<td><input  datatype="float" class="easyui-validatebox" name="profit[0]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="profit[1]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="profit[2]" /></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+					 <th class="bt" width="144"><p align="center">上缴税金（万元）</p></th>
+					<td><input  datatype="float" class="easyui-validatebox" name="hand_tax[0]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="hand_tax[1]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="hand_tax[2]" /></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+				 <th class="bt" width="144"><p align="center">公共技术服务平台投资额（万元）</p></th>
+					<td><input  datatype="float" class="easyui-validatebox" name="public_inve_sum[0]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="public_inve_sum[1]" /></td>
+					<td><input  datatype="float" class="easyui-validatebox" name="public_inve_sum[2]" /></td>
+				</tr>
+				<tr>
+					 <th class="bt" width="144"><p align="center">公共技术服务平台收益（万元）</p></th>
+					<td><input  datatype="float" class="easyui-validatebox" name="public_service_income[0]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="public_service_income[1]" /></td>
+					<!--没有字段-->
+					<td><input  datatype="float" class="easyui-validatebox" name="public_service_income[2]" /></td>
+					<!--没有字段-->
+				</tr>
+
+			</table>
+			 <div class="button_wrapper clearfix">
+            <!--     <div class="submit" >提交</div> -->
+                <div class="save" >保存</div>
+                <!-- <div class="reset" >重置</div> -->
+            </div>
+		</form>
+	</div>
+
+</body>
+</html>

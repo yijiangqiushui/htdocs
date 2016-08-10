@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>通州科委项目</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript" src="../../../../../common/html/lib/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+<script type="text/javascript" src="../../../../php/action/page/project_list/main.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+</head>
+<body class='easyui-layout'>
+<!-- 对树结构添加右键事件-->   
+
+
+
+<!--表结构-->
+<div id='center' data-options="region:'center',split:true" style="padding:5px;">
+  <table id="projectList" class="easyui-datagrid">
+  </table>
+  
+  
+  <div id="toolbar"> 
+  	<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="queryAdmin()">查询</a> 
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick="newAdmin()">添加</a> 
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="delArrAdmin()">批量删除</a> 
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-no" plain="true" onclick="disableAdmin(1)">禁用</a> 
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" plain="true" onclick="disableAdmin(0)">启用</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="get_isDel()">已删除</a>
+    <a href="javascript:void(0)" id="muti_back" class="easyui-linkbutton" iconcls="icon-ok" style="display:none" plain="true">批量恢复</a> 
+  	<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" id="back_loadPage" onclick="init()">返回用户信息</a> 
+  </div>
+</div>  
+  <!--添加-->
+
+<!--修改用户-->
+<div id="edtdlg" class="easyui-dialog" style="width:1300px;height:700px ;padding:0px 20px" closed="true" buttons="#dlg-buttons1">
+  <!--
+  <div class="ftitle">用户信息</div>
+  -->
+  
+</div>
+</body>
+</html>
+
+

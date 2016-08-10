@@ -1,0 +1,15 @@
+/* CSS Document */
+.panel-title{
+	font-size:18px;
+	height:28px;
+	line-height:28px;
+}
+.panel-header{
+	height:30px;
+}
+table tr{
+	height:40px;	
+}
+a{
+	text-decoration:none;
+}

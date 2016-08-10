@@ -1,0 +1,14 @@
+/* CSS Document */
+#newFm,#edtFm,#queFm{margin:0; padding:5px 30px;}
+.ftitle{font-size:14px; font-weight:bold; padding:5px 0; margin-bottom:10px; border-bottom:1px solid #ccc; }
+input{ border:1px solid #9cf;}
+a:link{text-decoration:none;} 
+a:hover{text-decoration:underline;} 
+#file{ border:0px;}
+
+#number0{ width:50px;}
+#file_name0{ width:727px;}
+#addedDate0{ width:154px;}
+#newdlg textarea{ border:1px solid #9cf; width:727px; font-size:16px;}
+#newdlg input{ border:1px solid #9cf; height:20px; }
+#newdlg select{ width:170px; height:24px;}

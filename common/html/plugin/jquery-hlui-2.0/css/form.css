@@ -1,0 +1,42 @@
+/* CSS Document */
+
+.ui-form-text{border:1px solid #ccc;height:22px; line-height:22px; font-size:14px; color:#666;
+background:-webkit-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-moz-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-ms-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-o-linear-gradient(bottom,#fff 0%,#efefef 100%);
+}
+.ui-form-file{border:1px solid #ccc;height:22px; line-height:22px; font-size:14px; color:#666;
+background:-webkit-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-moz-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-ms-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-o-linear-gradient(bottom,#fff 0%,#efefef 100%);
+}
+.ui-form-password{border:1px solid #ccc;height:22px; line-height:22px; font-size:14px; color:#666;
+background:-webkit-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-moz-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-ms-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-o-linear-gradient(bottom,#fff 0%,#efefef 100%);
+}
+.ui-form-textarea{ border:1px solid #ccc;line-height:18px; font-size:14px; color:#666;
+background:-webkit-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-moz-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-ms-linear-gradient(bottom,#fff 0%,#efefef 100%);
+background:-o-linear-gradient(bottom,#fff 0%,#efefef 100%);
+}
+.ui-form-select{border:1px solid #ccc;height:26px; line-height:26px; font-size:14px; color:#666;}
+
+.ui-form-button{font-size:12px;line-height:16px; padding:3px 10px; cursor:pointer; margin-right:5px; border:1px solid #ccc; color:#06f; text-decoration:none;
+background-color:#fff;
+border-radius:3px 3px;
+-moz-border-radius:3px 3px;
+cursor:pointer;	
+
+background:-webkit-linear-gradient(bottom,#eee 0%,#fff 100%);
+background:-moz-linear-gradient(bottom,#eee 0%,#fff 100%);
+background:-ms-linear-gradient(bottom,#eee 0%,#fff 100%);
+background:-o-linear-gradient(bottom,#eee 0%,#fff 100%);
+}
+.ui-form-button:hover{ color:#06f;}
+
+#hlui_submit_iframe{width:0; height:0; overflow:hidden;}

@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
+<title>文件内容管理</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<link rel="stylesheet" href="../../../../../common/html/plugin/kindeditor-4.1.10/themes/default/default.css" />
+<!--
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+-->
+<script type="text/javascript" src="../../../../../common/html/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script charset="utf-8" src="../../../../../common/html/plugin/kindeditor-4.1.10/kindeditor.js"></script>
+<script charset="utf-8" src="../../../../../common/html/plugin/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script type="text/javascript" src="../../js/smslist/smslistinfo.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/NTClientJavascript.js"></script>
+
+<link href="../../css/smslistinfo.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="easyui-layout">
+<!--树结构-->
+<div id="west" data-options="region:'west',title:'联系人分组',split:true" style="width:200px;padding:5px;">
+  <div>
+  	<a href="#" id="mySmsList">我的通讯录</a>
+		<ul id="treeData"></ul>
+	</div>
+	<div>
+  	<a href="#" id="otherSmsList">他人通讯录</a>
+    <div class="otherNameList" >
+    </div>
+  </div>
+</div>
+<!-- 对树结构添加右键事件-->   
+<div id="mm" class="easyui-menu" style="width:120px;">
+  <div onclick="addCat()" class="add_cat" data-options="iconCls:'icon-add'">添加分组</div>
+  <div onclick="edtCat()" class="edit_cat" data-options="iconCls:'icon-edit'">编辑分组</div>
+  <div onclick="delCat()" class="remove_cat" data-options="iconCls:'icon-remove'">移除分组</div>
+</div>
+<!--添加分组-->
+<div id="new_catDlg" class="easyui-dialog" style="width:380px;padding:10px 20px"
+      closed="true" buttons="#new_catdlg-buttons">
+  <h1 class="ftitle">分组信息</h1>
+  <form id="new_catFm" method="post" novalidate="novalidate">
+    <input type="hidden" name="upper_id" />
+    <input type="hidden" name="upper_cat" />
+    <input type="hidden" name="catname_all" />
+    <table>
+      <tr>
+        <td width="80">所属分组：</td>
+        <td><input name="uptext" class="easyui-validatebox" readonly='true' style="border:0px;" /></td>
+      </tr>
+      <tr>
+        <td>分组名称：</td>
+        <td><input name="cat_name" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="new_catdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveCat()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#new_catDlg').dialog('close')">取消</a>
+</div>
+<!--编辑分组-->
+<div id="edit_catDlg" class="easyui-dialog" style="width:380px;padding:10px 20px"
+      closed="true" buttons="#edit_catdlg-buttons">
+  <h1 class="ftitle">分组信息</h1>
+  <form id="edit_catFm" method="post" novalidate="novalidate">
+    <input type="hidden" name="upper_cat" />
+    <input id="catname_alledit" name="catname_all" type="hidden" />
+    <table>
+      <tr>
+        <td width="80">所属分组：</td>
+        <td><input name="upper_id" id="tree" style="width:153px;" />
+          <!--<input name="uptext" class="easyui-validatebox" readonly='true' style="border:0px;">--></td>
+      </tr>
+      <tr>
+        <td>分组名称：</td>
+        <td><input id="catname_edit" name="cat_name" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="edit_catdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="edtSaveCat()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#edit_catDlg').dialog('close')">取消</a>
+</div>
+
+
+<!--表结构-->
+<div id="center" data-options="region:'center',title:'联系人信息管理',split:true" style="padding:5px;">
+    <table id="infoGrid" class="easyui-datagrid"></table> 
+    <div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="queInfo()">查询</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newInfo()">添加</a>       
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delArrInfo()">批量删除</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-import" plain="true" onclick="importList()">导入通讯录</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-export" plain="true" onclick="exportList()">导出通讯录</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-export" plain="true" onclick="exportMyList()">允许他人导出</a>
+    <!--
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-export" plain="true" onclick="exportOtherList()">导出他人通讯录</a>-->
+    </div>
+</div>
+<!--导出他人通讯录-->
+<div id="otherDlg" class="easyui-dialog" style="width:400px;padding:10px 20px"
+        closed="true" buttons="#otherdlg-buttons">
+  <h1 class="ftitle">可导出用户列表</h1>
+  <form id="otherFm" method="post" action="" novalidate="novalidate" enctype="multipart/form-data">
+  	<input id="othersList" />
+    <br />
+    <br />
+    <div>
+    <input type="submit" value="导出Excel" onclick="exportOther(0);"/>
+    <input type="submit" value="导出CSV" onclick="exportOther(1);"/>
+    </div>
+  </form>	
+</div>
+<div id="otherdlg-buttons" style="text-align:center;padding:5px">
+    <!--<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="exportOther(0)">确定 </a>-->
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#otherDlg').dialog('close')">取消</a>
+</div>
+<!--允许他人导出-->
+<div id="myDlg" class="easyui-dialog" style="width:400px;padding:10px 20px"
+        closed="true" buttons="#mydlg-buttons">
+  <form id="myFm" method="post" enctype="multipart/form-data" novalidate="novalidate">
+    <h1 class="ftitle">允许人</h1>
+    <input id="others" />
+    <h1 class="ftitle">允许导出的我的通讯录分组</h1>
+    <input id="mylist" />
+  </form>	
+</div>
+<div id="mydlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="exportMine()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#myDlg').dialog('close')">取消</a>
+</div>
+<!--添加-->
+<div id="newDlg" class="easyui-dialog" style="width:400px;padding:10px 20px"
+        closed="true" buttons="#newdlg-buttons">
+  <h1 class="ftitle">联系人信息</h1>
+  <form id="newFm" method="post" enctype="multipart/form-data" novalidate="novalidate">
+    <input type="hidden" name="cat_id" />
+    <input type="hidden" name="category" />
+    <table>
+      <tr>
+        <td width="89">所属分组：</td>
+        <td colspan="5">
+        <span id="1"><input name="upper_text" class="easyui-validatebox" readonly="readonly" style="border:0px;" /></span> 
+        <span id="2"><input id="catTree" name="catId" style="width:154px;" /></span>
+       <!--
+        <input name="upper_text" class="easyui-validatebox" readonly="readonly" style="border:0"/> 
+        -->
+        </td>
+     </tr>
+     <tr>
+     	<td>姓名：</td>
+     	<td><input type="text" id="name" name="name" class="easyui-validatebox" maxlength="32" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+     </tr>
+     <tr>
+     	<td>手机号：</td>
+     	<td><input type="text" id="tel" name="tel"  class="easyui-validatebox" maxlength="11" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+     </tr>
+     <tr>
+     	<td>公司：</td>
+     	<td><input type="text" id="company" name="company" /></td>
+     </tr>
+     <tr>
+     	<td>职务：</td>
+     	<td><input type="text" id="job" name="job" /></td>
+     </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="newdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveInfo()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#newDlg').dialog('close')">取消</a>
+</div>
+    
+<!--查询-->
+<div id="queDlg" class="easyui-dialog" style="width:500px;padding:10px 20px"
+        closed="true" buttons="#quedlg-buttons">
+  <h1 class="ftitle">联系人信息</h1>
+  <form id="queFm" method="post" novalidate="novalidate">
+    <table width="391">
+      <tr>
+        <td width="85">姓名：</td>
+        <td width="294"><input id="name2" name="name" class="easyui-validatebox" maxlength="32" data-options="required:false,missingMessage:'该项为必填项'"/></td>
+      </tr>
+      <tr>
+        <td width="85">手机号：</td>
+        <td width="294"><input id="tel2" name="tel"  class="easyui-validatebox"  maxlength="11" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:false,missingMessage:'该项为必填项'"/></td>
+      </tr>
+      <tr>
+        <td width="85">公司：</td>
+        <td width="294"><input id="company2" name="company" /></td>
+      </tr>
+      <tr>
+        <td>添加时间：</td>
+        <td><input name="add_time" id="add_time2" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="quedlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="findInfo()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#queDlg').dialog('close')">取消</a>
+</div>
+
+<!--详情-->
+    <div id="newDlg-detail" class="easyui-dialog" style="width:400px;padding:10px 20px"
+            closed="true" buttons="#newdlg-buttons">
+      <div class="ftitle">
+        <h3>信息详情</h3>
+      </div>
+      <form id="proFM" method="post" enctype="multipart/form-data" novalidate="novalidate">
+        <table width="350px" border="1" bordercolor="#9cf" cellspacing="2" class="dialog">
+          <tr height="25px">
+            <td width="100px">所属分类：</td>
+            <td><label id="upper_text1"></label></td>
+          </tr>
+          <tr height="25px">
+            <td>姓名：</td>
+            <td><label id="name1"></label></td>
+          </tr>
+          <tr height="25px">
+            <td>电话：</td>
+            <td><label id="tel1"></label></td>
+          </tr>
+          <tr height="25px">
+            <td>公司：</td>
+            <td><label id="company1"></label></td>
+          </tr>
+          <tr height="25px">
+            <td>职务：</td>
+            <td><label id="job1"></label></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+      
+    <div id="newdlg-buttons" style="text-align:center;padding:5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#newDlg-detail').dialog('close')">关闭</a>
+    </div>
+
+
+<!--导入通讯录
+<div id="importList" class="easyui-dialog" style="width:320px;padding:10px 20px" closed="true">
+    <form id="import-form" action="http://localhost:8080/MS-Excel/importexcel.htm" method="post" enctype="multipart/form-data">
+    	<div>文件：<input type="file" name="file"></div></br>
+    	<div>
+    	<input type="submit" value="导入Excel"/></div>
+    </form>
+</div>
+  
+<div id="exportList" class="easyui-dialog" style="width:250px;padding:10px 20px" closed="true">
+    <form id="export-form" action="http://localhost:8080/MS-Excel/exportexcel.htm" method="post" enctype="multipart/form-data">
+    	<input type="submit" value="导出Excel"/>
+    </form>
+</div>-->
+
+
+<!--导入通讯录-->
+<div id="importList" class="easyui-dialog" style="width:320px;padding:10px 20px" closed="true">
+    <form id="import-form" action="" method="post" enctype="multipart/form-data">
+    	<div>文件：<input type="file" name="file"></div></br>
+      <div class="recovery">覆盖原分组：<input type="radio" name="recovery" value="1" />是<input type="radio" name="recovery" value="0" checked="checked" />否</div>
+    	<div class="import_button">
+    	<input type="submit" value="立即导入" onclick="changeURL(0);" />
+      <!--
+        <input type="submit" value="导入CSV" onclick="changeURL(1);"/>
+        -->
+      </div>
+    </form>
+</div>
+  
+<!--导出通讯录-->
+<div id="exportList" class="easyui-dialog" style="width:250px;padding:10px 20px" closed="true">
+    <form id="export-form" action="" method="post" enctype="multipart/form-data">
+    	<input type="submit" value="导出Excel" onclick="changeUrl(0);"/>
+    	<input type="submit" value="导出CSV" onclick="changeUrl(1);"/>
+    </form>
+</div>
+</body>
+</html>

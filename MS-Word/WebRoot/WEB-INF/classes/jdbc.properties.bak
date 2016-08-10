@@ -1,0 +1,7 @@
+#============================
+# Configure Oracle Datasource
+#============================
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://jsc-server:3306/fruits
+jdbc.username=db
+jdbc.password=qs-db

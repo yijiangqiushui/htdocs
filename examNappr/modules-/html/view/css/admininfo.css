@@ -1,0 +1,7 @@
+/* CSS Document */
+/**author:Gao Xue date:2014-04-30 Modified by Ma Jun Wei 2014/09/05*/
+#newfm,#quefm,#edtdlgfm{margin:0;padding:10px 30px;} 
+.ftitle{ font-size:14px; font-weight:bold; padding:5px 0; margin-bottom:10px; border-bottom:1px solid #ccc;}
+input{}
+ #toolbar a{ float:left; margin-top:10px;}
+ .easyui-validatebox{ width:145px; border:1px #999 solid;}

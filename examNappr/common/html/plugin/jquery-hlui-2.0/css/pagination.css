@@ -1,0 +1,20 @@
+/* CSS Document */
+
+.hlui-pagination *{ margin:0; padding:0; font-size:14px; line-height:16px;}
+.default span{ font-family:Verdana, Geneva, sans-serif;}
+
+.default .ui-pagination-turn2page{ width:30px; margin-left:5px;}
+
+.default .ui-pagination-links{ display:inline-table; padding:0 5px; height:16px; cursor:pointer; margin-left:2px; margin-right:2px;}
+.ui-pagination-links:hover{ background-color:#ccc;}
+
+.default .ui-pagination-first,.ui-pagination-pre,.ui-pagination-next,.ui-pagination-last{ display:inline-table; background-image:url(../img/pagination_icons.png); width:16px; height:16px; cursor:pointer; margin-left:2px;  margin-right:2px;}
+.default .ui-pagination-first:hover,.ui-pagination-pre:hover,.ui-pagination-next:hover,.ui-pagination-last:hover{ background-color:#fff;}
+.default .ui-pagination-first{ background-position:0 0;}
+.default .ui-pagination-pre{ background-position:-16px 0;}
+.default .ui-pagination-next{ background-position:-32px 0;}
+.default .ui-pagination-last{ background-position:-48px 0;}
+.default .ui-pagination-turn2page { width:auto; display:inline-table;}
+.default .ui-pagination-turn2page input{ width:30px; border:1px solid #ccc; height:16px; margin-left:5px;}
+.default .ui-pagination-link-current{ background-color:#f00; color:#fff;}
+

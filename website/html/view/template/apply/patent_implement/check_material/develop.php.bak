@@ -1,0 +1,244 @@
+<?php
+session_start();
+include '../../../../../../../common/php/config.ini.php';
+include '../../../../../../../common/php/lib/db.cls.php';
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>鏃犳爣棰樻枃妗�/title>
+
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../../common/html/plugin/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../../common/html/plugin/easyui/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="../../../../css/table.css" />
+<link rel="stylesheet" type="text/css" href="../../../../css/button.css" />
+<link rel="stylesheet"
+	href="../../../../../../../common/html/lib/css/datapicker/daterangepicker.css" />
+
+<script src="../../../../../../../common/html/lib/js/jquery-1.11.2.min.js"></script>
+<script
+	src="../../../../../../../common/html/plugin/datapicker/moment.min.js"></script>
+
+<script type="text/javascript"
+	src="../../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript"
+	src="../../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../../common/html/plugin/easyui/jquery.cookie.js"></script>
+<script type="text/javascript"
+	src="../../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+<script type="text/javascript"
+	src="../../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+
+<script
+	src="../../../../../../../common/html/plugin/datapicker/jquery.daterangepicker.js"></script>
+<script type="text/javascript" src="../../../../../../../common/html/js/validation.js"></script>	
+<script type="text/javascript" src="../../../../../../../common/html/js/tablecommon.js"></script>
+<script type="text/javascript"
+	src="../../../../js/check_material/develop.js"></script>
+
+<style>
+th {
+	width:80px;
+}
+select{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	font-size: 14px;
+	margin: auto 0;
+	text-align: center;
+	width:100%;
+	float:left;
+	height:99%;
+	margin: 0 auto;
+	padding: 0 auto ;
+	background-color: #D1E4F3;
+	
+}
+
+tr:nth-child(even) select {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	font-size: 14px;
+	margin: auto 0;
+	text-align: center;
+	width:100%;
+	float:left;
+	height:99%;
+	margin: 0 auto;
+	padding: 0 auto ;
+	background-color: #EAF3FA;
+}
+option {
+	font-style:inherit;
+	font-size:16px;
+	margin: 0 auto;
+	padding: 0 auto ;
+	background-color: #EAF3FA;
+}
+div{
+	padding:0;
+}
+</style>
+
+</head>
+
+<body>
+	<form id="develop" method="post">
+		<div class="project_content">
+			<div class="table_title clearfix">
+				<div class="title_pic left">涓撳埄瀹炴柦楠屾敹鎶ュ憡涔�/div>
+				<div class="right back_pic" id="back"></div>
+			</div>
+
+			<div class="table_content back-long">
+				<table cellspacing="0" cellpadding="0" class="basic_info">
+					<tr>
+						<td colspan="6" class="border_left_none"
+							style="background-color: #7AB5ED;">
+							<div class="title_top p-b10">椤圭洰瀹炴柦杩囩▼涓紒涓氱爺鍙戞柊涓撳埄銆佸紑鍙戞柊浜у搧鎯呭喌</div>
+						</td>
+					</tr>
+				<tr><td colspan="5">
+				<table id="patent_list">
+				<?php
+		$project_id = $_SESSION['project_id'];
+		$sql = "Select * from patent_list where project_id='$project_id' and  is_new = 1  ";
+// 		echo $sql;
+		$db = new DB ();
+		$result = $db->SelectOri ( $sql );
+		if($result == false){
+			$result = array();
+		}
+		$tableRow = mysql_num_rows ( $result );
+		if ($tableRow) {
+			for($i = 0; $i < $tableRow; $i ++) {
+				$row = mysql_fetch_object ( $result );
+				$count=$i+1;
+
+				echo "<tr>";
+				echo "<th rowspan='2'><p align='center'>".$count."</p></th>";
+				echo "<th><p align='center'>涓撳埄鍚嶇О</p></th>";
+				echo "<td><input type='text' name='patent_name[$i]'   value='$row->patent_name'/></td>";
+				echo "<td><th><p align='center'>绫诲瀷</p></th></td>";
+				echo "<td><select name='patent_type[$i]' >
+				<option value='鍙戞槑'"; if($row->patent_type == '鍙戞槑') { echo 'selected';} echo">鍙戞槑</option>
+				<option value='瀹炵敤鏂板瀷' "; if($row->patent_type == '瀹炵敤鏂板瀷') { echo 'selected';} echo">瀹炵敤鏂板瀷</option>
+				<option value='澶栬璁捐' "; if($row->patent_type == '澶栬璁捐') { echo 'selected';} echo">澶栬璁捐</option>
+				    </select></td>";
+				//echo "<td><input type='text' name='patent_type[$i]'     value='$row->patent_type'/></td>";
+				echo "<td rowspan='2'><input type='button' value='鍒犻櫎' class='pointer'  onclick='deleteTwoRow(this)'/></td>";
+				echo "</tr>";
+				echo "<tr>";
+		        echo "<th><p align='center'>涓撳埄鐘舵�</p></th>";
+		        echo "<td><select name='patent_state[$i]'   >
+		        <option value='鐢宠'"; if($row->patent_state == '鐢宠') { echo 'selected';} echo" >鐢宠</option>
+				<option value='瀹炲' "; if($row->patent_state == '瀹炲') { echo 'selected';} echo" >瀹炲</option>
+				<option value='鎺堟潈鏈夋晥'"; if($row->patent_state == '鎺堟潈鏈夋晥') { echo 'selected';} echo" >鎺堟潈鏈夋晥</option>
+				    </select></td>";
+		        echo "</tr>";
+
+			}
+		} else {
+
+			    echo "<tr>";
+				echo "<th rowspan='2'><p align='center'>1</p></th>";
+				echo "<th><p align='center'>涓撳埄鍚嶇О</p></th>";
+				echo "<td><input type='text' name='patent_name[0]'  /></td>";
+				echo "<td><th><p align='center'>绫诲瀷</p></th></td>";
+				echo "<td><select name='patent_type[$i]' value='$row->patent_type'>
+				<option value='鍙戞槑'>鍙戞槑</option>
+				<option value='瀹炵敤鏂板瀷'>瀹炵敤鏂板瀷</option>
+				<option value='澶栬璁捐'>澶栬璁捐</option>
+				</select></td>";
+				//echo "<td><input type='text' name='patent_type[0]'    ></td>";
+				echo "<td rowspan='2'><input type='button' value='鍒犻櫎' class='pointer'  onclick='deleteTwoRow(this)'/></td>";
+				echo "</tr>";
+				echo "<tr>";
+		        echo "<th><p align='center'>涓撳埄鐘舵�</p></th>";
+		        echo "<td><select name='patent_state[$i]' value='$row->patent_state'>
+		        <option value='鐢宠'>鐢宠</option>
+		        <option value='瀹炲'>瀹炲</option>
+		        <option value='鎺堟潈鏈夋晥'>鎺堟潈鏈夋晥</option>
+		        </select></td>";
+				//echo "<td><input type='text' name='patent_state[0]'  /></td>";
+		        echo "</tr>";
+
+		}
+		?>
+				
+				</table>
+				</td></tr>
+				<tr>
+				<th colspan="5"><input type="button" value="娣诲姞" class='pointer'  onclick="addLine()"/></th>
+				</tr>
+				<tr><td colspan="5">
+				<table id="produce">
+					<?php
+		$project_id = $_SESSION['project_id'];
+		$sql = "Select * from produce where project_id='$project_id'";
+		//
+// 		echo $sql;
+		$db = new DB ();
+		$result = $db->SelectOri ( $sql );
+		$tableRow = mysql_num_rows ( $result );
+		if ($tableRow) {
+			for($i = 0; $i < $tableRow; $i ++) {
+				$row = mysql_fetch_object ( $result );
+				$count=$i+1;
+				echo "<tr>";
+				echo "<th ><p align='center'>1</p></th>";
+				echo "<th><p align='center'>浜у搧鍚嶇О</p></th>";
+				echo "<td><input type='text' name='produce_name[$i]'  value='$row->produce_name'/></td>";
+
+				echo "<th><p align='center'>浜у搧姘村钩</p></th>";
+				echo "<td><select name='produce_level[$si]' > 
+						<option value='1' ";
+						if($row->produce_level==1){echo 'selected';}   echo  ">鍥介檯棰嗗厛</option>
+						<option value='2' ";
+						if($row->produce_level==2){echo 'selected';}  echo  ">鍥介檯鍏堣繘</option>
+						<option value='3'"; 
+						if($row->produce_level==3){echo 'selected';}  echo  ">鍥藉唴棰嗗厛</option>
+						<option value='4'";
+						 if($row->produce_level==4){echo 'selected';}  echo  ">鍥藉唴鍏堣繘</option>
+						<option value='5'";
+						if($row->produce_level==5){echo 'selected';}  echo  ">濉ˉ鍥藉唴绌虹櫧</option>
+						</select></td>";
+				echo "<td><input type='button' value='鍒犻櫎' class='pointer'  onclick='deleteRow(this)'/></td>";
+				echo "</tr>";
+			}
+		} else {
+			echo "<tr>";
+			echo "<th >1</th>";
+			echo "<th><p align='center'>浜у搧鍚嶇О</p></th>";
+			echo "<td><input type='text' name='produce_name[0]'/></td>";
+			echo "<th><p align='center'>浜у搧姘村钩</p></th>";
+			echo "<td><select name='produce_level[$si]' value='$row->produce_level'>
+						<option value='1'>鍥介檯棰嗗厛</option>
+						<option value='2'>鍥介檯鍏堣繘</option>
+						<option value='3'>鍥藉唴棰嗗厛</option>
+						<option value='4'>鍥藉唴鍏堣繘</option>
+						<option value='5'>濉ˉ鍥藉唴绌虹櫧</option>
+						</select></td>";
+			echo "<td   ><input type='button' value='鍒犻櫎' class='pointer'   onclick='deleteRow(this)'/></td>";
+			echo "</tr>";
+		}
+		?>
+				</table>
+				</td></tr>
+					 <tr><th colspan="5"><input type="button" value="娣诲姞" class='pointer'  onclick="addLine2()"/></th></tr>
+				</table>
+				<div class="button_wrapper clearfix d-n">
+					<div class="save">淇濆瓨</div>
+					<!-- <div class="reset" >閲嶇疆</div> -->
+				</div>
+			</div>
+
+		</div>
+	</form>
+
+
+</body>
+</html>

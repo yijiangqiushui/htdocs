@@ -1,0 +1,17 @@
+/* CSS Document */
+/**
+author:Gao Xue
+date:2014-06-09
+*/
+#scorefm{
+	margin:0;
+	padding:10px 30px;
+}
+.ftitle{
+	font-size:14px;
+	font-weight:bold;
+	padding:5px 0;
+	margin-bottom:10px;
+	border-bottom:1px solid #ccc;
+}
+

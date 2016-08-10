@@ -1,0 +1,63 @@
+.TabbedPanels {
+	margin: 0px; width: 100%;
+}
+#TabGroup {
+	background: rgb(255, 255, 255); margin: 0px; padding: 0px; border: 0px currentColor; border-image: none; width: 360px; text-align: left; float: left;
+}
+.TabbedPanelsTabGroup {
+	margin: 0px; padding: 0px; border: 0px currentColor; border-image: none; width: 100%; height: 36px; text-align: left; background-image: url("../../images/pmlc12_w_bj.gif"); background-repeat: repeat-x;
+}
+.TabbedPanelsGR {
+	margin: 0px; width: 100%; padding-top: 5px;
+}
+.TabbedPanelsTabGroupGR {
+	margin: 0px; padding: 0px; border: 0px currentColor; border-image: none; width: 100%; height: 36px; text-align: left; background-image: url("../../images/pmlc12_w_bj.gif"); background-repeat: repeat-x;
+}
+.TabbedPanelsTab {
+	width: 128px; height: 36px; text-align: center; color: rgb(0, 93, 0); line-height: 36px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; float: left; position: relative; cursor: pointer; background-image: url("../../images/pmlc12_w_bja.gif"); background-repeat: no-repeat; -moz-user-select: none; -khtml-user-select: none;
+}
+.TabbedPanelsTab1 {
+	width: 128px; height: 36px; text-align: center; color: rgb(238, 238, 238); line-height: 36px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; float: left; position: relative; cursor: pointer; background-image: url("../../images/pmlc12_w_bjb.gif"); background-repeat: no-repeat; -moz-user-select: none; -khtml-user-select: none;
+}
+.TabbedPanelsTabHover {
+	background-color: rgb(240, 248, 235);
+}
+.TabbedPanelsTabSelected {
+	color: rgb(255, 255, 255); background-image: url("../../images/pmlc12_w_bjb.gif"); background-repeat: no-repeat;
+}
+.TabbedPanelsContentGroup {
+	width: 100%; padding-top: 10px;
+}
+.TabbedPanelsContentGroupGR {
+	width: 100%; text-align: left; padding-top: 10px;
+}
+.Content {
+	padding: 10px 10px 10px 20px; text-align: left; color: rgb(85, 85, 85);
+}
+.ContentVisible {
+	
+}
+.VTabbedPanels .TabGroup {
+	float: left; position: relative; background-color: rgb(238, 238, 238);
+}
+.TabbedPanelsContent {
+	padding: 0px;
+}
+.VTabbedPanels .PanelsTab {
+	margin: 0px; border-top-color: currentColor; border-right-color: currentColor; border-left-color: currentColor; border-top-width: medium; border-right-width: medium; border-left-width: medium; border-top-style: none; border-right-style: none; border-left-style: none; float: none;
+}
+.VTabbedPanels .TabSelected {
+	background-color: rgb(255, 255, 255);
+}
+.VTabbedPanels .ContentGroup {
+	padding: 0px; width: 500px; height: 300px; clear: none; float: left;
+}
+.PMLC12_text_kuang {
+	border: 1px solid rgb(122, 176, 108); border-image: none; height: 18px; color: rgb(51, 51, 51);
+}
+.PMLC12_w_table {
+	width: 320px; height: 36px; float: right;
+}
+.PMLC12_w_table1 {
+	width: 700px; height: 36px; float: left;
+}

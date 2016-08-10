@@ -1,0 +1,100 @@
+1.
+http://127.0.0.1/phpanalysis/upload.html
+
+2.
+选择test.docx
+
+D:\Apache2.2.25\htdocs\phpanalysis\test.docx
+
+
+3.即可出来结果：
+http://127.0.0.1/phpanalysis/check_result.php?file=1447467492.docx
+
+
+查重系统
+http://127.0.0.1/phpanalysis/upload.html
+----》 upload-file.php
+---》dup_check.php
+---》开始查重———》check_result.php
+
+
+
+
+建立索引
+ALTER TABLE `check_articles` ADD INDEX index_name ( `checkName` )
+修改php.ini里面的30秒
+
+
+
+
+工作内容： 只需要按照效果图：
+D:\Apache2.2\htdocs\phpanalysis\20150831V2原型\chachong_main.html
+来做即可
+
+
+SELECT * FROM check_articles WHERE checkName="我喜欢" OR  checkName="便利" GROUP BY article_sentence  HAVING COUNT(article_sentence)>=2
+
+----------
+DELETE FROM article_content;
+delete from article_overview;
+DELETE FROM check_articles;
+
+---------------------------------
+1.记得写个页面，可以删减已经入库的项目的 
+2.显示一个 查重率，  重复的句子数量/ 原文总句子的数量    echo "【早晚去掉这个】查重率为:".($dup_num / sizeof($array)*100)."%";   
+
+
+3.$sentence_dup_list[] = $myOriginStrCopy; //这个有问题，但是我真心看不懂为啥，好在完全不影响啊程序！！
+--------------------------
+
+php.ini max_execution_time=300 修改；
+
+
+1.写一个删除的页眉，管理已经入库的文件。 显示文件名和前100个字符。查看全文。
+防止bug，重复入库。
+
+---------遇到的问题和解决----------------------
+如果发现 您的句子和 相似的句子 不一样， 请注意，就是### 各种替换的问题， ##出现就会导致：
+$offsetOrigenEnd = mb_strpos($mystr,"#",$offsetOrigen+1 );
+这一行写的已经很牛了！！解决了基本所有的乱码问题。
+用这一句反而各种乱码啊！   // $offsetOrigenEnd =$offsetOrigenEnd + mb_strlen($tmp); //不再利用354行找到下一个#的弱智方法来确定一句话，
+
+一句话开始的pos:746一句话结束的pos:761原文的一句话四、总结 7。~~~~~SELECT MIN(offset) offset,article_sentence,article_id FROM check_articles WHERE checkName="四" OR checkName="总结" GROUP BY article_sentence HAVING COUNT(article_sentence)>=1.4++++=====506=====520=====四、总结 5。_____四、总结	7。_____
+您的句子：四、总结	7。
+相似的句子：四、总结	5。
+相似句子的原文段落：#2.31虚拟主持人	4#2.32三维虚拟场景	4#2.5 接口技术	5#三、设备配置要求	5#四、总结	5...
+项目名称:科普讲解直播系统技术方案v1。 
+承担单位:朝阳某公司。 
+所属领域:计算机、直播、技术方
+
+
+376行
+//有些相似的句子过长，其实并不是相似，相似句子的长度应该在  $sentence_word_num * 0.7 ~ $sentence_word_num / 0.7 
+
+//如果原句长度小于5个；$sentence_word_num<5;认为太短不给显示；
+if ($sentence_word_num<=5) {  continue; }
+--------------------------------------------
+如何提高上百万级记录MySQL数据库查询速度 ！！！
+百万级优化：
+http://www.2cto.com/database/201306/222839.html
+
+
+、
+黄钦印经济学班 上午 11:21:20 
+http://www.2cto.com/database/201306/222839.html
+黄钦印经济学班 上午 11:22:10 
+http://www.jianshu.com/p/5dd73a35d70f
+黄钦印经济学班 上午 11:22:33 
+http://blog.csdn.net/waferleo/article/details/7179009 
+
+黄钦印经济学班 上午 11:23:44 
+http://wenku.baidu.com/link?url=2lHGpUe1kcuc-6URWGZsNRK34nss_mx97Ayo2ABNSURJ3ult-lAFfJjcMCHRMb1rDOyfQPv8EMGbUZAmMvfseRhSIUSI5I_-Iy77h5QmUAq
+黄钦印经济学班 上午 11:25:03 
+以上的部分是重复的，但每个都有不用
+
+---------------------------------------------------
+
+
+        foreach($arr as $word_dup_tmp){
+                        $myOriginStr= str_ireplace($word_dup_tmp, "<span class=\"span\">".$word_dup_tmp."</span>",$myOriginStr);
+                    } //end for

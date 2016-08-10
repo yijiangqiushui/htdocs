@@ -1,0 +1,33 @@
+[27-Feb-2016 17:30:59] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[27-Feb-2016 21:50:35] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[27-Feb-2016 22:14:15] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[27-Feb-2016 23:55:18] PHP Warning:  array_diff() [<a href='function.array-diff'>function.array-diff</a>]: Argument #1 is not an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 114
+[27-Feb-2016 23:58:52] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 10:11:30] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 10:12:42] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 10:19:52] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 10:20:01] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 10:57:37] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 11:17:52] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 11:25:48] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 11:26:16] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 11:31:14] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 11:31:43] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[28-Feb-2016 11:48:35] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 18:47:01] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 18:47:58] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 18:49:25] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 18:50:35] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 18:57:04] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 18:58:47] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 19:07:40] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 20:05:28] PHP Warning:  array_diff() [<a href='function.array-diff'>function.array-diff</a>]: Argument #1 is not an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 114
+[29-Feb-2016 20:05:45] PHP Warning:  array_diff() [<a href='function.array-diff'>function.array-diff</a>]: Argument #1 is not an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 114
+[29-Feb-2016 20:08:33] PHP Warning:  array_diff() [<a href='function.array-diff'>function.array-diff</a>]: Argument #1 is not an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 114
+[29-Feb-2016 20:12:25] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 20:18:05] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[29-Feb-2016 22:14:47] PHP Warning:  Cannot use a scalar value as an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 99
+[01-Mar-2016 22:16:10] PHP Warning:  array_diff() [<a href='function.array-diff'>function.array-diff</a>]: Argument #1 is not an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 114
+[03-Mar-2016 15:38:55] PHP Warning:  array_diff() [<a href='function.array-diff'>function.array-diff</a>]: Argument #1 is not an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 114
+[03-Mar-2016 15:39:52] PHP Warning:  array_diff() [<a href='function.array-diff'>function.array-diff</a>]: Argument #1 is not an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 114
+[03-Mar-2016 15:41:00] PHP Warning:  array_diff() [<a href='function.array-diff'>function.array-diff</a>]: Argument #1 is not an array in E:\kwproject\Program\htdocs\modules\php\action\class\projectapp\projectapp.cls.php on line 114

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/mediaplayer.js"></script>
+</head>
+
+<body>
+
+<div id="mytest"></div>
+<!--media-player-->
+
+<div onclick="playnext();">点击测试</div>
+
+<script type="text/javascript">
+var config={
+	renderTo:'#mytest',
+	id:'WindowsMediaPlayer',
+	'width':500,
+	'height':300,
+	params:[
+		{'name':'autoStart','val':'1'},
+		{'name':'AutoSize','val':'1'},
+		{'name':'enableContextMenu','val':'1'},
+//		{'name':'uiMode','val':'none'},
+	],
+	files:[
+		{'url':'/test/video/1.flv','volume':50},
+		{'url':'/test/video/2.flv','volume':75},
+		{'url':'/test/video/3.flv','volume':90},
+		{'url':'/test/video/2.mp4','volume':100},
+	]
+};
+
+//setTimeout('play()',3000);
+//setTimeout('pause()',9000);
+/*
+function controls(){
+	//WindowsMediaPlayer.fullScreen=true;
+	WindowsMediaPlayer.controls.stop();
+	WindowsMediaPlayer.URL='/test/video/2.flv';
+	WindowsMediaPlayer.autoStart=true;
+	WindowsMediaPlayer.controls.play();
+	WindowsMediaPlayer.fullScreen=true;
+}
+
+function playnext(){
+	WindowsMediaPlayer.controls.next();
+	
+	//WindowsMediaPlayer.fullScreen=true;
+	//alert(WindowsMediaPlayer.filename);
+}
+function pause(){
+	WindowsMediaPlayer.controls.pause();
+}*/
+
+</script>
+</body>
+</html>

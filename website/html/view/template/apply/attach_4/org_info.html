@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>申报单位基本情况</title><script type="text/javascript"
+			src="../../../../../../center/html/view/js/jquery-1.11.2.min.js"></script>
+		
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../../common/html/plugin/easyui/themes/icon.css" />
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+		
+		<script type="text/javascript" src="../../../../../../center/html/view/js/moment.min.js"></script>
+	    <script src="../../../../../../common/html/js/tablecommon.js"></script>
+	    <script type="text/javascript" src="../../../../../../common/html/js/validation.js"></script>
+		<script type="text/javascript" src="../../../js/apply/org4_info.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../../../../website/html/view/css/tablestyle.css" />
+        <link rel="stylesheet" type="text/css" href="../../../css/table.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/button.css" />
+			
+		<style type="text/css">
+input class ="easyui-validatebox" required ="true"{
+	height: 100%;
+	width: 100%;
+	font-size: 14px;
+	background-color: transparent;
+	border-color: #fff;
+}
+
+tr:nth-child(odd) {
+	background-color: #D1E4F3;
+}
+
+tr:nth-child(even) {
+	background-color: #EAF3FA;
+}
+
+td {
+	text-align: center;
+	line-height: 30px;
+}
+
+th {
+	font-weight: normal;
+	color: #fff;
+	font-size: 1.0em;
+	background-color: #7AB5ED;
+	line-height: 30px;
+}
+
+p {
+	padding: 0;
+	margin: 2px 0;
+}
+
+body {
+	text-align: center;
+	margin: auto 0;
+}
+</style>
+</head>
+
+<body>
+	<form action="" method="post" id="4org_info_fm">
+		<div class="project_content">
+			<div class="table_title clearfix">
+				<div class="title_pic left">项目申请书</div>
+				<div class="right back_pic" id="back"></div>
+			</div>
+			<div class="table_content back-long">
+				<table cellspacing="0" cellpadding="0" class="basic_info">
+					<tr>
+						<td colspan="6" class="border_left_none"
+							style="background-color: #7AB5ED;">
+							<div class="title_top p-b10">申报单位基本情况</div>
+						</td>
+					</tr>
+					<tr>
+						<th  width="105px"><p align="center">单位名称</p></th>
+						<td colspan="5"><input 
+							type="text" name="org_name" /></td>
+					</tr>
+					<tr>
+						<th ><p align="center">组织机构代码</p></th>
+						<td colspan="3"><input type="text" name="org_code"/></td>
+						<th ><p align="center">注册资金</p></th>
+						<td colspan="2"><input type="text" name="register_fund" datatype="bignumber"/></td>
+						<!--没有字段 -->
+					</tr>
+					<tr>
+						<th  width="105px"><p align="center">注册地址</p></th>
+						<td colspan="3"><input type="text" name="register_address" /></td>
+						<!--没有字段 -->
+						<th  ><p align="center">单位类型</p></th>
+						<td><input  type="text"name="org_type" /></td>
+					</tr>
+					<tr>
+						<th  width="105px"><p align="center">通讯地址</p></th>
+						<td colspan="3"><input type="text" name="contact_address" /></td>
+						<th ><p align="center">邮政编码</p></th>
+						<td><input type="text" name="postal" datatype="postal"/></td>
+					</tr>
+					<tr>
+						<th  width="105px" rowspan="2"><p align="center">法定代表人</p></th>
+						<th  width="89px" ><p align="center">姓名</p></th>
+						<th  width="105px" colspan="2"><p align="center">身份证号</p></th>
+						<th  width="105px" colspan="2"><p align="center">联系电话（手机/座机）</p></th>
+					</tr>
+					<tr>
+						<td><input type="text" name="legal_name" datatype="chinese_characters"/></td>
+						<td colspan="2"><input type="text" name="legal_id" datatype="idcard"/></td>
+						<!-- 没有字段-->
+						<td colspan="2"><input type="text" name="legal_phone" datatype="phandtel"/></td>
+						<!--没有字段-->
+					</tr>
+					<tr>
+						<th  width="105px" rowspan="2"><p align="center">联系人</p></th>
+						<th  width="89px" ><p align="center">姓名</p></th>
+						<th  width="105px" colspan="2"><p align="center">E-mail</p></th>
+						<th  width="105px" colspan="2"><p align="center">联系电话（手机/座机）</p></th>
+					</tr>
+					<tr>
+						<td><input type="text" name="linkman" datatype="chinese_characters"/></td>
+						<td colspan="2"><input type="text" name="linkman_email" datatype="email"/></td>
+						<!-- 没有字段-->
+						<td colspan="2"><input type="text" name="linkman_contact" datatype="phandtel"/></td>
+					</tr>
+				</table>
+				 <input type="hidden" name="save_display" id="save_display"/>
+				<div class="button_wrapper clearfix d-n">
+					<div class="save">保存</div>
+					<!-- <div class="reset" >重置</div> -->
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+1>  分类模块中，子分类，放在不是全部的分类下，刷新过后新的分类才会将其以非叶子节点形式展现，否则以叶子节点方式展示
+
+2>  编辑分类时，将其作为自己的子分类，页面隐藏
+
+3>  人才信息的所属社区未点击分类时，显示的是数字，点击之后才显示文字。
+
+
+
+
+
+
+
+
+科普之窗：
+    信息管理/留言管理：
+	是否推荐：无控制..
+	推荐位：编辑未读出..
+	
+
+信息添加时未清空内容
+
+
+function myCheck(){
+	for(var i=0;i<document.form1.elements.length-1;i++){
+        	if(document.form1.elements[i].value==""){
+                	alert("当前表单不能有空项");
+                     	document.form1.elements[i].focus();
+                     	return false;
+                }
+        }
+        return true;
+}

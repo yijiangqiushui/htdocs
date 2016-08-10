@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>项目（产品）推广扩散情况</title>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript"
+	src="../../../js/apply/project_info/project_promote.js"></script>
+</head>
+<body>
+	<div class="easyui-panel" style="border: 0;">
+		<form method="post" id="project_promote">
+			<table border="1" cellspacing="0">
+				<tr>
+					<td height="29" colspan="6"><h2>五、项目（产品）推广扩散情况</h2></td>
+				</tr>
+				<tr>
+					<td height="29" colspan="2">技术转让</td>
+					<td colspan="2">受让方名称</td>
+					<td colspan="2">企业规模</td>
+				</tr>
+				<tr>
+
+					<td height="29" colspan="2"></td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="assign_name" /></td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="assign_scale" /></td>
+				</tr>
+				<tr>
+					<td height="29" colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+				</tr>
+				<tr>
+					<td height="29" colspan="2">合作建厂</td>
+					<td colspan="2">合作方名称</td>
+					<td colspan="2">企业规模</td>
+				</tr>
+				<tr>
+					<td height="29" colspan="2">1</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="coop_name" /></td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="coop_scale" /></td>
+				</tr>
+				<tr>
+					<td height="29" colspan="2">2</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+				</tr>
+				<tr>
+					<td height="161" colspan="6"><textarea id="market_occupy"> 市场开拓、占有情况:</textarea></td>
+				</tr>
+			</table>
+			<a href="javascript:void(0);" class="easyui-linkbutton"
+				iconcls="icon-ok" onclick="submitdata()">确定</a> <a
+				href="javascript:void(0);" class="easyui-linkbutton"
+				iconcls="icon-no" onclick="reset()">重置</a>
+		</form>
+	</div>
+</body>
+</html>

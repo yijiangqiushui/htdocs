@@ -1,0 +1,74 @@
+/* CSS Document */
+*{ padding:0; margin:0; font-size:12px; font-family:'微软雅黑',Verdana, Geneva, sans-serif;}
+.clearBoth{ clear:both;}
+
+body{ overflow:hidden;
+-moz-user-select: none; /*火狐*/
+-webkit-user-select: none; /*webkit浏览器*/
+-ms-user-select: none; /*IE10*/
+-khtml-user-select: none; /*早期浏览器*/
+user-select: none;
+}
+.head{ height:80px; background-image:url(../img/main_banner.jpg); background-repeat:no-repeat; background-position:right; background-color:#0079ca; overflow:hidden;}
+.logo{ float:left; width:280px; height:80px; background-image:url(../img/logo.png); background-repeat:no-repeat; background-position:8px;}
+.navNinfo{ float:left;}
+.left{ float:left;}
+.right{ float:right; padding-right:30px;}
+.adminInfo{ color:#fff; line-height:16px; padding:12px 0;}
+.adminInfo a{ color:#fff; text-decoration:none;}
+.adminInfo a:hover{ text-decoration:underline;}
+.adminInfo span{ padding:0 5px;}
+.adminInfo{ padding-left:8px;}
+.adminInfo .right{ background-image:url(../img/lockscreen.png); background-position:left; background-repeat:no-repeat; padding-left:19px;}
+.nav .left{ height:40px; overflow:hidden; padding-right:8px;}
+.nav .left a{ display:block; text-decoration:none; float:left; line-height:32px; height:30px; margin-top:10px; color:#fff; padding:0 15px; margin-left:8px; background-color:#f1f1f1; font-size:14px; font-family:'宋体',Verdana, Geneva, sans-serif; font-weight:bold; background-image:url(../img/nav_bg.png);
+border-radius:5px 5px 0 0;
+-moz-border-radius:5px 5px 0 0;
+
+-moz-box-shadow: 0 0 8px #555;
+-webkit-box-shadow: 0 0 8px #555;
+box-shadow: 0 0 8px #555;
+}
+.nav .left a:hover{ text-decoration:underline;}
+#nav_selected{ color:#367abb; background-color:#e2e9ea; background-image:url();}
+
+.menu{ height:100%; float:left; padding-top:10px; background-image:url(../img/border_bg.gif); background-repeat:repeat-y; background-position:right;}
+.menu .holder{ overflow:hidden;}
+.menuBlock h1{font-size:14px; position:relative; text-indent:15px;color:#275d96; border-bottom:1px solid #ccc; line-height:28px;}
+.toggleSubmenu{ position:absolute; display:block; width:16px; height:16px; top:8px; right:15px; background-image:url(../img/toggle-submenu_.png); cursor:pointer;}
+.submenuItem{ padding:10px 0;}
+.submenuItem li{ line-height:29px; text-indent:15px;}
+.submenuItem li:hover{ background-color:#dee7ed; border-right:1px solid #ccc;}
+.submenuItem a{ color:#333; text-decoration:none;}
+.scrpllBtn{ margin:auto; width:108px; height:16px; margin-top:13px; }
+.btn2up,.btn2down{float:left; width:48px; height:17px; background-image:url(../img/scroll_bg.png); background-repeat:no-repeat; cursor:pointer;}
+.btn2up{ background-position:0 -16px; margin-right:10px;}
+.btn2down{ background-position:-47px -16px;}
+
+.targetFrame{ height:100%; float:left; background-color:#e2e9ea;}
+.toggleMenu{ border-left:1px solid #fff; height:100%; float:left; width:9px; background-image:url(../img/toggle-expand.png); background-repeat:no-repeat; background-position:center; cursor:pointer;}
+.targetFrame .holder{ float:left;}
+.position{ padding-left:20px; background-image:url(../img/position.png); background-repeat:no-repeat; background-position:left; line-height:28px; color:#333;}
+.targetFrame .iframe{ background-color:#fff; border:1px solid #fff;}
+.targetFrame .iframe iframe{ border:1px solid #ccc;}
+
+.screenLock_bg{ display:none; position:absolute; left:0; top:0; width:100%; height:100%; background-color:#3a6ea5;}
+.screenLock_pwd{ display:none; position:absolute; left:50%; top:50%; margin-left:-150px; margin-top:-50px; padding:15px 15px 20px 15px;background-color:#fff;
+border-radius:3px 3px;
+-moz-border-radius:3px 3px;
+}
+.screenLockForm label,input{ float:left; margin-right:10px;}
+.screenLockForm label{ width:54px; color:#666; font-size:14px; letter-spacing:3px; line-height:26px;}
+#slfPWD{ width:120px; height:24px; border:1px solid #ccc; font-size:16px;
+background:-webkit-linear-gradient(bottom,#fff 0%,#eee 100%);
+background:-moz-linear-gradient(bottom,#fff 0%,#eee 100%);
+background:-ms-linear-gradient(bottom,#fff 0%,#eee 100%);
+background:-o-linear-gradient(bottom,#fff 0%,#eee 100%);
+}
+#slfSubmit{ padding:0 15px; height:26px; border:1px solid #ccc; font-size:14px; cursor:pointer;
+background:-webkit-linear-gradient(bottom,#fff 0%,#eee 100%);
+background:-moz-linear-gradient(bottom,#fff 0%,#eee 100%);
+background:-ms-linear-gradient(bottom,#fff 0%,#eee 100%);
+background:-o-linear-gradient(bottom,#fff 0%,#eee 100%);
+}
+.sclTip{ background-image:url(../../lib/img/icon-4/info.png); background-position:left; background-repeat:no-repeat; padding-left:35px; line-height:32px; font-size:14px; font-weight:bold; color:#333; margin-bottom:10px;}

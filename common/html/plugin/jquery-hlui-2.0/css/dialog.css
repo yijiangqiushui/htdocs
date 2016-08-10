@@ -1,0 +1,29 @@
+/* CSS Document */
+.hlui-dialog *{ margin:0; padding:0;}
+
+.hlui-dialog{border:1px solid #95b8e7; padding:6px; background-color:#f1f1f1;
+border-radius:3px;
+-moz-border-radius:3px;
+
+-moz-box-shadow: 3px 3px 3px #ddd;
+-webkit-box-shadow: 3px 3px 3px #ddd;
+box-shadow:3px 3px 3px #ddd;
+
+background:-webkit-linear-gradient(bottom,#e0ecff 0%,#eef5ff 100%);
+background:-moz-linear-gradient(bottom,#e0ecff 0%,#eef5ff 100%);
+background:-o-linear-gradient(bottom,#e0ecff 0%,#eef5ff 100%);
+background:-ms-linear-gradient(bottom,#e0ecff 0%,#eef5ff 100%);
+}
+.hlui-dialog{ position:absolute; z-index:10000;}
+.hlui-dialog *{ font-size:12px;}
+
+.ui-dialog-titlebar{ padding-bottom:8px; cursor:move;}
+.ui-dialog-icon{ float:left; width:16px; height:16px; margin-right:5px;}
+.ui-dialog-title{ float:left; widows:16px; height:16px; font-weight:bold; line-height:16px; color:#367abb;}
+.ui-dialog-win{ float:right;}
+.ui-dialog-win a{ display:block; float:left; margin-left:3px; width:16px; height:16px; background-image:url(../img/panel_tools.png); background-repeat:no-repeat;}
+.ui-dialog-min{ background-position:0 0;}
+.ui-dialog-max{ background-position:0 -16px;}
+.ui-dialog-close{ background-position:-16px 0;}
+
+.ui-dialog-body{ border:1px solid #95b8e7; background:#fff; overflow:auto;}

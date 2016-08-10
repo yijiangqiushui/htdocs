@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title><link rel="stylesheet" type="text/css"  href="../../../../website/html/view/css/tablestyle.css" />
+<link href="../css/index.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../../../common/html/lib/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/NTClientJavascript.js" language="javascript"></script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="head"><img src="../img/loginBanner.png" width="1" height="1" /></div><!--head-->
+  <div class="body">
+    <div class="loginForm">
+    <div class="loginFormBanner"></div>
+    <form action="" method="post" id="login" name="login" onsubmit="submitForm();return false;">
+      <div class="input username">
+        <label for="username">用户名</label>
+        <input type="text" name="username" id="username" maxlength="30" placeholder="用户名"/>
+        <div class="clearBoth"></div>
+      </div>
+      <div class="input password">
+        <label for="password">密码</label>
+        <input type="password" name="password" id="password" maxlength="30" placeholder="你的密码"/>
+        <div class="clearBoth"></div>
+      </div>
+      <div class="input validateCode">
+        <label for="validateCode">验证码</label>
+        <input name="validateCode" type="text" id="validateCode" maxlength="4" placeholder="验证码"/>
+        <div class="clearBoth"></div>
+        <div class="validateCodeImg" val="0"></div>
+      </div>
+      <div class="submit"><input name="submit" type="submit" id="submit" value="点击登录" />
+      </div>
+      <div class="clearBoth_last"></div>
+    </form>
+    <div class="copyright"></div>
+    </div><!--loginForm-->
+  </div><!--body-->
+</div> 
+</body>
+</html>

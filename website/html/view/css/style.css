@@ -1,0 +1,27 @@
+.td {
+	width: 100%;
+}
+
+.td1 {
+	width: 100%;
+	height: 250px;
+}
+
+.input {
+	width: 100%;
+	border: none;
+}
+
+.sign {
+	position: fixed;
+	bottom: 10px;
+	left: 400px;
+}
+
+.input1 {
+	height: 150px;
+}
+
+table {
+	width: 100%;
+}

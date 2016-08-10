@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/kindeditor-4.1.10/themes/default/default.css" />
+<!--
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+-->
+<script type="text/javascript" src="../../../../../common/html/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/kindeditor-4.1.10/kindeditor.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/kindeditor-4.1.10/lang/zh_CN.js"></script>
+
+<script type="text/javascript" src="../../../../../common/html/plugin/uploadify/jquery.uploadify-3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/uploadify/uploadify.css"/>
+
+<script type="text/javascript" src="../../js/file/file.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/NTClientJavascript.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/file.css"/>
+
+<script type="text/javascript">
+/*
+	var editor;
+	KindEditor.options.filterMode = false;
+	KindEditor.ready(function(K) {
+		editor = K.create('textarea[name="file_content"]', {
+			resizeType : 1,
+			allowPreviewEmoticons : false,
+			allowImageUpload : true,
+			items : [
+				'source','|','fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+				'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+		});
+	});
+	*/
+</script>
+</head>
+
+<body>
+<div id="newdlg" style="padding:2px 5px">
+  <form id="newfm" method="post">
+    <table id="table" cellpadding="9" border="1" rules="all">
+      <tr>
+        <td>文件类型：</td>
+        <td>
+        <select name="types" id="types" class="easyui-combobox" data-options="editable:false,panelHeight:'110'">
+        	<option value="党组">党组</option>
+        	<option value="科委">科委</option>
+        	<option value="知识产权局">知识产权局</option>
+        	<option value="科委联席">科委联席</option>
+        	<option value="科技领导小组">科技领导小组</option>
+        </select>
+        </td>
+        <td>加密级别：</td>
+        <td>
+        <select name="file_level" id="file_level" class="easyui-combobox" data-options="editable:false,panelHeight:'50'">
+        	<option value="非密">非密</option>
+        	<option value="秘密">秘密</option>
+        </select>
+         <td>拟稿日期：</td>
+        <td><input type="text" name="addedDate" id="addedDate" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" /></td>
+        </td>
+      </tr>
+      <tr>
+        <td>文件名称：</td>
+        <td colspan="5"><input type="text" name="file_name" id="file_name" /></td>
+      </tr>
+      <tr>
+        <td>主要内容：</td>
+        <td colspan="5"><textarea name="file_content" id="file_content" rows="20"></textarea></td>
+      </tr>
+      <tr>
+        <td>印制份数：</td>
+        <td><input type="text" name="number" id="number"  class="easyui-validatebox" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+        <td colspan="4">
+        <input type="file" name="file_upload" id="file_upload"/>
+        <!--<p><a href="javascript:$('#file_upload').uploadify('settings', 'formData', {'typeCode':document.getElementById('id_file').value});$('#file_upload').uploadify('upload','*')">上传</a>
+        <a href="javascript:$('#file_upload').uploadify('cancel','*')">重置上传队列</a>
+        </p>-->
+        <input type="hidden" name="attach_name" id="attach_name" style="width:900px;">
+        <input type="hidden" name="file_auto_name" id="file_auto_name" style="width:900px;">
+        </td>
+      </tr>
+    </table>
+    <div class="submit">
+          <input type="button" name="button" id="button" value="提交" onmousemove="this.style.cursor='pointer'"  onclick="check();" />
+    </div>
+    <input type="hidden" value="1215154" name="tmpdir" id="id_file" />
+  </form>
+</div>
+</body>
+</html>

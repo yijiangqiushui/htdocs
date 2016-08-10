@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>管理员信息</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<!--
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/admin/admin.config.js"></script>
+-->
+<script type="text/javascript" src="../../../../../common/html/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+<script type="text/javascript" src="../../js/admin/admininfo.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/NTClientJavascript.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/admininfo.css"/>
+</head>
+<body class='easyui-layout'>
+<div id='west' data-options="region:'west',title:'用户分组',split:true" style="width:200px;padding:5px;">
+  <ul id="treeData">
+  </ul>
+</div>
+<!-- 对树结构添加右键事件-->   
+<div id="mm" class="easyui-menu" style="width:120px;">
+  <div onclick="newCat()" class="add_cat" data-options="iconCls:'icon-add'">添加分组</div>
+  <div onclick="editCat()" class="edit_cat" data-options="iconCls:'icon-edit'">编辑分组</div>
+  <div onclick="delCat()" class="remove_cat" data-options="iconCls:'icon-remove'">移除分组</div>
+  <div onclick="get_isDel_cat()" class="reload_cat" data-options="iconCls:'icon-reload'">恢复分组</div>
+</div>
+<!--添加分组-->
+<div id="new_catDlg" class="easyui-dialog" style="width:380px;padding:10px 20px"
+            closed="true" buttons="#new_catDlg-buttons">
+  <form id="new_catfm" method="post">
+    <table cellspacing="5">
+      <input id="pid" name="upperID" type="hidden" />
+      <tr>
+        <td width="80">所属分类：</td>
+        <td><input name="pritree1" id="pritree1" style="width:180px;" /></td>
+      </tr>
+      <tr>
+        <td>用户组：</td>
+        <td><input name="catName" style="width:180px;" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+      </tr>
+      <tr>
+        <td>专有名称：</td>
+        <td><input name="exclusive_name" style="width:180px;" class="easyui-validatebox" data-options="required:false,missingMessage:'该项为必填项'" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div id="new_catDlg-buttons" style="text-align:center;padding:5px"> 
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="saveNewCat()">确定 </a> 
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#new_catDlg').dialog('close')">取消</a> 
+</div>
+<!--修改分组-->
+<div id="edit_catDlg" class="easyui-dialog" style="width:380px;padding:10px 20px"
+            closed="true" buttons="#edit_catDlg-buttons">
+  <form id="edit_catform" method="post">
+    <table>
+      <tr>
+        <td width="80">所属分类：</td>
+        <td><input name="pritree" id="pritree" style="width:180px;" /></td>
+      </tr>
+      <tr>
+        <td>用户组：</td>
+        <td><input name="catName" style="width:180px;" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+      </tr>
+      <tr>
+        <td>专有名称：</td>
+        <td><input name="exclusive_name" style="width:180px;" class="easyui-validatebox" data-options="required:false,missingMessage:'该项为必填项'" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div id="edit_catDlg-buttons" style="text-align:center;padding:5px"> 
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="saveEditCat()">确定 </a> 
+  <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#edit_catDlg').dialog('close')">取消</a> 
+</div>
+
+
+<!--表结构-->
+<div id='center' data-options="region:'center',split:true" style="padding:5px;">
+  <table id="admingrid" class="easyui-datagrid">
+  </table>
+  <div id="toolbar"> 
+  	<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="queryAdmin()">查询</a> 
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick="newAdmin()">添加</a> 
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="delArrAdmin()">批量删除</a> 
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-no" plain="true" onclick="disableAdmin(1)">禁用</a> 
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" plain="true" onclick="disableAdmin(0)">启用</a>
+   <!-- <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="loadPage()">未删除</a>-->
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="get_isDel()">已删除</a>
+    <a href="javascript:void(0)" id="muti_back" class="easyui-linkbutton" iconcls="icon-ok" style="display:none" plain="true">批量恢复</a> 
+  	<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" id="back_loadPage" onclick="init()">返回用户信息</a> 
+  </div>
+</div>  
+  <!--添加-->
+<div id="newdlg" class="easyui-dialog" style="width:700px;padding:10px 20px"
+            closed="true" buttons="#dlg-buttons">
+  <div class="ftitle">用户信息</div>
+  <form id="newfm" method="post">
+    <input type="hidden" id="pcat" name="category" />
+    <input  name="isManager" type="hidden" id="isManager0" />
+    <input  name="managerMoreBm" type="hidden" id="managerMoreBm0" />
+    <table id="tbl">
+      <input id="up_id" name="upperID" type="hidden" />
+      <input name="userPrivileges" id="pridge" type="hidden"/>
+      <input name="exclusiveName" type="hidden" />
+      <tr>
+        <td>所属分类：</td>
+        <td><input id="ptext" class="easyui-validatebox" readonly='true' style="border:0px;" /></td>
+        <!--
+        <td>专有名称：</td>
+        <td><input name="exclusiveName" type="hidden" /></td>
+        -->
+      </tr>
+      <tr class="managerKs">
+        <td>管理科室：</td>
+        <td><input type="checkbox" class="loadPri0" onchange="loadPri(0)" /></td>
+      </tr>
+      <tr class="managerBm">
+        <td>所管部门：</td>
+        <td colspan="3"><input id="managerMoreBm" class="easyui-combox" style="width:440px;" /></td>
+      </tr>
+      <tr>
+        <td>用户名：</td>
+        <td class="usr"><input name="usr" class="easyui-validatebox" maxlength="32" data-options="required:true,missingMessage:'该项为必填项'" /><span></span></td>
+        <td>真实姓名：</td>
+        <td class="realname"><input name="realname" class="easyui-validatebox" maxlength="32" data-options="required:true,missingMessage:'该项为必填项'" /><span></span></td>
+      </tr>
+      <tr>
+        <td>设备ID：</td>
+        <td><input name="ntid" class="easyui-validatebox"/></td>
+        <td>SHA1种子码：</td>
+        <td><input name="seed" class="easyui-validatebox"/></td>
+      </tr>
+      <tr>
+        <td>密码：</td>
+        <td><input type="password" class="easyui-validatebox" name="pwd" maxlength="40"/></td>
+        <td>确认密码：</td>
+        <td><input type="password" class="easyui-validatebox" name="repwd" maxlength="40"/></td>
+      </tr>
+      <tr>
+        <td>电话：</td>
+        <td><input name="phone" class="easyui-validatebox"  maxlength="11" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+        <td>邮箱：</td>
+        <td><input name="email" class="easyui-validatebox" validtype="email" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+      </tr>
+      <tr>
+        <td>QQ：</td>
+        <td><input name="qq" class="easyui-validatebox" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')" maxlength="12" data-options="required:false,missingMessage:'该项为必填项'" /></td>
+        <td>状态：</td>
+        <td><input id="allow" name="isForbidden" type="radio" value="0" />
+          启用
+          <input id="forbidden" name="isForbidden" type="radio" value="1" />
+          禁用 </td>
+      </tr>
+      <tr class="privileges">
+        <td>用户权限：</td>
+        <td colspan="3">
+        <div class="privileges-div">
+        	<div style="margin:20px 0 10px 0;"></div>
+          <div class="easyui-tabs" style="width:480px;height:300px" id="tabs">
+            <div title="审批管理" style="padding:10px">
+              <ul>
+                <li>创建制发文件
+                 <input type="checkbox" class="drafter0" name="drafter0" value="drafter" onchange="getDrafterPri(0)" />拟稿人
+                </li>
+               <li style="list-style-type:none;">
+                  <input type="checkbox" value="file_add" name="file_add0" class="file_role0" onchange="check_isAll(0,'file')" />
+                  添加内容信息</li>
+                <br />
+                <li>文件审批管理   
+                  <input type="checkbox" class="maker0" name="maker0" value="maker" onchange="getMakerPri(0)" />制文人
+                </li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="file_query" name="file_query0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  查看内容信息
+                  <input type="checkbox" value="file_del" name="file_del0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  删除内容信息
+                  <input type="checkbox" value="file_edit" name="file_edit0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  修改内容信息
+                   <br />
+                  <input type="checkbox" value="file_red" name="file_red0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  上传红头文件
+                  <input type="checkbox" value="find_red" name="find_red0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  查看红头文件
+                  <input type="checkbox" value="file_detail" name="file_detail0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  查看内容详情
+                   <br />
+                  <input type="checkbox" value="make_red" name="make_red0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  通知制文人制作红头文件
+                   <input type="checkbox" value="remakes_red" name="remakes_red0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  通知制文人重新制作红头文件
+                   <br />
+                  <input type="checkbox" value="file_cancel" name="file_cancel0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  撤销文件
+                  <input type="checkbox" value="file_self" name="file_self0" class="file_role0" onchange="check_isAll(0,'file')"/>
+                  只显示自己的制发文件
+                 </li>
+                   <br />
+                <li>制发文件统计</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="file_report" name="file_report0"/>
+                  制发文件统计</li>
+                <br />
+                <li>印章使用申请</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="seal_add" name="seal_add0"/>
+                  添加内容信息</li>
+                <br />
+                <li>印章审批管理   
+                <input type="checkbox" class="sealer0" name="sealer0" value="sealer" onchange="seal_all(0)" />印章管理员
+                </li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="seal_query" name="seal_query0" class="seal_role0" onchange="check_isAll(0,'seal')"/>
+                  查看内容信息
+                  <input type="checkbox" value="seal_del" name="seal_del0" class="seal_role0" onchange="check_isAll(0,'seal')"/>
+                  删除内容信息
+                  <input type="checkbox" value="seal_edit" name="seal_edit0" class="seal_role0" onchange="check_isAll(0,'seal')"/>
+                  修改内容信息
+                  <br />
+                  <input type="checkbox" value="seal_getNo" name="seal_getNo0" class="seal_role0" onchange="check_isAll(0,'seal')"/>
+                  生成文件编码
+                  <input type="checkbox" value="seal_status" name="seal_status0" class="seal_role0" onchange="check_isAll(0,'seal')"/>
+                  设置信息状态
+                  <input type="checkbox" value="seal_reject" name="seal_reject0" class="seal_role0" onchange="check_isAll(0,'seal')"/>
+                  驳回申请
+                  <br />
+                  <input type="checkbox" value="seal_cancel" name="seal_cancel0" class="seal_role0" onchange="check_isAll(0,'seal')"/>
+                  撤销文件
+                  </li>
+                <br />
+                <li>印章使用统计</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="seal_report" name="seal_report0"/>
+                  印章使用统计</li>
+                <br />
+             </ul>
+            </div>
+            <div title="通信管理" style="padding:10px">
+              <ul>
+                <li>短信管理   <input type="checkbox" class="sms_concat0" onchange="sms_all(0)"/>全选</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="sms_query" name="sms_query0" class="sms_role0" onchange="check_isAll(0,'sms')"/>
+                  查询短消息
+                  <input type="checkbox" value="sms_add" name="sms_add0" class="sms_role0" onchange="check_isAll(0,'sms')"/>
+                  发送短消息
+                  <input type="checkbox" value="sms_reply" name="sms_reply0" class="sms_role0" onchange="check_isAll(0,'sms')"/>
+                  查看回复消息
+                  <input type="checkbox" value="sms_del" name="sms_del0" class="sms_role0" onchange="check_isAll(0,'sms')"/>
+                  删除短消息</li>
+                <br />
+                <li>短信统计</li>
+                <li style="list-style-type:none;">
+                	<input type="checkbox" value="sms_report" name="sms_report0"/>
+                	短信统计
+                </li><br />
+                <li>通讯录管理   <input type="checkbox" class="listinfo_concat0" onchange="listinfo_all(0)"/>全选</li>
+                <li style="list-style-type:none;">
+                <!--
+                  <input type="checkbox" name="smslistcat_query0" value="smslistcat_query" class="listcat_role0" onchange="check_isAll(0,'listcat')"/>
+                  查看分类信息
+                  -->
+                  <input type="checkbox" name="smslistcat_add0" value="smslistcat_add" class="listinfo_role0" onchange="check_isAll(0,'listinfo')"/>
+                  添加通讯录分组
+                  <input type="checkbox" name="smslistcat_edit0" value="smslistcat_edit" class="listinfo_role0" onchange="check_isAll(0,'listinfo')"/>
+                  编辑通讯录分组
+                  <input type="checkbox" name="smslistcat_del0" value="smslistcat_del" class="listinfo_role0" onchange="check_isAll(0,'listinfo')"/>
+                  删除通讯录分组
+                  <br /> 
+               <!--
+                   </li>
+                <li>通讯录内容信息   <input type="checkbox" class="listinfo_concat0" onchange="listinfo_all(0)"/>全选</li>
+                <li style="list-style-type:none;">
+                -->
+                  <input type="checkbox" name="smslistinfo_query0" value="smslistinfo_query" class="listinfo_role0" onchange="check_isAll(0,'listinfo')"/>
+                  查看联系人
+                  <input type="checkbox" name="smslistinfo_add0" value="smslistinfo_add" class="listinfo_role0" onchange="check_isAll(0,'listinfo')"/>
+                  添加联系人
+                  <input type="checkbox" name="smslistinfo_edit0" value="smslistinfo_edit" class="listinfo_role0" onchange="check_isAll(0,'listinfo')"/>
+                  修改联系人
+                  <input type="checkbox" name="smslistinfo_del0" value="smslistinfo_del" class="listinfo_role0" onchange="check_isAll(0,'listinfo')"/>
+                  删除联系人
+                  <br />
+                  <input type="checkbox" name="smslistinfo_import0" value="smslistinfo_import" class="listinfo_role0" onchange="check_isAll(0,'listinfo')"/>
+                  导入通讯录
+                  <input type="checkbox" name="smslistinfo_export0" value="smslistinfo_export" class="listinfo_role0" onchange="check_isAll(0,'listinfo')"/>
+                  导出通讯录 
+                  </li><br />
+              </ul>
+            </div>
+            <div title="设置" style="padding:10px">
+              <ul>
+                <li>用户分组   <input type="checkbox" class="admincat_concat0" onchange="admincat_all(0)"/>全选</li>
+                <li style="list-style-type:none;">
+                	所管分类
+                	<input class="easyui-combox" id="admincat_role" name="role"/>
+                </li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" name="admincat_query0" value="admincat_query" class="admincat_role0" onchange="check_isAll(0,'admincat')"/>
+                  查看用户分组
+                  <input type="checkbox" name="admincat_add0" value="admincat_add" class="admincat_role0" onchange="check_isAll(0,'admincat')"/>
+                  添加用户分组
+                  <input type="checkbox" name="admincat_edit0" value="admincat_edit" class="admincat_role0" onchange="check_isAll(0,'admincat')"/>
+                  修改用户分组
+                  <br />
+                  <input type="checkbox" name="admincat_del0" value="admincat_del" class="admincat_role0" onchange="check_isAll(0,'admincat')"/>
+                  删除用户分组
+                  <input type="checkbox" name="admincat_disable0" value="admincat_disable" class="admincat_role0" onchange="check_isAll(0,'admincat')"/>
+                  禁用用户分组
+                  <input type="checkbox" name="admincat_enable0" value="admincat_enable" class="admincat_role0" onchange="check_isAll(0,'admincat')"/>
+                  启用用户分组 </li>
+                <br />
+                <li>用户信息   <input type="checkbox" class="admininfo_concat0" onchange="admininfo_all(0)"/>全选</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" name="admininfo_query0" value="admininfo_query" class="admininfo_role0" onchange="check_isAll(0,'admininfo')"/>
+                  查看用户信息
+                  <input type="checkbox" name="admininfo_add0" value="admininfo_add" class="admininfo_role0" onchange="check_isAll(0,'admininfo')"/>
+                  添加用户
+                  <input type="checkbox" name="admininfo_edit0" value="admininfo_edit" class="admininfo_role0" onchange="check_isAll(0,'admininfo')"/>
+                  修改用户
+                  <br />
+                  <input type="checkbox" name="admininfo_del0" value="admininfo_del" class="admininfo_role0" onchange="check_isAll(0,'admininfo')"/>
+                  删除用户
+                  <input type="checkbox" name="admininfo_disable0" value="admininfo_disable" class="admininfo_role0" onchange="check_isAll(0,'admininfo')"/>
+                  禁用用户
+                  <input type="checkbox" name="admininfo_enable0" value="admininfo_enable" class="admininfo_role0" onchange="check_isAll(0,'admininfo')"/>
+                  启用用户 </li>
+              </ul>
+            </div>
+            <div title="扩展" style="padding:10px">
+              <ul>
+                <li>日志</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" name="loginfo_query0" value="loginfo_query"/>
+                  查看日志信息 </li>
+                <br />
+                <li>数据库</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" name="data_backup0" value="data_backup"/>
+                  备份数据&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="data_restore0" value="data_restore"/>
+                  恢复数据 </li><br />
+              </ul>
+            </div>
+          </div>
+        </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div id="dlg-buttons" style="text-align:center;padding:5px"> <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="saveAdmin()">确定 </a> <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#newdlg').dialog('close')">取消</a> </div>
+<!--修改用户-->
+<div id="edtdlg" class="easyui-dialog" style="width:700px;padding:10px 20px" closed="true" buttons="#dlg-buttons1">
+  <div class="ftitle">用户信息</div>
+  <form id="edtdlgfm" method="post">
+    <input type="hidden" id="upCat" name="upCat" />
+    <input name="userPrivileges" type="hidden" id="pridge2"/>
+    <input  name="isManager" type="hidden" id="isManager1" />
+    <input  name="managerMoreBm" type="hidden" id="managerMoreBm2" />
+    <input name="exclusiveName" type="hidden" />
+    <table>
+      <tr>
+        <td>所属分类：</td>
+        <td><input name="upperID" id="catTree" style="width:154px;" /></td>
+        <!--
+        <td>专有名称：</td>
+        <td><input name="exclusiveName"  /></td>
+        -->
+      </tr>
+      <tr class="managerKs1">
+        <td>管理科室：</td>
+        <td><input type="checkbox" class="loadPri1" onchange="loadPri(1)" /></td>
+      </tr>
+      <tr class="managerBm1">
+        <td>所管部门：</td>
+        <td colspan="3"><input id="managerMoreBm" class="easyui-combox" style="width:440px;" /></td>
+      </tr>
+      <tr>
+        <td>用户名：</td>
+        <td class="usr"><input name="usr" class="easyui-validatebox" maxlength="32" data-options="required:true,missingMessage:'该项为必填项'" /><span></span></td>
+        <td>真实姓名：</td>
+        <td class="realname"><input name="realname" class="easyui-validatebox" maxlength="32" data-options="required:true,missingMessage:'该项为必填项'" /><span></span></td>
+      </tr>
+      <tr>
+        <td>设备ID：</td>
+        <td><input name="ntid" class="easyui-validatebox"/></td>
+        <td>SHA1种子码：</td>
+        <td><input name="seed" class="easyui-validatebox"/></td>
+      </tr>
+      <tr>
+        <td>新密码：</td>
+        <td><input type="password" name="newpwd" id="newpwd" maxlength="40" class="easyui-validatebox" /></td>
+        <td>确认密码：</td>
+        <td><input type="password" name="confirmpwd" id="confirmpwd" maxlength="40" class="easyui-validatebox" /></td>
+      </tr>
+      <tr>
+        <td>电话：</td>
+        <td><input name="phone" class="easyui-validatebox" maxlength="11" onkeyup="value=value.replace(/[^\d-]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d-]/g,''))" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+        <td>邮箱：</td>
+        <td><input name="email" class="easyui-validatebox" validtype="email" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+      </tr>
+      <tr>
+        <td>QQ：</td>
+        <td><input name="qq" class="easyui-validatebox" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')" maxlength="12" data-options="required:false,missingMessage:'该项为必填项'" /></td>
+        <td>状态：</td>
+        <td><input id="allow" name="isForbidden" type="radio" value="0" />
+          启用
+          <input id="forbidden" name="isForbidden" type="radio" value="1" />
+          禁用 </td>
+      </tr>
+      <tr class="privileges">
+        <td>用户权限：</td>
+        <td colspan="3">
+        	<div style="margin:20px 0 10px 0;"></div>
+        	<div class="easyui-tabs" style="width:480px;height:300px">
+            <div title="审批管理" style="padding:10px">
+              <ul>
+                <li>创建制发文件
+                 <input type="checkbox" class="drafter1" name="drafter1" value="drafter" onchange="getDrafterPri(1)" />拟稿人
+                </li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="file_add" name="file_add1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  添加内容信息</li>
+                <br />
+                <li>文件审批管理
+                  <input type="checkbox" class="maker1" name="maker1" value="maker" onchange="getMakerPri(1)" />制文人
+                </li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="file_query" name="file_query1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  查看内容信息
+                  <input type="checkbox" value="file_del" name="file_del1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  删除内容信息
+                  <input type="checkbox" value="file_edit" name="file_edit1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  修改内容信息
+                  <br />
+                   <input type="checkbox" value="file_red" name="file_red1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  上传红头文件
+                  <input type="checkbox" value="find_red" name="find_red1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  查看红头文件
+                 <input type="checkbox" value="file_detail" name="file_detail1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  查看内容详情
+                   <br />
+                  <input type="checkbox" value="make_red" name="make_red1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  通知制文人制作红头文件
+                  <input type="checkbox" value="remakes_red" name="remakes_red1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  通知制文人重新制作红头文件
+                  <br />
+                  <input type="checkbox" value="file_cancel" name="file_cancel1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  撤销文件
+                  <input type="checkbox" value="file_self" name="file_self1" class="file_role1" onchange="check_isAll(1,'file')"/>
+                  只显示自己的制发文件
+              </li>
+                <br />
+                <li>制发文件统计</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="file_report" name="file_report1"/>
+                  制发文件统计</li>
+                <br />
+                <li>印章使用申请</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="seal_add" name="seal_add1"/>
+                  添加内容信息</li>
+                <br />
+                <li>印章审批管理   
+                <input type="checkbox" class="sealer1" name="sealer1" value="sealer" onchange="seal_all(1)" />印章管理员
+                </li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="seal_query" name="seal_query1" class="seal_role1" onchange="check_isAll(1,'seal')"/>
+                  查看内容信息
+                  <input type="checkbox" value="seal_del" name="seal_del1" class="seal_role1" onchange="check_isAll(1,'seal')"/>
+                  删除内容信息
+                  <input type="checkbox" value="seal_edit" name="seal_edit1" class="seal_role1" onchange="check_isAll(1,'seal')"/>
+                  修改内容信息
+                  <br />
+                  <input type="checkbox" value="seal_getNo" name="seal_getNo1" class="seal_role1" onchange="check_isAll(1,'seal')"/>
+                  生成文件编码
+                  <input type="checkbox" value="seal_status" name="seal_status1" class="seal_role1" onchange="check_isAll(1,'seal')"/>
+                  设置信息状态
+                  <input type="checkbox" value="seal_reject" name="seal_reject1" class="seal_role1" onchange="check_isAll(1,'seal')"/>
+                  驳回申请
+                  <br />
+                  <input type="checkbox" value="seal_cancel" name="seal_cancel1" class="seal_role1" onchange="check_isAll(1,'seal')"/>
+                  撤销文件
+                 </li>
+                <br />
+                <li>印章使用统计</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="seal_report" name="seal_report1"/>
+                  印章使用统计</li>
+                <br />
+             </ul>
+            </div>
+            <div title="通信管理" style="padding:10px">
+              <ul>
+                <li>短信管理   <input type="checkbox" class="sms_concat1" onchange="sms_all(1)"/>全选</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" value="sms_query" name="sms_query1" class="sms_role1" onchange="check_isAll(1,'sms')"/>
+                  查询短消息
+                  <input type="checkbox" value="sms_add" name="sms_add1" class="sms_role1" onchange="check_isAll(1,'sms')"/>
+                  发送短消息
+                  <input type="checkbox" value="sms_reply" name="sms_reply1" class="sms_role1" onchange="check_isAll(1,'sms')"/>
+                  查看回复消息
+                  <input type="checkbox" value="sms_del" name="sms_del1" class="sms_role1" onchange="check_isAll(1,'sms')"/>
+                  删除短消息</li>
+                <br />
+                <li>短信统计</li>
+                <li style="list-style-type:none;">
+                	<input type="checkbox" value="sms_report" name="sms_report1"/>
+                	短信统计
+                </li><br />
+                <li>通讯录管理   <input type="checkbox" class="listinfo_concat1" onchange="listinfo_all(1)"/>全选</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" name="smslistcat_add1" value="smslistcat_add" class="listinfo_role1" onchange="check_isAll(1,'listinfo')"/>
+                  添加通讯录分组
+                  <input type="checkbox" name="smslistcat_edit1" value="smslistcat_edit" class="listinfo_role1" onchange="check_isAll(1,'listinfo')"/>
+                  编辑通讯录分组
+                  <input type="checkbox" name="smslistcat_del1" value="smslistcat_del" class="listinfo_role1" onchange="check_isAll(1,'listinfo')"/>
+                  删除通讯录分组
+                  <br />
+                  <!--
+                  </li>
+                <li>通讯录内容信息   <input type="checkbox" class="listinfo_concat1" onchange="listinfo_all(1)"/>全选</li>
+                <li style="list-style-type:none;">
+                -->
+                  <input type="checkbox" name="smslistinfo_query1" value="smslistinfo_query" class="listinfo_role1" onchange="check_isAll(1,'listinfo')"/>
+                  查看联系人
+                  <input type="checkbox" name="smslistinfo_add1" value="smslistinfo_add" class="listinfo_role1" onchange="check_isAll(1,'listinfo')"/>
+                  添加联系人
+                  <input type="checkbox" name="smslistinfo_edit1" value="smslistinfo_edit" class="listinfo_role1" onchange="check_isAll(1,'listinfo')"/>
+                  修改联系人
+                  <input type="checkbox" name="smslistinfo_del1" value="smslistinfo_del" class="listinfo_role1" onchange="check_isAll(1,'listinfo')"/>
+                  删除联系人
+                  <br />
+                  <input type="checkbox" name="smslistinfo_import1" value="smslistinfo_import" class="listinfo_role1" onchange="check_isAll(1,'listinfo')"/>
+                  导入通讯录
+                  <input type="checkbox" name="smslistinfo_export1" value="smslistinfo_export" class="listinfo_role1" onchange="check_isAll(1,'listinfo')"/>
+                  导出通讯录 
+                  </li><br />
+              </ul>
+            </div>
+            <div title="设置" style="padding:10px">
+              <ul>
+                <li>用户分组   <input type="checkbox" class="admincat_concat1" onchange="admincat_all(1)"/>全选</li>
+                <li style="list-style-type:none;">
+                	所管分类
+                	<input class="easyui-combox" id="admincat_role1" name="admincat_role"/>
+                </li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" name="admincat_query1" value="admincat_query" class="admincat_role1" onchange="check_isAll(1,'admincat')"/>
+                  查看用户
+                  <input type="checkbox" name="admincat_add1" value="admincat_add" class="admincat_role1" onchange="check_isAll(1,'admincat')"/>
+                  添加用户
+                  <input type="checkbox" name="admincat_edit1" value="admincat_edit" class="admincat_role1" onchange="check_isAll(1,'admincat')"/>
+                  修改用户
+                  <br />
+                  <input type="checkbox" name="admincat_del1" value="admincat_del" class="admincat_role1" onchange="check_isAll(1,'admincat')"/>
+                  删除用户
+                  <input type="checkbox" name="admincat_disable1" value="admincat_disable" class="admincat_role1" onchange="check_isAll(1,'admincat')"/>
+                  禁用用户
+                  <input type="checkbox" name="admincat_enable1" value="admincat_enable" class="admincat_role1" onchange="check_isAll(1,'admincat')"/>
+                  启用用户 </li>
+                <br />
+                <li>用户信息   <input type="checkbox" class="admininfo_concat1" onchange="admininfo_all(1)"/>全选</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" name="admininfo_query1" value="admininfo_query" class="admininfo_role1" onchange="check_isAll(1,'admininfo')"/>
+                  查看用户信息
+                  <input type="checkbox" name="admininfo_add1" value="admininfo_add" class="admininfo_role1" onchange="check_isAll(1,'admininfo')"/>
+                  添加用户
+                  <input type="checkbox" name="admininfo_edit1" value="admininfo_edit" class="admininfo_role1" onchange="check_isAll(1,'admininfo')"/>
+                  修改用户
+                  <br />
+                  <input type="checkbox" name="admininfo_del1" value="admininfo_del" class="admininfo_role1" onchange="check_isAll(1,'admininfo')"/>
+                  删除用户
+                  <input type="checkbox" name="admininfo_disable1" value="admininfo_disable" class="admininfo_role1" onchange="check_isAll(1,'admininfo')"/>
+                  禁用用户
+                  <input type="checkbox" name="admininfo_enable1" value="admininfo_enable" class="admininfo_role1" onchange="check_isAll(1,'admininfo')"/>
+                  启用用户 </li>
+              </ul>
+            </div>
+            <div title="扩展" style="padding:10px">
+              <ul>
+                <li>日志</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" name="loginfo_query1" value="loginfo_query"/>
+                  查看日志信息 </li>
+                <br />
+                <li>数据库</li>
+                <li style="list-style-type:none;">
+                  <input type="checkbox" name="data_backup1" value="data_backup"/>
+                  备份数据&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="data_restore1" value="data_restore"/>
+                  恢复数据 </li><br />
+              </ul>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div id="dlg-buttons1" style="text-align:center;padding:5px"> <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="updateAdmin()">确定 </a> <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#edtdlg').dialog('close')">取消</a> </div>
+<!--查询用户-->
+<div id="quedlg" class="easyui-dialog" style="width:400px;height:220px;padding:10px 20px"
+            closed="true" buttons="#dlg-buttons2">
+  <div class="ftitle">管理员信息</div>
+  <form id="quefm" method="post" novalidate="novalidate">
+    <table>
+      <tr>
+        <td>用户名：</td>
+        <td><input id="username" name="usr" /></td>
+      </tr>
+      <tr>
+        <td>状态：</td>
+        <td><input id="allow" name="isForbidden" type="radio" value="0" />
+          启用
+          <input id="forbidden" name="isForbidden" type="radio" value="1" />
+          禁用 </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div id="dlg-buttons2" style="text-align:center;padding:5px"> <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="findAdmin()">确定 </a> <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#quedlg').dialog('close')">取消</a> </div>
+</body>
+</html>

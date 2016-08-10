@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>推荐单位统计</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/Highcharts/js/modules/exporting.js"></script>  
+<script type="text/javascript" src="../../../../../common/html/plugin/Highcharts/js/highcharts.js"></script>
+<script type="text/javascript" src="../../js/file/jquery.PrintArea.js"></script>
+<script type="text/javascript" src="../../js/file/seal_chart_report.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/NTClientJavascript.js"></script>
+
+</head>
+
+<body style="display:none;">
+ <form action="#" method="post">
+    <div style="font-weight:bold; margin-right:10px;">印章使用申请统计图表</div>
+    <div class="form_input" style="margin:10px 0px 0px 30px;">统计图类型:              
+      <input type="radio" name="charType" value="1" checked="checked" style="vertical-align: middle" />
+      柱状图&nbsp;&nbsp;&nbsp;
+     <!-- <input type="radio" name="charType" value="2" style="vertical-align: middle" />
+      趋势图&nbsp;&nbsp;&nbsp;-->
+      <input type="radio" name="charType" value="3" style="vertical-align: middle" />
+      饼状图&nbsp;&nbsp;					
+	</div>
+    <div class="form_input" style="margin:10px 0px 0px 30px;">统计类别:&nbsp;&nbsp;
+      <input type="radio" name="charClass" value="1" checked="checked" style="vertical-align: middle"/>
+      用章部门&nbsp;
+      <input type="radio" name="charClass" value="2" style="vertical-align: middle"/>
+      用章内容&nbsp;
+      <input type="radio" name="charClass" value="3" style="vertical-align: middle"/>
+      用章时间&nbsp;
+      <input type="radio" name="charClass" value="4" style="vertical-align: middle"/>
+      是否借出&nbsp;&nbsp;
+     </div>
+     
+    <div class="form_button" style="margin:0px 0px 0px 30px;">
+      <a href="javascript:void(0)" class="easyui-linkbutton" id="count-btn" iconCls="icon-edit" plain="true" onclick="count()"><input type="button"  value="开始统计" /></a> 
+      
+      <a href="javascript:void(0)" class="easyui-linkbutton" id="print-btn" iconCls="icon-print" plain="true" onclick="print_pic()"><input type="button"  value="打印统计图" /></a> 
+      
+      <a href="javascript:void(0)" class="easyui-linkbutton" id="back-btn" iconCls="icon-back" plain="true" onclick="backManage()"><input type="button"  value="回到文件审批管理" /></a>
+      
+    </div>
+  </form>
+  
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+
+</body>
+</html>

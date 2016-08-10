@@ -1,0 +1,22 @@
+后台页面：
+http://127.0.0.1/cms/cms/frame/list.php?category=1
+后面的category=1 可以自由指定，例如 category=a
+
+前台显示：
+首页可以用下面的直接显示前四个 
+http://127.0.0.1/cms/demo_front.php?category=1
+
+带分页的显示
+http://127.0.0.1/cms/demo_front_page.php?category=1
+
+点击后，新闻的详情页：
+demo_content.php
+
+
+-------------------------------------------
+
+客户端的说明：
+登陆的url完成（不需要修改了）
+http://127.0.0.1/cms/reminder.php?type=login&name=zhujian&pwd=123
+登陆之后每1分钟访问一次以下链接，返回  朱俭有多少个类型的项目待办
+http://127.0.0.1/cms/reminder.php?type=query&id=1

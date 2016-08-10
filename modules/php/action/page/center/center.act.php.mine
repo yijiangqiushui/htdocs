@@ -1,0 +1,33 @@
+<?php
+include '../../../../../center/php/config.ini.php';
+include '../../../../../common/php/config.ini.php';
+include '../../../../../common/php/lib/db.cls.php';
+include '../../class/center/center.cls.php';
+
+include '../../../../../common/php/plugin/fenci_v1.0_utf8/checkduplicate.cls.php';
+
+$action = $_GET['action'];
+$project_id = $_GET['project_id'];
+//这个是测试数据
+$department = 0;
+//$department = $_SESSION['department'];  
+    
+
+//     printf($project_array[2]."fff");
+
+
+
+$center=new Center();
+switch($action){
+    case 'OpenMid':
+        $center-> openmid($project_id);
+        break;
+   case 'stageMid':
+        $center-> stagemid($project_id);
+        break;
+   case 'project_main':
+       $center-> projectMain();
+        default:;
+
+  }
+?>

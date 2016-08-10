@@ -1,0 +1,19 @@
+<!--
+body *{margin:0;padding:0;font-size:12px}
+body{background-color:#FFF;/*overflow-x: hidden; scrollbar-face-color: #E1E1E1;scrollbar-highlight-color: #E1E1E1;scrollbar-shadow-color:#8C8C8D;scrollbar-arrow-color: #8C8C8D;scrollbar-base-color: #EFEFEF;scrollbar-track-color: #EFEFEF; scrollbar-darkshadow-color: #EFEFEF*/}
+#container{}
+ul,li{margin:0;padding:0;list-style:none; list-style-type:none;}
+#infoList{margin-bottom:10px}
+
+.promptRed{color:#F00}
+.promptBlue{color:#00F}
+
+
+#funcDiv_top{margin-bottom:5px;}
+#funcDiv_btm{margin:5px 0 5px 0}
+
+.clearBoth{ clear:both; font-size:0;}
+
+.noteBlue{color:#900}
+-->
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/focusslide.js"></script>
+
+<link href="../css/focusslide.css" rel="stylesheet" type="text/css" />
+
+<style>
+</style>
+</head>
+<body>
+<div id="test"></div>
+<div id="test2"></div>
+<script language="javascript">
+var config={
+	renderTo:'#test',
+	id:'hello',
+	width:340,
+	height:260,
+	img_root:'',
+	buttonStyle:{'bottom':'35px','text-align':'center'},
+		interval:5,
+		count:0,
+		clritvl:0,
+		speed:'normal',//normal,fast,slow
+		total:0,
+	info_arr:[
+	{'img':'http://img2.cache.netease.com/photo/0001/2014-05-22/9SSK83GV00AO0001.jpg','title':'近期在抛售房源','href':'http://localhost/?id=1'},
+	{'img':'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK824800AO0001.jpg','title':'这是百年大计','href':'http://localhost/?id=1'},
+	{'img':'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK824800AO0001.jpg','title':'我们的城市亮丽光','href':'http://localhost/?id=1'},
+	{'img':'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK824800AO0001.jpg','title':'"面子"是城市的风','href':'http://localhost/?id=1'},
+	{'img':'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK81E700AO0001.jpg','title':'fasdfpg','href':'http://localhost/?id=1'},
+	],
+};
+$.focusslide(config);
+
+var config2={
+	renderTo:'#test2',
+	id:'hello2',
+	width:340,
+	height:260,
+	img_root:'',
+	buttonStyle:{'bottom':'35px','text-align':'center'},
+		interval:5,
+		count:0,
+		clritvl:0,
+		speed:'normal',//normal,fast,slow
+		total:0,
+	info_arr:[
+	{'img':'http://img2.cache.netease.com/photo/0001/2014-05-22/9SSK83GV00AO0001.jpg','title':'近期在抛售房源','href':'http://localhost/?id=1'},
+	{'img':'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK824800AO0001.jpg','title':'这是百年大计','href':'http://localhost/?id=1'},
+	{'img':'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK824800AO0001.jpg','title':'我们的城市亮丽光','href':'http://localhost/?id=1'},
+	{'img':'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK824800AO0001.jpg','title':'"面子"是城市的风','href':'http://localhost/?id=1'},
+	{'img':'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK81E700AO0001.jpg','title':'fasdfpg','href':'http://localhost/?id=1'},
+	],
+};
+$.focusslide(config2);
+</script>
+</body>
+</html>

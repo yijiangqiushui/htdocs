@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>申报单位基本情况</title>
+
+<link rel="stylesheet" type="text/css" href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../common/html/plugin/easyui/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css" href="../../../css/button.css" />
+<link rel="stylesheet" type="text/css" href="../../../css/table.css"/>
+
+<script type="text/javascript" src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+<script type="text/javascript" src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+<script type="text/javascript" src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script src="../../../../../../common/html/js/tablecommon.js"></script>
+        <script type="text/javascript" src="../../../../../../common/html/js/validation.js"></script>
+<script type="text/javascript" src="../../../js/apply/org3_info.js"></script>
+
+</head>
+<body>
+	<form method="post" id="3org_info_fm">
+	<div class="project_content">
+		<div class="table_title clearfix">
+			<div class="title_pic left">项目申报书</div>
+			<div class="right back_pic" id="back"></div>
+		</div>
+		<div class="table_content back-long">
+		<table cellspacing="0" cellpadding="0" class="basic_info">
+			<tr>
+				<td colspan="6" class="border_left_none" style="background-color:#7AB5ED;">
+					<div class="title_top p-b10">申报单位基本情况</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<th width="180px"><p align="center">单位名称</p></th>
+				<td colspan="5"><input name="org_name" title="只读信息，若有误请联系管理员修改" readonly="readonly"/></td>
+			</tr>
+			
+			<tr>
+				<th><p align="center">组织机构代码</p></th>
+				<td colspan="3"><input name="org_code" title="只读信息，若有误请联系管理员修改" readonly/></td>
+				<th width="180px"><p align="center">注册资金</p></th>
+				<td width="150"><input name="register_fund" data_type="number"/></td>
+			</tr>
+			
+			<tr>
+				<th><p align="center">注册地址</p></th>
+				<td colspan="3"><input name="register_address" readonly/></td>
+				<th><p align="center">单位类型</p></th>
+				<td><input name="org_type"/></td>
+			</tr>
+			
+			<tr>
+				<th><p align="center"></p>通讯地址</th>
+				<td colspan="3"><input name="contact_address" readonly/></td>
+				<th><p align="center">邮政编码</p></th>
+				<td><input  name="postal" datatype="postcode" /></td>
+			</tr>
+			
+			<tr>
+				<th rowspan="2"><p align="center">法定代表人</p></th>
+				<th width="89"><p align="center">姓名</p></th>
+				<th colspan="2"><p align="center">身份证号</p></th>
+				<th colspan="2"><p align="center">联系电话（手机/座机）</p></th>
+			</tr>
+			
+			<tr>
+				<td><input name="legal_name" datatype="chinese_characters" readonly/></td>
+				<td colspan="2"><input name="legal_id" datatype="ID" readonly/></td>
+				<td colspan="2"><input name="legal_phone" datatype="phandtel" readonly/></td>
+			</tr>
+			
+			<tr>
+				<th rowspan="2"><p align="center">联系人</p></th>
+				<th><p align="center">姓名</p></th>
+				<th colspan="2"><p align="center">E-mail</p></th>
+				<th colspan="2"><p align="center">联系电话（手机/座机）</p></th>
+			</tr>
+			
+			<tr>
+				<td><input name="linkman"  datatype="chinese_characters" readonly/></td>
+				<td colspan="2"><input name="linkman_email" datatype="email" readonly/></td>
+				<td colspan="2"><input name="linkman_contact" datatype="phandtel" readonly/></td>
+			</tr>
+			
+			<tr>
+				<th><p align="center">企业是否上市</p></th>
+				<td colspan="3">
+				<input type="radio"    name="listed" style="width:4%;height:30%;margin-left: 40px;" value="1" onclick="ispicth(this);" /><span style="float: left;">是</span> <input    type="radio" style="width:4%;height:30%;margin-left: 40px;" name="listed" value="0"  onclick="ispicth(this);"/> <span style="float: left;">否</span> 
+				</td>
+				<th ><p align="center">企业上市代码</p></th>
+				<td ><input name="listed_code" class="listed_code" /></td>
+			</tr>
+			
+			<tr>
+				<th rowspan="3"><p align="center">自主知识产权情况（已授权）</p></th>
+				<th colspan="2"><p align="center">专利授权数</p></th>
+				<th colspan="1"><p align="center">发明专利</p></th>
+				<th><p align="center">实用型</p></th>
+				<th><p align="center">外观设计</p></th>
+			</tr>
+			
+			<tr>
+				<td colspan="2"><input name="patent_num" datatype="number"/></td>
+				<td ><input name="invent_patent" datatype="number"/></td>
+				<td><input name="functional_patent" datatype="number"/></td>
+				<td><input name="patent_design" datatype="number"/></td>
+			</tr>
+			
+			<tr>
+				<th colspan="2"><p align="center">其他知识产权数</p></th>
+				<td colspan="3"><input name="other_patent" datatype="number"/></td>
+			</tr>
+			
+			<tr>
+				<th><p align="center">所属行业</p></th>
+				<td colspan="3"><input name="org_trade" /></td>
+				<th colspan="1"><p align="center">主要产品或技术</p></th>
+				<td><input name="main_product" /></td>
+			</tr>
+			
+			<tr>
+				<th width="180px"><p align="center">职工总数（人）</p></th>
+				<td ><input name="staff_num" datatype="number"/></td>
+				<th width="180px"><p align="center">其中大专以上人员（人）</p></th>
+				<td width="180px"><input  name="junior" datatype="number"/></td>
+				<th width="180px"><p align="center">其中研究开发人员（人）</p></th>
+				<td ><input name="researcher_num" datatype="number"/></td>
+			</tr>
+			
+			<tr>
+				<th height="33"><p align="center">上半年销售收入 （万元）</p></th>
+				<td><input name="lasthalf_income" datatype="number"/></td>
+				<th><p align="center">上半年上缴税金（万元）</p></th>
+				<td><input name="lasthalf_tax" datatype="number"/></td>
+				<th><p align="center">上半年利润（万年）</p></th>
+				<td><input name="lasthalf_profit" datatype="number"/></td>
+			</tr>
+			
+			<tr>
+				<th ><p align="center">本年度预计销售 （万元）</p></th>
+				<td><input name="predict_tax" datatype="number"/></td>
+				<th><p align="center">本年度预计商检税金（万元）</p></th>
+				<td><input name="predict_inspectax" datatype="number"/></td>
+				<th><p align="center">本年度预计利润（万元）</p></th>
+				<td><input name="predict_profit" datatype="number"/></td>
+			</tr>
+			
+		</table>
+			<div class="button_wrapper clearfix">
+     			<div class="save">保存</div>
+     			<!-- <div class="reset" >重置</div> -->
+			</div>
+		</div>
+
+		</div>
+	</form>
+</body>
+</html>
+

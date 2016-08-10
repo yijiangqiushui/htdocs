@@ -1,0 +1,72 @@
+/* CSS Document */
+
+*{ padding:0; margin:0; font-size:12px;}
+.clear-both{ clear:both;}
+
+body{ overflow:hidden;}
+li{
+	list-style: none;
+}
+.head{ background-image:url(../../img/main-xmsbxt/di.png);}
+.banner{ background-image:url(../../img/main-xmsbxt/banner-arrow.png); background-repeat:no-repeat; background-position:200px 0; height:84px; position:relative;}
+.logo{ background-image:url(../../img/main-xmsbxt/logo.png); width:352px; height:58px; left:20px; top:13px; position:absolute;}
+.sysinfo{ position:absolute; right:60px; top:10px; width:200px; color:#fff;}
+.sysinfo-break{ background-image:url(../../img/main-xmsbxt/sysinfo-break.png); width:2px; height:16px; float:left; margin-left:10px;}
+.welcome{ float:left; background-image:url(../../img/main-xmsbxt/welcome.png); background-repeat:no-repeat; text-indent:20px;}
+.exit{ float:right; background-image:url(../../img/main-xmsbxt/exit.png); background-repeat:no-repeat; text-indent:20px; cursor:pointer;}
+
+.body{}
+.func-bar{ background-image:url(../../img/main-xmsbxt/position-bg.png);}
+.menu-bar{ width:199px; height:33px; background-image:url(../../img/main-xmsbxt/manage.png); float:left;}
+.menu-bar div{width:150px; height:32px; line-height:32px; font-size:14px; color:#fff; background-image:url(../../img/main-xmsbxt/execute.png); background-repeat:no-repeat; background-position:0 center; text-indent:20px; margin:auto;}
+.position{ float:left; line-height:32px; padding-left:30px; background-image:url(../../img/main-xmsbxt/position-icon.png); background-repeat:no-repeat; background-position:10px center;}
+.position a{ color:#f00; text-decoration:none;}
+
+.menusNiframe{ height:300px;}
+.menus-scroll-hidden{float:left; width:199px; height:0; overflow:hidden;}
+.menus{ width:219px; overflow-x:hidden; overflow-y:scroll;}
+.menu{ height:auto; line-height:30px; text-align:center; cursor:pointer; position:relative; }
+.menu-unselected{ height:auto;background-image:url(../../img/main-xmsbxt/menu-unselected.png);background-size:cover}
+.menu-unselected a{ text-decoration:none;color:#000}
+.menu-selected{ height:auto;background-image:url(../../img/main-xmsbxt/menu-selected.png) ;background-size:cover;}
+.menu-selected a{text-decoration:none;}
+.submenu{ display:none;}
+.submenu li{ text-align:center; line-height:30px; cursor:pointer;}
+.submenu-break{ background-image:url(../../img/main-xmsbxt/submenu-break.png); height:1px; background-position:center; background-repeat:no-repeat;}
+
+.switch-bar{ float:left; width:8px; height:100%; background-image:url(../../img/main-xmsbxt/switch-bar-bg.png); cursor:pointer;}
+.switch-bar-arrow{width:100%; height:100%; background-image:url(../../img/main-xmsbxt/switch-arrow.png); background-repeat:no-repeat; background-position:0 center;}
+
+.switch-bar-arrow{width:100%; height:100%; background-image:url(../../img/main-xmsbxt/switch-arrow.png); background-repeat:no-repeat; background-position:0 center;}
+
+.iframe{ float:left;}
+.iframe iframe{ height:100%;}
+.check{display:none;}
+.submit{display:none;}
+.left {
+	float: left;
+}
+.clearfix:after {
+	visibility: hidden;
+    display: block;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.pic {
+	width:15px;
+	height: 15px;
+	background: url('../../img/yes.png');
+	background-size: 15px 15px;
+	margin: 6px 0;
+}
+.hide {
+	display:none;
+}
+.show {
+	display:block;
+}
+.right {
+	float: right;
+}
+ 

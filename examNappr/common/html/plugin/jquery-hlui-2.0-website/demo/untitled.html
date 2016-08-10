@@ -1,0 +1,34 @@
+<html>   
+<head>   
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script>   
+$(function(){   
+    $("#phone").change(function(){   
+        $("#message").text("正在加载..");   
+        $("#theone").attr("src",$(this).val());  
+    });   
+       
+    $("#theone").load(function(){   
+        alert(100);//$("#message").text("");   
+    });   
+});   
+</script>   
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>   
+<body>   
+<select id="phone">   
+<option value="http://www.google.com.hk/">any one</option>   
+<option value="http://img4.cache.netease.com/photo/0001/2014-10-22/A96486U900AP0001.jpg">htc dream</option>   
+<option value="http://www.streamcave.com/upload/2010/8/201008251153454306.jpg">htc magic</option>   
+<option value="http://www.streamcave.com/upload/2010/8/201008251153453524.jpg">htc hero</option>   
+<option value="http://www.streamcave.com/upload/2010/8/201008251153464400.jpg">htc hattoo</option>   
+<option value="http://www.streamcave.com/upload/2010/8/201008251153483133.jpg">nexus one</option>   
+<option value="http://www.streamcave.com/upload/2010/8/201008251153485258.jpg">htc legend</option>   
+<option value="http://www.streamcave.com/upload/2010/8/201008251153510582.jpg">htc desire</option>   
+<option value="http://www.streamcave.com/upload/2010/8/201008251153532800.jpg">motorola milestone</option>   
+</select>   
+<span id="message" style="color:green"></span>   
+<hr/>   
+<iframe id="theone" src="" width="600" height="700"></iframe>   
+</body>   
+</html>  

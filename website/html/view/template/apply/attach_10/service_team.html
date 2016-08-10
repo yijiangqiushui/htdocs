@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+ <link rel="stylesheet" type="text/css" href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../../../common/html/plugin/easyui/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/table.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/button.css"/>
+    <link rel="stylesheet" href="../../../../../../common/html/lib/css/datapicker/daterangepicker.css" />
+    
+    <script src="../../../../../../common/html/lib/js/jquery-1.11.2.min.js"></script>
+    <script src="../../../../../../common/html/plugin/datapicker/moment.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/easyui/jquery.cookie.js" ></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+    <script type="text/javascript" src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+    
+    <script src="../../../../../../common/html/plugin/datapicker/jquery.daterangepicker.js"></script>
+    <script src="../../../../../../common/html/js/tablecommon.js"></script>
+    <script src="../../../../../../common/html/js/validation.js"></script>
+    <script type="text/javascript" src="../../../js/apply/10service_team.js"></script>
+    
+</head>
+<body>
+	<div class="project_content">
+	  <div class="table_title clearfix">
+	      <div class="title_pic left">基本信息</div>
+	      <div class="right back_pic" id="back"></div>
+      </div>
+      <div class="table_content back-long">
+		<form method="post" id="service_team">
+			<table cellspacing="0" cellpadding="0" class="basic_info">
+				<tr>
+					<td colspan="5"><h2>
+							<div class="title_top p-b10">项目申请书  </div>
+						</h2></td>
+				</tr>
+				<tr>
+				<th class="bt" width="85"><p align="center">单位人员总数</p></th>
+					<td colspan="2"><input  name="manage_num" datatype="number"/></td>
+					<!--没有字段-->
+				<th class="bt" width="101"><p align="center">服务人员总数</p></th>
+					<td width="105"><input  name="service_num" datatype="number"/></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+					<th class="bt" rowspan="4" width="85"><p align="center">服务人员结构</p></th>
+					<th class="bt" width="83"><p align="center">博士人数</p></th>
+					<td width="109"><input  name="doctor_num" datatype="number" class=calper /></td>
+					<!--没有字段-->
+					<th class="bt"  rowspan="4"><p align="center">所占比例</p></th>
+					<td><input  name="doctor_ratio" datatype="float" style="width:100px;float:left;" class="calratio" readonly/><p style='margin-left:100px;width:20px; margin-top:5px;'>%</p></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">硕士人数</p></th>
+					<td><input  name="master_num" datatype="number" class="calper"/></td>
+					<!--没有字段-->
+					<td><input  name="master_ratio" datatype="float" style="width:100px;float:left;" class="calratio" readonly/><p style="margin-left:100px;width:20px; margin-top:5px;">%</p></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">本科人数</p></th>
+					<td><input  name="college_num" datatype="number" class="calper"/></td>
+					<!--没有字段-->
+					<td><input  name="college_ratio" datatype="float" style="width:100px;float:left;" class="calratio" readonly/><p style="margin-left:100px;width:20px; margin-top:5px;">%</p></td>
+					<!--没有字段-->
+				</tr>
+				<tr>
+					<th class="bt" ><p align="center">专科人数</p></th>
+					<td><input  name="junior_num" datatype="number" class="calper"/></td>
+					<!--没有字段-->
+					<td><input  name="junior_ratio" datatype="float" style="width:100px;float:left;" class="calratio" readonly/><p style="margin-left:100px;width:20px; margin-top:5px;">%</p></td>
+					<!--没有字段-->
+				</tr>
+			</table>
+			 <div class="button_wrapper clearfix">
+               <!--  <div class="submit" >提交</div> -->
+                <div class="save" >保存</div>
+                <!-- <div class="reset" >重置</div> -->
+            </div>
+		</form>
+	</div>
+</body>
+</html>

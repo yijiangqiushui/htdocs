@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+input {
+	height: 100%;
+	width: 99.5%;
+	border: 0px;
+}
+
+textarea {
+	height: 100%;
+	width: 99.5%;
+	border: 0px;
+}
+</style>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../../common/html/plugin/easyui/themes/icon.css">
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+		<script type="text/javascript"
+			src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+		<link rel="stylesheet" type="text/css"
+			href="../../../../../../website/html/view/css/tablestyle.css" />
+</head>
+
+<body>
+	<table width="600" height="360" border="1" cellspacing="0">
+		<tr>
+			<td colspan="6"><h2>三、项目资金情况</h2></td>
+		</tr>
+		<tr>
+			<td width="71" rowspan="4"><p>计划</p>
+				<p>投资</p>
+				<p>总额</p></td>
+			<td width="94" rowspan="4"><input class="easyui-validatebox"
+				required="true" type="text" id="plan_input class="
+				easyui-validatebox"  required="true" " /></td>
+			<td width="98" rowspan="2">已完成投资</td>
+			<td width="85" rowspan="2"><input class="easyui-validatebox"
+				required="true" type="text" id="had_input class="
+				easyui-validatebox"  required="true" " /></td>
+			<td width="95" height="35">其中银行贷款</td>
+			<td width="131"><input class="easyui-validatebox"
+				required="true" type="text" id="bank_lend" /></td>
+		</tr>
+		<tr>
+			<td height="35">其他政府资助</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="gover_aid" /></td>
+		</tr>
+		<tr>
+			<td rowspan="2" height="35">计划新增投资额</td>
+			<td rowspan="2" height="35"><input class="easyui-validatebox"
+				required="true" type="text" id="add_input class="
+				easyui-validatebox"  required="true" " /></td>
+			<td height="35">固定资产</td>
+			<td height="35"><input class="easyui-validatebox"
+				required="true" type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td height="35">流动资金投资</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="low_input class="
+				easyui-validatebox"  required="true" " /></td>
+		</tr>
+		<tr>
+			<td rowspan="4">计划新增投资来源</td>
+			<td height="35">企业自有</td>
+			<td colspan="2"><input class="easyui-validatebox"
+				required="true" type="text" id="com_add  " /></td>
+			<td>银行贷款</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="bank_lend_add  " /></td>
+		</tr>
+		<tr>
+			<td rowspan="2">政府拨款</td>
+			<td rowspan="2"><input class="easyui-validatebox"
+				required="true" type="text" id="gover_aid_add" /></td>
+			<td colspan="2" height="35">其中专利实施资金</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="gover_patent-add " /></td>
+		</tr>
+		<tr>
+			<td colspan="2" height="35">其他财政拨款</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="gover_other_add" /></td>
+		</tr>
+		<tr>
+			<td>其他</td>
+			<td colspan="4" height="35"><input class="easyui-validatebox"
+				required="true" type="text" id="other_add" /></td>
+		</tr>
+		<tr>
+			<td height="66">申请专利实施资金主要用途</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="patent_for" /></td>
+			<td colspan="4"><p>1.新产品开发及试制 2.购置生产用配套仪器设备</p>
+				<p>3.贷款贴息 4.知识产权费用</p></td>
+		</tr>
+	</table>
+	<table width="600" height="293" border="1" cellspacing="0">
+		<tr>
+			<td colspan="7"><h2>四、项目主要参加人员登记表</h2></td>
+		</tr>
+		<tr>
+			<td width="45">姓名</td>
+			<td width="45">性别</td>
+			<td width="45">年龄</td>
+			<td width="81">职称（职务）</td>
+			<td width="85">专业</td>
+			<td width="122">单位</td>
+			<td width="147">在本项目中分担的任务</td>
+		</tr>
+		<tr>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="staff_name" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id=staff_sex "" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="staff_age" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="staff_posit" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="staff_major" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="staff_com" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="staff_do" /></td>
+		</tr>
+		<tr>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+	</table>
+	<table width="600" height="352" border="1" cellspacing="0">
+		<tr>
+			<td colspan="2"><h2>五、单位提供相关材料清单</h2></td>
+		</tr>
+		<tr>
+			<td width="90">序号</td>
+			<td width="500">材料名称</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="mate_name" /></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td><input class="easyui-validatebox" required="true"
+				type="text" id="" /></td>
+		</tr>
+		<tr>
+			<td>备注</td>
+			<td><textarea id="other_note"></textarea></td>
+		</tr>
+	</table>
+
+</body>
+</html>

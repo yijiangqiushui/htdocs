@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="/chaoyang-chuangxin/common/html/lib/js/jquery-2.1.0.min.js"></script>
+
+<script type="text/javascript" src="../js/imgrotate.js"></script>
+<link href="../css/imgrotate.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+<div id="render" style="padding:30px; background-color:#ccc;"></div>
+
+<script type="text/javascript">
+function imgrotate(id){
+	var config={
+		renderTo:'#render',
+		id:'img-rotate-'+id,
+		imgWidth:120,//图片宽度
+		imgHeight:90,//图片高度
+		txtHeight:20,//标题高度和行高
+		scrollAmount:5,//滚动块个数
+		scrollWidth:0,//滚动长度
+		width_heightAdded:10,//padding、border、margin等造成的宽度高度，如果没有修改css则不用修改本值
+		speed:'normal',//normal,slow,fast
+		infoArr:[
+			{'href':'#id=759','title':'牛堡屯学校参加','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/f03b11676fffdab654212268564368f25be1b96e_small.jpg'},
+			{'href':'#id=759','title':'牛堡屯学校参加','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/57ee7e270b95766995ee2c1cda33b824bdd6cc09_small.jpg'},
+			{'href':'#id=759','title':'牛堡屯学校参加','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/81f960922b6ebcf0330d9c7280f4413079daed5d_small.jpg'},
+			{'href':'#id=759','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/e7604151c4b84a61e5118b21afa48bd1942d2d7e_small.jpg','title':'牛堡屯学校参加'},
+			{'href':'#id=759','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/f03b11676fffdab654212268564368f25be1b96e_small.jpg','title':'牛堡屯学校参加'},
+			{'href':'#id=759','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/f7fcd6d3c66d66558388a83e80a449ba1f1b2e9b_small.jpg','title':'牛堡屯学校参加'},
+			{'href':'#id=759','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/870cb37d11b9420cb05de1eac88708c2ffb9a851_small.jpg','title':'牛堡屯学校参加'},
+			{'href':'#id=759','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/f03b11676fffdab654212268564368f25be1b96e_small.jpg','title':'牛堡屯学校参加'},
+			{'href':'#id=759','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/870cb37d11b9420cb05de1eac88708c2ffb9a851_small.jpg','title':'牛堡屯学校参加'},
+			{'href':'#id=759','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/f03b11676fffdab654212268564368f25be1b96e_small.jpg','title':'牛堡屯学校参加'},
+			{'href':'#id=759','imgurl':'http://www.tzqsnkj.com/common/upload/2014/08/25/870cb37d11b9420cb05de1eac88708c2ffb9a851_small.jpg','title':'牛堡屯学校参加'},
+		]
+	};
+	$('#'+config.id).css('display','block');
+	$.imgrotate(config);
+}
+imgrotate('yingcaizhanshi-one-index');
+</script>
+</body>
+</html>

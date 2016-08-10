@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>申报单位统计</title><link rel="stylesheet" type="text/css"
+	href="../../../../website/html/view/css/tablestyle.css" />
+<script type="text/javascript" src="../../../../common/html/plugin/easyui/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../../../../common/html/plugin/Highcharts/js/modules/exporting.js"></script>  
+<script type="text/javascript" src="../../../../common/html/plugin/Highcharts/js/highcharts.js"></script>
+<script type="text/javascript" src="../js/chart_apply.js"></script>
+
+</head>
+
+<body>
+ <form action="#" method="post">
+    <div>申报单位统计图表</div>
+    <div class="form_input">统计图类型:              
+      <input type="radio" name="charType" value="1" checked="checked" style="vertical-align: middle" />
+      柱状图&nbsp;&nbsp;
+      <input type="radio" name="charType" value="2" style="vertical-align: middle" />
+      趋势图&nbsp;&nbsp;
+      <input type="radio" name="charType" value="3" style="vertical-align: middle" />
+      饼状图&nbsp;&nbsp;					
+	</div>
+    <div class="form_input">统计类别:
+      <input type="radio" name="charClass" value="1" checked="checked" style="vertical-align: middle"/>
+      地域&nbsp;&nbsp;
+     </div>
+     
+      <input type="button"  value="开始统计" onClick="count()"/>
+    </div>
+  </form>
+  
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+[04-Jan-2016 15:40:14] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:40:19] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:40:20] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:40:57] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:41:08] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:41:09] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:42:01] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:42:01] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:42:01] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:50:37] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[04-Jan-2016 15:50:40] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in D:\Apache2.2.25\project_apply\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 81
+[27-Feb-2016 14:08:38] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 21
+[27-Feb-2016 14:08:38] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+ in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 21
+[27-Feb-2016 14:08:40] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 31
+[27-Feb-2016 14:08:40] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 套接字操作尝试一个无法连接的主机。
+ (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 686
+[27-Feb-2016 14:08:40] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 套接字操作尝试一个无法连接的主机。
+ in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 686
+[27-Feb-2016 14:08:40] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 687
+[27-Feb-2016 14:08:40] PHP Warning:  mysql_query() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 688
+[27-Feb-2016 14:08:40] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, array given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 79
+[27-Feb-2016 14:08:40] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 套接字操作尝试一个无法连接的主机。
+ (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 21
+[27-Feb-2016 14:08:40] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 套接字操作尝试一个无法连接的主机。
+ in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 21
+[27-Feb-2016 14:08:42] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 31
+[27-Feb-2016 14:08:42] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 套接字操作尝试一个无法连接的主机。
+ (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 686
+[27-Feb-2016 14:08:42] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 套接字操作尝试一个无法连接的主机。
+ in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 686
+[27-Feb-2016 14:08:42] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 687
+[27-Feb-2016 14:08:42] PHP Warning:  mysql_query() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 688
+[27-Feb-2016 14:08:42] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, null given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\unit_info.php on line 141
+[27-Feb-2016 14:08:42] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 套接字操作尝试一个无法连接的主机。
+ (trying to connect via tcp://192.168.1.171:3306) in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 21
+[27-Feb-2016 14:08:42] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 套接字操作尝试一个无法连接的主机。
+ in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 21
+[27-Feb-2016 14:08:44] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in E:\kwproject\Program\htdocs\common\php\lib\db.cls.php on line 31
+[27-Feb-2016 14:17:35] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 113
+[27-Feb-2016 14:18:04] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 116
+[27-Feb-2016 14:18:29] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 116
+[27-Feb-2016 14:19:37] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 116
+[27-Feb-2016 14:19:38] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 116
+[27-Feb-2016 14:19:38] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 116
+[27-Feb-2016 14:19:38] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 116
+[27-Feb-2016 14:19:39] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 116
+[27-Feb-2016 14:34:44] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, array given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 113
+[27-Feb-2016 14:34:44] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, array given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 184
+[27-Feb-2016 14:43:02] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, null given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 113
+[27-Feb-2016 14:43:02] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, null given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 184
+[27-Feb-2016 15:04:09] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 187
+[27-Feb-2016 15:05:54] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 188
+[27-Feb-2016 15:05:55] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 188
+[27-Feb-2016 15:05:55] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 188
+[27-Feb-2016 15:05:55] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 188
+[27-Feb-2016 15:05:56] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 188
+[27-Feb-2016 15:05:56] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 188
+[27-Feb-2016 15:05:57] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 188
+[27-Feb-2016 15:12:07] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in E:\kwproject\Program\htdocs\website\html\view\template\apply\patent_implement\check_material\develop.php on line 188

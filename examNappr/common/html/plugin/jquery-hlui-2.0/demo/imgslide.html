@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/imgslide.js"></script>
+
+<link href="../css/imgslide.css" rel="stylesheet" type="text/css" />
+
+<style>
+#test{ background-color:#333; width:800px; padding:10px; height:720px;}
+#test .ui-imgslide-intro{ color:#fff; line-height:24px;}
+</style>
+</head>
+<body>
+<div id="test"></div>
+<script language="javascript">
+function showimgslide(){
+	var config={
+		renderTo:'#test',
+		id:'hello',
+		width:800,
+		height:600,
+		show_realsize:true,
+		img_root:'',
+		img_arr:['http://img2.cache.netease.com/photo/0001/2014-05-22/9SSK83GV00AO0001.jpg',		'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK824800AO0001.jpg',
+		'http://img3.cache.netease.com/photo/0001/2014-05-22/9SSK81E700AO0001.jpg'],
+		intro_arr:['市场降价声一片，二手豪宅市场也未能"独善其身"。记者采访中了解到，不少手中持有多套房源的房主近期在抛售房源，很多房子都是空置没有人住过。','1.22日上午，李克强总理来到内蒙古赤峰市德润污水处理厂在建项目工地。他对企业负责人说，我们的城市亮丽光鲜，但地下基础设施仍是短板。"面子"是城市的风貌，而"里子"则是城市的良心。只有筑牢"里子"，才能撑起"面子"。这是百年大计。','fasdfpg']
+	};
+	$.imgslide(config);	
+}
+showimgslide();
+</script>
+</body>
+</html>

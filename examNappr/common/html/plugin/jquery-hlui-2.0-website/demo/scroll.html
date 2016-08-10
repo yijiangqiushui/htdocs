@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/scroll.js"></script>
+<link href="../css/scroll.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+*{ padding:0; margin:0;}
+</style>
+</head>
+
+<body>
+<div id="render" style="padding:30px; background-color:#ccc;"></div>
+
+<script type="text/javascript">
+var config={
+	renderTo:'#render',
+	id:'test',
+	width:200,
+	height:40,
+	interval:3,
+	count:0,
+	speed:'normal',//normal,fast,slow
+	clritvl:0,
+	content:'<p>&nbsp;&nbsp;李克强指出，中国政府统筹稳增长、促改革、调结构、惠民生、防风险，就是要更多运用改革的办法和市场的力量，增强经济增长的内生动力与活力，推动经济向中高端水平迈进，实现中国经济升级和民生不断改善，这也有利于世界的发展与繁荣。我们将构建更加开放的</p><p>格局，建设好、管理好上海自由贸易试验区，形成可复制可推广的经验，完善对中外企业一视同仁的公平竞争市场环境。中国愿做国际经贸新体系建设的参与者和贡献者。希望美方以更加开放的姿态为两国深化合作创造更多有利条件。</p>',
+	contentStyle:{'font-size':'12px','line-height':'20px','color':'#06f'},
+};
+
+$.scroll(config);
+</script>
+</body>
+</html>

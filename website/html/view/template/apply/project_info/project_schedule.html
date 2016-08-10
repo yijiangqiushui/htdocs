@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>项目进步情况</title>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript"
+	src="../../../js/apply/project_info/project_schedule.js"></script>
+</head>
+<body>
+	<div class="easyui-panel" style="border: 0;">
+		<form method="post" id="10org_info_fm">
+			<table border="1" cellspacing="0">
+				<tr>
+					<td colspan="6"><h2>二、项目进步情况</h2></td>
+				</tr>
+				<tr>
+					<td>项目负责人</td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="pro_master" /></td>
+					<td>职务</td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="master_posit" /></td>
+					<td>职称</td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="master_title" /></td>
+				</tr>
+				<tr>
+					<td>项目名称</td>
+					<td colspan="5"><input class="easyui-validatebox"
+						required="true" type="text" id="pro_name" /></td>
+				</tr>
+				<tr>
+					<td rowspan="3">所含专利名称</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="right_name" /></td>
+					<td>专利号</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="right_cdkey" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+					<td>专利号</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+					<td>专利号</td>
+					<td colspan="2"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+				</tr>
+				<tr>
+					<td>产品执行标准</td>
+					<td colspan="5"><input class="easyui-validatebox"
+						required="true" type="text" id="product_norm" /></td>
+				</tr>
+				<tr>
+					<td>产品鉴定日期</td>
+					<td colspan="5"><input class="easyui-validatebox"
+						required="true" type="text" id="iden_date" /></td>
+				</tr>
+				<tr>
+					<td>主持鉴定单位</td>
+					<td colspan="5"><input class="easyui-validatebox"
+						required="true" type="text" id="iden_com" /></td>
+				</tr>
+				<tr>
+					<td rowspan="3">产品获奖情况</td>
+					<td>获奖部门</td>
+					<td>授奖部门</td>
+					<td colspan="3">获奖等级</td>
+				</tr>
+				<tr>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="award_name" /></td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="award_com" /></td>
+					<td colspan="3"><input class="easyui-validatebox"
+						required="true" type="text" id="award_level" /></td>
+				</tr>
+				<tr>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="" /></td>
+					<td><input class="easyui-validatebox" required="true"
+						type="text" id="" /></td>
+					<td colspan="3"><input class="easyui-validatebox"
+						required="true" type="text" id="" /></td>
+				</tr>
+			</table>
+			<a href="javascript:void(0);" class="easyui-linkbutton"
+				iconcls="icon-ok" onclick="submitdata()">确定</a> <a
+				href="javascript:void(0);" class="easyui-linkbutton"
+				iconcls="icon-no" onclick="reset()">重置</a>
+		</form>
+	</div>
+</body>
+</html>

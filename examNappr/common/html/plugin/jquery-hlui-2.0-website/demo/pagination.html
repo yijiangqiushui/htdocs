@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/hlui.js"></script>
+
+<script type="text/javascript" src="../js/pagination.js"></script>
+<link href="../css/pagination.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div id="page"></div>
+
+<!---->
+<script type="text/javascript">
+function layPageination(){
+	$.post('pagination.php',function(ret_val){//先获取记录总数
+		
+		var pagination_vars={
+			id:'mytest',
+			renderTo:'#page',
+			class:'default',
+			total:ret_val,
+			size:15,
+			current:1,
+			list_num:5,
+			dataopt:{
+				is_four_text:0,
+				is_links:1,
+				is_turn2page:1
+			},
+			user_func:'loaddata',
+			params:'a=hello&b=world&c=100'
+		};
+		$.pagination(pagination_vars);
+	
+	//	var params=$.pagination_params('mytest');//查询条件，返回json格式
+	//	alert(params.b);
+
+	});
+}
+layPageination();
+
+function loaddata(){
+	alert($.pagination_params('mytest').a);
+}
+//alert($.pagination_params('mytest'));
+</script>
+</body>
+</html>

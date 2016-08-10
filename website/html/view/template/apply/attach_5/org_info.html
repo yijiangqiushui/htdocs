@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>申报单位基本情况</title>
+        <script src="../../../../../../center/html/view/js/jquery-1.11.2.min.js"></script>
+        <link rel="stylesheet" type="text/css"
+              href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css" />
+        <link rel="stylesheet" type="text/css"
+              href="../../../../../../common/html/plugin/easyui/themes/icon.css" />
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+        <script type="text/javascript"
+        src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+        <script type="text/javascript" src="../../../../../../common/html/js/validation.js"></script>
+        <script type="text/javascript" src="../../../../../../common/html/js/tablecommon.js"></script>
+
+        <script src="../../../../../../common/html/js/tablecommon.js"></script>
+        <script type="text/javascript" src="../../../js/apply/org5_info.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../css/table.css" />
+        <link rel="stylesheet" type="text/css" href="../../../css/button.css" />
+<style type="">
+textarea {
+	padding:6px;
+}
+</style>
+    </head>
+
+    <body>
+        <form method="post" id="5org_info_fm">
+            <div class="project_content">
+                <div class="table_title clearfix">
+                    <div class="title_pic left">项目申请书填写</div>
+                    <div class="right back_pic" id="back"></div>
+                </div>
+                <div class="table_content back-long">
+                    <table cellspacing="0" cellpadding="0" class="basic_info">
+                        <tr>
+                            <td colspan="6" class="border_left_none"
+                                style="background-color: #7AB5ED;">
+                                <div class="title_top p-b10">申报基本信息</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th  width="160px"><p align="center">单位名称</th>
+                            <td colspan="5"><input style="width: 99.5%; height: 100%;"
+                                                   type="text" name="org_name" readonly /></td>
+                        </tr>
+                        <tr>
+                            <th ><p align="center">组织机构代码</p></th>
+                            <td colspan="2"><input style="width: 99.5%; height: 100%;"
+                                                   type="text" name="org_code" readonly /></td>
+                            <th  width="150px"><p align="center">注册资金（万）</p></th>
+                            <td width="63" colspan="2"><input
+                                    style="width: 99.5%; height: 100%;" type="text"
+                                    name="register_fund" datatype="float" /></td>
+                            <!-- 注册资金没有字段-->
+                        </tr>
+                        <tr>
+                            <th ><p align="center">注册地址</p></th>
+                            <td colspan="2"><input colspan="2"
+                                                   style="width: 99.5%; height: 100%;" type="text"
+                                                   name="register_address" readonly /></td>
+                            <!-- 注册地址没有字段-->
+                            <th  width="150px"><p align="center">单位类型</p></th>
+                            <td colspan="2"><input type="text"
+                                                   style="width: 99.5%; height: 100%;" name="org_type" /></td>
+                        </tr>
+                        <tr>
+                            <th ><p align="center">通讯地址</p></th>
+                            <td colspan="2"><input style="width: 99.5%; height: 100%;"
+                                                   type="text" name="contact_address" readonly /></td>
+                            <th  width="150px"><p align="center" >邮政编码</p></th>
+                            <td colspan="2"><input type="text" datatype="postcode" placeholder="邮编格式：000000（6位数字）"
+                                                   style="width: 99.5%; height: 100%;" name="postal" /></td>
+                        </tr>
+                        <tr>
+                            <th  rowspan="2"><p align="center">法定代表人</p></th>
+                            <th  width="140px"><p align="center">姓名</p></th>
+                            <th  colspan="2"><p align="center">身份证号</p></th>
+                            <th  colspan="2"><p align="center">联系电话（手机/座机）</p></th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" style="width: 99.5%; height: 100%; min-width:50px;"
+                                       name="legal_name" datatype="" readonly /></td>
+                            <td colspan="2"><input style="width: 99.5%; height: 100%; min-width:200px;" type="text" datatype="idcard" placeholder='请输入18位身份证号' name="legal_id" /></td>
+                            
+                            <td colspan="2"><input style="width: 99.5%; height: 100%; min-width:200px;"
+                                                   type="text" datatype="phandtel" name="legal_phone" readonly /></td>
+                            
+                        </tr>
+                        <tr>
+                            <th  rowspan="2"><p align="center" rowspan="2">联系人</p></th>
+                            <th ><p align="center">姓名</p></th>
+                            <th  colspan="2"><p align="center">E-mail</p></th>
+                            <th  colspan="2"><p align="center">联系电话（手机/座机）</p></th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" style="width: 99.5%; height: 100%;"
+                                       name="linkman"   /></td>
+                            <td colspan="2"><input style="width: 99.5%; height: 100%;"
+                                                   type="text" datatype="email" name="linkman_email"
+                                                     /></td>
+                            
+                            <td colspan="2"><input style="width: 99.5%; height: 100%;"
+                                                   type="text" datatype="phandtel" name="linkman_contact"  /></td>
+                        </tr>
+                        <tr>
+                            <th  rowspan="4"><p align="center">资质名称</p></th>
+                            <th><p align="center">认定单位</p></th>
+                            <td colspan="4"><input style="width: 99.5%; height: 100%;"
+                                                   type="text" name="approve_org" /></td>
+                            
+                        </tr>
+                        <tr>
+                            <th><p align="center">名称</p></th>
+                            <td colspan="4"><input style="width: 99.5%; height: 100%;"
+                                                   type="text" name="name" /></td>
+                            
+                        </tr>
+                        <tr>
+                            <th ><p align="center">有效期</p></th>
+                            <td colspan="4"><input type="text" datatype="" 
+                                                   style="width: 99.5%; height: 100%;" name="validity" /></td>
+                            
+                        </tr>
+                        <tr>
+                            <th ><p align="center">编号</p></th>
+                            <td colspan="4"><input type="text"
+                                                   style="width: 99.5%; height: 100%;" name="aptitude_code" /></td>
+                            
+                        </tr>
+                        <tr>
+                            <th  rowspan="3"><p align="center">自主知识产权情况（已授权）</p></th>
+                            <th><p align="center">专利授权数</p></th>
+                            <th  colspan="2"><p align="center">发明专利</p></th>
+                            <th ><p align="center">实用新型</p></th>
+                            <th ><p align="center">外观设计</p></th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" style="width: 99.5%; height: 100%;"
+                                       name="patent_num" datatype="number" /></td>
+                            <td colspan="2"><input  type="text"  style="width: 99.5%; height: 100%;"
+                                       name="invent_patent" datatype="number" /></td>
+                            <td><input type="text" style="width: 99.5%; height: 100%;"
+                                       name="functional_patent" datatype="number" /></td>
+                            <td><input type="text" style="width: 99.5%; height: 100%;"
+                                       name="patent_design" datatype="number" /></td>
+                        </tr>
+                        <tr>
+                            <th  colspan="2"><p align="center">其他知识产权数</p></th>
+                            <td colspan="3"><input style="width: 99.5%; height: 100%;"
+                                                   type="text" name="other_patent" datatype="number" /></td>
+                        </tr>
+                        <tr>
+                            <th ><p align="center">所属行业</p></th>
+                            <td colspan="2"><input style="width: 99.5%; height: 100%;"
+                                                   type="text" name="org_trade" /></td>
+                            <th  colspan="2"><p align="center">主要产品或技术</p></th>
+                            <td><input type="text" style="width: 99.5%; height: 100%;"
+                                       name="main_product" /></td>
+                        </tr>
+                        <tr>
+                            <th  height="50px"><p align="center">职工总数（人）</p></th>
+                            
+                            <td><input type="text" datatype="number"
+                                       style="width: 99.5%; height: 100%;" name="staff_num" /></td>
+                            <th ><p align="center">其中大专以上人员（人）</p></th>
+                            
+                            <td width="58"><input style="width: 99.5%; height: 100%;"
+                                                  type="text" datatype="number" name="junior" /></td>
+                            <th ><p align="center">其中研究开发人员（人）</p></th>
+                            
+                            <td><input type="text" datatype="number"
+                                       style="width: 99.5%; height: 100%;" name="researcher_num" /></td>
+                        </tr>
+                        <tr>
+                            <th ><p align="center">上半年销售收入 （万元）</p></th>
+                            <td><input type="text" datatype="float"
+                                       style="width: 99.5%; height: 100%;" name="lasthalf_income" /></td>
+                            <th >上半年上缴税金（万元）</th>
+                            <td><input type="text" datatype="float"
+                                       style="width: 99.5%; height: 100%;" name="lasthalf_tax" /></td>
+                            <th >上半年利润（万元）</th>
+                            <td><input type="text" datatype="float"
+                                       style="width: 99.5%; height: 100%;" name="lasthalf_profit" /></td>
+                        </tr>
+                         <tr>
+                            <th ><p align="center">本年预计销售收入（万元）</p></th>
+                            <td><input type="text" datatype="float"
+                                       style="width: 99.5%; height: 100%;" name="predict_income" /></td>
+                            <th class="bt">本年预计上缴税金（万元）</th>
+                            <td><input type="text" datatype="float" style="width: 99.5%; height: 100%;" name="predict_tax" /></td>
+                            <th >本年预计利润（万元）</th>
+                            <td><input type="text" datatype="float"
+                                       style="width: 99.5%; height: 100%;" name="predict_profit" /></td>
+                            </tr>
+                        <tr class="special-row">
+                            <th  rowspan="3" colspan="2"><p align="center">科研机构开展的主要研究开发工作介绍（1000字以内）</p></th>
+                            <td colspan="5">
+                            <div style='padding:0 10px 0 0;'>
+                            	<textarea name="research_content" data-options="multiline:true" title="1000"></textarea>
+                            </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="button_wrapper clearfix d-n">
+
+                        <div class="save">保存</div>
+                        <!-- <div class="reset" >重置</div> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </body>
+</html>

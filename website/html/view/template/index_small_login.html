@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript"	src="../../../../common/html/lib/js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript"	src="../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+	<script type="text/javascript"	src="../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+	
+	<script type="text/javascript"	src="../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
+	
+	<link href="../css/index_small_login.css" type="text/css" rel="stylesheet">
+
+</head>
+
+
+<body>
+	<div class="wrapper">
+		 <form id="form1" name="form1" method="post" action="" class="hlui-form">
+			<div class="block1-name1"></div><div class="block1-word1">用户名：<input type="text" name="username" id="username" class="ui-form-validate ui-form-text" data-opt="required:true" /></div>
+			<div class="block1-name2"></div><div class="block1-word2">密<span style="visibility:hidden;">__</span>码：<input type="password" name="password" id="password" class="ui-form-validate ui-form-text" data-opt="required:true" /></div>
+		    <div class="block1-name3"></div><div class="block1-word3">验证码：<input type="text" name="validateCode" id="validateCode" style="width:80px;" class="ui-form-validate ui-form-text" data-opt="required:true" /></div>
+		    <div class="block1-validate"><img src="../../../../common/php/file/validateCode.png.php" alt="点击更换验证码" title="点击更换验证码" id="validateCodeImg"/></div>
+		    <div class="bw-login" id="submitbtn"><div class="login" ></div><div class="login-word" >登 录</div> </div> 
+		    <div class="bw-register" ><div class="register-word" >注 册</div></div>
+		    <div class="forget-pwd"><a href="#" id="get_help" >忘记密码</a></div>
+		    
+		</form>
+	</div>
+</body>
+</html>
+

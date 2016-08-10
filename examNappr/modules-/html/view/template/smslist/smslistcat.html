@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>通讯录分类管理</title>
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../../../../common/html/plugin/easyui/themes/icon.css">
+<!--
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+-->
+<script type="text/javascript" src="../../../../../common/html/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../js/smslist/smslistcat.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/common.js"></script>
+<script type="text/javascript" src="../../../../../center/html/view/js/NTClientJavascript.js"></script>
+
+<link href="../../css/smslistcat.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class='easyui-layout'>
+<!--树结构-->
+<div id='west' data-options="region:'west',title:'联系人分组',split:true" style="width:250px;padding:5px;">
+    <ul id="treeData"></ul>
+</div>
+    
+<!--表结构-->
+<div id='center' data-options="region:'center',title:'联系人分组管理',split:true" style="padding:5px;">
+	<table id="catGrid" class="easyui-datagrid"></table> 
+	<div id="toolbar">
+	    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newCat()">添加</a>       
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delArrCat()">批量删除</a>
+        <!--
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-no" plain="true" onclick="disableCat(1)">禁用</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="disableCat(0)">启用</a> -->
+    </div>
+</div>
+    
+<!--添加-->
+<div id="newDlg" class="easyui-dialog" style="width:380px;padding:10px 20px"
+      closed="true" buttons="#newdlg-buttons">
+  <h1 class="ftitle">分组信息</h1>
+  <form id="newFm" method="post" novalidate="novalidate">
+    <input type="hidden" name="upper_id" />
+    <input type="hidden" name="upper_cat" />
+    <input type="hidden" name="catname_all" />
+    <table>
+      <tr>
+        <td width="200">所属分组：</td>
+        <td><input name="uptext" class="easyui-validatebox" readonly='true' style="border:0px;" /></td>
+      </tr>
+      <tr>
+        <td>分组名称：</td>
+        <td><input name="cat_name" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+      </tr>
+      <tr>
+        <td>专用名称：</td>
+        <td><input name="exclusive_name" class="easyui-validatebox" /></td>
+      </tr>
+      <tr>
+        <td>是否禁用：</td>
+        <td>
+        <input type="radio" name="is_forbidden" value="1" />是
+        <input type="radio" name="is_forbidden" value="0" />否 
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="newdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveCat()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#newDlg').dialog('close')">取消</a>
+</div>
+    
+    
+<!--编辑-->
+<div id="edtDlg" class="easyui-dialog" style="width:380px;padding:10px 20px"
+      closed="true" buttons="#edtdlg-buttons">
+  <h1 class="ftitle">分组信息</h1>
+  <form id="edtFm" method="post" novalidate="novalidate">
+    <input type="hidden" name="upper_cat" />
+    <input id="catname_alledit" name="catname_all" type="hidden" />
+    <table>
+      <tr>
+        <td width="80">所属分组：</td>
+        <td><input name="upper_id" id="tree" style="width:153px;" />
+          <!--<input name="uptext" class="easyui-validatebox" readonly='true' style="border:0px;">--></td>
+      </tr>
+      <tr>
+        <td>分组名称：</td>
+        <td><input id="catname_edit" name="cat_name" class="easyui-validatebox" data-options="required:true,missingMessage:'该项为必填项'" /></td>
+      </tr>
+      <tr>
+        <td>专用名称：</td>
+        <td><input name="exclusive_name" class="easyui-validatebox" /></td>
+      </tr>
+      <tr>
+        <td>是否禁用：</td>
+        <td>
+        <input type="radio" name="is_forbidden" value="1" />是
+        <input type="radio" name="is_forbidden" value="0" />否 
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+      
+<div id="edtdlg-buttons" style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="edtSaveCat()">确定 </a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#edtDlg').dialog('close')">取消</a>
+</div>
+</body>
+</html>

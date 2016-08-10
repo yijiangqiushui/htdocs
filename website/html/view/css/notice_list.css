@@ -1,0 +1,68 @@
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f1f1f1;
+}
+
+.head {
+	width: 800px;
+	margin: auto;
+	padding: 30px 0;
+	background-image: url(../img/head_bg.png);
+	background-repeat: no-repeat;
+	background-position: 600px 0;
+}
+
+.body {
+	width: 800px;
+	margin: auto;
+	margin-bottom: 30px;
+}
+
+.module-name {
+	font-size: 14px;
+	color: #274571;
+	line-height: 30px;
+	border-bottom: 1px solid #ccc;
+}
+
+.list {
+	font-size: 14px;
+	line-height: 30px;
+	color: #666;
+	padding: 10px 0;
+}
+
+.list ul, li {
+	list-style: none;
+}
+
+.list a {
+	text-decoration: none;
+	color: #03309d;
+	margin-right: 15px;
+}
+
+.list a:hover {
+	text-decoration: underline;
+}
+
+.pagination {
+	text-align: center;
+	padding: 10px 0;
+}
+
+.body-bottom {
+	border-bottom: 1px solid #ccc;
+}
+
+.foot {
+	color: #666;
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 50px;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>项目详细内容</title>
+<!--heyangyang-->
+<link rel="stylesheet" type="text/css"
+	href="../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css"
+		href="../../../../../common/html/plugin/easyui/themes/icon.css">
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+		<script type="text/javascript"
+			src="../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+		<script charset="utf-8"
+			src="../../../../../common/html/plugin/kindeditor-4.1.10/kindeditor-min.js"></script>
+		<script type="text/javascript" src="../../js/main/apply4.js"></script>
+
+		<script type="text/javascript">
+	KindEditor.options.filterMode = false;
+	KindEditor.ready(function(K) {
+		editor = K.create('#editor_id', {
+			resizeType : 1,
+			allowPreviewEmoticons : false,
+			allowImageUpload : false,
+			items : [
+				'source','|','fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+				'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+		});
+	});
+</script>
+		<style type="text/css">
+a {
+	text-decoration: none;
+}
+
+#f table tr td .remark {
+	color: #F00;
+}
+</style>
+</head>
+
+<body>
+	<div style="font-weight: bold">四、项目详细内容</div>
+	<!--<a href="javascript:void(0)" class="easyui-linkbutton" onclick="updateData()">修改 </a>-->
+	<form id="f" name="f" method="post" novalidate
+		enctype="multipart/form-data">
+		<table width="925" border="0">
+			<tr>
+				<td>1、立项背景(限800字)</td>
+			</tr>
+			<tr>
+				<td><textarea name="background" id="background" cols='110'
+						rows="5"></textarea></td>
+			</tr>
+			<tr>
+				<td>2、详细科学技术内容(总体思路、技术方案、与当前同类科学技术的综合比较等)</td>
+
+			</tr>
+			<tr>
+				<td><span class="remark">&nbsp;&nbsp;&nbsp;*
+						如果内容中包含图片或表格，请单独使用word文档的方式上传（即另存为.doc格式文档，保存类型请选择“Word 97-2003
+						文档(*.doc)”）。</span></td>
+			</tr>
+			<tr>
+				<td><textarea id="editor_id" name="scienceCon"
+						style="width: 800px; height: 200px; visibility: hidden;"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>技术方案：<input name="file" type="file" />
+				</td>
+			</tr>
+			<tr>
+				<td>3、应用情况及推广程度(限800字)</td>
+			</tr>
+			<tr>
+				<td><textarea name="extend" id="extend" cols="110" rows="5"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>4、推动科学技术进步的作用(限800字)</td>
+			</tr>
+			<tr>
+				<td><textarea name="effect" id="effect" cols="110" rows="5"></textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<td>5、经济效益(无法计算直接经济效益的项目可以不填此栏)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					单位：万元人民币</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border='0'>
+						<tr>
+							<td width="15%" style="font-size: 12px;">项目总投资额</td>
+							<td width="35%"><input type='text'
+								class="easyui-validatebox" data-options="validType:'isVal'"
+								name='invest' style="width: 220px;" /></td>
+							<td width="15%" style="font-size: 12px;">回收期(年)</td>
+							<td width="35%"><input type='text'
+								class="easyui-validatebox" name='recoverDate'
+								style="width: 220px;" /></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table id="grid" class="easyui-datagrid-"></table>
+				</td>
+			</tr>
+			<tr>
+				<td align='center'><a href='javascript:void(0)'
+					onclick="showForm(0)" style="font-size: 12px;">添加效益详细信息</a></td>
+			</tr>
+			<tr>
+				<td style="font-size: 12px;">各栏目的计算依据</td>
+			</tr>
+			<tr>
+				<td><textarea name="casculBasis" cols="110" rows="5"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td style="font-size: 12px;">经济效益综述（限800字）</td>
+			</tr>
+			<tr>
+				<td><textarea name="economicBenefit" id="economicBenefit"
+						cols="110" rows="5"></textarea></td>
+			</tr>
+			<tr>
+				<td>6、社会效益（限800字）</td>
+			</tr>
+			<tr>
+				<td><textarea name="socialeffect" id="socialeffect" cols="110"
+						rows="5"></textarea></td>
+			</tr>
+			<!--<tr>
+     	 <td>
+         <div id="rec_con">
+         	<table border="0" width="100%">
+            	<tr>
+                	<td width="10%">审核意见：</td>
+                	<td width="90%"><textarea style="width: fit; height: fit; overflow-y:visible;border:0;resize:none;" readonly="readonly" name="checkAdvice"></textarea></td>
+                </tr>
+            </table>
+          </div>  			
+      	</td>
+    </tr>-->
+			<tr>
+				<td align="center"><input type="button" value="提交"
+					onclick="subData()" /> <input type="button" value="取消"
+					onclick="cancal()" /></td>
+			</tr>
+		</table>
+	</form>
+
+	<div id="dlg" class="easyui-dialog"
+		style="top: 600px; width: 400px; height: 350px; padding: 10px 20px"
+		closed="true" buttons="#dlg-buttons">
+		<form id="fm" method="post" novalidate>
+			<table>
+				<tr>
+					<td width='120'>年份：</td>
+					<td><input name="year" class="easyui-validatebox"
+						data-options="validType:'isYear'"></td>
+				</tr>
+				<tr>
+					<td>新增销售收入：</td>
+					<td><input name="income" class="easyui-validatebox"
+						data-options="validType:'isVal'"></td>
+				</tr>
+				<tr>
+					<td>新增利润：</td>
+					<td><input name="profit" class="easyui-validatebox"
+						data-options="validType:'isVal'"></td>
+				</tr>
+				<tr>
+					<td>新增税收：</td>
+					<td><input name="tax" class="easyui-validatebox"
+						data-options="validType:'isVal'"></td>
+				</tr>
+				<tr>
+					<td>创收外汇（美元）：</td>
+					<td><input name="foreignCurrency" class="easyui-validatebox"
+						data-options="validType:'isVal'"></td>
+				</tr>
+				<tr>
+					<td>节支总额：</td>
+					<td><input name="totalSavings" class="easyui-validatebox"
+						data-options="validType:'isVal'"></td>
+				</tr>
+
+			</table>
+		</form>
+
+	</div>
+
+	<div id="dlg-buttons" style="text-align: center; padding: 5px">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-ok" onclick="saveData()">确定 </a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
+
+
+
+</body>
+</html>

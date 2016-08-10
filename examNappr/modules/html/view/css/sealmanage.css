@@ -1,0 +1,7 @@
+/* CSS Document */
+/*Modified by zhao xiaogang 2014/09/09*/
+
+#newFm,#edtFm,#queFm{margin:0; padding:10px 30px;}
+.ftitle{font-size:14px; font-weight:bold; padding:5px 0; margin-bottom:10px; border-bottom:1px solid #ccc; }
+a:link{text-decoration:none;}    
+a:hover{text-decoration:underline;} 

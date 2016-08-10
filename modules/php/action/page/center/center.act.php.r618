@@ -1,0 +1,28 @@
+<?php
+include '../../../../../center/php/config.ini.php';
+include '../../../../../common/php/config.ini.php';
+include '../../../../../common/php/lib/db.cls.php';
+include '../../class/center/center.cls.php';
+
+include '../../../../../common/php/plugin/fenci_v1.0_utf8/checkduplicate.cls.php';
+
+$action = $_GET['action'];
+$project_id = $_GET['project_id'];
+    
+
+//     printf($project_array[2]."fff");
+
+
+
+$process=new Center();
+switch($action){
+    case 'OpenMid':
+        $process-> openmid($project_id);
+        break;
+   case 'stageMid':
+        $process-> stagemid($project_id);
+        break;
+        default:;
+
+  }
+?>

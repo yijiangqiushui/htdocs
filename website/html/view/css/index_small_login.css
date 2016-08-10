@@ -1,0 +1,108 @@
+* {
+	margin:0;
+	font-size:12px;
+}
+.block1-name1{
+	position:absolute;
+	background-image:url(../img/loginpic/username.jpg);
+	width:10px;
+	height:11px;
+	left:70px;
+	top:75px;
+}
+.block1-word1{
+	position:absolute;
+	left:90px;
+	top:68px;
+}
+
+.block1-name2{
+	position:absolute;
+	background-image:url(../img/loginpic/pwd.jpg);
+	width:10px;
+	height:11px;
+	left:70px;
+	top:117px;
+}
+.block1-word2{
+	position:absolute;
+	left:90px;
+	top:110px;
+}
+
+.block1-name3{
+	position:absolute;
+	background-image:url(../img/loginpic/check.jpg);
+	width:10px;
+	height:11px;
+	left:70px;
+	top:159px;
+}
+.block1-word3{
+	position:absolute;
+	left:90px;
+	top:152px;
+	display:inline;
+}
+.block1-validate{
+	position:absolute;
+	left:235px;
+	top:148px;
+}
+.login{ 
+	background-image:url(../img/loginpic/login.jpg);
+	width:51px;
+	height:23px;
+	position:absolute;
+	top:192px;
+	left:120px;
+}
+
+.bw-register{ 
+	background-image:url(../img/loginpic/register.jpg);
+	width:50px;
+	height:23px;
+	position:absolute;
+	top:192px;
+	left:200px;
+	cursor:pointer;
+}
+a{
+	text-decoration:none;
+}
+.login-word{
+	font-weight:600;
+	font-family:"宋体";
+	color:white;
+	font-size:12px;
+	position:absolute;
+	top:195px;
+	left:128px;
+	cursor:pointer
+}
+.register-word{
+	font-weight:600;
+	font-family:"宋体";
+	color:white;
+	font-size:12px;
+	position:absolute;
+	width:50px;
+	text-align:center;
+	line-height:23px;
+	cursor:pointer;
+}
+.validate-block{
+	display:inline;
+	position:absolute;
+	top:148px;
+	left:230px;
+}
+a{
+	color:black;
+}
+.forget-pwd{ 
+	position:absolute;
+	top:195px;
+	left:270px;
+}
+

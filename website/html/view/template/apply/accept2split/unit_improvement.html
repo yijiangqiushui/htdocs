@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../website/html/view/css/tablestyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../common/html/plugin/easyui/themes/icon.css">
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/hlui.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/jquery-hlui-2.0/js/form.js"></script>
+<script type="text/javascript"
+	src="../../../../../../common/html/plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../../js/apply/iopuc.js"></script>
+<title>项目单位能力改善提高情况</title>
+</head>
+<body>
+	<form id="iopuc_fm" method="post">
+		<table width="600" height="862" border="1" cellspacing="0">
+			<tr>
+				<td colspan="5"><h2>九、项目单位能力改善提高情况 单位：台、套、平方、万元</h2></td>
+			</tr>
+			<tr>
+				<td colspan="5">购置生产设备明细（单台套5万元及以上）</td>
+			</tr>
+			<tr>
+				<td width="96">序号</td>
+				<td>设备、工装、模具名称</td>
+				<td width="97">数量</td>
+				<td width="88">单价</td>
+				<td width="95">合计金额</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><input type="text" name="equipment_name" /></td>
+				<td><input type="text" name="equipment_num" /></td>
+				<td><input type="text" name="equipment_price" /></td>
+				<td><input type="text" name="equipment_fund" /></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+			</tr>
+			<tr>
+				<td colspan="5">购置检测仪器明细（单台5万元及以上）</td>
+			</tr>
+			<tr>
+				<td>序号</td>
+				<td>检测仪器名称</td>
+				<td>数量</td>
+				<td>单价</td>
+				<td>合计金额</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><input type="text" name="test_mame" /></td>
+				<td><input type="text" name="test_num" /></td>
+				<td><input type="text" name="test_price" /></td>
+				<td><input type="text" name="test_fund" /></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+				<td><input type="text" name="" /></td>
+			</tr>
+			<tr>
+				<td colspan="5">厂房、场地改善情况</td>
+			</tr>
+			<tr>
+				<td>新建厂房面积</td>
+				<td><input type="text" name="newplant_area" /></td>
+				<td colspan="2">合计金额</td>
+				<td><input type="text" name="newplant_fund" /></td>
+			</tr>
+			<tr>
+				<td>改扩建厂房面积</td>
+				<td><input type="text" name="change_area" /></td>
+				<td colspan="2">合计金额</td>
+				<td><input type="text" name="change_fund" /></td>
+			</tr>
+
+		</table>
+
+		<a href="#" class="easyui-linkbutton" iconcls="icon-ok"
+			onclick="submitdata()">确定</a> <a href="#" class="easyui-linkbutton"
+			iconcls="icon-no" onclick="reset()">重置</a>
+	</form>
+</body>
+</html>

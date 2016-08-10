@@ -1,0 +1,29 @@
+	int msg_ins = 0;
+	if(msg.getOriginator().equals("10010")){
+		if(msg.getText().indexOf("您的帐户可用余额为")!=-1){
+			msg_ins=jdbcTemplate.update(sql_insert);
+		}else{
+			srv.deleteMessage(msg);
+		}
+	}else{
+		msg_ins=jdbcTemplate.update(sql_insert);
+	}
+	if(msg_ins>0){
+		srv.deleteMessage(msg);
+	}
+
+
+
+//查询话费  发完最后一条时
+	if(phones[0].equals(smsPhoneArr[phoneLength-1])){
+		String query_sql="select replyTime from smsreply WHERE replyPhone='10010' and replyContent like '%您的帐户可用余额为%' order by replyTime desc limit 0,1";
+		List<MessageList> reply_list=jdbcTemplate.query(query_sql, new DAORowMapper<MessageList>(MessageList.class));
+		Calendar now = Calendar.getInstance();
+		String dat=reply_list.get(0).getReplyTime().toString().substring(0,10);
+		String nowtime=now.get(Calendar.YEAR)+"-"+((now.get(Calendar.MONTH) + 1)<10?"0":"")+(now.get(Calendar.MONTH) + 1)+"-"+now.get(Calendar.DATE);
+		if(!dat.equals(nowtime)){
+			msg = new OutboundMessage("10010", "102");
+			msg.setEncoding(MessageEncodings.ENCUCS2); 
+ 			srv.sendMessage(msg);
+		}
+	}
